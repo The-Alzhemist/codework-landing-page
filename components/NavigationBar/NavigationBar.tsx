@@ -14,7 +14,7 @@ const NavigationBar = () => {
       </ul>
 
       <div className="hidden md:flex items-center justify-end">
-        <button className="py-2.5 px-5 mr-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-full border-2">Contact us</button>
+        <button className="py-2.5 px-5 mr-2 text-sm font-medium text-gray-900  rounded-md border-2 border-[#C8D94C] hover:bg-[#C8D94C]">Contact us</button>
       </div>
     </nav>
   );

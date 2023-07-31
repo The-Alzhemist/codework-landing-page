@@ -16,7 +16,7 @@ const HelloSection = () => {
           reprehenderit cumque expedita adipisci aliquid. Non, eaque! Quae,
           laborum deleniti.
         </p>
-        <button className="py-2.5 px-5 mr-2 text-lg font-medium bg-green-400 text-gray-900 rounded-md bg-primary mb-4 md:mb-0 w-full md:w-[200px]">
+        <button className="py-2.5 px-5 mr-2 text-lg font-medium bg-[#C8D94C] text-gray-900 rounded-md bg-primary mb-4 md:mb-0 w-full md:w-[200px]">
           Contact Us
         </button>
       </div>
