@@ -5,10 +5,10 @@ const HelloSection = () => {
     <section className="px-4 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-[55%_45%] mt-10 md:py-[50px]">
       <div className="flex flex-col justify-center items-start mb-4">
         {/* subtitle */}
-        {/* <div className='font-bold uppercase text-sm mb-4'>Lorem ipsum dolor sit amet</div> */}
+        {/* <div className="font-bold uppercase text-sm mb-4">Lorem ipsum dolor sit amet</div> */}
         {/* title */}
         <h1 className="mb-5 text-3xl md:text-5xl font-bold">
-          Lorem, ipsum dolor sit amet consectetur adipisicing{" "}
+          Lorem, ipsum dolor sit amet consectetur adipisicing
         </h1>
         {/* content */}
         <p className="mb-6 opacity-75 max-w-[500px]">
