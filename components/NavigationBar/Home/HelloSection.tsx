@@ -59,7 +59,7 @@ const HelloSection = () => {
         </div>
       </div>
 
-      <div className="absolute bottom-0 right-0  rounded-full w-[470px] h-[470px] bg-[#C8D94C]"></div>
+      {/* <div className="absolute bottom-0 right-4  rounded-full w-[470px] h-[470px] bg-[#C8D94C]"></div> */}
     </section>
   );
 };
