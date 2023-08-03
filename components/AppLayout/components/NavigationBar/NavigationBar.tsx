@@ -1,4 +1,5 @@
 import React from "react";
+import withNavigation from "./withNavigation";
 
 const NavigationBar = () => {
   return (
@@ -12,12 +13,14 @@ const NavigationBar = () => {
           <li>project</li>
           <li>Members</li>
         </ul>
-        <button className="py-2.5 px-5 mr-2 text-sm font-medium text-gray-900  rounded-lg border-2 border-[#C8D94C] hover:bg-[#C8D94C]">
-          Contact us
+        <button className="py-2.5 px-5 mr-2 text-sm font-medium text-gray-900  rounded-lg border-2 border-black hover:bg-[#C8D94C]">
+          CONTACT US
         </button>
       </div>
     </nav>
   );
 };
 
-export default NavigationBar;
+
+const WrappedComponent = withNavigation(NavigationBar);
+export default WrappedComponent;
