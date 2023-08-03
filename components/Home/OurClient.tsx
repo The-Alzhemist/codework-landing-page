@@ -8,7 +8,7 @@ const OurClient = () => {
       <div className="flex justify-center gap-10">
         <img className="rounded-md" src="https://placehold.co/100x100" alt="" ></img>
         <img className="rounded-md" src="https://placehold.co/100x100" alt="" ></img>
-        <img className="rounded-md" src="https://placehold.co/100x100" alt="" ></img>
+        {/* <img className="rounded-md" src="https://placehold.co/100x100" alt="" ></img> */}
   
       </div>
     </div>

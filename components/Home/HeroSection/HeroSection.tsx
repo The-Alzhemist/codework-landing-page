@@ -17,13 +17,13 @@ const fontGloriaHallelujah = Gloria_Hallelujah({
 const HeroSection = () => {
   return (
     <section
-      className={`${fontPrompt.variable} font-prompt relative md:py-[50px] px-4 max-w-7xl mx-auto`}
+      className={`${fontPrompt.variable} font-prompt relative md:py-[50px] max-w-7xl mx-auto`}
     >
-      <div className="rounded-full circle absolute top-0 left-0"></div>
-      <div className="rounded-full circle absolute top-36 right-0"></div>
+      <div className="rounded-full w-40 h-40 md:w-[500px] md:h-[500px] bg-[#F9FFCD]   blur-[80px] z-0 absolute top-0 left-0"></div>
+      <div className="rounded-full w-40 h-40  md:w-[500px] md:h-[500px] bg-[#F9FFCD]   blur-[80px] z-0 absolute top-36 right-0"></div>
 
       <div className="flex w-full">
-        <div className="z-10 w-[75%] max-w-[830px] min-h-[600px]  relative bg-white border-[3px] border-black rounded-[50px] px-4 py-6 md:p-10 flex flex-col justify-center drop-shadow-md">
+        <div className="z-10 w-[100%] lg:w-[75%] max-w-[830px] min-h-[600px]  relative bg-white border-[3px] border-black rounded-[50px] py-6 md:p-10 flex flex-col justify-center drop-shadow-md">
 
           <h1 className="mb-20">
             <span className="flex text-lg md:text-5xl font-light mb-5">
@@ -59,7 +59,7 @@ const HeroSection = () => {
         </div>
 
         {/* right box  */}
-        <div className="w-[25%]">
+        <div className="hidden lg:block lg:w-[25%]">
           {/* circle  */}
           <div className="z-20  absolute bottom-0 right-12 rounded-full w-[470px] h-[470px] bg-[#C8D94C] "></div>
           

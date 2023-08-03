@@ -2,10 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-.circle {
+/* .circle {
   width:500px;
   height: 500px;
   background-color:rgb(250, 250, 196);
   filter: blur(120px);
   z-index: 0;
-}
+} */
