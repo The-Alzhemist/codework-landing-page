@@ -1,5 +1,6 @@
 import React from "react";
 import { Prompt, Gloria_Hallelujah } from "@next/font/google";
+import withHeroSection from "./withHeroSection";
 
 const fontPrompt = Prompt({
   weight: ["100", "200", "300", "400", "500", "600", "700"],
@@ -13,7 +14,7 @@ const fontGloriaHallelujah = Gloria_Hallelujah({
   variable: "--font-gloria-hallelujah",
 });
 
-const HelloSection = () => {
+const HeroSection = () => {
   return (
     <section
       className={`${fontPrompt.variable} font-prompt relative md:py-[50px] px-4 max-w-7xl mx-auto`}
@@ -119,4 +120,6 @@ const HelloSection = () => {
   );
 };
 
-export default HelloSection;
+
+const WrappedComponent = withHeroSection(HeroSection)
+export default WrappedComponent

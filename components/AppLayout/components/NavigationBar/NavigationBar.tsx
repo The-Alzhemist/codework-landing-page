@@ -17,8 +17,6 @@ const NavigationBar = () => {
           Contact us
         </button>
       </div>
-
-   
     </nav>
   );
 };
