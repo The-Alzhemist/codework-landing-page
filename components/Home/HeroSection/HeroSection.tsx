@@ -1,6 +1,7 @@
 import React from "react";
 import { Prompt, Gloria_Hallelujah } from "@next/font/google";
 import withHeroSection from "./withHeroSection";
+import BackgroundGradientBlur from "../../backgroundGradientBlur/BackgroundGradientBlur";
 
 const fontPrompt = Prompt({
   weight: ["100", "200", "300", "400", "500", "600", "700"],
@@ -19,13 +20,11 @@ const HeroSection = () => {
     <section
       className={`${fontPrompt.variable} font-prompt relative md:py-[50px] max-w-7xl mx-auto`}
     >
-      <div className="rounded-full w-40 h-40 md:w-[500px] md:h-[500px] bg-[#F9FFCD]   blur-[100px] z-0 absolute top-0 left-0"></div>
 
-      <div className="rounded-full w-40 h-40 md:w-[500px] md:h-[500px] bg-[#F9FFCD]   blur-[100px] z-0 absolute bottom-0 left-0"></div>
-
-      <div className="rounded-full w-40 h-40  md:w-[500px] md:h-[500px] bg-[#F9FFCD]   blur-[100px] z-0 absolute top-0 right-0"></div>
-
-      <div className="rounded-full w-40 h-40  md:w-[500px] md:h-[500px] bg-[#F9FFCD]   blur-[100px] z-0 absolute bottom-0 right-0"></div>
+      <BackgroundGradientBlur className="top-0 left-0"/>
+      <BackgroundGradientBlur className="top-0 right-0"/>
+      <BackgroundGradientBlur className="bottom-0 left-0"/>
+      <BackgroundGradientBlur className="bottom-0 right-0"/>
 
       <div className="flex w-full">
         <div className="z-10 w-[100%] lg:w-[75%] max-w-[830px] min-h-[600px]  relative bg-white border-[3px] border-black rounded-[50px] py-6 md:p-10 flex flex-col justify-center drop-shadow-md">
