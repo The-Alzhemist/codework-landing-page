@@ -57,7 +57,7 @@ const OurMember = () => {
         Our Members
       </h2>
       <div className="grid grid-cols-2 md:grid-cols-4 gap-10">
-       {dataList.map((item, index) => (
+       {dataList?.map((item, index) => (
      <div key={index}  className="grid justify-center text-center">
      <img
        className="rounded-full mb-4"

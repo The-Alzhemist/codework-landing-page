@@ -9,3 +9,7 @@
   filter: blur(120px);
   z-index: 0;
 } */
+
+.bg-line {
+  background: linear-gradient(180deg, transparent 50%, #E9FB64 50% 90%, rgba(0, 0, 0, 0) 90%);
+}

@@ -45,7 +45,7 @@ const OurService = () => {
         Our service
       </h2>
       <div className="grid md:grid-cols-3 gap-10">
-        {dataList.map((item, index) => (
+        {dataList?.map((item, index) => (
           <div key={index} className="flex flex-col max-w-[400px] border-[2px] border-slate-900 rounded-md">
             <img className="rounded-md" src="https://placehold.co/400x150" alt="" />
             <div className="p-3">

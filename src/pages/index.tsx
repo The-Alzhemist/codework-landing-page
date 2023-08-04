@@ -1,7 +1,7 @@
 
 import { Inter } from "next/font/google";
 import HeroSection from "../../components/Home/HeroSection/HeroSection";
-import AboutUs from "../../components/Home/AboutUs";
+import AboutUs from "../../components/Home/AboutUs/AboutUs";
 import OurService from "../../components/Home/OurService";
 import OurClient from "../../components/Home/OurClient";
 import OurMember from "../../components/Home/OurMember";
