@@ -17,7 +17,9 @@ const fontGloriaHallelujah = Gloria_Hallelujah({
 const TeamCulture = () => {
   return (
     <>
-      <section className={`${fontPrompt.variable} font-prompt relative max-w-7xl mx-auto py-[30px] md:py-[50px]`}>
+      <section
+        className={`${fontPrompt.variable} font-prompt relative max-w-7xl mx-auto py-[30px] md:py-[50px]`}
+      >
         <BackgroundGradientBlur className="bottom-0 right-0" />
         {/* 1 */}
         <div className="flex justify-between items-center mb-20 z-20">
@@ -53,18 +55,56 @@ const TeamCulture = () => {
         </div>
 
         {/* 3 */}
-        <div className="text-xl flex flex-col items-center">
+        <div className="text-xl flex flex-col items-center mb-20">
           <div className="md:min-w-[450px]">
             <div className="font-bold text-4xl  text-left">
-              <span className={`${fontGloriaHallelujah.variable} font-gloriaHallelujah bg-line`}>Good ideas</span>
+              <span
+                className={`${fontGloriaHallelujah.variable} font-gloriaHallelujah bg-line`}
+              >
+                Good ideas
+              </span>
             </div>
             <div className="font-normal text-3xl ml-3 text-center">
               often come along with
             </div>
             <div className="font-bold text-4xl  text-right">
-              <span className={`${fontGloriaHallelujah.variable} font-gloriaHallelujah bg-line`}>FUN!</span>
+              <span
+                className={`${fontGloriaHallelujah.variable} font-gloriaHallelujah bg-line`}
+              >
+                FUN!
+              </span>
             </div>
           </div>
+        </div>
+
+        {/* 4 */}
+        <div className="flex justify-evenly items-center mb-20 z-20">
+          <div>
+            <img src="https://placehold.co/370x390" alt="" />
+          </div>
+
+          <h2 className="text-left mb-5  ">
+            <div className="mb-4">
+              <div className="font-normal text-3xl md:text-5xl">
+                what happens on
+              </div>
+              <span className="font-bold text-3xl md:text-5xl bg-line">
+                FRIYAY?
+              </span>
+            </div>
+
+            <ul className="list-none border-2	p-5 rounded-lg min-w-[300px] border-[#A8B738]">
+              <li>- FIFA tournaments </li>
+              <li>- Knowledge sharing session</li>
+              <li>- Noodle at lunch</li>
+              <li>- Weekly Meeting</li>
+            </ul>
+            <ul className="list-none border-dashed border-x-2 border-b-2	p-5 rounded-t-sm rounded-b-lg min-w-[300px] border-[#A8B738]">
+              <li className="text-center">Wanna join the ride? <button className="py-2.5 px-5 mr-2 text-sm font-medium text-gray-900 bg-[#C8D94C]  rounded-xl border-2 border-gray-900 uppercase">
+              HOP IN!
+            </button></li>
+            </ul>
+          </h2>
         </div>
       </section>
     </>
