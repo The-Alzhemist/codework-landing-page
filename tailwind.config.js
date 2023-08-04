@@ -8,16 +8,19 @@ module.exports = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-      },
+      backgroundImage: (theme) => ({
+        'custom-gradient': 'linear-gradient(180deg, transparent 50%, #E9FB64 50% 90%, rgba(0, 0, 0, 0) 90%)',
+      }),
+      
       fontFamily: {
         prompt: ['var(--font-prompt)'],
         gloriaHallelujah:['var(--font-gloria-hallelujah)']
       },
+    
     },
+
+  
+  
     // colors: {
     //    primary: '#C8D94C',
     //    secondary: '#',
