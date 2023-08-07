@@ -20,7 +20,7 @@ const NavigationBar = () => {
            <div className="flex lg:hidden absolute top-0 right-0 text-2xl cursor-pointer" ><GiHamburgerMenu onClick={() => toggleNavbar()}/></div> 
         </div>
 
-        <div className={`flex flex-col lg:flex-row items-center justify-end gap-x-10 w-full transition-all duration-1000 ease-out  ${isOpen ? 'flex' : 'hidden'}`}>
+        <div className={`flex flex-col lg:flex-row items-center justify-end gap-x-10 w-full transition-all ease-out  ${isOpen ? 'flex' : 'hidden'}`}>
           <ul className="grid  grid-cols-1 gap-y-4 lg:gap-y-0 lg:grid-cols-5 justify-start lg:justify-center gap-x-10 justify-items-center items-center text-2xl lg:text-sm text-slate-800 font-bold w-full lg:w-auto mb-10 lg:mb-0">
             <li className="cursor-pointer hover:bg-custom-gradient p-1 w-full border-b-2 border-[#C8D94C] border-dashed lg:border-none">
               Home
