@@ -12,7 +12,7 @@ const NavigationBar = () => {
       <nav className={`flex flex-col lg:flex-row justify-start lg:justify-between p-7 lg:px-4 lg:py-0 max-w-7xl mx-auto  lg:h-16 items-start lg:items-center  ${isOpen ? 'bg-white' : ''}` }>
         <div className="mb-5 lg:mb-0 relative w-full lg:w-auto">
           <img src="/codework-logo.png" className="h-4 w-auto" alt="xx" />
-           <div className="flex lg:hidden absolute top-0 right-0 text-2xl cursor-pointer" >
+           <div className="flex lg:hidden absolute top-0 right-0 text-2xl cursor-pointer" onClick={() => setIsOpen(!isOpen)} >
             {/* <GiHamburgerMenu onClick={() => setIsOpen(!isOpen)}/> */}
             H
             </div> 
