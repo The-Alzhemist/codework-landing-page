@@ -13,3 +13,7 @@
 .bg-line {
   background: linear-gradient(180deg, transparent 50%, #E9FB64 50% 90%, rgba(0, 0, 0, 0) 90%);
 }
+.nav-bg-style {
+  background: rgba(255, 255, 255, 0.5);
+  /* hsla(0,0%,100%,.8); */
+}

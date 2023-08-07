@@ -3,23 +3,36 @@ import withNavigation from "./withNavigation";
 
 const NavigationBar = () => {
   return (
-      <nav className="grid grid-cols-[40%_60%] px-4  max-w-7xl mx-auto h-16 items-center ">
-        <div>CODEWORK</div>
+    <section className="sticky top-0 z-50  nav-bg-style mb-10 backdrop-blur-[5px]">
+      <nav className="flex flex-col lg:flex-row justify-start lg:justify-between p-7 lg:px-4 lg:py-0 max-w-7xl mx-auto h-screen lg:h-16 items-start lg:items-center ">
+        <div className="mb-5 lg:mb-0">
+          <img src="/codework-logo.png" className="h-4 w-auto" alt="xx" />
+        </div>
 
-        <div className="hidden md:flex items-center justify-end gap-x-10">
-          <ul className=" hidden md:grid grid-cols-5 justify-center gap-x-10 justify-items-center items-center text-sm text-slate-800 font-bold">
-            <li className="cursor-pointer hover:bg-custom-gradient p-1">Home</li>
-            <li className="cursor-pointer hover:bg-custom-gradient p-1">About us</li>
-            <li className="cursor-pointer hover:bg-custom-gradient p-1">Services</li>
-            <li className="cursor-pointer hover:bg-custom-gradient p-1">Projects</li>
-            <li className="cursor-pointer hover:bg-custom-gradient p-1">Clients</li>
+        <div className="flex flex-col lg:flex-row items-center justify-end gap-x-10">
+          <ul className="grid  grid-cols-1 gap-y-4 lg:gap-y-0 lg:grid-cols-5 justify-start lg:justify-center gap-x-10 justify-items-center items-center text-xl lg:text-sm text-slate-800 font-bold w-full lg:w-auto mb-10 lg:mb-0">
+            <li className="cursor-pointer hover:bg-custom-gradient p-1 w-full">
+              Home
+            </li>
+            <li className="cursor-pointer hover:bg-custom-gradient p-1 w-full">
+              About us
+            </li>
+            <li className="cursor-pointer hover:bg-custom-gradient p-1 w-full">
+              Services
+            </li>
+            <li className="cursor-pointer hover:bg-custom-gradient p-1 w-full">
+              Projects
+            </li>
+            <li className="cursor-pointer hover:bg-custom-gradient p-1 w-full">
+              Clients
+            </li>
           </ul>
-          <button className="py-2.5 px-5 mr-2 text-sm font-medium text-gray-900  rounded-lg border-2 border-black hover:bg-[#C8D94C]">
+          <button className="py-2.5 px-5 mr-2 text-sm font-medium text-gray-900  rounded-lg border-2 border-black  bg-[#C8D94C] lg:bg-transparent hover:bg-[#C8D94C]">
             CONTACT US
           </button>
         </div>
       </nav>
-  
+    </section>
   );
 };
 
