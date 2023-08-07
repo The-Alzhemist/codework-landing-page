@@ -2,14 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-/* .circle {
-  width:500px;
-  height: 500px;
-  background-color:rgb(250, 250, 196);
-  filter: blur(120px);
-  z-index: 0;
-} */
-
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 .bg-line {
   background: linear-gradient(180deg, transparent 50%, #E9FB64 50% 90%, rgba(0, 0, 0, 0) 90%);
 }

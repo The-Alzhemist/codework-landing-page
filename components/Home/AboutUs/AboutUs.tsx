@@ -12,7 +12,7 @@ const AboutUs = () => {
   return (
     <>
       <section
-        className={`${fontPrompt.variable} font-prompt relative max-w-7xl mx-auto py-[30px] md:py-[50px]  xl:px-40`}
+        className={`${fontPrompt.variable} font-prompt relative max-w-[1440px] mx-auto py-[30px] md:py-[50px] lg:px-[50px]`}
       >
         <BackgroundGradientBlur className="top-0 left-0 " />
         <BackgroundGradientBlur className="bottom-40 right-0" />
