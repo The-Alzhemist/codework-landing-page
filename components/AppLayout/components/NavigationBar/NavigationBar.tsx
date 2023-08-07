@@ -2,11 +2,8 @@ import React, { useState } from "react";
 import withNavigation from "./withNavigation";
 import { GiHamburgerMenu } from "react-icons/gi";
 
-const NavigationBar = () => {
-
-  const [isOpen, setIsOpen] = useState(false);
-
-    
+const NavigationBar = ({isOpen,
+  setIsOpen}:any) => {
   return (
     <section className="07082023:1618 sticky top-0 z-50  lg:bg-inherit	 mb-10  lg:backdrop-blur-[5px]">
       <nav className={`flex flex-col lg:flex-row justify-start lg:justify-between p-7 lg:px-4 lg:py-0 max-w-7xl mx-auto  lg:h-16 items-start lg:items-center  ${isOpen ? 'bg-white' : ''}` }>
@@ -14,7 +11,7 @@ const NavigationBar = () => {
           <img src="/codework-logo.png" className="h-4 w-auto" alt="xx" />
            <div className="flex lg:hidden absolute top-0 right-0 text-2xl cursor-pointer" onClick={() => setIsOpen(!isOpen)} >
             {/* <GiHamburgerMenu onClick={() => setIsOpen(!isOpen)}/> */}
-            H
+            HH
             </div> 
         </div>
 
