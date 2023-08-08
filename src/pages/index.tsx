@@ -21,8 +21,8 @@ export default function Home() {
         {/* <TeamCulture/> */}
         <OurService />
        <OurClient />
-        {/* <OurMember />
-        <ContactUs />   */}
+       {/* <OurMember /> */}
+        <ContactUs />  
       </AppLayout>
     </>
   );

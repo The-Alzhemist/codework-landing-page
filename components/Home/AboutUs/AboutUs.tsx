@@ -3,7 +3,8 @@ import BackgroundGradientBlur from "../../backgroundGradientBlur/BackgroundGradi
 import { Prompt } from "@next/font/google";
 import Paragraph from "../../AppLayout/components/typography/paragraph/Paragraph";
 import Image from "next/image";
-import { Button } from "../../AppLayout/components/button/button";
+import { Button } from "../../AppLayout/components/button/Button";
+// import { Button } from "../../AppLayout/components/button/button";
 
 const fontPrompt = Prompt({
   weight: ["100", "200", "300", "400", "500", "600", "700"],

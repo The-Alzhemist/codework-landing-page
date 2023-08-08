@@ -3,7 +3,8 @@ import withNavigation from "./withNavigation";
 import Link from "next/link";
 import Image from "next/image";
 import { animated } from "@react-spring/web";
-import { Button } from "../button/button";
+import { Button } from "../button/Button";
+// import { Button } from "../button/button";
 
 
 

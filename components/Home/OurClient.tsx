@@ -42,7 +42,6 @@ const OurClient = () => {
           alt="simple but ambitious section cover"
         />
           </a>
-      
         </div>
     </div>
   
