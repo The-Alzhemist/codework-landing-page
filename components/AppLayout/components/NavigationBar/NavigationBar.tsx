@@ -4,34 +4,42 @@ import Link from "next/link";
 import Image from "next/image";
 import { animated } from "@react-spring/web";
 import { Button } from "../button/button";
+import { Prompt } from "@next/font/google";
 
-const NavigationBar = ({  IsSideMenuOpen,
+const fontPrompt = Prompt({
+  weight: ["100", "200", "300", "400", "500", "600", "700"],
+  subsets: ["latin"],
+  variable: "--font-prompt",
+});
+
+const NavigationBar = ({
+  IsSideMenuOpen,
   setIsSideMenuOpen,
   navStyle,
   hamburgerStyle1,
   hamburgerStyle2,
-  hamburgerStyle3}:any) => {
+  hamburgerStyle3,
+  menu,
+}: any) => {
   return (
-   <>
-     <>
-      <header className="fixed z-50 flex h-16 w-full items-center overflow-hidden bg-primary-50/30 backdrop-blur">
+    <>
+      <header
+        className={`text-md fixed z-50 flex h-16 w-full items-center overflow-hidden bg-primary-50/30 backdrop-blur`}
+      >
         <div className=" w-full h-full mx-auto flex items-center justify-between px-6 py-3">
-          <div className="flex items-center text-2xl font-black text-primary-900">
-            <div className="relative w-[170px] h-[15px] mr-[8px]"  >
-             
-               <Link href="/"> 
-               <Image
-                src="/codework-logo.png"
-                alt="Picture of the author"
-                sizes="1000px"
-                fill
-                style={{
-                  objectFit: 'contain',
-                }}
-              />
+          <div className="flex items-center  font-black text-primary-900">
+            <div className="relative w-[170px] h-[15px]">
+              <Link href="/">
+                <Image
+                  src="/codework-logo.png"
+                  alt="Picture of the author"
+                  fill
+                  style={{
+                    objectFit: "contain",
+                  }}
+                />
               </Link>
             </div>
-           
           </div>
 
           {/* Burger for Sidemenu, only for mobile */}
@@ -58,28 +66,18 @@ const NavigationBar = ({  IsSideMenuOpen,
           </div>
 
           {/* Only for PC */}
-          <div className="hidden items-end lg:flex">
-            <p className="flex cursor-pointer py-3 px-6 hover:text-primary-500 hover:bg-custom-gradient font-medium">
-              <Link href="/">Home</Link>
-            </p>
-            <p className="flex cursor-pointer py-3 px-6 hover:text-primary-500  font-medium">
-              <Link href="/aboutus">About us</Link>
-            </p>
-            <p className="flex cursor-pointer py-3 px-6 hover:text-primary-500 hover:bg-custom-gradient font-medium">
-              <Link href="/projects">Projects</Link>
-            </p>
-            <p className="flex cursor-pointer py-3 px-6 hover:text-primary-500 hover:bg-custom-gradient font-medium">
-              <Link href="/clients">Clients</Link>
-            </p>
-            <Button
-              onClick={() =>
-                window.open(
-                  "https://github.com/CyberBonfire/next-tailwind-landing-page"
-                )
-              }
-            >
-              Contact Us
-            </Button> 
+          <div className="hidden lg:flex items-center gap-x-2">
+            {menu?.map((menu: any, index: number) => (
+              <React.Fragment key={`menu-${index}`}>
+                <p
+                  className={`flex cursor-pointer py-3 px-6 hover:text-primary-500 hover:bg-custom-gradient font-medium ${fontPrompt.variable} font-prompt`}
+                >
+                  <Link href={menu.url}>{menu.name}</Link>
+                </p>
+              </React.Fragment>
+            ))}
+
+            <Button>Contact Us</Button>
           </div>
         </div>
       </header>
@@ -87,45 +85,28 @@ const NavigationBar = ({  IsSideMenuOpen,
       {/* Sidemenu */}
       <animated.nav
         style={navStyle}
-        className="fixed top-0 z-20 flex h-full flex-col bg-primary-50/30 p-6 text-lg text-primary-900 backdrop-blur w-full"
+        className="fixed top-0 z-20 flex h-full flex-col bg-primary-50/30 p-6 text-primary-900 backdrop-blur w-full"
       >
         <ul className="mt-16 flex flex-col">
-          <li>
-          <p className="flex cursor-pointer py-3 px-6 hover:text-primary-500 font-medium">
-              <Link href="/">Home</Link>
-            </p>
-          </li>
-          <li>
-          <p className="flex cursor-pointer py-3 px-6 hover:text-primary-500 font-medium">
-              <Link href="/contact">About us</Link>
-            </p>
-          </li>
-          <li>
-          <p className="flex cursor-pointer py-3 px-6 hover:text-primary-500 font-medium">
-              <Link href="/contact">Projects</Link>
-            </p>
-          </li>
-          <li>
-          <p className="flex cursor-pointer py-3 px-6 hover:text-primary-500 font-medium">
-              <Link href="/contact">Clients</Link>
-            </p>
-          </li>
-          <Button
-              onClick={() =>
-                window.open(
-                  "https://github.com/CyberBonfire/next-tailwind-landing-page"
-                )
-              }
-            >
-              Contact Us
-            </Button> 
+          {menu?.map((menu: any, index: number) => (
+            <React.Fragment key={`mobile-menu-${index}`}>
+              <li>
+                <p className="flex cursor-pointer py-3 px-6 hover:text-primary-500 font-medium">
+                  <Link href={menu.url}>{menu.name}</Link>
+                </p>
+              </li>
+            </React.Fragment>
+          ))}
+
+          <Button>
+            Contact Us
+          </Button>
         </ul>
       </animated.nav>
 
       {/* Margin */}
       <div className="relative h-24 w-full" />
     </>
-   </>
   );
 };
 

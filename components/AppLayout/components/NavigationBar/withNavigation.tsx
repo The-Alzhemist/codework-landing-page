@@ -1,5 +1,7 @@
+import { Prompt } from "@next/font/google";
 import { useSpring } from "@react-spring/web";
 import React, { useState } from "react";
+
 
 
 const withNavigation = (Component: React.FC) => {
@@ -20,6 +22,25 @@ const withNavigation = (Component: React.FC) => {
       y: IsSideMenuOpen ? -8 : 0,
       rotate: IsSideMenuOpen ? -225 : 0,
     });
+    const menu =  [
+      {
+        "name": "Home",
+        "url": "/"
+      },
+      {
+        "name": "About us",
+        "url": "/aboutus"
+      },
+      {
+        "name": "Projects",
+        "url": "/projects"
+      },
+      {
+        "name": "Clients",
+        "url": "/clients"
+      },
+    ]
+
     
     const newProps: any = {
       IsSideMenuOpen,
@@ -27,8 +48,8 @@ const withNavigation = (Component: React.FC) => {
       navStyle,
       hamburgerStyle1,
       hamburgerStyle2,
-      hamburgerStyle3
-
+      hamburgerStyle3,
+      menu
     };
     return <Component  {...newProps} />;
   };
