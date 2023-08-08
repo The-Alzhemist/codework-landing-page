@@ -8,7 +8,7 @@ export const Header: React.FC = () => {
   const [IsSideMenuOpen, setIsSideMenuOpen] = useState<boolean>(false);
   const navStyle = useSpring({
     opacity: IsSideMenuOpen ? 1 : 0,
-    right: IsSideMenuOpen ? 0 : -500,
+    right: IsSideMenuOpen ? 0 : -700,
   });
   const hamburgerStyle2 = useSpring({
     opacity: IsSideMenuOpen ? 0 : 1,
