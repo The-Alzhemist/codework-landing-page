@@ -78,7 +78,7 @@ const NavigationBar = ({
         </div>
       </header>
 
-      {/* Sidemenu */}
+      {/* Sidemenu for tablet mobile */}
       <animated.nav
         style={navStyle}
         className="fixed top-0 z-20 flex h-full flex-col bg-primary-50/30 p-6 text-primary-900 backdrop-blur w-full"
@@ -86,15 +86,15 @@ const NavigationBar = ({
         <ul className="mt-16 flex flex-col">
           {menu?.map((menu: any, index: number) => (
             <React.Fragment key={`mobile-menu-${index}`}>
-              <li>
-                <p className="flex cursor-pointer py-3 px-6 hover:text-primary-500 font-medium">
+              <li className="border-b-[2px] border-dashed border-[#A8B738]">
+                <p className="flex cursor-pointer py-3  hover:text-primary-500 font-medium text-2xl">
                   <Link href={menu.url}>{menu.name}</Link>
                 </p>
               </li>
             </React.Fragment>
           ))}
 
-          <Button>
+          <Button className="mt-8">
             Contact Us
           </Button>
         </ul>
