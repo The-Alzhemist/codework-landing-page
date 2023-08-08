@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import { animated, useSpring } from "@react-spring/web";
-// import { Container } from '../../atoms/Container';
 import Link from "next/link";
-// import { Paragraph } from '../../atoms/Typography';
 import Image from "next/image";
 import { Button } from "../button/button";
 
@@ -28,17 +26,17 @@ export const Header: React.FC = () => {
       <header className="fixed z-20 flex h-16 w-full items-center overflow-hidden bg-primary-50/30 backdrop-blur">
         <div className=" w-full h-full mx-auto flex items-center justify-between px-6 py-3">
           <div className="flex items-center text-2xl font-black text-primary-900">
-            <div className="relative w-[42px] h-[42px] mr-[8px]">
+            <div className="relative w-[170px] h-[15px] mr-[8px]"  >
              
                <Link href="/"> 
                <Image
                 src="/codework-logo.png"
-                layout="fill"
-                objectFit="contain"
-                alt="logo"
-                priority
-                loading="eager"
-                className="w-2"
+                alt="Picture of the author"
+                sizes="1000px"
+                fill
+                style={{
+                  objectFit: 'contain',
+                }}
               />
               </Link>
             </div>
@@ -55,42 +53,41 @@ export const Header: React.FC = () => {
             >
               <animated.span
                 style={hamburgerStyle1}
-                className="mb-1 h-1 w-6 rounded-full bg-yellow-800"
+                className="mb-1 h-1 w-6 rounded-full bg-slate-900"
               />
               <animated.span
                 style={hamburgerStyle2}
-                className="mb-1 h-1 w-6 rounded-full bg-yellow-800"
+                className="mb-1 h-1 w-6 rounded-full bg-slate-900"
               />
               <animated.span
                 style={hamburgerStyle3}
-                className="mb-1 h-1 w-6 rounded-full bg-yellow-800"
+                className="mb-1 h-1 w-6 rounded-full bg-slate-900"
               />
             </button>
           </div>
 
           {/* Only for PC */}
           <div className="hidden items-end sm:flex">
-            <p className="flex cursor-pointer py-3 px-6 hover:text-primary-500">
+            <p className="flex cursor-pointer py-3 px-6 hover:text-primary-500 font-medium">
               <Link href="/">Home</Link>
             </p>
-            <p className="flex cursor-pointer py-3 px-6 hover:text-primary-500">
+            <p className="flex cursor-pointer py-3 px-6 hover:text-primary-500 font-medium">
               <Link href="/contact">About us</Link>
             </p>
-            <p className="flex cursor-pointer py-3 px-6 hover:text-primary-500">
+            <p className="flex cursor-pointer py-3 px-6 hover:text-primary-500 font-medium">
               <Link href="/contact">Projects</Link>
             </p>
-            <p className="flex cursor-pointer py-3 px-6 hover:text-primary-500">
+            <p className="flex cursor-pointer py-3 px-6 hover:text-primary-500 font-medium">
               <Link href="/contact">Clients</Link>
             </p>
             <Button
-              className="px-6 text-green-700"
               onClick={() =>
                 window.open(
                   "https://github.com/CyberBonfire/next-tailwind-landing-page"
                 )
               }
             >
-              Get ExamApp
+              Contact Us
             </Button> 
           </div>
         </div>
@@ -101,22 +98,36 @@ export const Header: React.FC = () => {
         style={navStyle}
         className="fixed top-0 z-10 flex h-full flex-col bg-primary-50/30 p-6 text-lg text-primary-900 backdrop-blur w-full"
       >
-        <ul className="mt-24 flex flex-col">
+        <ul className="mt-16 flex flex-col">
           <li>
-            <p className="flex cursor-pointer py-2 px-8 hover:text-primary-500">
+          <p className="flex cursor-pointer py-3 px-6 hover:text-primary-500 font-medium">
               <Link href="/">Home</Link>
             </p>
           </li>
           <li>
-            <p className="flex cursor-pointer py-2 px-8 hover:text-primary-500">
-              <Link href="/contact">Contact</Link>
+          <p className="flex cursor-pointer py-3 px-6 hover:text-primary-500 font-medium">
+              <Link href="/contact">About us</Link>
             </p>
           </li>
           <li>
-            <p className="flex cursor-pointer py-2 px-8 hover:text-primary-500">
-              <Link href="/privacy-policy">Privacy</Link>
+          <p className="flex cursor-pointer py-3 px-6 hover:text-primary-500 font-medium">
+              <Link href="/contact">Projects</Link>
             </p>
           </li>
+          <li>
+          <p className="flex cursor-pointer py-3 px-6 hover:text-primary-500 font-medium">
+              <Link href="/contact">Clients</Link>
+            </p>
+          </li>
+          <Button
+              onClick={() =>
+                window.open(
+                  "https://github.com/CyberBonfire/next-tailwind-landing-page"
+                )
+              }
+            >
+              Contact Us
+            </Button> 
         </ul>
       </animated.nav>
 
