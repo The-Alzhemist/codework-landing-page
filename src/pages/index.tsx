@@ -2,7 +2,7 @@
 import { Inter } from "next/font/google";
 import HeroSection from "../../components/Home/HeroSection/HeroSection";
 import AboutUs from "../../components/Home/AboutUs/AboutUs";
-import OurService from "../../components/Home/OurService";
+import OurService from "../../components/Home/OurService/OurService";
 import OurClient from "../../components/Home/OurClient";
 import OurMember from "../../components/Home/OurMember";
 import ContactUs from "../../components/Home/ContactUs";
@@ -20,9 +20,9 @@ export default function Home() {
         <AboutUs />
         {/* <TeamCulture/> */}
         <OurService />
-        {/* <OurClient />
-        <OurMember />
-        <ContactUs />  */}
+       <OurClient />
+        {/* <OurMember />
+        <ContactUs />   */}
       </AppLayout>
     </>
   );

@@ -1,9 +1,9 @@
 import React from "react";
 import Image from "next/image";
 import { Prompt } from "@next/font/google";
-import BackgroundGradientBlur from "../backgroundGradientBlur/BackgroundGradientBlur";
-import Paragraph from "../AppLayout/components/typography/paragraph/Paragraph";
-import Hyperlinks from "../AppLayout/components/link/Hyperlinks";
+import BackgroundGradientBlur from "../../backgroundGradientBlur/BackgroundGradientBlur";
+import Paragraph from "../../AppLayout/components/typography/paragraph/Paragraph";
+import Hyperlinks from "../../AppLayout/components/link/Hyperlinks";
 
 
 const fontPrompt = Prompt({
