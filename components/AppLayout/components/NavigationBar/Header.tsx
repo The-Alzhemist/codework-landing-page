@@ -1,11 +1,10 @@
-import React, { useState } from 'react';
-import { animated, useSpring } from '@react-spring/web';
+import React, { useState } from "react";
+import { animated, useSpring } from "@react-spring/web";
 // import { Container } from '../../atoms/Container';
-import Link from 'next/link';
+import Link from "next/link";
 // import { Paragraph } from '../../atoms/Typography';
-import Image from 'next/image';
-import { Button } from '../button/button';
-
+import Image from "next/image";
+import { Button } from "../button/button";
 
 export const Header: React.FC = () => {
   const [IsSideMenuOpen, setIsSideMenuOpen] = useState<boolean>(false);
@@ -26,27 +25,24 @@ export const Header: React.FC = () => {
   });
   return (
     <>
-      <header className="fixed z-20 flex h-24 w-full items-center overflow-hidden bg-primary-50/30 backdrop-blur">
-        <div className="container w-full h-full mx-auto flex items-center justify-between px-6 py-3">
-        <div className="flex items-center text-2xl font-black text-primary-900">
-            <div
-              style={{
-                position: 'relative',
-                width: '42px',
-                height: '42px',
-                marginRight: '8px',
-              }}
-            >
-              <Image
-                src="/icon.png"
+      <header className="fixed z-20 flex h-16 w-full items-center overflow-hidden bg-primary-50/30 backdrop-blur">
+        <div className=" w-full h-full mx-auto flex items-center justify-between px-6 py-3">
+          <div className="flex items-center text-2xl font-black text-primary-900">
+            <div className="relative w-[42px] h-[42px] mr-[8px]">
+             
+               <Link href="/"> 
+               <Image
+                src="/codework-logo.png"
                 layout="fill"
                 objectFit="contain"
                 alt="logo"
                 priority
                 loading="eager"
+                className="w-2"
               />
+              </Link>
             </div>
-            <Link href="/">ExamApp</Link>
+           
           </div>
 
           {/* Burger for Sidemenu, only for mobile */}
@@ -78,28 +74,32 @@ export const Header: React.FC = () => {
               <Link href="/">Home</Link>
             </p>
             <p className="flex cursor-pointer py-3 px-6 hover:text-primary-500">
-              <Link href="/contact">Contact</Link>
+              <Link href="/contact">About us</Link>
+            </p>
+            <p className="flex cursor-pointer py-3 px-6 hover:text-primary-500">
+              <Link href="/contact">Projects</Link>
+            </p>
+            <p className="flex cursor-pointer py-3 px-6 hover:text-primary-500">
+              <Link href="/contact">Clients</Link>
             </p>
             <Button
-              className="px-6"
+              className="px-6 text-green-700"
               onClick={() =>
                 window.open(
-                  'https://github.com/CyberBonfire/next-tailwind-landing-page'
+                  "https://github.com/CyberBonfire/next-tailwind-landing-page"
                 )
               }
             >
               Get ExamApp
-            </Button>
+            </Button> 
           </div>
         </div>
-         
-   
       </header>
 
       {/* Sidemenu */}
       <animated.nav
         style={navStyle}
-        className="fixed top-0 z-10 flex h-full flex-col bg-primary-50/30 p-6 text-lg text-primary-900 backdrop-blur"
+        className="fixed top-0 z-10 flex h-full flex-col bg-primary-50/30 p-6 text-lg text-primary-900 backdrop-blur w-full"
       >
         <ul className="mt-24 flex flex-col">
           <li>
