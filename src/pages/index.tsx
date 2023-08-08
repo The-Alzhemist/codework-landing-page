@@ -16,7 +16,7 @@ export default function Home() {
   return (
     <>
       <AppLayout>
-        <HeroSection />
+        {/* <HeroSection /> */}
         <AboutUs />
         <TeamCulture/>
         <OurService />
