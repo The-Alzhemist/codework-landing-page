@@ -27,7 +27,7 @@ const HeroSection = () => {
       <BackgroundGradientBlur className="bottom-0 right-0"/>
 
       <div className="flex w-full">
-        <div className="z-10 w-[100%] lg:w-[75%] max-w-[830px] min-h-[600px]  relative bg-white border-[3px] border-black rounded-[50px] py-6 md:p-10 flex flex-col justify-center drop-shadow-md">
+        <div className="z-10 w-[100%] lg:w-[80%] max-w-[830px] min-h-[600px]  relative bg-white border-[3px] border-black rounded-[50px] py-6 md:p-10 flex flex-col justify-center drop-shadow-md">
           <h1 className="mb-20">
             <span className="flex text-lg md:text-5xl font-light mb-5">
               WE CAN MAKE YOUR
@@ -62,7 +62,7 @@ const HeroSection = () => {
         </div>
 
         {/* right box  */}
-        <div className="hidden lg:block lg:w-[25%]">
+        <div className="hidden lg:block lg:w-[20%]">
           {/* circle  */}
           <div className="z-20  absolute bottom-0 right-12 rounded-full w-[470px] h-[470px] bg-[#C8D94C] "></div>
 

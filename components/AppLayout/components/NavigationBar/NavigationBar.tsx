@@ -1,69 +1,131 @@
-import React, { useState } from "react";
+import React from "react";
 import withNavigation from "./withNavigation";
-import { GiHamburgerMenu } from "react-icons/gi";
+import Link from "next/link";
+import Image from "next/image";
+import { animated } from "@react-spring/web";
+import { Button } from "../button/button";
 
-const NavigationBar = ({isOpen,
-  setIsOpen}:any) => {
+const NavigationBar = ({  IsSideMenuOpen,
+  setIsSideMenuOpen,
+  navStyle,
+  hamburgerStyle1,
+  hamburgerStyle2,
+  hamburgerStyle3}:any) => {
   return (
-    <section className="07082023:1618 sticky top-0 z-50  lg:bg-inherit	 mb-10  lg:backdrop-blur-[5px]">
-      <nav className={`flex flex-col lg:flex-row justify-start lg:justify-between p-7 lg:px-4 lg:py-0 max-w-7xl mx-auto  lg:h-16 items-start lg:items-center  ${isOpen ? 'bg-white' : ''}` }>
-        <div className="mb-5 lg:mb-0 relative w-full lg:w-auto">
-          <img src="/codework-logo.png" className="h-4 w-auto" alt="xx" />
-           <div className="flex lg:hidden absolute top-0 right-0 text-2xl cursor-pointer" onClick={() => setIsOpen(!isOpen)} >
-            {/* <GiHamburgerMenu onClick={() => setIsOpen(!isOpen)}/> */}
-            HH
-            </div> 
-        </div>
+   <>
+     <>
+      <header className="fixed z-50 flex h-16 w-full items-center overflow-hidden bg-primary-50/30 backdrop-blur">
+        <div className=" w-full h-full mx-auto flex items-center justify-between px-6 py-3">
+          <div className="flex items-center text-2xl font-black text-primary-900">
+            <div className="relative w-[170px] h-[15px] mr-[8px]"  >
+             
+               <Link href="/"> 
+               <Image
+                src="/codework-logo.png"
+                alt="Picture of the author"
+                sizes="1000px"
+                fill
+                style={{
+                  objectFit: 'contain',
+                }}
+              />
+              </Link>
+            </div>
+           
+          </div>
 
-        {/* desktop  */}
-        <div className={`hidden lg:flex flex-col lg:flex-row items-center justify-end gap-x-10 w-full transition-all ease-out`}>
-          <ul className="grid  grid-cols-1 gap-y-4 lg:gap-y-0 lg:grid-cols-5 justify-start lg:justify-center gap-x-10 justify-items-center items-center text-2xl lg:text-sm text-slate-800 font-bold w-full lg:w-auto mb-10 lg:mb-0">
-            <li className="cursor-pointer hover:bg-custom-gradient p-1 w-full border-b-2 border-[#C8D94C] border-dashed lg:border-none">
-              Home
-            </li>
-            <li className="cursor-pointer hover:bg-custom-gradient p-1 w-full border-b-2 border-[#C8D94C] border-dashed lg:border-none">
-              About us
-            </li>
-            <li className="cursor-pointer hover:bg-custom-gradient p-1 w-full border-b-2 border-[#C8D94C] border-dashed lg:border-none">
-              Services
-            </li>
-            <li className="cursor-pointer hover:bg-custom-gradient p-1 w-full border-b-2 border-[#C8D94C] border-dashed lg:border-none">
-              Projects
-            </li>
-            <li className="cursor-pointer hover:bg-custom-gradient p-1 w-full border-b-2 border-[#C8D94C] border-dashed lg:border-none">
-              Clients
-            </li>
-          </ul>
-          <button className="py-2.5 px-5 mr-2 text-sm font-medium text-gray-900  rounded-lg border-2 border-black   lg:bg-transparent hover:bg-[#C8D94C]">
-            CONTACT US
-          </button>
-        </div>
+          {/* Burger for Sidemenu, only for mobile */}
+          <div className="z-20 flex items-end lg:hidden">
+            <button
+              className="ml-4 flex flex-col"
+              onClick={() => {
+                setIsSideMenuOpen(!IsSideMenuOpen);
+              }}
+            >
+              <animated.span
+                style={hamburgerStyle1}
+                className="mb-1 h-1 w-6 rounded-full bg-slate-900"
+              />
+              <animated.span
+                style={hamburgerStyle2}
+                className="mb-1 h-1 w-6 rounded-full bg-slate-900"
+              />
+              <animated.span
+                style={hamburgerStyle3}
+                className="mb-1 h-1 w-6 rounded-full bg-slate-900"
+              />
+            </button>
+          </div>
 
-        {/* mobile */}
-        <div className={`flex lg:hidden flex-col lg:flex-row items-center justify-end gap-x-10 w-full transition-all ease-out ${isOpen ? 'h-[500px]' : 'h-[-1000px]'}`}>
-          <ul className="grid  grid-cols-1 gap-y-4 lg:gap-y-0 lg:grid-cols-5 justify-start lg:justify-center gap-x-10 justify-items-center items-center text-2xl lg:text-sm text-slate-800 font-bold w-full lg:w-auto mb-10 lg:mb-0">
-            <li className="cursor-pointer hover:bg-custom-gradient p-1 w-full border-b-2 border-[#C8D94C] border-dashed lg:border-none">
-              Home
-            </li>
-            <li className="cursor-pointer hover:bg-custom-gradient p-1 w-full border-b-2 border-[#C8D94C] border-dashed lg:border-none">
-              About us
-            </li>
-            <li className="cursor-pointer hover:bg-custom-gradient p-1 w-full border-b-2 border-[#C8D94C] border-dashed lg:border-none">
-              Services
-            </li>
-            <li className="cursor-pointer hover:bg-custom-gradient p-1 w-full border-b-2 border-[#C8D94C] border-dashed lg:border-none">
-              Projects
-            </li>
-            <li className="cursor-pointer hover:bg-custom-gradient p-1 w-full border-b-2 border-[#C8D94C] border-dashed lg:border-none">
-              Clients
-            </li>
-          </ul>
-          <button className="py-2.5 px-5 mr-2 text-sm font-medium text-gray-900  rounded-lg border-2 border-black   lg:bg-transparent hover:bg-[#C8D94C]">
-            CONTACT US
-          </button>
+          {/* Only for PC */}
+          <div className="hidden items-end lg:flex">
+            <p className="flex cursor-pointer py-3 px-6 hover:text-primary-500 hover:bg-custom-gradient font-medium">
+              <Link href="/">Home</Link>
+            </p>
+            <p className="flex cursor-pointer py-3 px-6 hover:text-primary-500  font-medium">
+              <Link href="/aboutus">About us</Link>
+            </p>
+            <p className="flex cursor-pointer py-3 px-6 hover:text-primary-500 hover:bg-custom-gradient font-medium">
+              <Link href="/projects">Projects</Link>
+            </p>
+            <p className="flex cursor-pointer py-3 px-6 hover:text-primary-500 hover:bg-custom-gradient font-medium">
+              <Link href="/clients">Clients</Link>
+            </p>
+            <Button
+              onClick={() =>
+                window.open(
+                  "https://github.com/CyberBonfire/next-tailwind-landing-page"
+                )
+              }
+            >
+              Contact Us
+            </Button> 
+          </div>
         </div>
-      </nav>
-    </section>
+      </header>
+
+      {/* Sidemenu */}
+      <animated.nav
+        style={navStyle}
+        className="fixed top-0 z-20 flex h-full flex-col bg-primary-50/30 p-6 text-lg text-primary-900 backdrop-blur w-full"
+      >
+        <ul className="mt-16 flex flex-col">
+          <li>
+          <p className="flex cursor-pointer py-3 px-6 hover:text-primary-500 font-medium">
+              <Link href="/">Home</Link>
+            </p>
+          </li>
+          <li>
+          <p className="flex cursor-pointer py-3 px-6 hover:text-primary-500 font-medium">
+              <Link href="/contact">About us</Link>
+            </p>
+          </li>
+          <li>
+          <p className="flex cursor-pointer py-3 px-6 hover:text-primary-500 font-medium">
+              <Link href="/contact">Projects</Link>
+            </p>
+          </li>
+          <li>
+          <p className="flex cursor-pointer py-3 px-6 hover:text-primary-500 font-medium">
+              <Link href="/contact">Clients</Link>
+            </p>
+          </li>
+          <Button
+              onClick={() =>
+                window.open(
+                  "https://github.com/CyberBonfire/next-tailwind-landing-page"
+                )
+              }
+            >
+              Contact Us
+            </Button> 
+        </ul>
+      </animated.nav>
+
+      {/* Margin */}
+      <div className="relative h-24 w-full" />
+    </>
+   </>
   );
 };
 
