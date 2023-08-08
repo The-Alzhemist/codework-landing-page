@@ -1,10 +1,10 @@
 import { Prompt } from "@next/font/google";
 import React from "react";
-import BackgroundGradientBlur from "../backgroundGradientBlur/BackgroundGradientBlur";
+import BackgroundGradientBlur from "../../backgroundGradientBlur/BackgroundGradientBlur";
 import Image from "next/image";
-import Hyperlinks from "../AppLayout/components/link/Hyperlinks";
-import Paragraph from "../AppLayout/components/typography/paragraph/Paragraph";
-import { Button } from "../AppLayout/components/button/Button";
+import Hyperlinks from "../../AppLayout/components/link/Hyperlinks";
+import Paragraph from "../../AppLayout/components/typography/paragraph/Paragraph";
+import { Button } from "../../AppLayout/components/button/Button";
 
 
 const fontPrompt = Prompt({

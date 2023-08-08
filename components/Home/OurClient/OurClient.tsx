@@ -1,6 +1,6 @@
 import { Prompt } from "@next/font/google";
 import React from "react";
-import BackgroundGradientBlur from "../backgroundGradientBlur/BackgroundGradientBlur";
+import BackgroundGradientBlur from "../../backgroundGradientBlur/BackgroundGradientBlur";
 import Image from "next/image";
 
 const fontPrompt = Prompt({

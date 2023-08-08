@@ -47,7 +47,7 @@ const HeroSection = () => {
           </h1>
 
         
-          <Paragraph className={`mb-8 max-w-[670px]`}>
+          <Paragraph className={`mb-8 max-w-[670px] text-base`}>
             We grant our team the autonomy to work in ways that suit them best,
             and we create a free and open space for sharing ideas. We believe
             that when individuals feel empowered and inspired, the magic of
