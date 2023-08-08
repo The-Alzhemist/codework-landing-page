@@ -5,7 +5,7 @@ import React, { useState } from "react";
 
 
 const withNavigation = (Component: React.FC) => {
-  const Hoc = () => {
+  const Hoc = (props: any) => {
     const [IsSideMenuOpen, setIsSideMenuOpen] = useState<boolean>(false);
     const navStyle = useSpring({
       opacity: IsSideMenuOpen ? 1 : 0,
@@ -41,6 +41,8 @@ const withNavigation = (Component: React.FC) => {
       },
     ]
 
+    const { font } = props 
+
     
     const newProps: any = {
       IsSideMenuOpen,
@@ -49,7 +51,8 @@ const withNavigation = (Component: React.FC) => {
       hamburgerStyle1,
       hamburgerStyle2,
       hamburgerStyle3,
-      menu
+      menu,
+      font
     };
     return <Component  {...newProps} />;
   };

@@ -1,16 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import withNavigation from "./withNavigation";
 import Link from "next/link";
 import Image from "next/image";
 import { animated } from "@react-spring/web";
 import { Button } from "../button/button";
-import { Prompt } from "@next/font/google";
 
-const fontPrompt = Prompt({
-  weight: ["100", "200", "300", "400", "500", "600", "700"],
-  subsets: ["latin"],
-  variable: "--font-prompt",
-});
+
 
 const NavigationBar = ({
   IsSideMenuOpen,
@@ -20,11 +15,12 @@ const NavigationBar = ({
   hamburgerStyle2,
   hamburgerStyle3,
   menu,
+  font
 }: any) => {
   return (
     <>
       <header
-        className={`text-md fixed z-50 flex h-16 w-full items-center overflow-hidden bg-primary-50/30 backdrop-blur`}
+        className={`${font.variable} font-prompt text-md fixed z-50 flex h-16 w-full items-center overflow-hidden bg-primary-50/30 backdrop-blur`}
       >
         <div className=" w-full h-full mx-auto flex items-center justify-between px-6 py-3">
           <div className="flex items-center  font-black text-primary-900">
@@ -69,11 +65,11 @@ const NavigationBar = ({
           <div className="hidden lg:flex items-center gap-x-2">
             {menu?.map((menu: any, index: number) => (
               <React.Fragment key={`menu-${index}`}>
-                <p
-                  className={`flex cursor-pointer py-3 px-6 hover:text-primary-500 hover:bg-custom-gradient font-medium ${fontPrompt.variable} font-prompt`}
+                <div
+                  className={`flex cursor-pointer hover:text-primary-500 hover:bg-custom-gradient font-medium`}
                 >
-                  <Link href={menu.url}>{menu.name}</Link>
-                </p>
+                  <Link className="py-3 px-6" href={menu.url}>{menu.name}</Link>
+                </div>
               </React.Fragment>
             ))}
 

@@ -2,6 +2,8 @@ import React from "react";
 import { Prompt, Gloria_Hallelujah } from "@next/font/google";
 import withHeroSection from "./withHeroSection";
 import BackgroundGradientBlur from "../../backgroundGradientBlur/BackgroundGradientBlur";
+import Paragraph from "../../AppLayout/components/typography/paragraph/Paragraph";
+import Hyperlinks from "../../AppLayout/components/link/Hyperlinks";
 
 const fontPrompt = Prompt({
   weight: ["100", "200", "300", "400", "500", "600", "700"],
@@ -20,14 +22,13 @@ const HeroSection = () => {
     <section
       className={`${fontPrompt.variable} font-prompt relative md:py-[50px] max-w-[1440px] mx-auto lg:px-[50px]`}
     >
-
       <BackgroundGradientBlur className="top-0 left-0"/>
       <BackgroundGradientBlur className="top-0 right-0"/>
       <BackgroundGradientBlur className="bottom-0 left-0"/>
       <BackgroundGradientBlur className="bottom-0 right-0"/>
 
       <div className="flex w-full">
-        <div className="z-10 w-[100%] lg:w-[80%] max-w-[830px] min-h-[600px]  relative bg-white border-[3px] border-black rounded-[50px] py-6 md:p-10 flex flex-col justify-center drop-shadow-md">
+        <div className="z-10 w-[100%] lg:w-[80%]  min-h-[600px]  relative bg-white border-[3px] border-black rounded-[50px] py-6 md:p-10 flex flex-col justify-center drop-shadow-md">
           <h1 className="mb-20">
             <span className="flex text-lg md:text-5xl font-light mb-5">
               WE CAN MAKE YOUR
@@ -45,19 +46,21 @@ const HeroSection = () => {
             </span>
           </h1>
 
-          <p className="mb-8 max-w-[660px]">
-            Lorem ipsum dolor sit amet consectetur. Aliquam consectetur sed
-            elementum vitae ultrices nisi dis pellentesque lectus. Non eget
-            semper quam sit enim venenatis hendrerit mauris quam.
-          </p>
+        
+          <Paragraph className={`mb-8 max-w-[670px]`}>
+            We grant our team the autonomy to work in ways that suit them best,
+            and we create a free and open space for sharing ideas. We believe
+            that when individuals feel empowered and inspired, the magic of
+            creativity flourishes, leading us to greater heights together!
+          </Paragraph>
 
           <div className="max-w-7xl">
             <button className="py-2.5 px-5 mr-2 text-sm font-medium text-gray-900 bg-[#C8D94C]  rounded-xl border-2 border-gray-900 uppercase">
               Contact us
             </button>
-            <a className="text-sm font-light border-b-[1px] border-black ml-4">
-              SEE MORE ABOUT US
-            </a>
+            <Hyperlinks link="/aboutus">
+              See more about us
+            </Hyperlinks>
           </div>
         </div>
 
@@ -67,7 +70,7 @@ const HeroSection = () => {
           <div className="z-20  absolute bottom-0 right-12 rounded-full w-[470px] h-[470px] bg-[#C8D94C] "></div>
 
           {/* circle  */}
-          <div className="z-0 absolute top-0 right-72 rounded-full w-[300px] h-[300px] bg-[#A8B738]"></div>
+          <div className="z-0 absolute top-0 right-60 rounded-full w-[300px] h-[300px] bg-[#A8B738]"></div>
 
           <svg
             className="z-40 absolute right-20"
