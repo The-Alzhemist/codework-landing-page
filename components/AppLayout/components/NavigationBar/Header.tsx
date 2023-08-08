@@ -8,7 +8,7 @@ export const Header: React.FC = () => {
   const [IsSideMenuOpen, setIsSideMenuOpen] = useState<boolean>(false);
   const navStyle = useSpring({
     opacity: IsSideMenuOpen ? 1 : 0,
-    right: IsSideMenuOpen ? 0 : -270,
+    right: IsSideMenuOpen ? 0 : -500,
   });
   const hamburgerStyle2 = useSpring({
     opacity: IsSideMenuOpen ? 0 : 1,
@@ -23,7 +23,7 @@ export const Header: React.FC = () => {
   });
   return (
     <>
-      <header className="fixed z-20 flex h-16 w-full items-center overflow-hidden bg-primary-50/30 backdrop-blur">
+      <header className="fixed z-50 flex h-16 w-full items-center overflow-hidden bg-primary-50/30 backdrop-blur">
         <div className=" w-full h-full mx-auto flex items-center justify-between px-6 py-3">
           <div className="flex items-center text-2xl font-black text-primary-900">
             <div className="relative w-[170px] h-[15px] mr-[8px]"  >
@@ -44,7 +44,7 @@ export const Header: React.FC = () => {
           </div>
 
           {/* Burger for Sidemenu, only for mobile */}
-          <div className="z-20 flex items-end sm:hidden">
+          <div className="z-20 flex items-end lg:hidden">
             <button
               className="ml-4 flex flex-col"
               onClick={() => {
@@ -67,17 +67,17 @@ export const Header: React.FC = () => {
           </div>
 
           {/* Only for PC */}
-          <div className="hidden items-end sm:flex">
-            <p className="flex cursor-pointer py-3 px-6 hover:text-primary-500 font-medium">
+          <div className="hidden items-end lg:flex">
+            <p className="flex cursor-pointer py-3 px-6 hover:text-primary-500 hover:bg-custom-gradient font-medium">
               <Link href="/">Home</Link>
             </p>
-            <p className="flex cursor-pointer py-3 px-6 hover:text-primary-500 font-medium">
+            <p className="flex cursor-pointer py-3 px-6 hover:text-primary-500 hover:bg-custom-gradient font-medium">
               <Link href="/contact">About us</Link>
             </p>
-            <p className="flex cursor-pointer py-3 px-6 hover:text-primary-500 font-medium">
+            <p className="flex cursor-pointer py-3 px-6 hover:text-primary-500 hover:bg-custom-gradient font-medium">
               <Link href="/contact">Projects</Link>
             </p>
-            <p className="flex cursor-pointer py-3 px-6 hover:text-primary-500 font-medium">
+            <p className="flex cursor-pointer py-3 px-6 hover:text-primary-500 hover:bg-custom-gradient font-medium">
               <Link href="/contact">Clients</Link>
             </p>
             <Button
@@ -96,7 +96,7 @@ export const Header: React.FC = () => {
       {/* Sidemenu */}
       <animated.nav
         style={navStyle}
-        className="fixed top-0 z-10 flex h-full flex-col bg-primary-50/30 p-6 text-lg text-primary-900 backdrop-blur w-full"
+        className="fixed top-0 z-20 flex h-full flex-col bg-primary-50/30 p-6 text-lg text-primary-900 backdrop-blur w-full"
       >
         <ul className="mt-16 flex flex-col">
           <li>
