@@ -3,6 +3,7 @@ import BackgroundGradientBlur from "../../backgroundGradientBlur/BackgroundGradi
 import { Prompt } from "@next/font/google";
 import Paragraph from "../../AppLayout/components/typography/paragraph/Paragraph";
 import Image from "next/image";
+import { Button } from "../../AppLayout/components/button/button";
 
 const fontPrompt = Prompt({
   weight: ["100", "200", "300", "400", "500", "600", "700"],
@@ -31,7 +32,6 @@ const AboutUs = () => {
           </h2>
 
           <div>
-          
             <Image
               src="/simple-but-ambitious-cover.png"
               width={490}
@@ -61,15 +61,19 @@ const AboutUs = () => {
           </Paragraph>
         </div>
 
+        <div className="flex justify-center">
+          <Button>READ MORE ABOUT US</Button>
+        </div>
+
         {/* 4 */}
-        <div className="text-right text-xl flex flex-col items-center z-20 min-h-[500px] justify-center">
+        {/* <div className="text-right text-xl flex flex-col items-center z-20 min-h-[500px] justify-center">
           <p className="max-w-[600px] text-center mb-8">
             It is our commitment to deliver nothing less than a seriously
           </p>
           <div className="font-normal text-4xl bg-line ml-3">
             mind-blowing product
           </div>
-        </div>
+        </div> */}
       </section>
     </>
   );

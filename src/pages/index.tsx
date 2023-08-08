@@ -18,11 +18,11 @@ export default function Home() {
       <AppLayout>
         <HeroSection /> 
         <AboutUs />
-        <TeamCulture/>
+        {/* <TeamCulture/> */}
         <OurService />
-        <OurClient />
+        {/* <OurClient />
         <OurMember />
-        <ContactUs />
+        <ContactUs />  */}
       </AppLayout>
     </>
   );

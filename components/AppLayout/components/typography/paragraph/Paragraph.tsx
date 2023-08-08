@@ -9,7 +9,7 @@ const fontPrompt = Prompt({
 
 const Paragraph = (props:any) => {
   return (
-      <p className={`${fontPrompt.variable} font-prompt ${props.className}`}>
+      <p className={`${fontPrompt.variable} text-2xl font-prompt ${props.className}`}>
             {props.children}
       </p>
   )

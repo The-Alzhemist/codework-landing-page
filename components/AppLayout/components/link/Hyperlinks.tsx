@@ -3,7 +3,7 @@ import React from 'react'
 
 const Hyperlinks = (props:any) => {
   return (
-    <Link href={props.link} className="text-sm font-light hover:border-b-[1px] border-black ml-4">
+    <Link href={props.link} className={` ${props.className} text-sm font-light hover:border-b-[2px] border-black }`}>
         {props.children}
     </Link>
   )

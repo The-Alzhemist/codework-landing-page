@@ -1,63 +1,54 @@
 import React from "react";
+import Image from "next/image";
+import { Prompt } from "@next/font/google";
+import BackgroundGradientBlur from "../backgroundGradientBlur/BackgroundGradientBlur";
+import Paragraph from "../AppLayout/components/typography/paragraph/Paragraph";
+import Hyperlinks from "../AppLayout/components/link/Hyperlinks";
 
-const dataList = [
-  {
-    id: 1,
-    name: "UX/UI Design",
-    content:
-      "Lorem ipsum dolor sit amet consectetur adipisicingLorem ipsum dolor sit amet",
-  },
-  {
-    id: 2,
-    name: "Project Solution Consulting",
-    content:
-      "Lorem ipsum dolor sit amet consectetur adipisicing Lorem ipsum dolor sit amet",
-  },
-  {
-    id: 3,
-    name: "Web Development",
-    content:
-      "Lorem ipsum dolor sit amet consectetur adipisicing Lorem ipsum dolor sit amet",
-  },
-  {
-    id: 4,
-    name: "Mobile app Development",
-    content:
-      "Lorem ipsum dolor sit amet consectetur adipisicing Lorem ipsum dolor sit amet",
-  },
-  {
-    id: 5,
-    name: "Digital Marketing",
-    content:
-      "Lorem ipsum dolor sit amet consectetur adipisicing Lorem ipsum dolor sit amet",
-  },
-  {
-    id: 6,
-    name: "Digital Transformation Consulting",
-    content:
-      "Lorem ipsum dolor sit amet consectetur adipisicingLorem ipsum dolor sit amet",
-  },
-];
+
+const fontPrompt = Prompt({
+  weight: ["100", "200", "300", "400", "500", "600", "700"],
+  subsets: ["latin"],
+  variable: "--font-prompt",
+});
+
 const OurService = () => {
   return (
-    <section className="max-w-7xl mx-auto py-[30px] md:py-[50px] px-4 ">
-      <h2 className="text-left mb-5 text-3xl md:text-5xl font-extrabold uppercase">
-        Our service
-      </h2>
-      <div className="grid md:grid-cols-3 gap-10">
-        {dataList?.map((item, index) => (
-          <div key={index} className="flex flex-col max-w-[400px] border-[2px] border-slate-900 rounded-md">
-            <img className="rounded-md" src="https://placehold.co/400x150" alt="" />
-            <div className="p-3">
-              <h3 className="font-bold  text-xl border-b-[5px] border-[#C8D94C] inline">{item.name}</h3>
-              <p className="text-sm opacity-70 my-2">
-              {item.content}
-              </p>
-            </div>
-          </div>
-        ))}
+    <section
+    className={`${fontPrompt.variable} font-prompt relative max-w-[1440px] mx-auto py-[30px] md:py-[50px] lg:px-[50px]`}
+  >
+    <BackgroundGradientBlur className="bottom-40 right-0" />
+    {/* 1 */}
+    <h2 className="flex justify-center text-5xl">
+      <span className="font-normal bg-line mb-7">OUR PRODUCT</span>
+    </h2>
+    <div className="flex justify-between items-center mb-10 z-20">
+      <h3 className="text-left mb-5  md:text-5xl">
+        <div className="mb-10"><span className="font-normal bg-line mb-7">KHOTBOT</span></div>
+        <Paragraph className="max-w-[670px]">
+        The ultimate assistant for bitcoin traders, making profitable trades in both UP & DOWN markets without the need to constantly monitor market prices.
+        </Paragraph>
+
+        <Hyperlinks link="/aboutus" >
+              See more about us
+        </Hyperlinks>
+      </h3>
+
+      <div>
+        <Image
+          src="/simple-but-ambitious-cover.png"
+          width={490}
+          height={413}
+          className="max-w-[490px] h-auto"
+          alt="simple but ambitious section cover"
+        />
       </div>
-    </section>
+    </div>
+
+  
+
+  
+  </section>
   );
 };
 
