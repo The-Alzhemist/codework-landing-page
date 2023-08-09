@@ -18,12 +18,11 @@ const AboutUs = () => {
       <section
         className={`${fontPrompt.variable} font-prompt relative max-w-[1440px] mx-auto py-[30px] md:py-[50px] lg:px-[50px]`}
       >
-        {/* <BackgroundGradientBlur className="top-0 left-0 " /> */}
         <BackgroundGradientBlur className="bottom-40 right-0" />
         <BackgroundGradientBlur className="bottom-0 left-0" />
         {/* 1 */}
-        <div className="flex justify-between items-center mb-10 z-20">
-          <h2 className="text-left mb-5 text-3xl md:text-5xl uppercase">
+        <div className="flex flex-col lg:flex-row justify-between items-center mb-10 z-20">
+          <h2 className="text-left mb-5 text-3xl md:text-5xl uppercase lg:w-2/4">
             <div className="w-1 h-40 bg-[#687318] rounded-sm mb-4"></div>
             <div className="font-normal">Simple</div>
             <div>
@@ -32,11 +31,12 @@ const AboutUs = () => {
             </div>
           </h2>
 
-          <div>
+          <div className="lg:w-2/4">
             <Image
               src="/simple-but-ambitious-cover.png"
               width={490}
               height={413}
+              layout="responsive" 
               className="max-w-[490px] h-auto"
               alt="simple but ambitious section cover"
             />

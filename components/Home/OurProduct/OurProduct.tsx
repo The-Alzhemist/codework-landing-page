@@ -22,8 +22,8 @@ const OurProduct = () => {
     <h2 className="flex justify-center text-5xl">
       <span className="font-normal bg-line mb-7">OUR PRODUCT</span>
     </h2>
-    <div className="flex justify-between items-center mb-10 z-20">
-      <h3 className="text-left mb-5  md:text-5xl">
+    <div className="flex flex-col lg:flex-row justify-between items-center mb-10 z-20">
+      <h3 className="text-left mb-5  md:text-5xl lg:w-2/4">
         <div className="mb-10"><span className="font-normal bg-line mb-7">KHOTBOT</span></div>
         <Paragraph className="max-w-[670px]">
         The ultimate assistant for bitcoin traders, making profitable trades in both UP & DOWN markets without the need to constantly monitor market prices.
@@ -34,11 +34,12 @@ const OurProduct = () => {
         </Hyperlinks>
       </h3>
 
-      <div>
+      <div className="lg:w-2/4">
         <Image
           src="/simple-but-ambitious-cover.png"
           width={490}
           height={413}
+          layout="responsive"
           className="max-w-[490px] h-auto"
           alt="simple but ambitious section cover"
         />

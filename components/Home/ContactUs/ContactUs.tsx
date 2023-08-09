@@ -21,13 +21,13 @@ const ContactUs = () => {
       <BackgroundGradientBlur className="bottom-40 right-0" />
       {/* 1 */}
 
-      <div className="flex justify-between items-center mb-10 z-20">
-        <h2 className="text-left mb-5  md:text-5xl lg:min-w-[550px]">
+      <div className="flex gap-3 flex-col lg:flex-row justify-between items-center mb-10 z-20">
+        <h2 className="text-left mb-5  md:text-5xl lg:w-2/4">
           <Paragraph className="max-w-[670px]">
             Let’s make your idea come true!
           </Paragraph>
 
-          <div className="mb-10 flex justify-center">
+          <div className="mb-10 flex justify-end">
             <span className="font-normal bg-line mb-3">CONTACT US</span>
           </div>
 
@@ -36,11 +36,12 @@ const ContactUs = () => {
           </div>
         </h2>
 
-        <div>
+        <div className="lg:w-2/4">
           <Image
             src="/contactus.png"
             width={588}
             height={492}
+            layout="responsive" 
             className="max-w-[490px] h-auto"
             alt="simple but ambitious section cover"
           />
