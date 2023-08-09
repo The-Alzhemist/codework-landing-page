@@ -28,14 +28,22 @@ const AboutUs = () => {
             <div>
               <span className="font-light text-4xl">But</span>
               <span className="font-normal bg-line ml-3">AMBITIOUS</span>
+              <Image
+              src="/home/aboutus/aboutus-section-sticker-1.png"
+              width={0}
+              height={0}
+              layout="responsive" 
+              className="max-w-[58px] h-auto absolute left-[370px]"
+              alt="simple but ambitious section cover"
+            />
             </div>
           </h2>
 
-          <div className="lg:w-2/4">
+          <div className="lg:w-2/4 flex justify-end">
             <Image
               src="/simple-but-ambitious-cover.png"
-              width={490}
-              height={413}
+              width={0}
+              height={0}
               layout="responsive" 
               className="max-w-[490px] h-auto"
               alt="simple but ambitious section cover"
@@ -44,22 +52,35 @@ const AboutUs = () => {
         </div>
 
         {/* 2 */}
-        <div className="text-right text-xl flex flex-col items-end z-20">
-          <div className="w-40 h-1 bg-[#687318] rounded-sm mb-7"></div>
-          <Paragraph className="max-w-[600px] text-right">
+        <div className="text-right text-xl flex flex-col items-end z-20 pr-[70px] relative mb-14">
+          <div className="z-10 w-40 h-1 bg-[#687318] rounded-sm mb-7"></div>
+          <Image
+              src="/home/global/star.png"
+              width={0}
+              height={0}
+              layout="responsive" 
+              className="max-w-[200px] h-auto absolute right-0 top-10"
+              alt="simple but ambitious section cover"
+            />
+          <Paragraph className="z-10 max-w-[600px] text-right">
             We are a group of people who take pride in consistently delivering
             awesome products that will exceed your expectations.
           </Paragraph>
+         
         </div>
 
         {/* 3 */}
-        <div className="text-right text-xl flex flex-col items-start z-20 mb-32">
-          <div className="w-40 h-1 bg-[#687318] rounded-sm mb-7"></div>
-          <Paragraph className="max-w-[600px] text-left">
+        <div className="text-right text-xl flex flex-col items-start z-20 mb-32 pl-[70px] relative">
+      
+        <div className="z-0 absolute top-[-70px] left-0 rounded-full w-[140px] h-[140px] bg-[#C8D94C]"></div>
+       
+          <div className="z-10 w-40 h-1 bg-[#687318] rounded-sm mb-7"></div>
+          <Paragraph className=" z-10 max-w-[600px] text-left">
             Everyday, we take chances to learn, grow and overcome new challenges
             to be able to deliver top-notch software that’s better than you can
             imagine!
           </Paragraph>
+       
         </div>
 
         <div className="flex justify-center">
