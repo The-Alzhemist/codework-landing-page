@@ -63,7 +63,7 @@ const OurService = () => {
           width={0}
           height={0}
           layout="responsive"
-          className="-z-10 max-w-[250px] h-auto absolute left-[35%] top-[65%]"
+          className=" max-w-[250px] h-auto absolute left-[37%] top-[65%]"
           alt="simple but ambitious section cover"
         />
           <span className="font-normal mr-3 relative">OUR
