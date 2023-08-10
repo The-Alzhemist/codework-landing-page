@@ -3,7 +3,7 @@ import BackgroundGradientBlur from "../../backgroundGradientBlur/BackgroundGradi
 import { Prompt } from "@next/font/google";
 import Paragraph from "../../AppLayout/components/typography/paragraph/Paragraph";
 import Image from "next/image";
-import { Button } from "../../AppLayout/components/button/Button";
+import { PrimaryButton } from "../../AppLayout/components/button/PrimaryButton";
 // import { Button } from "../../AppLayout/components/button/button";
 
 const fontPrompt = Prompt({
@@ -84,7 +84,7 @@ const AboutUs = () => {
         </div>
 
         <div className="flex justify-center mb-[150px]">
-          <Button>READ MORE ABOUT US</Button>
+          <PrimaryButton>READ MORE ABOUT US</PrimaryButton>
         </div>
 
         {/* 4 */}

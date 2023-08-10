@@ -3,10 +3,9 @@ import withNavigation from "./withNavigation";
 import Link from "next/link";
 import Image from "next/image";
 import { animated } from "@react-spring/web";
-import { Button } from "../button/Button";
+import { PrimaryButton } from "../button/PrimaryButton";
+import { OutlinedButton } from "../button/OutlinedButton";
 // import { Button } from "../button/button";
-
-
 
 const NavigationBar = ({
   IsSideMenuOpen,
@@ -63,18 +62,18 @@ const NavigationBar = ({
           </div>
 
           {/* Only for PC */}
-          <div className="hidden lg:flex items-center gap-x-2">
+          <div className="hidden lg:flex items-center gap-x-5">
             {menu?.map((menu: any, index: number) => (
               <React.Fragment key={`menu-${index}`}>
                 <div
-                  className={`flex cursor-pointer hover:text-primary-500 hover:bg-custom-gradient font-medium`}
+                  className={`flex cursor-pointer hover:text-secondary hover:bg-custom-gradient font-medium`}
                 >
-                  <Link className="py-3 px-6" href={menu.url}>{menu.name}</Link>
+                  <Link className="py-1 px-3" href={menu.url}>{menu.name}</Link>
                 </div>
               </React.Fragment>
             ))}
 
-            <Button>Contact Us</Button>
+            <OutlinedButton>Contact Us</OutlinedButton>
           </div>
         </div>
       </header>
@@ -88,16 +87,16 @@ const NavigationBar = ({
           {menu?.map((menu: any, index: number) => (
             <React.Fragment key={`mobile-menu-${index}`}>
               <li className="border-b-[2px] border-dashed border-[#A8B738]">
-                <p className="flex cursor-pointer py-3  hover:text-primary-500 font-medium text-2xl">
+                <p className="flex cursor-pointer py-3 hover:text-secondary font-medium text-2xl">
                   <Link href={menu.url}>{menu.name}</Link>
                 </p>
               </li>
             </React.Fragment>
           ))}
 
-          <Button className="mt-8">
+          <OutlinedButton className="mt-8">
             Contact Us
-          </Button>
+          </OutlinedButton>
         </ul>
       </animated.nav>
 

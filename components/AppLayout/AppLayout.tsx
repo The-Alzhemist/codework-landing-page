@@ -18,7 +18,7 @@ const AppLayout = ({ children }: FunctionComponentType) => {
     <>
       <NavigationBar font={fontPrompt} />
       {/* <Header/> */}
-      <main className="px-5">{children}</main>
+      <main className="px-5 text-secondary">{children}</main>
       <Footer />
     </>
   );

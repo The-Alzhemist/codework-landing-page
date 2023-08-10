@@ -2,8 +2,6 @@ import { Prompt } from "@next/font/google";
 import { useSpring } from "@react-spring/web";
 import React, { useState } from "react";
 
-
-
 const withNavigation = (Component: React.FC) => {
   const Hoc = (props: any) => {
     const [IsSideMenuOpen, setIsSideMenuOpen] = useState<boolean>(false);

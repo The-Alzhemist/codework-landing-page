@@ -4,7 +4,7 @@ import BackgroundGradientBlur from "../../backgroundGradientBlur/BackgroundGradi
 import Image from "next/image";
 import Hyperlinks from "../../AppLayout/components/link/Hyperlinks";
 import Paragraph from "../../AppLayout/components/typography/paragraph/Paragraph";
-import { Button } from "../../AppLayout/components/button/Button";
+import { PrimaryButton } from "../../AppLayout/components/button/PrimaryButton";
 
 
 const fontPrompt = Prompt({
@@ -57,7 +57,7 @@ const ContactUs = () => {
               className="-z-10 max-w-[30px] h-auto absolute right-[-10px] bottom-12"
               alt="simple but ambitious section cover"
             />
-            <Button>READ MORE ABOUT US</Button>
+            <PrimaryButton>READ MORE ABOUT US</PrimaryButton>
           </div>
         </h2>
 

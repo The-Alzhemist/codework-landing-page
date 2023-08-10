@@ -7,10 +7,10 @@ const fontPrompt = Prompt({
   variable: "--font-prompt",
 });
 
-export const Button: React.FC<ButtonHTMLAttributes<HTMLButtonElement>> = (
+export const OutlinedButton: React.FC<ButtonHTMLAttributes<HTMLButtonElement>> = (
   props
 ) => {
-  const className = `${props.className}  ${fontPrompt.variable} font-prompt  py-2.5 px-5 mr-2 text-sm font-medium text-gray-900 bg-[#C8D94C]  rounded-xl border-2 border-gray-900 uppercase`;
+  const className = `${props.className}  ${fontPrompt.variable} font-prompt py-2.5 px-5 mr-2 text-sm font-medium rounded-xl text-secondary  border-2 border-secondary hover:bg-primary-800 hover:text-primary-100 hover:border-primary-100 hover:shadow-md uppercase`;
   return (
     <button {...props} className={className}>
       <span>{props.children}</span>

@@ -22,11 +22,10 @@ const OurProduct = () => {
     {/* <h2 className="flex justify-center text-5xl">
       <span className="font-normal bg-line mb-7">OUR PRODUCT</span>
     </h2> */}
-    <h2 className="flex justify-center text-5xl relative">
+    <h2 className="flex justify-center text-5xl relative mb-10">
      
    
-     <div className="mb-7">
-     
+     <div className="">
        <span className="font-normal mr-3 relative">OUR
        <Image
        src="/home/our-product/our-product-sticker-2.png"
