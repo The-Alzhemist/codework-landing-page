@@ -65,10 +65,9 @@ const OurMember = () => {
        alt=""
      />
      <div className="font-bold text">{item.name}</div>
-     <div className="font-sm text-sm">{item.position}</div>
+     <div className="font-sm text-sm">{item.position}x</div>
    </div>
       ))} 
-       
       </div>
     </section>
   );
