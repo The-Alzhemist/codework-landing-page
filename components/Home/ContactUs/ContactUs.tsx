@@ -22,13 +22,13 @@ const ContactUs = () => {
       {/* 1 */}
 
       <div className="flex gap-10 flex-col lg:flex-row justify-between items-center mb-10 z-20">
-        <h2 className="text-left mb-5  md:text-5xl lg:w-2/4">
+        <h2 className="text-left mb-5 text-3xl md:text-5xl lg:w-2/4">
           <Paragraph className="max-w-[670px] text-end pr-3 mb-2">
             Let’s make your idea come true!
           </Paragraph>
 
           <div className="mb-14 flex justify-end relative">
-            <span className="font-normal bg-line mb-3">CONTACT US
+            <span className="font-normal  bg-line mb-3">CONTACT US
             <Image
               src="/home/contact-us/contact-us-sticker-1.png"
               width={0}

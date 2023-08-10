@@ -62,7 +62,7 @@ const AboutUs = () => {
               className="max-w-[100px] md:max-w-[200px] h-auto absolute right-0 top-10"
               alt="simple but ambitious section cover"
             />
-          <Paragraph className="z-10 max-w-[600px] text-right text-base md:text-2xl md:font-xl lg:font-3xl">
+          <Paragraph className="z-10 max-w-[800px] text-right text-base md:text-2xl md:font-xl lg:font-3xl">
             We are a group of people who take pride in consistently delivering
             awesome products that will exceed your expectations.
           </Paragraph>
@@ -75,7 +75,7 @@ const AboutUs = () => {
         <div className="z-0 absolute top-[-70px] left-0 rounded-full w-[100px] h-[100px] md:w-[140px] md:h-[140px] bg-primary"></div>
        
           <div className="z-10 w-40 h-1 bg-primary-900 rounded-sm mb-7"></div>
-          <Paragraph className=" z-10 max-w-[600px] text-left text-base md:text-2xl md:font-xl lg:font-3xl">
+          <Paragraph className=" z-10 max-w-[800px] text-left text-base md:text-2xl md:font-xl lg:font-3xl">
             Everyday, we take chances to learn, grow and overcome new challenges
             to be able to deliver top-notch software that’s better than you can
             imagine!
