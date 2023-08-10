@@ -5,7 +5,7 @@ import BackgroundGradientBlur from "../../backgroundGradientBlur/BackgroundGradi
 import Paragraph from "../../AppLayout/components/typography/paragraph/Paragraph";
 import Hyperlinks from "../../AppLayout/components/link/Hyperlinks";
 import Image from "next/image";
-
+import { PrimaryButton } from "../../AppLayout/components/button/PrimaryButton";
 
 const fontPrompt = Prompt({
   weight: ["100", "200", "300", "400", "500", "600", "700"],
@@ -50,7 +50,7 @@ const HeroSection = () => {
               idea come
             </span>
             <span
-              className={`${fontGloriaHallelujah.variable} font-gloriaHallelujah text-7xl  text-[#C8D94C] md:ml-4 flex md:inline relative`}
+              className={`${fontGloriaHallelujah.variable} font-gloriaHallelujah text-7xl  text-primary md:ml-4 flex md:inline relative`}
             >
               TRUE
               <Image
@@ -74,16 +74,14 @@ const HeroSection = () => {
           </Paragraph>
 
           <div className="max-w-7xl">
-            <button className="py-2.5 px-5 mr-4 text-sm font-medium text-gray-900 bg-[#C8D94C]  rounded-xl border-2 border-gray-900 uppercase">
-              Contact us
-            </button>
+            <PrimaryButton>Contact us</PrimaryButton>
             <Hyperlinks link="/aboutus">See more about us</Hyperlinks>
           </div>
         </div>
 
         {/* right box  */}
         <div className="hidden lg:block lg:w-[20%]">
-        <Image
+          <Image
             src="/home/hero/hero-section-stciker-2.png"
             width={40}
             height={40}
@@ -93,7 +91,7 @@ const HeroSection = () => {
           />
 
           {/* circle  */}
-          <div className="z-0 absolute top-0 right-[15%] rounded-full w-[300px] h-[300px] bg-[#A8B738]"></div>
+          <div className="z-0 absolute top-0 right-[15%] rounded-full w-[300px] h-[300px] bg-primary-800"></div>
 
           <Image
             src="/hero-section-1.png"
@@ -103,7 +101,6 @@ const HeroSection = () => {
             className="md:max-w-[400px] lg:max-w-[480px] h-auto p-3 z-20 absolute bottom-[-20px] right-[2%]"
             alt="simple but ambitious section cover"
           />
-          
         </div>
       </div>
     </section>
