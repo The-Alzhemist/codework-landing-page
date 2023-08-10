@@ -55,7 +55,7 @@ const AboutUs = () => {
         <div className="text-right  flex flex-col items-end z-20 sm:pr-[70px] relative mb-14">
           <div className="z-10 w-40 h-1 bg-primary-900 rounded-sm mb-7"></div>
           <Image
-              src="/home/global/star.png"
+              src="/global/star.png"
               width={0}
               height={0}
               layout="responsive" 
