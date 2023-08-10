@@ -5,7 +5,7 @@ const BackgroundGradientBlur = ({className}: BgGradientBlueInterface) => {
   return (
     <>
       <div className={`rounded-full w-[150px] h-[150px] md:w-[500px] md:h-[500px]
-      bg-primary sm:bg-primary-200  blur-[80px] sm:blur-[100px]  -z-10 absolute ${className}`}></div>
+      bg-primary sm:bg-primary-200 blur-[10px] sm:blur-[100px]  -z-10 absolute ${className}`}></div>
     </>
   );
 };
