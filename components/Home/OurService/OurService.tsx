@@ -70,7 +70,7 @@ const OurService = () => {
           <span className="font-normal bg-line relative">
             SERVICES
             <Image
-              src="/home/global/star.png"
+              src="/global/star.png"
               width={0}
               height={0}
               layout="responsive"
