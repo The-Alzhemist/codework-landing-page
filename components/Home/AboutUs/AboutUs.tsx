@@ -33,7 +33,7 @@ const AboutUs = () => {
               width={0}
               height={0}
               layout="responsive" 
-              className="max-w-[58px] h-auto absolute left-[370px]"
+              className="hidden sm:flex max-w-[58px] h-auto absolute left-[370px]"
               alt="simple but ambitious section cover"
             />
             </div>
@@ -59,7 +59,7 @@ const AboutUs = () => {
               width={0}
               height={0}
               layout="responsive" 
-              className="max-w-[200px] h-auto absolute right-0 top-10"
+              className="hidden sm:flex max-w-[200px] h-auto absolute right-0 top-10"
               alt="simple but ambitious section cover"
             />
           <Paragraph className="z-10 max-w-[600px] text-right">

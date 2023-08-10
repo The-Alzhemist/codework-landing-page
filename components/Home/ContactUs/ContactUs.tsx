@@ -34,7 +34,7 @@ const ContactUs = () => {
               width={0}
               height={0}
               layout="responsive"
-              className="-z-10 max-w-[255px] h-auto absolute right-10 bottom-[-10px]"
+              className="-z-10 hidden sm:flex max-w-[255px] h-auto absolute right-10 bottom-[-10px]"
               alt="simple but ambitious section cover"
             />
             </span>

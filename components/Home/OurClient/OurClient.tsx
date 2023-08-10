@@ -26,7 +26,7 @@ const OurClient = () => {
               width={0}
               height={0}
               layout="responsive"
-              className="-z-10 max-w-[54px] h-auto absolute right-[-30px] top-[-30px]"
+              className="-z-10 hidden sm:flex max-w-[54px] h-auto absolute right-[-30px] top-[-30px]"
               alt="simple but ambitious section cover"
             />
             <Image
@@ -34,7 +34,7 @@ const OurClient = () => {
               width={0}
               height={0}
               layout="responsive"
-              className="-z-10 max-w-[260px] h-auto absolute right-[10px] bottom-[-20px]"
+              className="-z-10 hidden sm:flex max-w-[260px] h-auto absolute right-[10px] bottom-[-20px]"
               alt="simple but ambitious section cover"
             />
           </span>

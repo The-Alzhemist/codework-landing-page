@@ -36,8 +36,8 @@ const HeroSection = () => {
               WE CAN MAKE YOUR
               <Image
                 src="/home/hero/hero-section-stciker-1.png"
-                width={40}
-                height={40}
+                width={0}
+                height={0}
                 layout="responsive"
                 className="hidden md:flex max-w-[100px] max-h-[100px] absolute md:top-[-70px] md:left-[470px]"
                 alt="simple but ambitious section cover"
@@ -55,8 +55,8 @@ const HeroSection = () => {
               TRUE
               <Image
                 src="/home/hero/hero-section-stciker-3.png"
-                width={40}
-                height={40}
+                width={0}
+                height={0}
                 layout="responsive"
                 className="hidden md:flex max-w-[200px] max-h-[100px] absolute md:left-[35px] "
                 alt="simple but ambitious section cover"
@@ -83,8 +83,8 @@ const HeroSection = () => {
         <div className="hidden lg:block lg:w-[20%]">
           <Image
             src="/home/hero/hero-section-stciker-2.png"
-            width={40}
-            height={40}
+            width={0}
+            height={0}
             layout="responsive"
             className="z-10 hidden md:flex max-w-[140px] m absolute top-20 right-[16%] "
             alt="simple but ambitious section cover"
@@ -95,10 +95,10 @@ const HeroSection = () => {
 
           <Image
             src="/hero-section-1.png"
-            width={41180}
-            height={41180}
+            width={0}
+            height={0}
             layout="responsive"
-            className="md:max-w-[400px] lg:max-w-[480px] h-auto p-3 z-20 absolute bottom-[-20px] right-[2%]"
+            className="hidden sm:flex md:max-w-[400px] lg:max-w-[480px] h-auto p-3 z-20 absolute bottom-[-20px] right-[2%]"
             alt="simple but ambitious section cover"
           />
         </div>
