@@ -83,7 +83,7 @@ const AboutUs = () => {
        
         </div>
 
-        <div className="flex justify-center">
+        <div className="flex justify-center mb-[150px]">
           <Button>READ MORE ABOUT US</Button>
         </div>
 
