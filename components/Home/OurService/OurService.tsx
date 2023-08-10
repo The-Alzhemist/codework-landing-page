@@ -52,7 +52,7 @@ const OurService = () => {
       <BackgroundGradientBlur className="bottom-40 right-0" />
       <BackgroundGradientBlur className="bottom-40 left-0" />
       {/* 1 */}
-      <h2 className="flex justify-center text-5xl relative">
+      <h2 className="flex justify-center text-3xl md:text-5xl relative">
      
    
         <div className="mb-7">

@@ -22,7 +22,7 @@ const OurProduct = () => {
     {/* <h2 className="flex justify-center text-5xl">
       <span className="font-normal bg-line mb-7">OUR PRODUCT</span>
     </h2> */}
-    <h2 className="flex justify-center text-5xl relative mb-10">
+    <h2 className="flex justify-center text-3xl md:text-5xl relative mb-10">
      
    
      <div className="">
@@ -51,9 +51,9 @@ const OurProduct = () => {
    </h2>
 
     <div className="flex flex-col lg:flex-row justify-between items-center mb-10 z-20">
-      <h3 className="text-left mb-4  md:text-[32px] lg:w-2/4">
-        <div className="mb-10"><span className="font-normal bg-line mb-7">KHOTBOT</span></div>
-        <Paragraph className="max-w-[670px]">
+      <h3 className="text-left mb-4    lg:w-2/4">
+        <div className="mb-10"><span className="font-normal bg-line mb-7 md:text-[32px]">KHOTBOT</span></div>
+        <Paragraph className="max-w-[670px] text-base md:text-2xl">
         The ultimate assistant for bitcoin traders, making profitable trades in both UP & DOWN markets without the need to constantly monitor market prices.
         </Paragraph>
 

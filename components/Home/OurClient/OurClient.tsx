@@ -16,11 +16,11 @@ const OurClient = () => {
     >
       <BackgroundGradientBlur className="top-0 left-0" />
       {/* 1 */}
-      <h2 className="flex justify-center text-5xl mb-20 relative">
+      <h2 className="flex justify-center text-3xl md:text-5xl mb-20 relative">
         <div className="mb-7">
           <span className="font-normal mr-3 relative">OUR</span>
-          <span className="font-normal bg-line relative">
-            SERVICES
+          <span className="font-normal bg-line relative uppercase">
+            Partners
             <Image
               src="/home/our-partner/our-partner-sticker-1.png"
               width={0}

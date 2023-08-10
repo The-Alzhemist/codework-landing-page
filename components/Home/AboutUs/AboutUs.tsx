@@ -23,7 +23,7 @@ const AboutUs = () => {
         {/* 1 */}
         <div className="flex flex-col lg:flex-row justify-between items-center mb-10 z-20">
           <h2 className="text-left mb-5 text-3xl md:text-5xl uppercase lg:w-2/4">
-            <div className="w-1 h-40 bg-[#687318] rounded-sm mb-4"></div>
+            <div className="w-1 h-40 bg-primary-900 rounded-sm mb-4"></div>
             <div className="font-normal">Simple</div>
             <div>
               <span className="font-light text-4xl">But</span>
@@ -52,17 +52,17 @@ const AboutUs = () => {
         </div>
 
         {/* 2 */}
-        <div className="text-right text-xl flex flex-col items-end z-20 pr-[70px] relative mb-14">
-          <div className="z-10 w-40 h-1 bg-[#687318] rounded-sm mb-7"></div>
+        <div className="text-right  flex flex-col items-end z-20 sm:pr-[70px] relative mb-14">
+          <div className="z-10 w-40 h-1 bg-primary-900 rounded-sm mb-7"></div>
           <Image
               src="/home/global/star.png"
               width={0}
               height={0}
               layout="responsive" 
-              className="hidden sm:flex max-w-[200px] h-auto absolute right-0 top-10"
+              className="max-w-[100px] md:max-w-[200px] h-auto absolute right-0 top-10"
               alt="simple but ambitious section cover"
             />
-          <Paragraph className="z-10 max-w-[600px] text-right">
+          <Paragraph className="z-10 max-w-[600px] text-right text-base md:text-2xl md:font-xl lg:font-3xl">
             We are a group of people who take pride in consistently delivering
             awesome products that will exceed your expectations.
           </Paragraph>
@@ -70,12 +70,12 @@ const AboutUs = () => {
         </div>
 
         {/* 3 */}
-        <div className="text-right text-xl flex flex-col items-start z-20 mb-32 pl-[70px] relative">
+        <div className="text-right text-xl flex flex-col items-start z-20 mb-32 sm:pl-[70px] relative">
       
-        <div className="z-0 absolute top-[-70px] left-0 rounded-full w-[140px] h-[140px] bg-[#C8D94C]"></div>
+        <div className="z-0 absolute top-[-70px] left-0 rounded-full w-[100px] h-[100px] md:w-[140px] md:h-[140px] bg-primary"></div>
        
-          <div className="z-10 w-40 h-1 bg-[#687318] rounded-sm mb-7"></div>
-          <Paragraph className=" z-10 max-w-[600px] text-left">
+          <div className="z-10 w-40 h-1 bg-primary-900 rounded-sm mb-7"></div>
+          <Paragraph className=" z-10 max-w-[600px] text-left text-base md:text-2xl md:font-xl lg:font-3xl">
             Everyday, we take chances to learn, grow and overcome new challenges
             to be able to deliver top-notch software that’s better than you can
             imagine!
