@@ -117,22 +117,34 @@ const OurService = () => {
 
           {/* for mobile */}
         <div className="block sm:hidden">
-       
-
         <div className="flex flex-col justify-center gap-1  items-start flex-no duration-1000 ease-out ">
-          { jobRow.map((job: any, index: number) => (
+          {/* { jobRow.map((job: any, index: number) => (
             <React.Fragment key={`job-row-mobile-${index}`}>
               <div className="bg-primary-500 rounded-lg w-full h-full   hover:w-full hover:h-full
               flex flex-col justify-center items-center text-center transition-all duration-1000 ease-out group m-3 shadow-xl p-2">
                 <div className="text-base  sm:text-lg duration-1000 ease-out ">
                   {job.name}
                 </div>
-                {/* <p className="duration-1000 ease-out p-2">
+                <p className="duration-1000 ease-out p-2">
                   {job.description}
-                </p> */}
+                </p>
               </div>
             </React.Fragment>
-          ))}
+          ))} */}
+
+              { jobRow.map((job: any, index: number) => (
+            <React.Fragment  key={`job-row-mobile-${index}`}>
+              <div className="bg-primary-500 rounded-3xl p-5 mb-5
+              flex flex-col justify-center items-center text-center shadow-xl">
+                <div className="text-lg mb-2 font-semibold text-secondary-900">
+                  {job.name}
+                </div>
+                <p className="text-sm text-secondary-900">
+                  {job.description}
+                </p>
+              </div>
+            </React.Fragment>
+          ))} 
         </div>
         </div>
 
