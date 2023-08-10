@@ -82,6 +82,7 @@ const OurService = () => {
       </h2>
 
       <div className="mx-auto my-5">
+        {/* for desktop and tablet */}
         <div className="hidden sm:block">
           <div className="flex justify-center items-end gap-3 flex-no duration-1000 ease-out ">
           { jobRow.slice(0,3).map((job: any, index: number) => (
@@ -113,6 +114,30 @@ const OurService = () => {
           ))}
         </div>
         </div>
+
+          {/* for mobile */}
+        <div className="block sm:hidden">
+       
+
+        <div className="flex flex-col justify-center gap-1  items-start flex-no duration-1000 ease-out ">
+          { jobRow.map((job: any, index: number) => (
+            <React.Fragment key={`job-row-mobile-${index}`}>
+              <div className="bg-primary-500 rounded-lg w-full h-full   hover:w-full hover:h-full
+              flex flex-col justify-center items-center text-center transition-all duration-1000 ease-out group m-3 shadow-xl p-2">
+                <div className="text-base  sm:text-lg duration-1000 ease-out ">
+                  {job.name}
+                </div>
+                {/* <p className="duration-1000 ease-out p-2">
+                  {job.description}
+                </p> */}
+              </div>
+            </React.Fragment>
+          ))}
+        </div>
+        </div>
+
+
+            
         
       </div>
     </section>
