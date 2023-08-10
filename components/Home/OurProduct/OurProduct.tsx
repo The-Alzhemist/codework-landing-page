@@ -52,7 +52,7 @@ const OurProduct = () => {
    </h2>
 
     <div className="flex flex-col lg:flex-row justify-between items-center mb-10 z-20">
-      <h3 className="text-left mb-5  md:text-4xl lg:w-2/4">
+      <h3 className="text-left mb-4  md:text-[32px] lg:w-2/4">
         <div className="mb-10"><span className="font-normal bg-line mb-7">KHOTBOT</span></div>
         <Paragraph className="max-w-[670px]">
         The ultimate assistant for bitcoin traders, making profitable trades in both UP & DOWN markets without the need to constantly monitor market prices.
