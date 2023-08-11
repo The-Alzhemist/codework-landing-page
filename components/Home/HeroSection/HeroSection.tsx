@@ -74,7 +74,7 @@ const HeroSection = () => {
           </Paragraph>
 
           <div className="max-w-7xl">
-            <PrimaryButton>Contact us</PrimaryButton>
+            <PrimaryButton className="mr-2">Contact us</PrimaryButton>
             <Hyperlinks link="/aboutus">See more about us</Hyperlinks>
           </div>
         </div>

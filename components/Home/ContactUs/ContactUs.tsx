@@ -46,7 +46,7 @@ const ContactUs = () => {
               width={0}
               height={0}
               layout="responsive"
-              className="-z-10 max-w-[80px] h-auto absolute right-60 bottom-5"
+              className="z-0 max-w-[80px] h-auto absolute right-60 bottom-5"
               alt="simple but ambitious section cover"
             />
              <Image
@@ -54,7 +54,7 @@ const ContactUs = () => {
               width={0}
               height={0}
               layout="responsive"
-              className="-z-10 max-w-[30px] h-auto absolute right-[-10px] bottom-12"
+              className="z-0 max-w-[30px] h-auto absolute right-[-10px] bottom-12"
               alt="simple but ambitious section cover"
             />
             <PrimaryButton>READ MORE ABOUT US</PrimaryButton>
@@ -67,7 +67,7 @@ const ContactUs = () => {
             width={0}
             height={0}
             layout="responsive" 
-            className="max-w-[490px] h-auto"
+            className="z-0 max-w-[490px] h-auto"
             alt="simple but ambitious section cover"
           />
         </div>

@@ -32,7 +32,7 @@ const OurProduct = () => {
        width={0}
        height={0}
        layout="responsive"
-       className=" max-w-[45px] h-auto absolute left-[-30px] top-[-30px]"
+       className="z-0 max-w-[45px] h-auto absolute left-[-30px] top-[-30px]"
        alt="simple but ambitious section cover"
      />
        </span>
