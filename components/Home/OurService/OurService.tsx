@@ -74,7 +74,7 @@ const OurService = () => {
               width={0}
               height={0}
               layout="responsive"
-              className="z-0 hidden sm:flex max-w-[100px] h-auto absolute right-[-30px] top-[-30px]"
+              className="-z-10 hidden sm:flex max-w-[100px] h-auto absolute right-[-30px] top-[-30px]"
               alt="simple but ambitious section cover"
             />
           </span>

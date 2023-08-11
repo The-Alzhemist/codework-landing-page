@@ -30,10 +30,10 @@ const HeroSection = () => {
       <BackgroundGradientBlur className="bottom-0 right-0" />
 
       <div className="flex w-full">
-        <div className="z-10 w-[100%] lg:w-[80%]  min-h-[600px]  relative bg-white border-[3px] border-black rounded-[50px] py-6 md:p-10 flex flex-col justify-center drop-shadow-md">
+        <div className="z-10 w-[100%] lg:w-[80%]  min-h-[600px]  relative bg-white border-[3px] border-black rounded-[50px] py-6 md:p-10 flex flex-col justify-center drop-shadow-md p-2 sm:p-0">
           <h1 className="mb-20 relative">
             <span className="flex text-lg md:text-5xl font-light mb-5 relative">
-              WE CAN MAKE YOUR
+              <div>WE CAN MAKE YOUR</div> 
               <Image
                 src="/home/hero/hero-section-stciker-1.png"
                 width={0}
