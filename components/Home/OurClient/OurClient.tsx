@@ -12,7 +12,7 @@ const fontPrompt = Prompt({
 const OurClient = () => {
   return (
     <section
-      className={`${fontPrompt.variable} font-prompt relative max-w-[1440px] mx-auto py-[30px] md:py-[50px] lg:px-[50px] mb-[150px]`}
+      className={`${fontPrompt.variable} font-prompt relative max-w-[1440px] mx-auto py-[30px] md:py-[50px] lg:px-[50px] mb-[100px]`}
     >
       <BackgroundGradientBlur className="top-0 left-0" />
       {/* 1 */}

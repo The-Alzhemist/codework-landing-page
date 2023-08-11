@@ -22,7 +22,7 @@ const fontGloriaHallelujah = Gloria_Hallelujah({
 const HeroSection = () => {
   return (
     <section
-      className={`${fontPrompt.variable} font-prompt relative md:py-[50px] max-w-[1440px] mx-auto lg:px-[50px] pt-5 sm:pt-0`}
+      className={`${fontPrompt.variable} font-prompt relative md:py-[50px] max-w-[1440px] mx-auto lg:px-[50px] pt-5 sm:pt-0 mb-9`}
     >
       <BackgroundGradientBlur className="top-0 left-0" />
       <BackgroundGradientBlur className="top-0 right-0" />
