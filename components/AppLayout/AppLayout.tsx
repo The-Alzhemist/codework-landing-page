@@ -19,7 +19,7 @@ const AppLayout = ({ children }: FunctionComponentType) => {
       <NavigationBar font={fontPrompt} />
       {/* <Header/> */}
       {/* bg-primary-200 sm:bg-white */}
-      <main className="px-5 text-secondary bg-primary-200 sm:bg-transparent">{children}</main>
+      <main className="px-5 text-secondary bg-primary-100 sm:bg-transparent">{children}</main>
       <Footer />
     </>
   );
