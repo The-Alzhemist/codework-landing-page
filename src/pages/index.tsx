@@ -6,8 +6,6 @@ import AppLayout from "../../components/AppLayout/AppLayout";
 import OurProduct from "../../components/Home/OurProduct/OurProduct";
 import OurService from "../../components/Home/OurService/OurService";
 
-
-
 export default function Home() {
   return (
     <>

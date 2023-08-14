@@ -2,21 +2,17 @@ import { Prompt } from "@next/font/google";
 import React from "react";
 import BackgroundGradientBlur from "../../backgroundGradientBlur/BackgroundGradientBlur";
 import Image from "next/image";
-import Hyperlinks from "../../AppLayout/components/link/Hyperlinks";
+
 import Paragraph from "../../AppLayout/components/typography/paragraph/Paragraph";
 import { PrimaryButton } from "../../AppLayout/components/button/PrimaryButton";
 
 
-const fontPrompt = Prompt({
-  weight: ["100", "200", "300", "400", "500", "600", "700"],
-  subsets: ["latin"],
-  variable: "--font-prompt",
-});
+
 
 const ContactUs = () => {
   return (
     <section
-      className={`${fontPrompt.variable} font-prompt relative max-w-[1440px] mx-auto py-[30px] md:py-[50px] lg:px-[150px]`}
+      className={`relative max-w-[1440px] mx-auto py-[30px] md:py-[50px] lg:px-[150px]`}
     >
       <BackgroundGradientBlur className="bottom-40 right-40" />
       {/* 1 */}

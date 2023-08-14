@@ -5,11 +5,7 @@ import Hyperlinks from "../../AppLayout/components/link/Hyperlinks";
 import { Prompt } from "@next/font/google";
 import Image from "next/image";
 
-const fontPrompt = Prompt({
-  weight: ["100", "200", "300", "400", "500", "600", "700"],
-  subsets: ["latin"],
-  variable: "--font-prompt",
-});
+
 
 const OurService = () => {
   const jobRow = [
@@ -47,7 +43,7 @@ const OurService = () => {
 
   return (
     <section
-      className={`${fontPrompt.variable} font-prompt relative max-w-[1440px] mx-auto py-[30px] md:py-[50px] lg:px-[50px] mb-10`}
+      className={`relative max-w-[1440px] mx-auto py-[30px] md:py-[50px] lg:px-[50px] mb-10`}
     >
       <BackgroundGradientBlur className="bottom-40 right-0" />
       <BackgroundGradientBlur className="bottom-40 left-0" />

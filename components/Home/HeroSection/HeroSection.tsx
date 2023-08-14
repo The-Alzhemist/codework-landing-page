@@ -1,17 +1,11 @@
 import React from "react";
-import { Prompt, Gloria_Hallelujah } from "@next/font/google";
+import { Gloria_Hallelujah } from "@next/font/google";
 import withHeroSection from "./withHeroSection";
 import BackgroundGradientBlur from "../../backgroundGradientBlur/BackgroundGradientBlur";
 import Paragraph from "../../AppLayout/components/typography/paragraph/Paragraph";
 import Hyperlinks from "../../AppLayout/components/link/Hyperlinks";
 import Image from "next/image";
 import { PrimaryButton } from "../../AppLayout/components/button/PrimaryButton";
-
-const fontPrompt = Prompt({
-  weight: ["100", "200", "300", "400", "500", "600", "700"],
-  subsets: ["latin"],
-  variable: "--font-prompt",
-});
 
 const fontGloriaHallelujah = Gloria_Hallelujah({
   weight: ["400"],
@@ -22,7 +16,7 @@ const fontGloriaHallelujah = Gloria_Hallelujah({
 const HeroSection = () => {
   return (
     <section
-      className={`${fontPrompt.variable} font-prompt relative md:py-[50px] max-w-[1440px] mx-auto lg:px-[50px] pt-5 sm:pt-0 mb-9`}
+      className={`relative md:py-[50px] max-w-[1440px] mx-auto lg:px-[50px] pt-5 sm:pt-0 mb-9`}
     >
       <BackgroundGradientBlur className="top-0 left-0" />
       <BackgroundGradientBlur className="top-0 right-0" />

@@ -1,20 +1,13 @@
 import React from "react";
 import Image from "next/image";
-import { Prompt } from "@next/font/google";
 import BackgroundGradientBlur from "../../backgroundGradientBlur/BackgroundGradientBlur";
 import Paragraph from "../../AppLayout/components/typography/paragraph/Paragraph";
 import Hyperlinks from "../../AppLayout/components/link/Hyperlinks";
 
-const fontPrompt = Prompt({
-  weight: ["100", "200", "300", "400", "500", "600", "700"],
-  subsets: ["latin"],
-  variable: "--font-prompt",
-});
-
 const OurProduct = () => {
   return (
     <section
-      className={`${fontPrompt.variable} font-prompt relative max-w-[1440px] mx-auto py-[30px] md:py-[50px] lg:px-[50px]`}
+      className={`relative max-w-[1440px] mx-auto py-[30px] md:py-[50px] lg:px-[50px]`}
     >
       <BackgroundGradientBlur className="bottom-40 right-0" />
       <h2 className="flex justify-center text-3xl md:text-5xl relative mb-10">

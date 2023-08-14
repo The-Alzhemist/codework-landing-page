@@ -39,7 +39,7 @@ const withNavigation = (Component: React.FC) => {
       },
     ]
 
-    const { font } = props 
+    const { fontPrompt } = props 
 
     
     const newProps: any = {
@@ -50,7 +50,7 @@ const withNavigation = (Component: React.FC) => {
       hamburgerStyle2,
       hamburgerStyle3,
       menu,
-      font
+      fontPrompt
     };
     return <Component  {...newProps} />;
   };

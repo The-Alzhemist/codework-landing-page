@@ -5,26 +5,19 @@ import { FunctionComponentType } from "../../interfaces/FunctionComponentType";
 import withAppLayout from "./withAppLayout";
 import { Prompt } from "@next/font/google";
 
-
 const fontPrompt = Prompt({
   weight: ["100", "200", "300", "400", "500", "600", "700"],
   subsets: ["latin"],
   variable: "--font-prompt",
 });
 
-const AppLayout = ({ children }: FunctionComponentType) => {
 
+const AppLayout = ({ children }: FunctionComponentType) => {
   return (
     <>
-      <NavigationBar font={fontPrompt} />
-      {/* <Header/> */}
-
-      {/*  bug: */}
-      {/* <main className="px-5 text-secondary">{children}</main> */}
-
-      {/* none bug */}
-      <main className="px-5 text-secondary bg-primary-100 lg:bg-transparent">{children}</main>
-      <Footer />
+      <NavigationBar fontPrompt={fontPrompt} />
+      <main className={`${fontPrompt.variable} font-prompt px-5 text-secondary bg-primary-100 lg:bg-transparent`}>{children}</main>
+      <Footer fontPrompt={fontPrompt}/>
     </>
   );
 };

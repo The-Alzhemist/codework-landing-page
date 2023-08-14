@@ -15,12 +15,12 @@ const NavigationBar = ({
   hamburgerStyle2,
   hamburgerStyle3,
   menu,
-  font
+  fontPrompt
 }: any) => {
   return (
     <>
       <header
-        className={`${font.variable} font-prompt text-md fixed z-50 flex h-16 w-full items-center overflow-hidden bg-primary-50/30 bg-white`}
+        className={`${fontPrompt.variable} font-prompt text-md fixed z-50 flex h-16 w-full items-center overflow-hidden bg-primary-50/30 bg-white`}
       >
         <div className=" w-full h-full mx-auto flex items-center justify-between px-6 py-3">
           <div className="flex items-center  font-black text-primary-900">

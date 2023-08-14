@@ -1,13 +1,9 @@
-import { Prompt } from "@next/font/google";
 import React from "react";
 
-const fontPrompt = Prompt({
-  weight: ["100", "200", "300", "400", "500", "600", "700"],
-  subsets: ["latin"],
-  variable: "--font-prompt",
-});
 
-const Footer = () => {
+
+const Footer = (props: any) => {
+  const { fontPrompt } = props
   return (
     <footer>
       <div
