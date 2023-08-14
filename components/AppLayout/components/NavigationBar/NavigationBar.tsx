@@ -86,7 +86,7 @@ const NavigationBar = ({
         <ul className="mt-16 flex flex-col">
           {menu?.map((menu: any, index: number) => (
             <React.Fragment key={`mobile-menu-${index}`}>
-              <li className="border-b-[2px] border-dashed border-[#A8B738]">
+              <li className="border-b-[2px] border-dashed border-primary-700">
                 <p className="flex cursor-pointer text-secondary font-medium text-2xl">
                   <Link className="py-3 w-full text-secondary"  href={menu.url}>{menu.name}</Link>
                 </p>

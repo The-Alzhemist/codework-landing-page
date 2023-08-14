@@ -42,7 +42,7 @@ const OurClient = () => {
       </h2>
 
       <div className="flex justify-center gap-10">
-        <div className="w-[150px] h-[150px] md:w-[200px] md:h-[200px] bg-white rounded-full border-2 border-[#A8B738] flex justify-center items-center">
+        <div className="w-[150px] h-[150px] md:w-[200px] md:h-[200px] bg-white rounded-full border-2 border-primary-700 flex justify-center items-center">
           <Image
             src="/semour.png"
             width={170}
@@ -53,13 +53,13 @@ const OurClient = () => {
           />
         </div>
 
-        <div className="w-[150px] h-[150px] md:w-[200px] md:h-[200px] bg-white rounded-full border-2 border-[#A8B738] flex justify-center items-center">
+        <div className="w-[150px] h-[150px] md:w-[200px] md:h-[200px] bg-white rounded-full border-2 border-primary-700 flex justify-center items-center">
           <a>
             <Image
               src="/scgc.png"
               width={170}
               height={59}
-              className=" h-auto p-3"
+              className="h-auto p-3"
               alt="simple but ambitious section cover"
             />
           </a>
