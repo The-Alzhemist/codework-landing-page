@@ -3,7 +3,7 @@ import withNavigation from "./withNavigation";
 import Link from "next/link";
 import Image from "next/image";
 import { animated } from "@react-spring/web";
-import { PrimaryButton } from "../button/PrimaryButton";
+
 import { OutlinedButton } from "../button/OutlinedButton";
 // import { Button } from "../button/button";
 

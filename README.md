@@ -39,9 +39,9 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 
 <!-- clear -->
-- responsive hero section
-- use tailwind color
-- font root import 
+- responsive hero section  = done
+- use tailwind color = done
+- font root import  = done
 - hoc pattern 
 - json data each component
 - externalLink component

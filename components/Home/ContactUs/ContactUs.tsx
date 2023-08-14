@@ -53,7 +53,7 @@ const ContactUs = () => {
               className="z-0 max-w-[30px] h-auto absolute right-[-10px] bottom-12"
               alt="simple but ambitious section cover"
             />
-            <PrimaryButton>READ MORE ABOUT US</PrimaryButton>
+            <PrimaryButton pathName="/aboutus">READ MORE ABOUT US</PrimaryButton>
           </div>
         </h2>
 

@@ -77,9 +77,9 @@ const AboutUs = () => {
         </div>
 
         <div className="flex justify-center mb-[150px]">
-          <PrimaryButton>READ MORE ABOUT US</PrimaryButton>
+          <PrimaryButton pathName="/aboutus">READ MORE ABOUT US</PrimaryButton>
         </div>
-
+x
         {/* 4 */}
         {/* <div className="text-right text-xl flex flex-col items-center z-20 min-h-[500px] justify-center">
           <p className="max-w-[600px] text-center mb-8">
