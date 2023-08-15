@@ -3,8 +3,10 @@ import Image from "next/image";
 import BackgroundGradientBlur from "../../backgroundGradientBlur/BackgroundGradientBlur";
 import Paragraph from "../../AppLayout/components/typography/paragraph/Paragraph";
 import Hyperlinks from "../../AppLayout/components/link/Hyperlinks";
+import withOurProduct from "./withOurProduct";
 
-const OurProduct = () => {
+const OurProduct = (props: any) => {
+  const { ourProductSectionText } = props;
   return (
     <section
       className={`relative max-w-[1440px] mx-auto py-[30px] md:py-[50px] lg:px-[50px]`}
@@ -13,7 +15,7 @@ const OurProduct = () => {
       <h2 className="flex justify-center text-3xl md:text-5xl relative mb-10">
         <div className="">
           <span className="font-normal mr-3 relative">
-            OUR
+            {ourProductSectionText.heading1}
             <Image
               src="/home/our-product/our-product-sticker-2.png"
               width={0}
@@ -24,7 +26,7 @@ const OurProduct = () => {
             />
           </span>
           <span className="font-normal bg-line relative">
-            PRODUCT
+            {ourProductSectionText.heading2}
             <Image
               src="/home/our-product/our-product-sticker-1.png"
               width={0}
@@ -38,19 +40,19 @@ const OurProduct = () => {
       </h2>
 
       <div className="flex flex-col lg:flex-row justify-between items-center mb-10 z-20">
-        <h3 className="text-left mb-4    lg:w-2/4">
+
+        
+        <h3 className="text-left mb-4 lg:w-2/4">
           <div className="mb-10">
             <span className="font-normal bg-line mb-7 md:text-[32px]">
-              KHOTBOT
+              {ourProductSectionText.productName}
             </span>
           </div>
-          <Paragraph className="max-w-[670px] text-base md:text-2xl">
-            The ultimate assistant for bitcoin traders, making profitable trades
-            in both UP & DOWN markets without the need to constantly monitor
-            market prices.
+          <Paragraph className="max-w-[670px] text-base md:text-2xl mb-5 md:mb-10">
+          {ourProductSectionText.productDescription}
           </Paragraph>
 
-          <Hyperlinks link="/aboutus">See more about us</Hyperlinks>
+          <Hyperlinks link="/aboutus">{ourProductSectionText.productLinkName}</Hyperlinks>
         </h3>
 
         <div className="lg:w-2/4 flex justify-end">
@@ -68,4 +70,5 @@ const OurProduct = () => {
   );
 };
 
-export default OurProduct;
+const WrappedComponent = withOurProduct(OurProduct);
+export default WrappedComponent;
