@@ -1,16 +1,13 @@
-import { Prompt } from "@next/font/google";
 import React from "react";
 import BackgroundGradientBlur from "../../backgroundGradientBlur/BackgroundGradientBlur";
 import Image from "next/image";
-
 import Paragraph from "../../AppLayout/components/typography/paragraph/Paragraph";
 import { PrimaryButton } from "../../AppLayout/components/button/PrimaryButton";
 import withContactUs from "./withContactUs";
+import { contactUsProp } from "./interface";
 
 
-
-
-const ContactUs = (props: any) => {
+const ContactUs = (props: contactUsProp) => {
   const { contactUsSectionText } = props
   return (
     <section

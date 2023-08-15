@@ -4,6 +4,9 @@ import Footer from "./components/Footer/Footer";
 import { FunctionComponentType } from "../../interfaces/FunctionComponentType";
 import withAppLayout from "./withAppLayout";
 import { Prompt } from "@next/font/google";
+import { fontPromptInterface } from "./components/interface";
+
+
 
 const fontPrompt = Prompt({
   weight: ["100", "200", "300", "400", "500", "600", "700"],

@@ -1,8 +1,9 @@
 import React from "react";
+import { HeroSectionProps, HeroTextInterface } from "./interface";
 
-const withHeroSection = (Component: React.FC) => {
+const withHeroSection = (Component: React.FC<HeroSectionProps>) => {
   const Hoc = () => {
-    const heroSectionText = {
+    const heroSectionText: HeroTextInterface = {
       heading1: "WE CAN MAKE YOUR",
       heading2: "idea come",
       heading3: "TRUE",
@@ -11,7 +12,7 @@ const withHeroSection = (Component: React.FC) => {
       linkName: "See more about us"
     }
 
-    const newProps: any = {
+    const newProps: HeroSectionProps = {
       heroSectionText
     };
 

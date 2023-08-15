@@ -1,10 +1,9 @@
 import React from "react";
 import withFooter from "./withFooter";
+import { FooterProps } from "./interface";
 
-const Footer = (props: any) => {
+const Footer = (props: FooterProps) => {
   const { fontPrompt, footerMenu } = props;
-
-  console.log("xxx>>>", footerMenu);
 
   return (
     <footer className="bg-secondary-1000 text-white">
@@ -13,19 +12,19 @@ const Footer = (props: any) => {
       >
         {/* left */}
         <div className="w-full lg:w-1/2">
-          <div className="font-light">{footerMenu.footer_left.company_name}</div>
-          <div className="font-light">{footerMenu.footer_left.company_address}</div>
-          <div className="font-light">Email: {footerMenu.footer_left.company_email}</div>
-          <div className="mb-5 font-light"> Tel: {footerMenu.footer_left.company_tel}</div>
+          <div className="font-light">{footerMenu.footerLeft.companyName}</div>
+          <div className="font-light">{footerMenu.footerLeft.companyAddress}</div>
+          <div className="font-light">Email: {footerMenu.footerLeft.companyEmail}</div>
+          <div className="mb-5 font-light"> Tel: {footerMenu.footerLeft.companyTel}</div>
           <div className="text-sm font-light">
-            {footerMenu.footer_left.company_copyright}
+            {footerMenu.footerLeft.companyCopyright}
           </div>
         </div>
 
         {/* right */}
         <div className="w-full lg:w-1/2 flex flex-col gap-y-5">
           <div className="w-full flex">
-            {footerMenu.footer_right
+            {footerMenu.footerRight
               .slice(0, 3)
               .map((menu: any, index: number) => (
                 <React.Fragment key={`footer-menu-${index}`}>
@@ -40,7 +39,7 @@ const Footer = (props: any) => {
               ))}
           </div>
           <div className="w-full flex">
-          {footerMenu.footer_right
+          {footerMenu.footerRight
               .slice(3, 6)
               .map((menu: any, index: number) => (
                 <React.Fragment key={`footer-menu-${index}`}>

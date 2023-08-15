@@ -1,8 +1,9 @@
 import React from "react";
+import { aboutUsProps, aboutUsTextInterface } from "./interface";
 
-const withAboutUs = (Component: React.FC) => {
+const withAboutUs = (Component: React.FC<aboutUsProps>) => {
   const Hoc = () => {
-    const aboutUsSectionText = {
+    const aboutUsSectionText:aboutUsTextInterface = {
       heading1: "SIMPLE",
       heading2: "BUT",
       heading3: "AMBITIOUS",
@@ -11,7 +12,7 @@ const withAboutUs = (Component: React.FC) => {
       buttonName: 'READ MORE ABOUT US'
     }
 
-    const newProps: any = {
+    const newProps: aboutUsProps = {
        aboutUsSectionText
     };
 

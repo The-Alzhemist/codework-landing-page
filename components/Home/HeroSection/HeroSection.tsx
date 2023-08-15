@@ -6,6 +6,7 @@ import Paragraph from "../../AppLayout/components/typography/paragraph/Paragraph
 import Hyperlinks from "../../AppLayout/components/link/Hyperlinks";
 import Image from "next/image";
 import { PrimaryButton } from "../../AppLayout/components/button/PrimaryButton";
+import { HeroSectionProps } from "./interface";
 
 const fontGloriaHallelujah = Gloria_Hallelujah({
   weight: ["400"],
@@ -13,7 +14,7 @@ const fontGloriaHallelujah = Gloria_Hallelujah({
   variable: "--font-gloria-hallelujah",
 });
 
-const HeroSection = (props: any) => {
+const HeroSection = (props: HeroSectionProps) => {
 
   const { heroSectionText } = props
   return (

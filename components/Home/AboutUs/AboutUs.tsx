@@ -4,9 +4,10 @@ import Paragraph from "../../AppLayout/components/typography/paragraph/Paragraph
 import Image from "next/image";
 import { PrimaryButton } from "../../AppLayout/components/button/PrimaryButton";
 import withAboutUs from "./withAboutUs";
+import { aboutUsProps } from "./interface";
 
 
-const AboutUs = (props: any) => {
+const AboutUs = (props: aboutUsProps) => {
   const { aboutUsSectionText } = props
   return (
     <>
