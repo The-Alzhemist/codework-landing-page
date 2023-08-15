@@ -4,7 +4,7 @@ import Paragraph from "../../AppLayout/components/typography/paragraph/Paragraph
 import Hyperlinks from "../../AppLayout/components/link/Hyperlinks";
 import Image from "next/image";
 import withOurService from "./withOurService";
-import { OurServiceProps } from "./interface";
+import { OurServiceProps, ProductSolution } from "./interface";
 
 const OurService = (props: OurServiceProps) => {
   const { ourServiceSectionText } = props;
@@ -48,7 +48,7 @@ const OurService = (props: OurServiceProps) => {
           <div className="flex justify-center items-end gap-3 flex-no duration-1000 ease-out ">
             {ourServiceSectionText.productSolutionsList
               .slice(0, 3)
-              .map((job: any, index: number) => (
+              .map((job: ProductSolution, index: number) => (
                 <React.Fragment key={`job-row-a-${index}`}>
                   <div className="bg-primary-500 rounded-full sm:w-[150px] sm:h-[150px] lg:w-[250px] lg:h-[250px]  sm:hover:w-[350px] sm:hover:h-[350px] lg:hover:w-[450px] lg:hover:h-[450px] flex flex-col justify-center items-center text-center transition-all duration-1000 ease-out group m-3 shadow-xl p-2">
                     <div className="text-2xl md:text-xl sm:text-lg duration-1000 ease-out">
@@ -71,14 +71,14 @@ const OurService = (props: OurServiceProps) => {
           <div className="flex justify-center gap-3  items-start flex-no duration-1000 ease-out ">
             {ourServiceSectionText.productSolutionsList
               .slice(3, 7)
-              .map((job: any, index: number) => (
+              .map((product: ProductSolution, index: number) => (
                 <React.Fragment key={`job-row-a-${index}`}>
                   <div className="bg-primary-500 rounded-full sm:w-[150px] sm:h-[150px] lg:w-[250px] lg:h-[250px]  sm:hover:w-[350px] sm:hover:h-[350px] lg:hover:w-[450px] lg:hover:h-[450px] flex flex-col justify-center items-center text-center transition-all duration-1000 ease-out group m-3 shadow-xl p-2">
                     <div className="text-2xl md:text-xl sm:text-lg duration-1000 ease-out ">
-                      {job.name}
+                      {product.name}
                     </div>
                     <Paragraph className="text-[0px] group-hover:text-[16px] duration-1000 ease-out leading-5 mt-3 font-light mb-5">
-                      {job.description}
+                      {product.description}
                     </Paragraph>
                     <Hyperlinks
                       className="text-xs text-[0px] group-hover:text-[16px] "
@@ -96,17 +96,17 @@ const OurService = (props: OurServiceProps) => {
         <div className="block sm:hidden">
           <div className="flex flex-col justify-center gap-1  items-start flex-no duration-1000 ease-out ">
             {ourServiceSectionText.productSolutionsList.map(
-              (job: any, index: number) => (
+              (product: ProductSolution, index: number) => (
                 <React.Fragment key={`job-row-mobile-${index}`}>
                   <div
                     className="bg-primary-500 rounded-3xl p-5 mb-5
               flex flex-col justify-center items-center text-center shadow-xl"
                   >
                     <div className="text-lg mb-2 font-semibold text-secondary-900">
-                      {job.name}
+                      {product.name}
                     </div>
                     <Paragraph className="text-sm text-secondary-900 mb-5">
-                      {job.description}
+                      {product.description}
                     </Paragraph>
                     <Hyperlinks
                       className="text-xs text-[0px] group-hover:text-[16px]"

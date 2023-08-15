@@ -1,9 +1,29 @@
-import { Prompt } from "@next/font/google";
 import { useSpring } from "@react-spring/web";
 import React, { useState } from "react";
+import { ExternalNavigationProps, NavigationProps } from "./interface";
 
-const withNavigation = (Component: React.FC) => {
-  const Hoc = (props: any) => {
+
+const menu = [
+  {
+    name: "Home",
+    url: "/",
+  },
+  {
+    name: "About us",
+    url: "/aboutus",
+  },
+  {
+    name: "Projects",
+    url: "/projects",
+  },
+  {
+    name: "Clients",
+    url: "/clients",
+  },
+];
+
+const withNavigation = (Component: React.FC<NavigationProps>) => {
+  const Hoc = (props: ExternalNavigationProps) => {
     const [IsSideMenuOpen, setIsSideMenuOpen] = useState<boolean>(false);
     const navStyle = useSpring({
       opacity: IsSideMenuOpen ? 1 : 0,
@@ -20,29 +40,10 @@ const withNavigation = (Component: React.FC) => {
       y: IsSideMenuOpen ? -8 : 0,
       rotate: IsSideMenuOpen ? -225 : 0,
     });
-    const menu =  [
-      {
-        "name": "Home",
-        "url": "/"
-      },
-      {
-        "name": "About us",
-        "url": "/aboutus"
-      },
-      {
-        "name": "Projects",
-        "url": "/projects"
-      },
-      {
-        "name": "Clients",
-        "url": "/clients"
-      },
-    ]
 
-    const { fontPrompt } = props 
+    const { fontPrompt } = props;
 
-    
-    const newProps: any = {
+    const newProps: NavigationProps = {
       IsSideMenuOpen,
       setIsSideMenuOpen,
       navStyle,
@@ -50,9 +51,9 @@ const withNavigation = (Component: React.FC) => {
       hamburgerStyle2,
       hamburgerStyle3,
       menu,
-      fontPrompt
+      fontPrompt,
     };
-    return <Component  {...newProps} />;
+    return <Component {...newProps} />;
   };
 
   return Hoc;

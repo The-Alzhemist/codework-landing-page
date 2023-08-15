@@ -6,7 +6,7 @@ import withAppLayout from "./withAppLayout";
 import { Prompt } from "@next/font/google";
 import { NextFontWithVariable } from "@next/font";
 
-const fontPrompt: NextFontWithVariable = Prompt({
+const fontPrompt = Prompt({
   weight: ["100", "200", "300", "400", "500", "600", "700"],
   subsets: ["latin"],
   variable: "--font-prompt",

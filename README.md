@@ -48,3 +48,4 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 - move components to src 
 - change img to <source/>
 - fork to codework repo
+- use tailwind merge library

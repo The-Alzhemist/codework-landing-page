@@ -1,14 +1,14 @@
-import { fontPromptInterface } from "../interface";
+import { NextFontWithVariable } from "@next/font";
 
 export interface FooterMenu {
-    footerLeft: {
-      companyName: string;
-      companyAddress: string;
-      companyEmail: string;
-      companyTel: string;
-      companyCopyright: string;
-    };
-    footerRight: FooterMenuItem[];
+  footerLeft: {
+    companyName: string;
+    companyAddress: string;
+    companyEmail: string;
+    companyTel: string;
+    companyCopyright: string;
+  };
+  footerRight: FooterMenuItem[];
 }
 
 export interface FooterMenuItem {
@@ -19,5 +19,9 @@ export interface FooterMenuItem {
 
 export interface FooterProps {
   footerMenu: FooterMenu;
-  fontPrompt: fontPromptInterface; 
+  fontPrompt: NextFontWithVariable;
+}
+
+export interface footerExternalProps {
+  fontPrompt: NextFontWithVariable;
 }

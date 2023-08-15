@@ -1,10 +1,9 @@
 import React from "react";
-import { FooterMenu, FooterProps } from "./interface";
-
+import { FooterMenu, FooterProps, footerExternalProps } from "./interface";
 
 
 const withFooter = (Component: React.FC<FooterProps>) => {
-  const Hoc = (props:any) => {
+  const Hoc = (props:footerExternalProps) => {
     const footerMenu: FooterMenu = {
       footerLeft: {
         companyName: "CodeWork Tech Co.,Ltd.",

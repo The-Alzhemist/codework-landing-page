@@ -5,6 +5,7 @@ import Image from "next/image";
 import { animated } from "@react-spring/web";
 
 import { OutlinedButton } from "../button/OutlinedButton";
+import { MenuItem, NavigationProps } from "./interface";
 // import { Button } from "../button/button";
 
 const NavigationBar = ({
@@ -16,7 +17,7 @@ const NavigationBar = ({
   hamburgerStyle3,
   menu,
   fontPrompt
-}: any) => {
+}: NavigationProps) => {
   return (
     <>
       <header
@@ -63,7 +64,7 @@ const NavigationBar = ({
 
           {/* Only for PC */}
           <div className="hidden lg:flex items-center gap-x-5">
-            {menu?.map((menu: any, index: number) => (
+            {menu?.map((menu: MenuItem, index: number) => (
               <React.Fragment key={`menu-${index}`}>
                 <div
                   className={`flex cursor-pointer hover:text-secondary hover:bg-custom-gradient font-medium`}
@@ -84,7 +85,7 @@ const NavigationBar = ({
         className="fixed top-0 z-30 flex h-full flex-col bg-primary-50/30 p-6 text-primary-900 bg-white w-full"
       >
         <ul className="mt-16 flex flex-col">
-          {menu?.map((menu: any, index: number) => (
+          {menu?.map((menu: MenuItem, index: number) => (
             <React.Fragment key={`mobile-menu-${index}`}>
               <li className="border-b-[2px] border-dashed border-primary-700">
                 <p className="flex cursor-pointer text-secondary font-medium text-2xl">
