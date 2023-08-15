@@ -1,10 +1,11 @@
 import React from "react";
+import { OurServiceProps, OurServiceSectionTextInterface } from "./interface";
 
-const withOurService = (Component: React.FC) => {
+const withOurService = (Component: React.FC<OurServiceProps>) => {
   const Hoc = () => {
     
 
-    const ourServiceSectionText = {
+    const ourServiceSectionText: OurServiceSectionTextInterface = {
         heading1: 'OUR',
         heading2: 'SERVICES',
         productSolutionsList: [
@@ -41,7 +42,7 @@ const withOurService = (Component: React.FC) => {
         ]
       }
 
-    const newProps: any = {
+    const newProps: OurServiceProps = {
         ourServiceSectionText
     };
 

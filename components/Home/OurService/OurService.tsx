@@ -4,8 +4,9 @@ import Paragraph from "../../AppLayout/components/typography/paragraph/Paragraph
 import Hyperlinks from "../../AppLayout/components/link/Hyperlinks";
 import Image from "next/image";
 import withOurService from "./withOurService";
+import { OurServiceProps } from "./interface";
 
-const OurService = (props: any) => {
+const OurService = (props: OurServiceProps) => {
   const { ourServiceSectionText } = props;
   return (
     <section
