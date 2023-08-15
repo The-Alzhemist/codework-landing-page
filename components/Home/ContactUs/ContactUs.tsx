@@ -5,11 +5,13 @@ import Image from "next/image";
 
 import Paragraph from "../../AppLayout/components/typography/paragraph/Paragraph";
 import { PrimaryButton } from "../../AppLayout/components/button/PrimaryButton";
+import withContactUs from "./withContactUs";
 
 
 
 
-const ContactUs = () => {
+const ContactUs = (props: any) => {
+  const { contactUsSectionText } = props
   return (
     <section
       className={`relative max-w-[1440px] mx-auto py-[30px] md:py-[50px] lg:px-[150px]`}
@@ -20,11 +22,11 @@ const ContactUs = () => {
       <div className="flex gap-10 flex-col lg:flex-row justify-between items-center mb-10 z-20">
         <h2 className="text-left mb-5 text-3xl md:text-5xl lg:w-2/4">
           <Paragraph className="max-w-[670px] text-end pr-3 mb-2">
-            Let’s make your idea come true!
+            {contactUsSectionText.heading1}
           </Paragraph>
 
           <div className="mb-14 flex justify-end relative">
-            <span className="font-normal  bg-line mb-3">CONTACT US
+            <span className="font-normal  bg-line mb-3"> {contactUsSectionText.heading2}
             <Image
               src="/home/contact-us/contact-us-sticker-1.png"
               width={0}
@@ -53,7 +55,7 @@ const ContactUs = () => {
               className="z-0 max-w-[30px] h-auto absolute right-[-10px] bottom-12"
               alt="simple but ambitious section cover"
             />
-            <PrimaryButton pathName="/aboutus">READ MORE ABOUT US</PrimaryButton>
+            <PrimaryButton pathName="/aboutus">{contactUsSectionText.buttonName}</PrimaryButton>
           </div>
         </h2>
 
@@ -72,4 +74,5 @@ const ContactUs = () => {
   );
 };
 
-export default ContactUs;
+const WrappedComponent = withContactUs(ContactUs);
+export default WrappedComponent;
