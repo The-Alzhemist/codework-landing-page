@@ -1,16 +1,11 @@
 import React from "react";
-import { ContactUsTextInterface, contactUsProp } from "./interface";
+import { contactUsProp } from "./interface";
+import { contactUsSectionText } from "@/Constant/Home/contactus-text";
 
 const withContactUs = (Component: React.FC<contactUsProp>) => {
   const Hoc = () => {
-    const contactUsSectionText: ContactUsTextInterface = {
-      heading1: "Let’s make your idea come true!",
-      heading2: "CONTACT US",
-      buttonName: 'READ MORE ABOUT US'
-    }
-
     const newProps: contactUsProp = {
-        contactUsSectionText
+      contactUsSectionText
     };
 
     return <Component {...newProps} />;
