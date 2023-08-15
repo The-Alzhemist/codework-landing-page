@@ -42,6 +42,9 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 - responsive hero section  = done
 - use tailwind color = done
 - font root import  = done
-- hoc pattern 
+- hoc pattern = done
 - json data each component
 - externalLink component
+- move components to src 
+- change img to <source/>
+- fork to codework repo

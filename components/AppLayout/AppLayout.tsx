@@ -4,16 +4,13 @@ import Footer from "./components/Footer/Footer";
 import { FunctionComponentType } from "../../interfaces/FunctionComponentType";
 import withAppLayout from "./withAppLayout";
 import { Prompt } from "@next/font/google";
-import { fontPromptInterface } from "./components/interface";
+import { NextFontWithVariable } from "@next/font";
 
-
-
-const fontPrompt = Prompt({
+const fontPrompt: NextFontWithVariable = Prompt({
   weight: ["100", "200", "300", "400", "500", "600", "700"],
   subsets: ["latin"],
   variable: "--font-prompt",
 });
-
 
 const AppLayout = ({ children }: FunctionComponentType) => {
   return (
