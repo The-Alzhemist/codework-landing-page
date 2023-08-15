@@ -3,9 +3,11 @@ import BackgroundGradientBlur from "../../backgroundGradientBlur/BackgroundGradi
 import Paragraph from "../../AppLayout/components/typography/paragraph/Paragraph";
 import Image from "next/image";
 import { PrimaryButton } from "../../AppLayout/components/button/PrimaryButton";
+import withAboutUs from "./withAboutUs";
 
 
-const AboutUs = () => {
+const AboutUs = (props: any) => {
+  const { aboutUsSectionText } = props
   return (
     <>
       <section
@@ -17,10 +19,10 @@ const AboutUs = () => {
         <div className="flex flex-col lg:flex-row justify-between items-center mb-10 z-20">
           <h2 className="text-left mb-5 text-3xl md:text-5xl uppercase lg:w-2/4">
             <div className="w-1 h-40 bg-primary-900 rounded-sm mb-4"></div>
-            <div className="font-normal">Simple</div>
+            <div className="font-normal">{aboutUsSectionText.heading1}</div>
             <div>
-              <span className="font-light text-4xl">But</span>
-              <span className="font-normal bg-line ml-3">AMBITIOUS</span>
+              <span className="font-light text-4xl">{aboutUsSectionText.heading2}</span>
+              <span className="font-normal bg-line ml-3">{aboutUsSectionText.heading3}</span>
               <Image
               src="/home/aboutus/aboutus-section-sticker-1.png"
               width={0}
@@ -56,8 +58,7 @@ const AboutUs = () => {
               alt="simple but ambitious section cover"
             />
           <Paragraph className="z-10 max-w-[800px] text-right text-base md:text-2xl md:font-xl lg:font-3xl">
-            We are a group of people who take pride in consistently delivering
-            awesome products that will exceed your expectations.
+          {aboutUsSectionText.descriptionRight}
           </Paragraph>
          
         </div>
@@ -69,18 +70,16 @@ const AboutUs = () => {
        
           <div className="z-10 w-40 h-1 bg-primary-900 rounded-sm mb-7"></div>
           <Paragraph className=" z-10 max-w-[800px] text-left text-base md:text-2xl md:font-xl lg:font-3xl">
-            Everyday, we take chances to learn, grow and overcome new challenges
-            to be able to deliver top-notch software that’s better than you can
-            imagine!
+          {aboutUsSectionText.descriptionLeft}
           </Paragraph>
        
         </div>
 
         <div className="flex justify-center mb-[150px]">
-          <PrimaryButton pathName="/aboutus">READ MORE ABOUT US</PrimaryButton>
+          <PrimaryButton pathName="/aboutus"> {aboutUsSectionText.buttonName}</PrimaryButton>
         </div>
-x
         {/* 4 */}
+        {/* ย้ายไปอยู่หน้่าอื่น คอมเม้่นไว้ก่อน เดี๋ยวคุยกับ designer */}
         {/* <div className="text-right text-xl flex flex-col items-center z-20 min-h-[500px] justify-center">
           <p className="max-w-[600px] text-center mb-8">
             It is our commitment to deliver nothing less than a seriously
@@ -94,4 +93,6 @@ x
   );
 };
 
-export default AboutUs;
+
+const WrappedComponent = withAboutUs(AboutUs);
+export default WrappedComponent;
