@@ -1,8 +1,9 @@
 import React from "react";
+import { ourPartnerProps, ourPartnerTextInterface } from "./interface";
 
-const withOurPartner = (Component: React.FC) => {
+const withOurPartner = (Component: React.FC<ourPartnerProps>) => {
   const Hoc = () => {
-    const ourPartnerSectionText = {
+    const ourPartnerSectionText: ourPartnerTextInterface = {
       heading1: "OUR ",
       heading2: "PARTNERS",
       imagesList: [
@@ -11,7 +12,7 @@ const withOurPartner = (Component: React.FC) => {
       ]
     }
 
-    const newProps: any = {
+    const newProps: ourPartnerProps = {
     ourPartnerSectionText
     };
 

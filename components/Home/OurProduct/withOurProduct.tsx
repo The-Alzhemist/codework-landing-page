@@ -1,8 +1,9 @@
 import React from "react";
+import { OurProductProps, OurProductTextInterface } from "./interface";
 
-const withOurProduct = (Component: React.FC) => {
+const withOurProduct = (Component: React.FC<OurProductProps>) => {
   const Hoc = () => {
-    const ourProductSectionText = {
+    const ourProductSectionText: OurProductTextInterface = {
       heading1: "OUR",
       heading2: "PRODUCT",
       productName: "KHOTBOT",
@@ -10,7 +11,7 @@ const withOurProduct = (Component: React.FC) => {
       productLinkName: "See more about us",
     };
 
-    const newProps: any = {
+    const newProps: OurProductProps = {
       ourProductSectionText,
     };
 

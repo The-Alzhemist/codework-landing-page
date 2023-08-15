@@ -2,8 +2,10 @@ import React from "react";
 import BackgroundGradientBlur from "../../backgroundGradientBlur/BackgroundGradientBlur";
 import Image from "next/image";
 import withOurPartner from "./withOurPartner";
+import { ourPartnerProps, ImageInfo } from "./interface";
 
-const OurPartner = (props: any) => {
+
+const OurPartner = (props: ourPartnerProps) => {
   const { ourPartnerSectionText } = props;
   return (
     <section
@@ -39,7 +41,7 @@ const OurPartner = (props: any) => {
       </h2>
 
       <div className="flex justify-center gap-10">
-        {ourPartnerSectionText.imagesList.map((item: any, index: number) => (
+        {ourPartnerSectionText.imagesList.map((item: ImageInfo, index: number) => (
           <React.Fragment key={`our-partner-${index}`}>
             <div className="w-[150px] h-[150px] md:w-[200px] md:h-[200px] bg-white rounded-full border-2 border-primary-700 flex justify-center items-center">
               <Image

@@ -4,8 +4,9 @@ import BackgroundGradientBlur from "../../backgroundGradientBlur/BackgroundGradi
 import Paragraph from "../../AppLayout/components/typography/paragraph/Paragraph";
 import Hyperlinks from "../../AppLayout/components/link/Hyperlinks";
 import withOurProduct from "./withOurProduct";
+import { OurProductProps } from "./interface";
 
-const OurProduct = (props: any) => {
+const OurProduct = (props: OurProductProps) => {
   const { ourProductSectionText } = props;
   return (
     <section
