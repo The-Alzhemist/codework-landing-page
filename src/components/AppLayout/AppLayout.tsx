@@ -1,7 +1,7 @@
 import React from "react";
 import NavigationBar from "./components/NavigationBar/NavigationBar";
 import Footer from "./components/Footer/Footer";
-import { FunctionComponentType } from "../../interfaces/FunctionComponentType";
+import { FunctionComponentType } from "../../../interfaces/FunctionComponentType";
 import withAppLayout from "./withAppLayout";
 import { Prompt } from "@next/font/google";
 import { NextFontWithVariable } from "@next/font";

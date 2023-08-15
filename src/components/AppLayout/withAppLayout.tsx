@@ -1,6 +1,6 @@
 
 import React from "react";
-import { FunctionComponentType } from "../../interfaces/FunctionComponentType";
+import { FunctionComponentType } from "../../../interfaces/FunctionComponentType";
 
 const withAppLayout = (Component: React.FC<FunctionComponentType>) => {
   const Hoc = (props: FunctionComponentType) => {
