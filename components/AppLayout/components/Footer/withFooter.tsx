@@ -6,7 +6,7 @@ const withFooter = (Component: React.FC) => {
 
     const footerMenu =  {
         footer_left: {
-            company_name: "xCodeWork Tech Co.,Ltd.",
+            company_name: "CodeWork Tech Co.,Ltd.",
             company_address: "3774 Sukhumvit road, South Bang Na, Bang Na, Bangkok 10260",
             company_email: "hello@codework-tech.com",
             company_tel: "(+66) 83 987 4997",

@@ -1,11 +1,10 @@
-import { Prompt } from "@next/font/google";
 import React from "react";
 import BackgroundGradientBlur from "../../backgroundGradientBlur/BackgroundGradientBlur";
 import Image from "next/image";
+import withOurPartner from "./withOurPartner";
 
-
-
-const OurClient = () => {
+const OurPartner = (props: any) => {
+  const { ourPartnerSectionText } = props;
   return (
     <section
       className={`font-prompt relative max-w-[1440px] mx-auto py-[30px] md:py-[50px] lg:px-[50px] mb-[100px]`}
@@ -14,9 +13,11 @@ const OurClient = () => {
       {/* 1 */}
       <h2 className="flex justify-center text-3xl md:text-5xl mb-20 relative">
         <div className="mb-7">
-          <span className="font-normal mr-3 relative">OUR</span>
+          <span className="font-normal mr-3 relative">
+            {ourPartnerSectionText.heading1}
+          </span>
           <span className="font-normal bg-line relative uppercase">
-            Partners
+            {ourPartnerSectionText.heading2}
             <Image
               src="/home/our-partner/our-partner-sticker-1.png"
               width={0}
@@ -38,31 +39,24 @@ const OurClient = () => {
       </h2>
 
       <div className="flex justify-center gap-10">
-        <div className="w-[150px] h-[150px] md:w-[200px] md:h-[200px] bg-white rounded-full border-2 border-primary-700 flex justify-center items-center">
-          <Image
-            src="/semour.png"
-            width={170}
-            height={59}
-            layout="responsive"
-            className=" h-auto p-3"
-            alt="simple but ambitious section cover"
-          />
-        </div>
-
-        <div className="w-[150px] h-[150px] md:w-[200px] md:h-[200px] bg-white rounded-full border-2 border-primary-700 flex justify-center items-center">
-          <a>
-            <Image
-              src="/scgc.png"
-              width={170}
-              height={59}
-              className="h-auto p-3"
-              alt="simple but ambitious section cover"
-            />
-          </a>
-        </div>
+        {ourPartnerSectionText.imagesList.map((item: any, index: number) => (
+          <React.Fragment key={`our-partner-${index}`}>
+            <div className="w-[150px] h-[150px] md:w-[200px] md:h-[200px] bg-white rounded-full border-2 border-primary-700 flex justify-center items-center">
+              <Image
+                src={item.pathName}
+                width={170}
+                height={59}
+                layout="responsive"
+                className="h-auto p-3"
+                alt="simple but ambitious section cover"
+              />
+            </div>
+          </React.Fragment>
+        ))}
       </div>
     </section>
   );
 };
 
-export default OurClient;
+const WrappedComponent = withOurPartner(OurPartner);
+export default WrappedComponent;

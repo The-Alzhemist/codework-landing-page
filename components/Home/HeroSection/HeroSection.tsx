@@ -13,7 +13,9 @@ const fontGloriaHallelujah = Gloria_Hallelujah({
   variable: "--font-gloria-hallelujah",
 });
 
-const HeroSection = () => {
+const HeroSection = (props: any) => {
+
+  const { heroSectionText } = props
   return (
     <section
       className={`relative md:py-[50px] max-w-[1440px] mx-auto lg:px-[50px] pt-5 sm:pt-0 mb-9`}
@@ -26,8 +28,8 @@ const HeroSection = () => {
       <div className="flex w-full">
         <div className="z-10 w-[100%] lg:w-[80%]  min-h-[600px]  relative bg-white border-[3px] border-black rounded-[50px] py-6 md:p-10 flex flex-col justify-center drop-shadow-md p-5 sm:p-0">
           <h1 className="mb-14 md:mb-20 relative">
-            <span className="flex text-lg md:text-5xl font-light mb-5 relative">
-              <div>WE CAN MAKE YOUR</div> 
+            <span className="flex font-light mb-5 relative">
+              <div className="text-lg md:text-5xl">{heroSectionText.heading1}</div> 
               <Image
                 src="/home/hero/hero-section-stciker-1.png"
                 width={0}
@@ -41,12 +43,12 @@ const HeroSection = () => {
             <span
               className={`${fontGloriaHallelujah.variable} font-gloriaHallelujah  text-5xl md:text-7xl `}
             >
-              idea come
+              {heroSectionText.heading2}
             </span>
             <span
               className={`${fontGloriaHallelujah.variable} font-gloriaHallelujah text-5xl md:text-7xl  text-primary md:ml-4 flex md:inline relative mt-5 md:mt-0 `}
             >
-              TRUE
+               {heroSectionText.heading3}
               <Image
                 src="/home/hero/hero-section-stciker-3.png"
                 width={0}
@@ -61,15 +63,12 @@ const HeroSection = () => {
           <Paragraph
             className={`mb-8 lg:max-w-[550px]  xl:max-w-[670px]  text-base`}
           >
-            We grant our team the autonomy to work in ways that suit them best,
-            and we create a free and open space for sharing ideas. We believe
-            that when individuals feel empowered and inspired, the magic of
-            creativity flourishes, leading us to greater heights together!
+             {heroSectionText.description}
           </Paragraph>
 
           <div className="max-w-7xl">
-            <PrimaryButton  pathName="/aboutus" className="mr-5">Contact us</PrimaryButton>
-            <Hyperlinks link="/aboutus">See more about us</Hyperlinks>
+            <PrimaryButton  pathName="/aboutus" className="mr-5">{heroSectionText.buttonName}</PrimaryButton>
+            <Hyperlinks link="/aboutus">{heroSectionText.linkName}</Hyperlinks>
           </div>
         </div>
 
