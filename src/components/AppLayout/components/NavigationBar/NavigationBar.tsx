@@ -102,7 +102,7 @@ const NavigationBar = ({
       </animated.nav>
 
       {/* Margin */}
-      <div className="relative h-24 w-full" />
+      <div className="relative h-16 sm:h-24 w-full" />
     </>
   );
 };
