@@ -43,9 +43,11 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 - use tailwind color = done
 - font root import  = done
 - hoc pattern = done
-- json data each component
+- json data each component = done
+- move components to src = done
 - externalLink component
-- move components to src 
+- use tailwind merge library
+
 - change img to <source/>
 - fork to codework repo
-- use tailwind merge library
+
