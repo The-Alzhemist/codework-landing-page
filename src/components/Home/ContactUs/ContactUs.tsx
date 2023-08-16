@@ -57,14 +57,32 @@ const ContactUs = (props: contactUsProp) => {
         </h2>
 
         <div className="lg:w-2/4">
-          <Image
+          {/* <Image
             src="/home/contact-us/contact-us-section-cover.png"
             width={0}
             height={0}
             layout="responsive" 
             className="z-0 max-w-[490px] h-auto"
             alt="simple but ambitious section cover"
-          />
+          /> */}
+             <picture className="z-0 max-w-[490px] h-auto">
+            <source
+              srcSet="/home/contact-us/contact-us-section-cover-1x.webp"
+              type="image/webp"
+              media="(max-width: 639px)"
+            />
+            <source
+              srcSet="/home/contact-us/contact-us-section-cover-3x.webp"
+              type="image/webp"
+              media="(min-width: 640px)"
+            />
+            <img
+              src="/home/contact-us/contact-us-section-cover-3x.png"
+              alt="codework contact us section cover image"
+              title="codework contact us section cover image"
+              loading="lazy"
+            />
+          </picture>
         </div>
       </div>
     </section>

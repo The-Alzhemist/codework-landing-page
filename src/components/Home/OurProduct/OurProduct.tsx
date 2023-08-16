@@ -41,8 +41,6 @@ const OurProduct = (props: OurProductProps) => {
       </h2>
 
       <div className="flex flex-col lg:flex-row justify-between items-center mb-10 z-20">
-
-        
         <h3 className="text-left mb-4 lg:w-2/4">
           <div className="mb-10">
             <span className="font-normal bg-line mb-7 md:text-[32px]">
@@ -50,21 +48,33 @@ const OurProduct = (props: OurProductProps) => {
             </span>
           </div>
           <Paragraph className="max-w-[670px] text-base md:text-2xl mb-5 md:mb-10">
-          {ourProductSectionText.productDescription}
+            {ourProductSectionText.productDescription}
           </Paragraph>
 
-          <Hyperlinks link="/aboutus">{ourProductSectionText.productLinkName}</Hyperlinks>
+          <Hyperlinks link="/aboutus">
+            {ourProductSectionText.productLinkName}
+          </Hyperlinks>
         </h3>
 
         <div className="lg:w-2/4 flex justify-end">
-          <Image
-            src="/home/our-product/our-product-cover.png"
-            width={0}
-            height={0}
-            layout="responsive"
-            className="max-w-[475px] h-auto"
-            alt="simple but ambitious section cover"
-          />
+          <picture className="max-w-[475px] h-auto">
+            <source
+              srcSet="/home/our-product/our-product-cover-1x.webp"
+              type="image/webp"
+              media="(max-width: 639px)"
+            />
+            <source
+              srcSet="/home/our-product/our-product-cover-3x.webp"
+              type="image/webp"
+              media="(min-width: 640px)"
+            />
+            <img
+              src="/home/our-product/our-product-cover-1x.png"
+              alt="codework our product section cover image"
+              title="codework our product section cover image"
+              loading="lazy"
+            />
+          </picture>
         </div>
       </div>
     </section>

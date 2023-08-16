@@ -6,9 +6,8 @@ import { PrimaryButton } from "../../AppLayout/components/button/PrimaryButton";
 import withAboutUs from "./withAboutUs";
 import { aboutUsProps } from "./interface";
 
-
 const AboutUs = (props: aboutUsProps) => {
-  const { aboutUsSectionText } = props
+  const { aboutUsSectionText } = props;
   return (
     <>
       <section
@@ -22,28 +21,50 @@ const AboutUs = (props: aboutUsProps) => {
             <div className="w-1 h-40 bg-primary-900 rounded-sm mb-4"></div>
             <div className="font-normal">{aboutUsSectionText.heading1}</div>
             <div>
-              <span className="font-light text-4xl">{aboutUsSectionText.heading2}</span>
-              <span className="font-normal bg-line ml-3">{aboutUsSectionText.heading3}</span>
+              <span className="font-light text-4xl">
+                {aboutUsSectionText.heading2}
+              </span>
+              <span className="font-normal bg-line ml-3">
+                {aboutUsSectionText.heading3}
+              </span>
               <Image
-              src="/home/aboutus/aboutus-section-sticker-1.png"
-              width={0}
-              height={0}
-              layout="responsive" 
-              className="hidden sm:flex max-w-[58px] h-auto absolute left-[370px]"
-              alt="simple but ambitious section cover"
-            />
+                src="/home/aboutus/aboutus-section-sticker-1.png"
+                width={0}
+                height={0}
+                layout="responsive"
+                className="hidden sm:flex max-w-[58px] h-auto absolute left-[370px]"
+                alt="simple but ambitious section cover"
+              />
             </div>
           </h2>
 
           <div className="lg:w-2/4 flex justify-end">
-            <Image
+            {/* <Image
               src="/simple-but-ambitious-cover.png"
               width={0}
               height={0}
               layout="responsive" 
               className="max-w-[490px] h-auto"
               alt="simple but ambitious section cover"
-            />
+            /> */}
+            <picture className="max-w-[490px] h-auto">
+              <source
+                srcSet="/home/aboutus/simple-but-ambitious-cover-1x.webp"
+                type="image/webp"
+                media="(max-width: 639px)"
+              />
+              <source
+                srcSet="/home/aboutus/simple-but-ambitious-cover-3x.webp"
+                type="image/webp"
+                media="(min-width: 640px)"
+              />
+              <img
+                src="/home/aboutus/simple-but-ambitious-cover-3x.png"
+                alt="codework about us section cover image"
+                title="codework about us section cover image"
+                loading="lazy"
+              />
+            </picture>
           </div>
         </div>
 
@@ -51,33 +72,33 @@ const AboutUs = (props: aboutUsProps) => {
         <div className="text-right  flex flex-col items-end z-20 sm:pr-[70px] relative mb-14">
           <div className="z-10 w-40 h-1 bg-primary-900 rounded-sm mb-7"></div>
           <Image
-              src="/global/star.png"
-              width={0}
-              height={0}
-              layout="responsive" 
-              className="max-w-[100px] md:max-w-[200px] h-auto absolute right-0 top-10"
-              alt="simple but ambitious section cover"
-            />
+            src="/global/star.png"
+            width={0}
+            height={0}
+            layout="responsive"
+            className="max-w-[100px] md:max-w-[200px] h-auto absolute right-0 top-10"
+            alt="simple but ambitious section cover"
+          />
           <Paragraph className="z-10 max-w-[800px] text-right text-base md:text-2xl md:font-xl lg:font-3xl">
-          {aboutUsSectionText.descriptionRight}
+            {aboutUsSectionText.descriptionRight}
           </Paragraph>
-         
         </div>
 
         {/* 3 */}
         <div className="text-right text-xl flex flex-col items-start z-20 mb-32 sm:pl-[70px] relative">
-      
-        <div className="z-0 absolute top-[-70px] left-0 rounded-full w-[100px] h-[100px] md:w-[140px] md:h-[140px] bg-primary"></div>
-       
+          <div className="z-0 absolute top-[-70px] left-0 rounded-full w-[100px] h-[100px] md:w-[140px] md:h-[140px] bg-primary"></div>
+
           <div className="z-10 w-40 h-1 bg-primary-900 rounded-sm mb-7"></div>
           <Paragraph className=" z-10 max-w-[800px] text-left text-base md:text-2xl md:font-xl lg:font-3xl">
-          {aboutUsSectionText.descriptionLeft}
+            {aboutUsSectionText.descriptionLeft}
           </Paragraph>
-       
         </div>
 
         <div className="flex justify-center mb-[150px]">
-          <PrimaryButton pathName="/aboutus"> {aboutUsSectionText.buttonName}</PrimaryButton>
+          <PrimaryButton pathName="/aboutus">
+            {" "}
+            {aboutUsSectionText.buttonName}
+          </PrimaryButton>
         </div>
         {/* 4 */}
         {/* ย้ายไปอยู่หน้่าอื่น คอมเม้่นไว้ก่อน เดี๋ยวคุยกับ designer */}
@@ -93,7 +114,6 @@ const AboutUs = (props: aboutUsProps) => {
     </>
   );
 };
-
 
 const WrappedComponent = withAboutUs(AboutUs);
 export default WrappedComponent;

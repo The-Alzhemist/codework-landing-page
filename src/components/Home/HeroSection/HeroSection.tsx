@@ -15,8 +15,7 @@ const fontGloriaHallelujah = Gloria_Hallelujah({
 });
 
 const HeroSection = (props: HeroSectionProps) => {
-
-  const { heroSectionText } = props
+  const { heroSectionText } = props;
   return (
     <section
       className={`relative md:py-[50px] max-w-[1440px] mx-auto lg:px-[50px] pt-5 sm:pt-0 mb-9`}
@@ -30,7 +29,9 @@ const HeroSection = (props: HeroSectionProps) => {
         <div className="z-10 w-[100%] lg:w-[80%]  min-h-[600px]  relative bg-white border-[3px] border-black rounded-[50px] py-6 md:p-10 flex flex-col justify-center drop-shadow-md p-5 sm:p-0">
           <h1 className="mb-14 md:mb-20 relative">
             <span className="flex font-light mb-5 relative">
-              <div className="text-lg md:text-5xl">{heroSectionText.heading1}</div> 
+              <div className="text-lg md:text-5xl">
+                {heroSectionText.heading1}
+              </div>
               <Image
                 src="/home/hero/hero-section-stciker-1.png"
                 width={0}
@@ -49,7 +50,7 @@ const HeroSection = (props: HeroSectionProps) => {
             <span
               className={`${fontGloriaHallelujah.variable} font-gloriaHallelujah text-5xl md:text-7xl  text-primary md:ml-4 flex md:inline relative mt-5 md:mt-0 `}
             >
-               {heroSectionText.heading3}
+              {heroSectionText.heading3}
               <Image
                 src="/home/hero/hero-section-stciker-3.png"
                 width={0}
@@ -64,11 +65,13 @@ const HeroSection = (props: HeroSectionProps) => {
           <Paragraph
             className={`mb-8 lg:max-w-[550px]  xl:max-w-[670px]  text-base`}
           >
-             {heroSectionText.description}
+            {heroSectionText.description}
           </Paragraph>
 
           <div className="max-w-7xl">
-            <PrimaryButton  pathName="/aboutus" className="mr-5">{heroSectionText.buttonName}</PrimaryButton>
+            <PrimaryButton pathName="/aboutus" className="mr-5">
+              {heroSectionText.buttonName}
+            </PrimaryButton>
             <Hyperlinks link="/aboutus">{heroSectionText.linkName}</Hyperlinks>
           </div>
         </div>
@@ -87,14 +90,23 @@ const HeroSection = (props: HeroSectionProps) => {
           {/* circle  */}
           <div className="z-0 absolute top-0 right-[15%] rounded-full w-[300px] h-[300px] bg-primary-800"></div>
 
-          <Image
-            src="/hero-section-1.png"
-            width={0}
-            height={0}
-            layout="responsive"
-            className="hidden sm:flex md:max-w-[400px] lg:max-w-[480px] h-auto p-3 z-20 absolute bottom-[-20px] right-[2%]"
-            alt="simple but ambitious section cover"
-          />
+          <picture className="hidden sm:flex md:max-w-[400px] lg:max-w-[480px] h-auto p-3 z-20 absolute bottom-[-20px] right-[2%]">
+            <source
+              srcSet="/home/hero/hero-section-cover-1x.webp"
+              type="image/webp"
+              media="(max-width: 639px)"
+            />
+            <source
+              srcSet="/home/hero/hero-section-cover-3x.webp"
+              type="image/webp"
+              media="(min-width: 640px)"
+            />
+            <img
+              src="/home/hero/hero-section-cover-3x.png"
+              alt="codework-hero-section-cover image"
+              title="codework-hero-section-cover image"
+            />
+          </picture>
         </div>
       </div>
     </section>
