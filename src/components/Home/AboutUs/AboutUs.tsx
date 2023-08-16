@@ -39,14 +39,6 @@ const AboutUs = (props: aboutUsProps) => {
           </h2>
 
           <div className="lg:w-2/4 flex justify-end">
-            {/* <Image
-              src="/simple-but-ambitious-cover.png"
-              width={0}
-              height={0}
-              layout="responsive" 
-              className="max-w-[490px] h-auto"
-              alt="simple but ambitious section cover"
-            /> */}
             <picture className="max-w-[490px] h-auto">
               <source
                 srcSet="/home/aboutus/simple-but-ambitious-cover-1x.webp"

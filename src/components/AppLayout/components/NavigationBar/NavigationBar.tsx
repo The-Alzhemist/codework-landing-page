@@ -16,7 +16,7 @@ const NavigationBar = ({
   hamburgerStyle2,
   hamburgerStyle3,
   menu,
-  fontPrompt
+  fontPrompt,
 }: NavigationProps) => {
   return (
     <>
@@ -27,14 +27,18 @@ const NavigationBar = ({
           <div className="flex items-center  font-black text-primary-900">
             <div className="relative w-[170px] h-[15px]">
               <Link href="/">
-                <Image
-                  src="/codework-logo.png"
-                  alt="Picture of the author"
-                  fill
-                  style={{
-                    objectFit: "contain",
-                  }}
-                />
+                <picture>
+                  <source
+                    srcSet="/codework-logo-1x.webp"
+                    type="image/webp"
+                  />
+                  <img
+                    src="/codework-logo-1x.png"
+                    alt="codework logo"
+                    title="codework logo"
+                    loading="lazy"
+                  />
+                </picture>
               </Link>
             </div>
           </div>
@@ -69,7 +73,9 @@ const NavigationBar = ({
                 <div
                   className={`flex cursor-pointer hover:text-secondary hover:bg-custom-gradient font-medium`}
                 >
-                  <Link className="py-1 px-3" href={menu.url}>{menu.name}</Link>
+                  <Link className="py-1 px-3" href={menu.url}>
+                    {menu.name}
+                  </Link>
                 </div>
               </React.Fragment>
             ))}
@@ -89,15 +95,15 @@ const NavigationBar = ({
             <React.Fragment key={`mobile-menu-${index}`}>
               <li className="border-b-[2px] border-dashed border-primary-700">
                 <p className="flex cursor-pointer text-secondary font-medium text-2xl">
-                  <Link className="py-3 w-full text-secondary"  href={menu.url}>{menu.name}</Link>
+                  <Link className="py-3 w-full text-secondary" href={menu.url}>
+                    {menu.name}
+                  </Link>
                 </p>
               </li>
             </React.Fragment>
           ))}
 
-          <OutlinedButton className="mt-8">
-            Contact Us
-          </OutlinedButton>
+          <OutlinedButton className="mt-8">Contact Us</OutlinedButton>
         </ul>
       </animated.nav>
 
