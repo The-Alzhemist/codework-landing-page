@@ -45,7 +45,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 - hoc pattern = done
 - json data each component = done
 - move components to src = done
-- externalLink component
+- externalLink component = done
 - use tailwind merge library
 
 - change img to <source/>
