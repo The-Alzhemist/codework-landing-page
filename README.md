@@ -46,8 +46,9 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 - json data each component = done
 - move components to src = done
 - externalLink component = done
-- use tailwind merge library
+- use tailwind merge library = done
 
+- meta title, description for home page
 - change img to <source/>
 - fork to codework repo
 
