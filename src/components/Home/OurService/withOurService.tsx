@@ -1,6 +1,6 @@
 import React from "react";
 import { OurServiceProps, OurServiceSectionTextInterface } from "./interface";
-import { ourServiceSectionText } from "@/Constant/Home/our-service-test";
+import { ourServiceSectionText } from "@/constants/Home/our-service-test";
 
 const withOurService = (Component: React.FC<OurServiceProps>) => {
   const Hoc = () => {

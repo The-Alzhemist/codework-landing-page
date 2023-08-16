@@ -1,6 +1,6 @@
 import React from "react";
 import { contactUsProp } from "./interface";
-import { contactUsSectionText } from "@/Constant/Home/contactus-text";
+import { contactUsSectionText } from "@/constants/Home/contactus-text";
 
 const withContactUs = (Component: React.FC<contactUsProp>) => {
   const Hoc = () => {
