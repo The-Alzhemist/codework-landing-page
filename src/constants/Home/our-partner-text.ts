@@ -4,7 +4,6 @@ export const ourPartnerSectionText: ourPartnerTextInterface = {
     heading1: "OUR ",
     heading2: "PARTNERS",
     imagesList: [
-      {pathName: '/semour.png'},
-      {pathName: '/scgc.png'}
+      {pathName: '/semour.png', urlName: 'https://seamoormarine.com'},
     ]
   }

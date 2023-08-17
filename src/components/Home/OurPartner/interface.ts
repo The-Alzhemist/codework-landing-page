@@ -6,6 +6,7 @@ export interface ourPartnerTextInterface {
 
 export interface ImageInfo {
     pathName: string;
+    urlName: string;
 }
   
 export interface ourPartnerProps {
