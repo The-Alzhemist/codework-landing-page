@@ -47,19 +47,6 @@ module.exports = {
       },
     
     },
-
-  
-  
-    // colors: {
-    //    primary: '#C8D94C',
-    //    secondary: '#',
-    //    tertiary: '#FFFBFE'
-    // },
-    // text: {
-    //   primary: '#C8D94C',
-    //   secondary: '#',
-    //   tertiary: '#FFFBFE'
-    // }
   },
   plugins: [],
 }
