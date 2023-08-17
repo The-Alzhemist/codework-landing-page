@@ -1,12 +1,11 @@
-import React, { useEffect } from "react";
+import React  from "react";
 import withNavigation from "./withNavigation";
 import Link from "next/link";
-import Image from "next/image";
 import { animated } from "@react-spring/web";
 
 import { OutlinedButton } from "../button/OutlinedButton";
 import { MenuItem, NavigationProps } from "./interface";
-// import { Button } from "../button/button";
+
 
 const NavigationBar = ({
   IsSideMenuOpen,
@@ -80,7 +79,7 @@ const NavigationBar = ({
               </React.Fragment>
             ))}
 
-            <OutlinedButton>Contact Us</OutlinedButton>
+            <OutlinedButton className="" pathName="/contact-us">Contact Us</OutlinedButton>
           </div>
         </div>
       </header>
@@ -103,7 +102,8 @@ const NavigationBar = ({
             </React.Fragment>
           ))}
 
-          <OutlinedButton className="mt-8">Contact Us</OutlinedButton>
+          <li><OutlinedButton className="mt-8 w-full max-w-md" pathName="/contact-us" >Contact Us</OutlinedButton></li>
+     
         </ul>
       </animated.nav>
 
