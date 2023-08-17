@@ -11,7 +11,7 @@ import MetaTag from "@/components/seo/MetaTag";
 export default function Home() {
   return (
     <>
-     <MetaTag/>
+     <MetaTag image="/seo/codework-meta-cover-v2.jpg" />
 
       <AppLayout>
         <HeroSection />
