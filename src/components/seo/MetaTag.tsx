@@ -15,7 +15,7 @@ const MetaTag = (props: MetaTagInterface) => {
     defaultMetaDescription = "Bring innovation to life with our innovative software solutions. From UX/UI design to digital transformation consultant, we deliver excellence in scalability, reliability, and creativity."
   }
   if(image) {
-    defaultMetaImage = "/seo/codework-meta-cover.png"
+    defaultMetaImage = "https://codework-tech.web.app/seo/codework-meta-cover.png"
   }
 
 
@@ -38,7 +38,7 @@ const MetaTag = (props: MetaTagInterface) => {
       <meta name="twitter:image" content={image ? image : defaultMetaImage} />
 
 
-      <link rel="icon" href="/seo/codework-browser-image-v2.ico" type="image/ico" sizes="32x32" />
+      <link rel="icon" href="/seo/codework-title-browser-white.ico" type="image/ico" sizes="32x32" />
 
     </Head>
   );
