@@ -3,6 +3,7 @@ import BackgroundGradientBlur from "../../backgroundGradientBlur/BackgroundGradi
 import Image from "next/image";
 import withOurPartner from "./withOurPartner";
 import { ourPartnerProps, ImageInfo } from "./interface";
+import Link from "next/link";
 
 
 const OurPartner = (props: ourPartnerProps) => {
@@ -43,7 +44,7 @@ const OurPartner = (props: ourPartnerProps) => {
       <div className="flex justify-center gap-10">
         {ourPartnerSectionText.imagesList.map((item: ImageInfo, index: number) => (
           <React.Fragment key={`our-partner-${index}`}>
-            <div className="w-[150px] h-[150px] md:w-[200px] md:h-[200px] bg-white rounded-full border-2 border-primary-700 flex justify-center items-center">
+            <a className="w-[150px] h-[150px] md:w-[200px] md:h-[200px] bg-white rounded-full border-2 border-primary-700 flex justify-center items-center transition-all ease-out duration-100 hover:shadow-lg" href={item.urlName} target="_blank" rel="noopener nofollow">
               <Image
                 src={item.pathName}
                 width={170}
@@ -52,7 +53,8 @@ const OurPartner = (props: ourPartnerProps) => {
                 className="h-auto p-3"
                 alt="simple but ambitious section cover"
               />
-            </div>
+            </a>
+           
           </React.Fragment>
         ))}
       </div>

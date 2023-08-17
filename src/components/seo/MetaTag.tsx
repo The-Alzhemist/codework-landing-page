@@ -14,8 +14,8 @@ const MetaTag = (props: MetaTagInterface) => {
   if(!description) {
     defaultMetaDescription = "Bring innovation to life with our innovative software solutions. From UX/UI design to digital transformation consultant, we deliver excellence in scalability, reliability, and creativity."
   }
-  if(image) {
-    defaultMetaImage = "https://codework-tech.web.app/seo/codework-meta-cover.png"
+  if(!image) {
+    defaultMetaImage = "https://codework-tech.web.app/seo/codework-meta-cover-v2.jpg"
   }
 
 
