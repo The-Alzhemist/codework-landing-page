@@ -1,6 +1,7 @@
 import React from "react";
 import AppLayout from "../components/AppLayout/AppLayout";
 import MetaTag from "@/components/seo/MetaTag";
+import ContactUsForm from "@/components/ContactUs/contactus-form";
 
 const ContactUsPage = () => {
   return (
@@ -13,6 +14,8 @@ const ContactUsPage = () => {
             Contact us page is coming soon...
           </div>
         </div>
+
+       <ContactUsForm/>
       </AppLayout>
     </>
   );
