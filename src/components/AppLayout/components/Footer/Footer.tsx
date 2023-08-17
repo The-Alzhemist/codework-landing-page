@@ -1,6 +1,7 @@
 import React from "react";
 import withFooter from "./withFooter";
 import { FooterMenuItem, FooterProps } from "./interface";
+import Link from "next/link";
 
 const Footer = (props: FooterProps) => {
   const { fontPrompt, footerMenu } = props;
@@ -22,14 +23,16 @@ const Footer = (props: FooterProps) => {
         </div>
 
         {/* right */}
+      
         <div className="w-full lg:w-1/2 flex flex-col gap-y-5">
+            {/* Row:1 */}
           <div className="w-full flex">
             {footerMenu.footerRight
               .slice(0, 3)
               .map((menu: FooterMenuItem, index: number) => (
                 <React.Fragment key={`footer-menu-${index}`}>
                   <div className="w-1/3">
-                    <div>{menu.pageMenu}</div>
+                  <Link href={menu.path}>{menu.pageMenu}</Link>
                       {menu.hasSubMenu &&
                         menu.subMenu?.map((submenu: { name: string }, index: number) => (
                           <div className="text-sm font-light" key={`submenu-top-${index}`}>{submenu.name}</div>
@@ -38,13 +41,14 @@ const Footer = (props: FooterProps) => {
                 </React.Fragment>
               ))}
           </div>
+            {/* Row:2 */}
           <div className="w-full flex">
           {footerMenu.footerRight
               .slice(3, 6)
               .map((menu: FooterMenuItem, index: number) => (
                 <React.Fragment key={`footer-menu-${index}`}>
                   <div className="w-1/3">
-                    <div>{menu.pageMenu}</div>
+                    <Link href={menu.path}>{menu.pageMenu}</Link>
                       {menu.hasSubMenu &&
                         menu.subMenu?.map((submenu: { name: string }, index: number) => (
                           <div className="text-sm" key={`submenu-top-${index}`}>{submenu.name}</div>

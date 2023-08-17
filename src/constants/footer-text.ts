@@ -13,10 +13,12 @@ export const footerMenu: FooterMenu = {
       {
         pageMenu: "Home",
         hasSubMenu: false,
+        path: '/'
       },
       {
         pageMenu: "About us",
         hasSubMenu: false,
+        path: '/aboutus',
         subMenu: [
           {
             name: "Our story",
@@ -32,6 +34,7 @@ export const footerMenu: FooterMenu = {
       {
         pageMenu: "Services",
         hasSubMenu: false,
+        path: '/services',
         subMenu: [
           {
             name: "UX/UI Design",
@@ -41,14 +44,17 @@ export const footerMenu: FooterMenu = {
       {
         pageMenu: "Projects",
         hasSubMenu: false,
+        path: '/projects',
       },
       {
         pageMenu: "Products",
         hasSubMenu: false,
+        path: '/products',
       },
       {
         pageMenu: "Privacy policy",
         hasSubMenu: false,
+        path: '/privacy-policy',
       },
     ],
   };

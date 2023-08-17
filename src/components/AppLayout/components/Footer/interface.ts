@@ -14,7 +14,8 @@ export interface FooterMenu {
 export interface FooterMenuItem {
   pageMenu: string;
   hasSubMenu: boolean;
-  subMenu?: { name: string }[];
+  subMenu?: { name: string, path?: string }[];
+  path: string;
 }
 
 export interface FooterProps {
