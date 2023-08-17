@@ -33,11 +33,11 @@ const HeroSection = (props: HeroSectionProps) => {
                 {heroSectionText.heading1}
               </div>
               <Image
-                src="/home/hero/hero-section-stciker-1.png"
+                src="/home/hero/hero-section-sticker-1.png"
                 width={0}
                 height={0}
                 layout="responsive"
-                className="hidden md:flex max-w-[100px] max-h-[100px] absolute md:top-[-70px] md:left-[470px]"
+                className="top-[-60px] left-[150px] md:flex max-w-[100px] max-h-[100px] absolute md:top-[-70px] md:left-[470px]"
                 alt="simple but ambitious section cover"
               />
             </span>
@@ -52,7 +52,7 @@ const HeroSection = (props: HeroSectionProps) => {
             >
               {heroSectionText.heading3}
               <Image
-                src="/home/hero/hero-section-stciker-3.png"
+                src="/home/hero/hero-section-sticker-3.png"
                 width={0}
                 height={0}
                 layout="responsive"
@@ -79,7 +79,7 @@ const HeroSection = (props: HeroSectionProps) => {
         {/* right box  */}
         <div className="hidden lg:block lg:w-[20%]">
           <Image
-            src="/home/hero/hero-section-stciker-2.png"
+            src="/home/hero/hero-section-sticker-2.png"
             width={0}
             height={0}
             layout="responsive"
