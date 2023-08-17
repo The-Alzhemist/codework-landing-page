@@ -5,5 +5,5 @@ export const ourProductSectionText: OurProductTextInterface = {
     heading2: "PRODUCT",
     productName: "KHOTBOT",
     productDescription: "The ultimate assistant for bitcoin traders, making profitable trades in both UP & DOWN markets without the need to constantly monitor market prices.",
-    productLinkName: "See more about us",
+    productLinkName: "Learn more about the product details",
   };

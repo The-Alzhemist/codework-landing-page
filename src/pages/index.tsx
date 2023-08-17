@@ -15,10 +15,10 @@ export default function Home() {
 
       <AppLayout>
         <HeroSection />
-        <OurClient />
         <AboutUs />
         <OurService />
         <OurProduct />
+        <OurClient />
         <ContactUs />
       </AppLayout>
     </>

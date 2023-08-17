@@ -102,14 +102,14 @@ const OurService = (props: OurServiceProps) => {
                     className="bg-primary-500 rounded-3xl p-5 mb-5
               flex flex-col justify-center items-center text-center shadow-xl"
                   >
-                    <div className="text-lg mb-2 font-semibold text-secondary-900">
+                    <div className="text-lg mb-2 font-semibold text-secondary-1000">
                       {product.name}
                     </div>
                     <Paragraph className="text-sm text-secondary-900 mb-5">
                       {product.description}
                     </Paragraph>
                     <Hyperlinks
-                      className="text-xs text-[0px] group-hover:text-[16px]"
+                      className="text-xs"
                       link="/aboutus"
                     >
                       See more

@@ -1,26 +1,8 @@
 import { useSpring } from "@react-spring/web";
 import React, { useState } from "react";
 import { ExternalNavigationProps, NavigationProps } from "./interface";
+import { menu } from "@/constants/Home/navigation-bar-text";
 
-
-const menu = [
-  {
-    name: "Home",
-    url: "/",
-  },
-  {
-    name: "About us",
-    url: "/aboutus",
-  },
-  {
-    name: "Projects",
-    url: "/projects",
-  },
-  {
-    name: "Clients",
-    url: "/clients",
-  },
-];
 
 const withNavigation = (Component: React.FC<NavigationProps>) => {
   const Hoc = (props: ExternalNavigationProps) => {
