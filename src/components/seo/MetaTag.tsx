@@ -29,7 +29,7 @@ const MetaTag = (props: MetaTagInterface) => {
       <meta property="og:description" content={description ? description : defaultMetaDescription} />
       <meta
         property="og:image"
-        content={image ? image : 'https://fakeimg.pl/250x100/'}
+        content={image ? image : defaultMetaImage}
       />
 
       {/* X.com (Twitter) */}
