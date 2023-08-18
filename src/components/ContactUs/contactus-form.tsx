@@ -26,23 +26,22 @@ const ContactUsForm = () => {
   });
 
   const { register, handleSubmit, formState } = form;
-  const { errors } = formState;
+  const { errors, isValid } = formState;
 
   const onSubmitHandler = (data: FormValues) => {
     console.log("data >>", data);
   };
 
   return (
-    <div>
+    <div className="relative max-w-[1440px] mx-auto py-[30px] md:py-[50px] lg:px-[150px] ">
       <form onSubmit={handleSubmit(onSubmitHandler)} noValidate>
         {/* row 1 */}
         <div>
           <label className="flex" htmlFor="tellAboutIdeaInput">
             tellAboutIdeaInput
           </label>
-          <input
-            className="border-2 rounded-md"
-            type="text"
+          <textarea
+            className="appearance-none border rounded py-2 px-3 w-full text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
             id="tellAboutIdeaInput"
             {...register("tellAboutIdeaInput", {
               required: {
@@ -51,19 +50,20 @@ const ContactUsForm = () => {
               },
             })}
           />
+       
           <p className="text-red-500">{errors.tellAboutIdeaInput?.message}</p>
         </div>
 
         {/* row2 */}
         <div className="flex">
           {/* left */}
-          <div>
+          <div className="w-full">
             {/*  */}
             <label className="flex" htmlFor="budgetInput">
               budgetInput
             </label>
             <input
-              className="border-2 rounded-md"
+              className="appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
               type="text"
               id="budgetInput"
               {...register("budgetInput", {
@@ -80,7 +80,7 @@ const ContactUsForm = () => {
               name
             </label>
             <input
-              className="border-2 rounded-md"
+              className="appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
               type="text"
               id="name"
               {...register("name", {
@@ -97,7 +97,7 @@ const ContactUsForm = () => {
               email
             </label>
             <input
-              className="border-2 rounded-md"
+              className="appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
               type="text"
               id="email"
               {...register("email", {
@@ -111,15 +111,15 @@ const ContactUsForm = () => {
           </div>
 
           {/* right */}
-          <div>
+          <div className="w-full">
             <div className="flex">
               {/* timeSlot */}
-              <div>
+              <div className="w-full">
                 <label className="flex" htmlFor="timeSlot">
                   timeSlot
                 </label>
                 <input
-                  className="border-2 rounded-md"
+                  className="appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
                   type="date"
                   id="timeSlot"
                   {...register("timeSlot", {
@@ -133,23 +133,13 @@ const ContactUsForm = () => {
               </div>
 
               {/* timePeriod */}
-              <div>
+              <div className="w-full">
                 <label className="flex" htmlFor="timePeriod">
                   time period
                 </label>
-                {/* <input
-                className="border-2 rounded-md"
-                type="text"
-                id="timePeriod"
-                {...register("timePeriod", {
-                  required: {
-                    value: true,
-                    message: "timePeriod is required",
-                  },
-                })}
-              /> */}
+        
                 <select
-                className="border-2"
+                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                   id="timePeriod" 
                   {...register("timePeriod",{
                     required: "select one option",
@@ -168,7 +158,7 @@ const ContactUsForm = () => {
               phoneNumber
             </label>
             <input
-              className="border-2 rounded-md"
+              className="appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
               type="text"
               id="phoneNumber"
               {...register("phoneNumber", {
@@ -184,7 +174,7 @@ const ContactUsForm = () => {
               CompanyName
             </label>
             <input
-              className="border-2 rounded-md"
+              className="appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
               type="text"
               id="CompanyName"
               {...register("CompanyName", {
@@ -198,7 +188,7 @@ const ContactUsForm = () => {
           </div>
         </div>
 
-        <button className="bg-teal-800 p-2 text-white">Submit</button>
+        <button className="bg-teal-800 p-2 text-white" disabled={!isValid}>Submit</button>
       </form>
     </div>
   );
