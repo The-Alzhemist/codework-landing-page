@@ -1,4 +1,5 @@
 import { NextFontWithVariable } from "@next/font";
+import { SpringValue } from "@react-spring/web";
 
 export interface MenuItem {
   name: string;
@@ -12,9 +13,9 @@ export interface ExternalNavigationProps {
 export interface NavigationProps extends ExternalNavigationProps {
   IsSideMenuOpen: boolean;
   setIsSideMenuOpen: React.Dispatch<React.SetStateAction<boolean>>;
-  navStyle: any;
-  hamburgerStyle1: any;
-  hamburgerStyle2: any;
-  hamburgerStyle3: any;
+  navStyle: { opacity: SpringValue<number>; right: SpringValue<number> };
+  hamburgerStyle1: { rotate: SpringValue<number>; y: SpringValue<number> };
+  hamburgerStyle2: { opacity: SpringValue<number> };
+  hamburgerStyle3: { rotate: SpringValue<number>; y: SpringValue<number> };
   menu: MenuItem[];
 }
