@@ -15,6 +15,7 @@ const ContactUsPage = () => {
           </div>
         </div>
 
+      
        <ContactUsForm/>
       </AppLayout>
     </>
