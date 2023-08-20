@@ -1,17 +1,6 @@
-[{
-  "hosting": {
-    "target": "staging-codework-tech",
-    "cleanUrls": true,
-    "public": "out",
-    "ignore": [
-      "firebase.json",
-      "**/.*",
-      "**/node_modules/**"
-    ]
-  }
-},
-  {
-    "hosting": {
+{
+  "hosting": [
+    {
       "target": "codework-tech",
       "cleanUrls": true,
       "public": "out",
@@ -20,6 +9,15 @@
         "**/.*",
         "**/node_modules/**"
       ]
+    },{
+      "target": "staging-codework-tech",
+      "cleanUrls": true,
+      "public": "out",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ]
     }
-  }
-]
+  ]
+}
