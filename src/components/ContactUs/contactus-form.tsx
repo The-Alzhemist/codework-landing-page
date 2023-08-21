@@ -38,11 +38,12 @@ const ContactUsForm = () => {
         {/* row 1 */}
         <div>
           <label className="flex" htmlFor="tellAboutIdeaInput">
-            tellAboutIdeaInput
+          Tell us your idea <span className="text-red-500">*</span>
           </label>
           <textarea
             className="appearance-none border rounded py-2 px-3 w-full text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
             id="tellAboutIdeaInput"
+            placeholder="Write something ..."
             {...register("tellAboutIdeaInput", {
               required: {
                 value: true,
@@ -55,12 +56,12 @@ const ContactUsForm = () => {
         </div>
 
         {/* row2 */}
-        <div className="flex">
+        <div className="flex gap-x-6">
           {/* left */}
           <div className="w-full">
             {/*  */}
             <label className="flex" htmlFor="budgetInput">
-              budgetInput
+            Your budget? (optional)
             </label>
             <input
               className="appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
@@ -77,7 +78,7 @@ const ContactUsForm = () => {
 
             {/*  */}
             <label className="flex" htmlFor="name">
-              name
+              Name <span className="text-red-500">*</span>
             </label>
             <input
               className="appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
@@ -94,7 +95,7 @@ const ContactUsForm = () => {
 
             {/*  */}
             <label className="flex" htmlFor="email">
-              email
+            Email <span className="text-red-500">*</span>
             </label>
             <input
               className="appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
@@ -112,14 +113,14 @@ const ContactUsForm = () => {
 
           {/* right */}
           <div className="w-full">
-            <div className="flex">
+            <div className="flex gap-x-6">
               {/* timeSlot */}
               <div className="w-full">
                 <label className="flex" htmlFor="timeSlot">
-                  timeSlot
+                Preferred time slots
                 </label>
                 <input
-                  className="appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+                  className="appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 h-[38px] leading-tight focus:outline-none focus:shadow-outline"
                   type="date"
                   id="timeSlot"
                   {...register("timeSlot", {
@@ -135,19 +136,19 @@ const ContactUsForm = () => {
               {/* timePeriod */}
               <div className="w-full">
                 <label className="flex" htmlFor="timePeriod">
-                  time period
+                  <span className="text-white">time period</span>
                 </label>
         
                 <select
-                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full px-2 h-[38px]"
                   id="timePeriod" 
                   {...register("timePeriod",{
                     required: "select one option",
                   })}
                 >
-                  <option value="13.00-14.00">Function 1</option>
-                  <option value="14.00-16.00">Function 2</option>
-                  <option value="17.00-18.00">Function 3</option>
+                  <option value="13.00-14.00" selected>13.00-14.00</option>
+                  <option value="14.00-16.00">14.00-16.00</option>
+                  <option value="17.00-18.00">17.00-18.00</option>
                 </select>
                 <p className="text-red-500">{errors.timePeriod?.message}</p>
               </div>
@@ -155,7 +156,7 @@ const ContactUsForm = () => {
 
             {/*  */}
             <label className="flex" htmlFor="phoneNumber">
-              phoneNumber
+            Phone number <span className="text-red-500">*</span>
             </label>
             <input
               className="appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
@@ -171,7 +172,7 @@ const ContactUsForm = () => {
             <p className="text-red-500">{errors.phoneNumber?.message}</p>
             {/*  */}
             <label className="flex" htmlFor="CompanyName">
-              CompanyName
+            Company name
             </label>
             <input
               className="appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
