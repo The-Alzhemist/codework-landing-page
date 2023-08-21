@@ -32,82 +32,74 @@ const ContactUsForm = () => {
   const { errors, isValid } = formState;
 
   const sendEmail = (formEmail: any) => {
-    // const SERVICE_ID = "service_n3oz9jw";
-    // const TEMPLATE_ID = "template_1eta5yc";
-    // const PUBLIC_KEY = "vGBtBUXGtYU9DWtFv";
+    const SERVICE_ID = "service_n3oz9jw";
+    const TEMPLATE_ID = "template_1eta5yc";
+    const PUBLIC_KEY = "vGBtBUXGtYU9DWtFv";
 
-    // emailjs.send(SERVICE_ID, TEMPLATE_ID, formEmail, PUBLIC_KEY).then(
-    //   (result) => {
-    //     console.log(result.text);
-    //     alert("Successful with result: " + result.text);
-    //   },
-    //   (error) => {
-    //     console.log(error.text);
-    //     alert("Error with result: " + error.text);
-    //   }
-    // );
-    alert('Send msg called! 3')
-    forwardToSlack()
+    emailjs.send(SERVICE_ID, TEMPLATE_ID, formEmail, PUBLIC_KEY).then(
+      (result) => {
+        console.log(result.text);
+        alert("Successful with result: " + result.text);
+      },
+      (error) => {
+        console.log(error.text);
+        alert("Error with result: " + error.text);
+      }
+    );
+
+
+    forwardToSlack(formEmail);
   };
 
-  const forwardToSlack = async () => {
-    const slackWebhookURL = 'https://hooks.slack.com/services/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';
-    
-    // const payload = {
-    //   text: `New Email: \n Subject: Hello nueng \n Message: Wow Good job`,
-    // };
-    
-    // fetch(slackWebhookURL, {
-    //   method: 'POST',
-    //   headers: {
-    //     'Content-Type': 'application/json',
-    //   },
-    //   body: JSON.stringify(payload),
-    // })
-    //   .then((response) => {
-    //     if (response.ok) {
-    //       console.log('Email forwarded to Slack successfully.');
-    //     } else {
-    //       console.error('Failed to forward email to Slack:', response.statusText);
-    //     }
-    //   })
-    //   .catch((error) => {
-    //     console.error('Error sending email to Slack:', error);
-    //   });
+  const forwardToSlack = async (formEmail: any) => {
+    // const slackWebhookURL = 'https://hooks.slack.com/services/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';
+    const slackWebhookURL =
+      "https://hooks.slack.com/services/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";
 
+
+    const message = `
+    **New message!! 😄**
+    *from email: ${formEmail.email}*
+    
+    *Name:*
+    \`${formEmail.name}\`
+    ------------------------------------
+    *Company:*
+    \`${formEmail.CompanyName}\`
+    ------------------------------------
+    *Email:*
+    \`${formEmail.email}\`
+    ------------------------------------
+    *Preferred time slots:*
+    \`${formEmail.timeSlot}\` ช่วงเวลา \`${formEmail.timePeriod}\`
+    ------------------------------------ 
+    *Tell us your idea:*
+    \`${formEmail.tellAboutIdeaInput}\`
+    ------------------------------------
+    *Budget Amount*:
+    \`${formEmail.budgetInput}\`
+  `;
 
     const data = {
-      "text": `{ Hello Name:}`,
-    }
+      text: message,
+    };
 
     let res = await axios.post(slackWebhookURL, JSON.stringify(data), {
       withCredentials: false,
-      transformRequest: [(data) => {return data}]})
+      transformRequest: [
+        (data) => {
+          return data;
+        },
+      ],
+    });
 
     if (res.status === 200) {
-      alert("Form Submitted Successfully!")
-
-    
+      alert("Form Submitted Successfully!");
     } else {
-      alert("Error Occurred!")
-    }
-  }
-
-  
-
-  const endMessageToSlack = async () => {
-    const webhookUrl = 'https://hooks.slack.com/services/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';
-    const message = {
-      text: 'Hello from my React app!',
-    };
-
-    try {
-      const response = await axios.post(webhookUrl, message);
-      console.log('Message sent to Slack:', response.data);
-    } catch (error) {
-      console.error('Error sending message to Slack:', error);
+      alert("Error Occurred!");
     }
   };
+
 
   return (
     <div className="relative max-w-[1440px] mx-auto py-[30px] md:py-[50px] lg:px-[150px] ">
