@@ -1,0 +1,18 @@
+ Name:
+      - ${formEmail.name}
+
+      Company:
+      - ${formEmail.CompanyName}
+
+      Email:
+      - ${formEmail.email}
+
+      Preferred time slots:
+      - ${formEmail.timeSlot} ช่วงเวลา ${formEmail.timePeriod} 
+
+
+      Tell us your idea:
+      - ${formEmail.tellAboutIdeaInput}
+
+      Budget Amount:
+      - ${formEmail.budgetInput}
