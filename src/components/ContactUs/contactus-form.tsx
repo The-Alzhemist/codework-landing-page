@@ -1,5 +1,8 @@
 import React from "react";
 import { useForm } from "react-hook-form";
+import { PrimaryButton } from "../AppLayout/components/button/PrimaryButton";
+import { ExternalOutlinedButton } from "../AppLayout/components/button/ExternalOutlinedButton";
+import { ExternalPrimaryButton } from "../AppLayout/components/button/ExternalPrimaryButton";
 
 type FormValues = {
   tellAboutIdeaInput: string;
@@ -178,18 +181,15 @@ const ContactUsForm = () => {
               className="appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
               type="text"
               id="CompanyName"
-              {...register("CompanyName", {
-                required: {
-                  value: true,
-                  message: "CompanyName is required",
-                },
-              })}
+              {...register("CompanyName")}
             />
             <p className="text-red-500">{errors.CompanyName?.message}</p>
           </div>
         </div>
 
-        <button className="bg-teal-800 p-2 text-white" disabled={!isValid}>Submit</button>
+      
+
+        <ExternalPrimaryButton className={`${isValid ? 'bg-teal-800' : 'bg-teal-50' }`}  pathName="#" disabled={!isValid}>SEND MESSAGE</ExternalPrimaryButton>
       </form>
     </div>
   );
