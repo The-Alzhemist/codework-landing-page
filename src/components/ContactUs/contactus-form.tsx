@@ -3,17 +3,9 @@ import { useForm } from "react-hook-form";
 import { ExternalPrimaryButton } from "../AppLayout/components/button/ExternalPrimaryButton";
 import emailjs from "@emailjs/browser";
 import axios from "axios";
-
-type FormValues = {
-  tellAboutIdeaInput: string;
-  budgetInput: string;
-  name: string;
-  email: string;
-  timeSlot: string;
-  timePeriod: string;
-  phoneNumber: number;
-  CompanyName: string;
-};
+import { FormValues } from "./interface";
+import { EMAILJS_PUBLIC_KEY, EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, SLACK_WEBHOOK_URL } from "@/config/environment";
+import { SlackMessageFormat } from "./slack-message";
 
 const ContactUsForm = () => {
   const form = useForm<FormValues>({
@@ -31,12 +23,15 @@ const ContactUsForm = () => {
   const { register, handleSubmit, formState } = form;
   const { errors, isValid } = formState;
 
-  const sendEmail = (formEmail: any) => {
-    const SERVICE_ID = "service_n3oz9jw";
-    const TEMPLATE_ID = "template_1eta5yc";
-    const PUBLIC_KEY = "vGBtBUXGtYU9DWtFv";
+  const sendMessageHandler = (formEmail: any) => {
+    // sent to mailbox
+    // sendEmail(formEmail)
 
-    emailjs.send(SERVICE_ID, TEMPLATE_ID, formEmail, PUBLIC_KEY).then(
+    // sent to slack
+    forwardToSlack(formEmail);
+  }
+  const sendEmail = (formEmail: any) => {
+    emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, formEmail, EMAILJS_PUBLIC_KEY).then(
       (result) => {
         console.log(result.text);
         alert("Successful with result: " + result.text);
@@ -46,42 +41,13 @@ const ContactUsForm = () => {
         alert("Error with result: " + error.text);
       }
     );
-
-
-    forwardToSlack(formEmail);
   };
 
   const forwardToSlack = async (formEmail: any) => {
-    // const slackWebhookURL = 'https://hooks.slack.com/services/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';
-    const slackWebhookURL =
-      "https://hooks.slack.com/services/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";
 
-
-    const message = `
-    **New message!! 😄**
-    *from email: ${formEmail.email}*
-    
-    *Name:*
-    \`${formEmail.name}\`
-    ------------------------------------
-    *Company:*
-    \`${formEmail.CompanyName}\`
-    ------------------------------------
-    *Email:*
-    \`${formEmail.email}\`
-    ------------------------------------
-    *Preferred time slots:*
-    \`${formEmail.timeSlot}\` ช่วงเวลา \`${formEmail.timePeriod}\`
-    ------------------------------------ 
-    *Tell us your idea:*
-    \`${formEmail.tellAboutIdeaInput}\`
-    ------------------------------------
-    *Budget Amount*:
-    \`${formEmail.budgetInput}\`
-  `;
-
+    const slackWebhookURL = SLACK_WEBHOOK_URL
     const data = {
-      text: message,
+      text: SlackMessageFormat(formEmail),
     };
 
     let res = await axios.post(slackWebhookURL, JSON.stringify(data), {
@@ -100,10 +66,9 @@ const ContactUsForm = () => {
     }
   };
 
-
   return (
     <div className="relative max-w-[1440px] mx-auto py-[30px] md:py-[50px] lg:px-[150px] ">
-      <form onSubmit={handleSubmit(sendEmail)} noValidate>
+      <form onSubmit={handleSubmit(sendMessageHandler)} noValidate>
         {/* row 1 */}
         <div>
           <label className="flex" htmlFor="tellAboutIdeaInput">
