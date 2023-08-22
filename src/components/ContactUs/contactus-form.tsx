@@ -4,8 +4,16 @@ import { ExternalPrimaryButton } from "../AppLayout/components/button/ExternalPr
 import emailjs from "@emailjs/browser";
 import axios from "axios";
 import { FormValues } from "./interface";
-import { EMAILJS_PUBLIC_KEY, EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, SLACK_WEBHOOK_URL } from "@/config/environment";
+import {
+  EMAILJS_PUBLIC_KEY,
+  EMAILJS_SERVICE_ID,
+  EMAILJS_TEMPLATE_ID,
+  SLACK_WEBHOOK_URL,
+} from "@/config/environment";
 import { SlackMessageFormat } from "./slack-message";
+import FormStringInput from "./component/formStringInput/FormStringInput";
+import FormTextareaInput from "./component/formStringInput/FormTextareaInput";
+import FormDateInput from "./component/formDateInput/FormDateInput";
 
 const ContactUsForm = () => {
   const form = useForm<FormValues>({
@@ -25,27 +33,33 @@ const ContactUsForm = () => {
 
   const sendMessageHandler = (formEmail: any) => {
     // sent to mailbox
-    // sendEmail(formEmail)
+    //  sendEmail(formEmail)
 
     // sent to slack
     forwardToSlack(formEmail);
-  }
+  };
   const sendEmail = (formEmail: any) => {
-    emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, formEmail, EMAILJS_PUBLIC_KEY).then(
-      (result) => {
-        console.log(result.text);
-        alert("Successful with result: " + result.text);
-      },
-      (error) => {
-        console.log(error.text);
-        alert("Error with result: " + error.text);
-      }
-    );
+    emailjs
+      .send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        formEmail,
+        EMAILJS_PUBLIC_KEY
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+          alert("Successful with result: " + result.text);
+        },
+        (error) => {
+          console.log(error.text);
+          alert("Error with result: " + error.text);
+        }
+      );
   };
 
   const forwardToSlack = async (formEmail: any) => {
-
-    const slackWebhookURL = SLACK_WEBHOOK_URL
+    const slackWebhookURL = SLACK_WEBHOOK_URL;
     const data = {
       text: SlackMessageFormat(formEmail),
     };
@@ -71,63 +85,33 @@ const ContactUsForm = () => {
       <form onSubmit={handleSubmit(sendMessageHandler)} noValidate>
         {/* row 1 */}
         <div>
-          <label className="flex" htmlFor="tellAboutIdeaInput">
-            Tell us your idea <span className="text-red-500">*</span>
-          </label>
-          <textarea
-            className="appearance-none border rounded py-2 px-3 w-full text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
-            id="tellAboutIdeaInput"
-            placeholder="Write something ..."
-            {...register("tellAboutIdeaInput", {
-              required: {
-                value: true,
-                message: "tellAboutIdeaInput is required",
-              },
-            })}
+          <FormTextareaInput
+            labelName="Tell us your idea"
+            inputName="tellAboutIdeaInput"
+            register={register}
+            isRequired={true}
+            errors={errors.tellAboutIdeaInput?.message}
           />
-
-          <p className="text-red-500">{errors.tellAboutIdeaInput?.message}</p>
         </div>
 
         {/* row2 */}
         <div className="flex gap-x-6">
           {/* left */}
           <div className="w-full">
-            {/*  */}
-            <label className="flex" htmlFor="budgetInput">
-              Your budget? (optional)
-            </label>
-            <input
-              className="appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
-              type="text"
-              id="budgetInput"
-              {...register("budgetInput", {
-                required: {
-                  value: true,
-                  message: "budgetInput is required",
-                },
-              })}
-            />
-            <p className="text-red-500">{errors.budgetInput?.message}</p>
+            <FormStringInput
+              labelName="Your budget? (optional)"
+              inputName="budgetInput"
+              register={register}
+              isRequired={false}
+            ></FormStringInput>
+            <FormStringInput
+              labelName="Name"
+              inputName="name"
+              register={register}
+              isRequired={true}
+              errors={errors.name?.message}
+            ></FormStringInput>
 
-            {/*  */}
-            <label className="flex" htmlFor="name">
-              Name <span className="text-red-500">*</span>
-            </label>
-            <input
-              className="appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
-              type="text"
-              id="name"
-              {...register("name", {
-                required: {
-                  value: true,
-                  message: "name is required",
-                },
-              })}
-            />
-            <p className="text-red-500">{errors.name?.message}</p>
-
-            {/*  */}
             <label className="flex" htmlFor="email">
               Email <span className="text-red-500">*</span>
             </label>
@@ -148,23 +132,13 @@ const ContactUsForm = () => {
           {/* right */}
           <div className="w-full">
             <div className="flex gap-x-6">
-              {/* timeSlot */}
               <div className="w-full">
-                <label className="flex" htmlFor="timeSlot">
-                  Preferred time slots
-                </label>
-                <input
-                  className="appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 h-[38px] leading-tight focus:outline-none focus:shadow-outline"
-                  type="date"
-                  id="timeSlot"
-                  {...register("timeSlot", {
-                    required: {
-                      value: true,
-                      message: "timeSlot is required",
-                    },
-                  })}
+                <FormDateInput
+                  labelName=" Preferred time slots"
+                  inputName="timeSlot"
+                  register={register}
+                  isRequired={false}
                 />
-                <p className="text-red-500">{errors.timeSlot?.message}</p>
               </div>
 
               {/* timePeriod */}
@@ -190,33 +164,20 @@ const ContactUsForm = () => {
               </div>
             </div>
 
-            {/*  */}
-            <label className="flex" htmlFor="phoneNumber">
-              Phone number <span className="text-red-500">*</span>
-            </label>
-            <input
-              className="appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
-              type="text"
-              id="phoneNumber"
-              {...register("phoneNumber", {
-                required: {
-                  value: true,
-                  message: "phoneNumber is required",
-                },
-              })}
-            />
-            <p className="text-red-500">{errors.phoneNumber?.message}</p>
-            {/*  */}
-            <label className="flex" htmlFor="CompanyName">
-              Company name
-            </label>
-            <input
-              className="appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
-              type="text"
-              id="CompanyName"
-              {...register("CompanyName")}
-            />
-            <p className="text-red-500">{errors.CompanyName?.message}</p>
+            <FormStringInput
+              labelName=" Phone number"
+              inputName="phoneNumber"
+              register={register}
+              isRequired={true}
+              errors={errors.phoneNumber?.message}
+            ></FormStringInput>
+
+            <FormStringInput
+              labelName="Company Name"
+              inputName="CompanyName"
+              register={register}
+              isRequired={false}
+            ></FormStringInput>
           </div>
         </div>
 
