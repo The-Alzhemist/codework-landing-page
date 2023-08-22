@@ -52,7 +52,7 @@ const ContactUs = (props: contactUsProp) => {
               className="z-0 max-w-[30px] h-auto absolute right-[-10px] bottom-12"
               alt="simple but ambitious section cover"
             />
-            <PrimaryButton pathName="/aboutus">{contactUsSectionText.buttonName}</PrimaryButton>
+            {/* <PrimaryButton pathName="/aboutus">{contactUsSectionText.buttonName}</PrimaryButton> */}
           </div>
         </h2>
 
