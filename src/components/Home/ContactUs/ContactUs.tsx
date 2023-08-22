@@ -36,14 +36,14 @@ const ContactUs = (props: contactUsProp) => {
           </div>
 
           <div className="flex justify-end relative">
-          <Image
+          {/* <Image
               src="/home/contact-us/contact-us-sticker-3.png"
               width={0}
               height={0}
               layout="responsive"
               className="z-0 max-w-[80px] h-auto absolute right-60 bottom-5"
               alt="simple but ambitious section cover"
-            />
+            /> */}
              <Image
               src="/home/contact-us/contact-us-sticker-2.png"
               width={0}
@@ -57,7 +57,7 @@ const ContactUs = (props: contactUsProp) => {
         </h2>
 
         <div className="lg:w-2/4">
-          {/* <Image
+          {/* <ImageP
             src="/home/contact-us/contact-us-section-cover.png"
             width={0}
             height={0}
