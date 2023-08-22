@@ -87,10 +87,9 @@ const AboutUs = (props: aboutUsProps) => {
         </div>
 
         <div className="flex justify-center mb-[150px]">
-          <PrimaryButton pathName="/aboutus">
-            {" "}
+          {/* <PrimaryButton pathName="/aboutus">
             {aboutUsSectionText.buttonName}
-          </PrimaryButton>
+          </PrimaryButton> */}
         </div>
         {/* 4 */}
         {/* ย้ายไปอยู่หน้่าอื่น คอมเม้่นไว้ก่อน เดี๋ยวคุยกับ designer */}

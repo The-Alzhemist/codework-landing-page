@@ -57,12 +57,12 @@ const OurService = (props: OurServiceProps) => {
                     <Paragraph className="text-[0px] group-hover:text-[16px] duration-1000 ease-out leading-5 mt-3 font-light mb-5">
                       {job.description}
                     </Paragraph>
-                    <Hyperlinks
+                    {/* <Hyperlinks
                       className="text-xs text-[0px] group-hover:text-[16px]"
                       link="/aboutus"
                     >
                       See more
-                    </Hyperlinks>
+                    </Hyperlinks> */}
                   </div>
                 </React.Fragment>
               ))}
@@ -108,12 +108,12 @@ const OurService = (props: OurServiceProps) => {
                     <Paragraph className="text-sm text-secondary-900 mb-5">
                       {product.description}
                     </Paragraph>
-                    <Hyperlinks
+                    {/* <Hyperlinks
                       className="text-xs"
                       link="/aboutus"
                     >
                       See more
-                    </Hyperlinks>
+                    </Hyperlinks> */}
                   </div>
                 </React.Fragment>
               )

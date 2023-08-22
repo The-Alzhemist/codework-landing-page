@@ -26,7 +26,7 @@ const Footer = (props: FooterProps) => {
       
         <div className="w-full lg:w-1/2 flex flex-col gap-y-5">
             {/* Row:1 */}
-          <div className="w-full flex">
+          {/* <div className="w-full flex">
             {footerMenu.footerRight
               .slice(0, 3)
               .map((menu: FooterMenuItem, index: number) => (
@@ -40,9 +40,9 @@ const Footer = (props: FooterProps) => {
                     </div>
                 </React.Fragment>
               ))}
-          </div>
+          </div> */}
             {/* Row:2 */}
-          <div className="w-full flex">
+          {/* <div className="w-full flex">
           {footerMenu.footerRight
               .slice(3, 6)
               .map((menu: FooterMenuItem, index: number) => (
@@ -56,7 +56,7 @@ const Footer = (props: FooterProps) => {
                     </div>
                 </React.Fragment>
               ))}
-          </div>
+          </div> */}
         </div>
       </div>
     </footer>

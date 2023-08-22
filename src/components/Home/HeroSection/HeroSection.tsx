@@ -69,10 +69,10 @@ const HeroSection = (props: HeroSectionProps) => {
           </Paragraph>
 
           <div className="max-w-7xl">
-            <PrimaryButton pathName="/aboutus" className="mr-5">
+            {/* <PrimaryButton pathName="/aboutus" className="mr-5">
               {heroSectionText.buttonName}
-            </PrimaryButton>
-            <Hyperlinks link="/aboutus">{heroSectionText.linkName}</Hyperlinks>
+            </PrimaryButton> */}
+            {/* <Hyperlinks link="/aboutus">{heroSectionText.linkName}</Hyperlinks> */}
           </div>
         </div>
 
