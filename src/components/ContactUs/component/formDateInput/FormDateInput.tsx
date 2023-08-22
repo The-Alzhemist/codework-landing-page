@@ -13,7 +13,7 @@ const FormDateInput = ({
         {labelName} {isRequired && <span className="text-red-500">*</span>}
       </label>
       <input
-        className="appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 h-[38px] leading-tight focus:outline-none focus:shadow-outline"
+        className={`appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 h-[38px] leading-tight focus:outline-none focus:shadow-outline`}
         type="date"
         id={inputName}
         {...register(inputName, {

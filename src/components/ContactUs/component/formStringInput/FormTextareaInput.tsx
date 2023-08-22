@@ -3,21 +3,22 @@ import React from "react";
 const FormTextareaInput = ({ labelName, inputName, register, errors, isRequired }: any) => {
   return (
     <>
-      <label className="flex" htmlFor={inputName}>
+      <label className="flex" htmlFor={inputName ? inputName : ''}>
             {labelName} <span className="text-red-500">*</span>
           </label>
           <textarea
-            className="appearance-none border rounded py-2 px-3 w-full text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+            className={`appearance-none border rounded py-2 px-3 w-full text-gray-700 leading-tight focus:outline-none focus:shadow-outline  ${errors && 'border-red-500'}`}
             id={inputName}
-            placeholder="Write something ..."
             {...register(inputName, {
               required: {
-                value: true,
+                value: isRequired,
                 message: `${labelName} is required`,
               },
             })}
+            placeholder="Write something ..."
           />
-          {isRequired && <p className="text-red-500 mb-5">{errors}</p>}
+           {/* {errors && <p className="text-red-500 mb-5">{errors}</p>} */}
+          
     </>
   );
 };

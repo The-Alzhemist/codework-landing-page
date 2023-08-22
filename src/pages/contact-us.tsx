@@ -2,6 +2,7 @@ import React from "react";
 import AppLayout from "../components/AppLayout/AppLayout";
 import MetaTag from "@/components/seo/MetaTag";
 import ContactUsForm from "@/components/ContactUs/contactus-form";
+import ContactForm from "@/components/ContactUs/FormSpree-form";
 
 const ContactUsPage = () => {
   return (
@@ -15,8 +16,8 @@ const ContactUsPage = () => {
           </div>
         </div>
 
-      
-       <ContactUsForm/>
+        {/* <ContactUsForm/> */}
+        <ContactForm />
       </AppLayout>
     </>
   );
