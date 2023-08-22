@@ -43,7 +43,8 @@ const NavigationBar = ({
           </div>
 
           {/* Burger for Sidemenu, only for mobile */}
-          <div className="z-20 flex items-end lg:hidden">
+           {/* หน้าไหนเสร็จแล้วค่อยๆมาเปิดทีละปุ่ม */}
+          {/* <div className="z-20 flex items-end lg:hidden">
             <button
               className="ml-4 flex flex-col"
               onClick={() => {
@@ -63,10 +64,11 @@ const NavigationBar = ({
                 className="mb-1 h-1 w-6 rounded-full bg-slate-900"
               />
             </button>
-          </div>
+          </div> */}
 
           {/* Only for PC */}
-          <div className="hidden lg:flex items-center gap-x-5">
+           {/* หน้าไหนเสร็จแล้วค่อยๆมาเปิดทีละปุ่ม */}
+          {/* <div className="hidden lg:flex items-center gap-x-5">
             {menu?.map((menu: MenuItem, index: number) => (
               <React.Fragment key={`menu-${index}`}>
                 <div
@@ -80,12 +82,13 @@ const NavigationBar = ({
             ))}
 
             <OutlinedButton className="" pathName="/contact-us">Contact Us</OutlinedButton>
-          </div>
+          </div> */}
         </div>
       </header>
 
       {/* Sidemenu for tablet mobile */}
-      <animated.nav
+      {/* หน้าไหนเสร็จแล้วค่อยๆมาเปิดทีละปุ่ม */}
+      {/* <animated.nav
         style={navStyle}
         className="fixed top-0 z-30 flex h-full flex-col bg-primary-50/30 p-6 text-primary-900 bg-white w-full"
       >
@@ -105,7 +108,7 @@ const NavigationBar = ({
           <li><OutlinedButton className="mt-8 w-full max-w-md" pathName="/contact-us" >Contact Us</OutlinedButton></li>
      
         </ul>
-      </animated.nav>
+      </animated.nav> */}
 
       {/* Margin */}
       <div className="relative h-16 sm:h-24 w-full" />

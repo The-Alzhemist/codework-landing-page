@@ -51,9 +51,9 @@ const OurProduct = (props: OurProductProps) => {
             {ourProductSectionText.productDescription}
           </Paragraph>
 
-          <Hyperlinks link="/aboutus">
+          {/* <Hyperlinks link="/aboutus">
             {ourProductSectionText.productLinkName}
-          </Hyperlinks>
+          </Hyperlinks> */}
         </h3>
 
         <div className="lg:w-2/4 flex justify-end">
