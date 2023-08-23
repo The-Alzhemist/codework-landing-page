@@ -6,6 +6,9 @@ import FormTextareaInput from "./component/formStringInput/FormTextareaInput";
 import FormStringInput from "./component/formStringInput/FormStringInput";
 import FormDateInput from "./component/formDateInput/FormDateInput";
 import { ExternalPrimaryButton } from "../AppLayout/components/button/ExternalPrimaryButton";
+import BackgroundGradientBlur from "../backgroundGradientBlur/BackgroundGradientBlur";
+import FormSelectedInput from "./component/formSelectedInput/FormSelectedInput";
+import FormEmailInput from "./component/formEmailInput/FormEmailInput";
 const ContactForm = () => {
   const [state, sendDataToFromSpree] = useFormSpree("xwkdoowe");
 
@@ -15,8 +18,20 @@ const ContactForm = () => {
 
   return (
     <>
-      <div className="relative max-w-[1440px] mx-auto py-[30px] md:py-[50px] lg:px-[150px] ">
-        <form onSubmit={handleSubmit(sendDataToFromSpree)} noValidate>
+      <div className="bg-white rounded-xl relative max-w-[1440px] mx-auto py-[30px] md:py-[50px] lg:px-[150px]">
+        <BackgroundGradientBlur className="top-0 left-0" />
+        <BackgroundGradientBlur className="top-0 right-0" />
+        <h1 className="text-center mb-20">
+          <div className="text-2xl font-light">Wanna talk with us?</div>
+          <div className="font-normal inline bg-line ml-3 text-3xl md:text-5xl">
+            CONTACT US
+          </div>
+        </h1>
+        <form
+          className="max-w-[1440px] px-2 md:px-5"
+          onSubmit={handleSubmit(sendDataToFromSpree)}
+          noValidate
+        >
           {/* row 1 */}
           <div>
             <FormTextareaInput
@@ -29,7 +44,7 @@ const ContactForm = () => {
           </div>
 
           {/* row2 */}
-          <div className="flex gap-x-6">
+          <div className="flex flex-col sm:flex-row gap-x-6">
             {/* left */}
             <div className="w-full">
               <FormStringInput
@@ -46,27 +61,11 @@ const ContactForm = () => {
                 errors={errors.name?.message}
               ></FormStringInput>
 
-              <label className="flex" htmlFor="email">
-                Email <span className="text-red-500">*</span>
-              </label>
-              <input
-                className={`appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline ${
-                  errors.email?.message && "border-red-500"
-                }`}
-                type="text"
-                id="email"
-                {...register("email", {
-                  required: {
-                    value: true,
-                    message: "Email is required",
-                  },
-                  pattern: {
-                    value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                    message: "Invalid pattern email address",
-                  },
-                })}
-              />
-              {/* <p className="text-red-500">{errors.email?.message}</p> */}
+              <FormEmailInput labelName="Email"
+                inputName="email"
+                register={register}
+                isRequired={true}
+                errors={errors.name?.message}/>
             </div>
 
             {/* right */}
@@ -80,25 +79,14 @@ const ContactForm = () => {
                     isRequired={false}
                   />
                 </div>
-
                 {/* timePeriod */}
                 <div className="w-full">
-                  <label className="flex" htmlFor="timePeriod">
-                    <span className="text-white">time period</span>
-                  </label>
-
-                  <select
-                    className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full px-2 h-[38px]"
-                    id="timePeriod"
-                    {...register("timePeriod")}
-                  >
-                    <option value="-">Select time period</option>
-                    <option value="13.00-14.00">13.00-14.00</option>
-                    <option value="14.00-16.00">14.00-16.00</option>
-                    <option value="17.00-18.00">17.00-18.00</option>
-                  </select>
-                  {/* <p className="text-red-500">{errors.timePeriod?.message}</p> */}
-                  <p></p>
+                  <FormSelectedInput
+                    labelName="timePeriod"
+                    inputName="timePeriod"
+                    register={register}
+                    isRequired={false}
+                  />
                 </div>
               </div>
 
@@ -119,11 +107,11 @@ const ContactForm = () => {
             </div>
           </div>
 
-          <div>
+          <div className="mb-5">
             <label htmlFor="how did you hear about us">
               How did you hear about us?
             </label>
-            <div className="flex gap-x-5">
+            <div className="flex flex-wrap gap-x-5">
               <div className="">
                 <input
                   type="checkbox"
@@ -176,6 +164,11 @@ const ContactForm = () => {
             </div>
           </div>
 
+          <div className="mb-5  text-sm">
+            *We will be in touch with you shortly through the number +66 83 987
+            4997.
+          </div>
+
           {errors && (
             <div className="mb-5">
               {errors.idea && (
@@ -208,7 +201,7 @@ const ContactForm = () => {
             to us!
           </div>
         )}
-          {state.errors && (
+        {state.errors && (
           <div className="text-red-500 mt-3">
             Sorry, we couldn't send your message. Please try again
           </div>

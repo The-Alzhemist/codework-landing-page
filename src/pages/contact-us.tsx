@@ -1,7 +1,6 @@
 import React from "react";
 import AppLayout from "../components/AppLayout/AppLayout";
 import MetaTag from "@/components/seo/MetaTag";
-import ContactUsForm from "@/components/ContactUs/contactus-form";
 import ContactForm from "@/components/ContactUs/FormSpree-form";
 
 const ContactUsPage = () => {
@@ -10,14 +9,9 @@ const ContactUsPage = () => {
       <MetaTag />
 
       <AppLayout>
-        <div className="text-right text-xl flex flex-col items-center z-20 min-h-[500px] justify-center">
-          <div className="font-normal text-4xl bg-line ml-3">
-            Contact us page is coming soon...
-          </div>
-        </div>
-
-        {/* <ContactUsForm/> */}
+        <div className="flex flex-col items-center z-20 min-h-[500px] justify-center ">
         <ContactForm />
+        </div>
       </AppLayout>
     </>
   );
