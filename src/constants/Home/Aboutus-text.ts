@@ -1,7 +1,7 @@
 import { aboutUsTextInterface } from "@/components/Home/AboutUs/interface";
 
 export const aboutUsSectionText: aboutUsTextInterface = {
-    heading1: "EIEI",
+    heading1: "haha",
     heading2: "BUT",
     heading3: "AMBITIOUS",
     descriptionRight:"We are a group of people who take pride in consistently delivering awesome products that will exceed your expectations.",
