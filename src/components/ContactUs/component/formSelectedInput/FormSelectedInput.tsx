@@ -1,4 +1,5 @@
 import React from "react";
+import { FormSelectedInterface } from "./interface";
 
 const FormSelectedInput = ({
   labelName,
@@ -6,7 +7,7 @@ const FormSelectedInput = ({
   register,
   errors,
   isRequired,
-}: any) => {
+}: FormSelectedInterface) => {
   return (
     <>
       <label className="flex" htmlFor={inputName}>
@@ -23,7 +24,7 @@ const FormSelectedInput = ({
           },
         })}
       >
-        <option value="-">Select time period</option>
+        <option value="">Select time period</option>
         <option value="13.00-14.00">13.00-14.00</option>
         <option value="14.00-16.00">14.00-16.00</option>
         <option value="17.00-18.00">17.00-18.00</option>

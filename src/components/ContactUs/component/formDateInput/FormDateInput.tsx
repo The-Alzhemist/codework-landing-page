@@ -1,4 +1,5 @@
 import React from "react";
+import { FormDateInterface } from "./interface";
 
 const FormDateInput = ({
   labelName,
@@ -6,7 +7,7 @@ const FormDateInput = ({
   register,
   errors,
   isRequired,
-}: any) => {
+}: FormDateInterface) => {
   return (
     <>
       <label className="flex" htmlFor={inputName}>

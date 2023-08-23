@@ -1,6 +1,5 @@
 import React from "react";
 import { useForm as useFormSpree } from "@formspree/react";
-
 import FormTextareaInput from "./component/formStringInput/FormTextareaInput";
 import FormStringInput from "./component/formStringInput/FormStringInput";
 import FormDateInput from "./component/formDateInput/FormDateInput";
