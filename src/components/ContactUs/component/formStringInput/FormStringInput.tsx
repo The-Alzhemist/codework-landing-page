@@ -10,6 +10,7 @@ const FormStringInput = ({ labelName, inputName, register, errors, isRequired }:
         className={`appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-3 ${errors && 'border-red-500'}`}
         type="text"
         id={inputName}
+        placeholder="Write something ..."
         {...register(inputName, {
           required: {
             value: isRequired,

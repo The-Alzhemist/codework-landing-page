@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useForm as useFormSpree } from "@formspree/react";
 import { FormValues } from "./interface";
 import { useForm } from "react-hook-form";
@@ -12,18 +12,19 @@ import FormEmailInput from "./component/formEmailInput/FormEmailInput";
 import withFormSpreeForm from "./withFormSpree-form";
 const ContactForm = () => {
     const [state, sendDataToFromSpree] = useFormSpree("xwkdoowe");
+    const [isShowOtherChannel, setIsShowOtherChannel] = useState(false)
     const form = useForm<FormValues>();
     const { register, handleSubmit, formState } = form;
     const { errors, isValid } = formState;
  
   return (
     <>
-      <div className="bg-white rounded-xl relative max-w-[1440px] mx-auto py-[30px] md:py-[50px] lg:px-[150px]">
+      <div className="bg-white rounded-xl relative max-w-[1440px] mx-auto py-[30px] md:py-[50px] lg:px-[50px] my-5 sm:my-0">
         <BackgroundGradientBlur className="top-0 left-0" />
         <BackgroundGradientBlur className="top-0 right-0" />
         <h1 className="text-center mb-20">
-          <div className="text-2xl font-light">Wanna talk with us?</div>
-          <div className="font-normal inline bg-line ml-3 text-3xl md:text-5xl">
+          <div className="text-2xl font-light mr-20">Wanna talk with us?</div>
+          <div className="font-normal inline bg-line text-3xl md:text-5xl ml-20">
             CONTACT US
           </div>
         </h1>
@@ -72,7 +73,7 @@ const ContactForm = () => {
 
             {/* right */}
             <div className="w-full">
-              <div className="flex gap-x-6">
+              <div className="flex gap-x-3 sm:gap-x-6">
                 <div className="w-full">
                   <FormDateInput
                     labelName=" Preferred time slots"
@@ -113,7 +114,7 @@ const ContactForm = () => {
             <label htmlFor="how did you hear about us">
               How did you hear about us?
             </label>
-            <div className="flex flex-wrap gap-x-5">
+            <div className="flex flex-col sm:flex-row flex-wrap gap-x-5">
               <div className="">
                 <input
                   type="checkbox"
@@ -150,11 +151,12 @@ const ContactForm = () => {
                     value="OtherChannel"
                     {...register("channels")}
                     className="mr-2"
+                    onChange={(e) => e.target.checked? setIsShowOtherChannel(true) : setIsShowOtherChannel(false) }
                   />
                   <label htmlFor="">Other (please specify)</label>
                 </div>
 
-                <div>
+                {isShowOtherChannel && <div className="w-full sm:w-[190px]">
                   <FormStringInput
                     labelName=""
                     inputName="otherChannel"
@@ -162,6 +164,7 @@ const ContactForm = () => {
                     isRequired={false}
                   ></FormStringInput>
                 </div>
+                }
               </div>
             </div>
           </div>
@@ -193,18 +196,18 @@ const ContactForm = () => {
           </ExternalPrimaryButton>
         </form>
         {state.submitting && (
-          <div className="text-secondary-900 mt-3">
+          <div className="text-secondary-900 mt-3 px-2 md:px-5">
             Sending your message, please wait...
           </div>
         )}
         {state.succeeded && (
-          <div className="text-primary-800 mt-3">
+          <div className="text-primary-800 mt-3 px-2 md:px-5">
             Your message has been sent successfully. Thank you for reaching out
             to us!
           </div>
         )}
         {state.errors && (
-          <div className="text-red-500 mt-3">
+          <div className="text-red-500 mt-3 px-2 md:px-5">
             {`Sorry, we couldn't send your message. Please try again`}
           </div>
         )}

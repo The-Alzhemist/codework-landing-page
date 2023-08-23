@@ -7,8 +7,9 @@ const FormTextareaInput = ({ labelName, inputName, register, errors, isRequired 
             {labelName} <span className="text-red-500">*</span>
           </label>
           <textarea
-            className={`appearance-none border rounded py-2 px-3 w-full text-gray-700 leading-tight focus:outline-none focus:shadow-outline  ${errors && 'border-red-500'}`}
+            className={`appearance-none border rounded py-2 px-3 w-full text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-2 ${errors && 'border-red-500'}`}
             id={inputName}
+            rows={5}
             {...register(inputName, {
               required: {
                 value: isRequired,
