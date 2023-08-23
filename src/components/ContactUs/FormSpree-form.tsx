@@ -1,7 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import { useForm as useFormSpree } from "@formspree/react";
-import { FormValues } from "./interface";
-import { useForm } from "react-hook-form";
+
 import FormTextareaInput from "./component/formStringInput/FormTextareaInput";
 import FormStringInput from "./component/formStringInput/FormStringInput";
 import FormDateInput from "./component/formDateInput/FormDateInput";
@@ -14,13 +13,14 @@ import StatusMessage from "./component/statusMessage/StatusMessage";
 import FormCheckboxInput from "./component/formCheckboxInput/FormCheckboxInput";
 import { FORMSPREE_SLACK_TEST } from "@/config/environment";
 import { checkboxList } from "./component/formCheckboxInput/constants";
-const ContactForm = () => {
+import { WithFormSpreeFormProps } from "./interface";
+const ContactForm = ({  isShowOtherChannel,
+  setIsShowOtherChannel,
+  register,
+  handleSubmit,
+  errors,
+  isValid}:WithFormSpreeFormProps) => {
   const [state, sendDataToFromSpree] = useFormSpree(FORMSPREE_SLACK_TEST);
-
-  const [isShowOtherChannel, setIsShowOtherChannel] = useState(false);
-  const form = useForm<FormValues>();
-  const { register, handleSubmit, formState } = form;
-  const { errors, isValid } = formState;
 
   return (
     <>

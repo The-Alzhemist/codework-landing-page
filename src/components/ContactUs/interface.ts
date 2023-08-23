@@ -1,3 +1,4 @@
+import { UseFormHandleSubmit } from "react-hook-form";
 
 export type FormValues = {
     idea: string;
@@ -11,3 +12,11 @@ export type FormValues = {
     channels: string
   };
 
+  export interface WithFormSpreeFormProps {
+    isShowOtherChannel: boolean;
+    setIsShowOtherChannel: React.Dispatch<React.SetStateAction<boolean>>;
+    register: any; 
+    handleSubmit: UseFormHandleSubmit<FormValues, undefined>;
+    errors: any; 
+    isValid: boolean; 
+  }
