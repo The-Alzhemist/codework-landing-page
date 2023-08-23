@@ -1,3 +1,4 @@
+
 export type FormValues = {
     idea: string;
     budget: string;
@@ -9,3 +10,4 @@ export type FormValues = {
     CompanyName: string;
     channels: string
   };
+

@@ -9,13 +9,13 @@ import { ExternalPrimaryButton } from "../AppLayout/components/button/ExternalPr
 import BackgroundGradientBlur from "../backgroundGradientBlur/BackgroundGradientBlur";
 import FormSelectedInput from "./component/formSelectedInput/FormSelectedInput";
 import FormEmailInput from "./component/formEmailInput/FormEmailInput";
+import withFormSpreeForm from "./withFormSpree-form";
 const ContactForm = () => {
-  const [state, sendDataToFromSpree] = useFormSpree("xwkdoowe");
-
-  const form = useForm<FormValues>();
-  const { register, handleSubmit, formState } = form;
-  const { errors, isValid } = formState;
-
+    const [state, sendDataToFromSpree] = useFormSpree("xwkdoowe");
+    const form = useForm<FormValues>();
+    const { register, handleSubmit, formState } = form;
+    const { errors, isValid } = formState;
+ 
   return (
     <>
       <div className="bg-white rounded-xl relative max-w-[1440px] mx-auto py-[30px] md:py-[50px] lg:px-[150px]">
@@ -39,7 +39,7 @@ const ContactForm = () => {
               inputName="idea"
               register={register}
               isRequired={true}
-              errors={errors.idea?.message}
+              errors={errors?.idea?.message}
             />
           </div>
 
@@ -58,14 +58,16 @@ const ContactForm = () => {
                 inputName="name"
                 register={register}
                 isRequired={true}
-                errors={errors.name?.message}
+                errors={errors?.name?.message}
               ></FormStringInput>
 
-              <FormEmailInput labelName="Email"
+              <FormEmailInput
+                labelName="Email"
                 inputName="email"
                 register={register}
                 isRequired={true}
-                errors={errors.name?.message}/>
+                errors={errors?.email?.message}
+              />
             </div>
 
             {/* right */}
@@ -95,7 +97,7 @@ const ContactForm = () => {
                 inputName="phoneNumber"
                 register={register}
                 isRequired={true}
-                errors={errors.phoneNumber?.message}
+                errors={errors?.phoneNumber?.message}
               ></FormStringInput>
 
               <FormStringInput
@@ -203,7 +205,7 @@ const ContactForm = () => {
         )}
         {state.errors && (
           <div className="text-red-500 mt-3">
-            Sorry, we couldn't send your message. Please try again
+            {`Sorry, we couldn't send your message. Please try again`}
           </div>
         )}
       </div>
@@ -211,4 +213,6 @@ const ContactForm = () => {
   );
 };
 
-export default ContactForm;
+
+const WrappedComponent = withFormSpreeForm(ContactForm);
+export default WrappedComponent;
