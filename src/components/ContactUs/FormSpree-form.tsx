@@ -10,13 +10,18 @@ import BackgroundGradientBlur from "../backgroundGradientBlur/BackgroundGradient
 import FormSelectedInput from "./component/formSelectedInput/FormSelectedInput";
 import FormEmailInput from "./component/formEmailInput/FormEmailInput";
 import withFormSpreeForm from "./withFormSpree-form";
+import StatusMessage from "./component/statusMessage/StatusMessage";
+import FormCheckboxInput from "./component/formCheckboxInput/FormCheckboxInput";
+import { FORMSPREE_SLACK_TEST } from "@/config/environment";
+import { checkboxList } from "./component/formCheckboxInput/constants";
 const ContactForm = () => {
-    const [state, sendDataToFromSpree] = useFormSpree("xwkdoowe");
-    const [isShowOtherChannel, setIsShowOtherChannel] = useState(false)
-    const form = useForm<FormValues>();
-    const { register, handleSubmit, formState } = form;
-    const { errors, isValid } = formState;
- 
+  const [state, sendDataToFromSpree] = useFormSpree(FORMSPREE_SLACK_TEST);
+
+  const [isShowOtherChannel, setIsShowOtherChannel] = useState(false);
+  const form = useForm<FormValues>();
+  const { register, handleSubmit, formState } = form;
+  const { errors, isValid } = formState;
+
   return (
     <>
       <div className="bg-white rounded-xl relative max-w-[1440px] mx-auto py-[30px] md:py-[50px] lg:px-[50px] my-5 sm:my-0">
@@ -29,7 +34,7 @@ const ContactForm = () => {
           </div>
         </h1>
         <form
-          className="max-w-[1440px] px-2 md:px-5"
+          className="w-full max-w-[1440px] px-2 md:px-5"
           onSubmit={handleSubmit(sendDataToFromSpree)}
           noValidate
         >
@@ -43,8 +48,7 @@ const ContactForm = () => {
               errors={errors?.idea?.message}
             />
           </div>
-
-          {/* row2 */}
+          {/* row 2 */}
           <div className="flex flex-col sm:flex-row gap-x-6">
             {/* left */}
             <div className="w-full">
@@ -61,7 +65,6 @@ const ContactForm = () => {
                 isRequired={true}
                 errors={errors?.name?.message}
               ></FormStringInput>
-
               <FormEmailInput
                 labelName="Email"
                 inputName="email"
@@ -70,7 +73,6 @@ const ContactForm = () => {
                 errors={errors?.email?.message}
               />
             </div>
-
             {/* right */}
             <div className="w-full">
               <div className="flex gap-x-3 sm:gap-x-6">
@@ -82,7 +84,6 @@ const ContactForm = () => {
                     isRequired={false}
                   />
                 </div>
-                {/* timePeriod */}
                 <div className="w-full">
                   <FormSelectedInput
                     labelName="timePeriod"
@@ -92,7 +93,6 @@ const ContactForm = () => {
                   />
                 </div>
               </div>
-
               <FormStringInput
                 labelName=" Phone number"
                 inputName="phoneNumber"
@@ -100,7 +100,6 @@ const ContactForm = () => {
                 isRequired={true}
                 errors={errors?.phoneNumber?.message}
               ></FormStringInput>
-
               <FormStringInput
                 labelName="Company Name"
                 inputName="companyName"
@@ -111,62 +110,14 @@ const ContactForm = () => {
           </div>
 
           <div className="mb-5">
-            <label htmlFor="how did you hear about us">
-              How did you hear about us?
-            </label>
-            <div className="flex flex-col sm:flex-row flex-wrap gap-x-5">
-              <div className="">
-                <input
-                  type="checkbox"
-                  value="Search engine (Google, Yahoo, etc.)"
-                  {...register("channels")}
-                  className="mr-2"
-                />
-                <label htmlFor="">Search engine (Google, Yahoo, etc.)</label>
-              </div>
-              <div className="">
-                <input
-                  type="checkbox"
-                  value="Social Media"
-                  {...register("channels")}
-                  className="mr-2"
-                />
-                <label htmlFor="">Social media</label>
-              </div>
-
-              <div className="">
-                <input
-                  type="checkbox"
-                  value="Friend/Colleague"
-                  {...register("channels")}
-                  className="mr-2"
-                />
-                <label htmlFor="">Friend/Colleague</label>
-              </div>
-
-              <div className="">
-                <div>
-                  <input
-                    type="checkbox"
-                    value="OtherChannel"
-                    {...register("channels")}
-                    className="mr-2"
-                    onChange={(e) => e.target.checked? setIsShowOtherChannel(true) : setIsShowOtherChannel(false) }
-                  />
-                  <label htmlFor="">Other (please specify)</label>
-                </div>
-
-                {isShowOtherChannel && <div className="w-full sm:w-[190px]">
-                  <FormStringInput
-                    labelName=""
-                    inputName="otherChannel"
-                    register={register}
-                    isRequired={false}
-                  ></FormStringInput>
-                </div>
-                }
-              </div>
-            </div>
+            <FormCheckboxInput
+              labelName="How did you hear about us?"
+              inputName="channel"
+              checkboxList={checkboxList}
+              register={register}
+              isShowOtherChannel={isShowOtherChannel}
+              setIsShowOtherChannel={setIsShowOtherChannel}
+            />
           </div>
 
           <div className="mb-5  text-sm">
@@ -195,27 +146,14 @@ const ContactForm = () => {
             SEND MESSAGE
           </ExternalPrimaryButton>
         </form>
-        {state.submitting && (
-          <div className="text-secondary-900 mt-3 px-2 md:px-5">
-            Sending your message, please wait...
-          </div>
-        )}
-        {state.succeeded && (
-          <div className="text-primary-800 mt-3 px-2 md:px-5">
-            Your message has been sent successfully. Thank you for reaching out
-            to us!
-          </div>
-        )}
-        {state.errors && (
-          <div className="text-red-500 mt-3 px-2 md:px-5">
-            {`Sorry, we couldn't send your message. Please try again`}
-          </div>
-        )}
+        <StatusMessage
+          submitting={state.submitting}
+          succeeded={state.succeeded}
+          errors={state.errors}
+        />
       </div>
     </>
   );
 };
-
-
 const WrappedComponent = withFormSpreeForm(ContactForm);
 export default WrappedComponent;

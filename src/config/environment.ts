@@ -1,7 +1,3 @@
-// for email.js
-export const EMAILJS_SERVICE_ID = "service_n3oz9jw";
-export const EMAILJS_TEMPLATE_ID = "template_1eta5yc";
-export const EMAILJS_PUBLIC_KEY = "vGBtBUXGtYU9DWtFv";
-
-// for slack 
-export const SLACK_WEBHOOK_URL = "https://hooks.slack.com/services/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"
+// FormSpree Key
+export const FORMSPREE_SLACK_TEST = "xwkdoowe"
+export const FORMSPREE_SLACK_LANDING_GROUP = "xknlrznz"
