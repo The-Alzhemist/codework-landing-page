@@ -1,6 +1,7 @@
 import React from "react";
+import { FormStringInterface } from "./interface";
 
-const FormTextareaInput = ({ labelName, inputName, register, errors, isRequired }: any) => {
+const FormTextareaInput = ({ labelName, inputName, register, errors, isRequired }: FormStringInterface) => {
   return (
     <>
       <label className="flex" htmlFor={inputName ? inputName : ''}>
