@@ -1,6 +1,6 @@
-import { UseFormHandleSubmit } from "react-hook-form";
+import { FieldErrors, UseFormHandleSubmit } from "react-hook-form";
 
-export type FormValues = {
+export type ContactFormTypes = {
     idea: string;
     budget: string;
     name: string;
@@ -16,8 +16,8 @@ export type FormValues = {
     isShowOtherChannel: boolean;
     setIsShowOtherChannel: React.Dispatch<React.SetStateAction<boolean>>;
     register: any; 
-    handleSubmit: UseFormHandleSubmit<FormValues, undefined>;
-    errors: any; 
+    handleSubmit: UseFormHandleSubmit<ContactFormTypes, undefined>;
+    errors: FieldErrors<ContactFormTypes>; 
     isValid: boolean; 
     state:any
     sendDataToFromSpree:any

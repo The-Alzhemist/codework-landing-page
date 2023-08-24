@@ -3,6 +3,6 @@ export interface FormSelectedInterface {
     inputName: string;
     optionList:{ value: string; text: string; }[];
     register:any
-    errors?:any
+    errors?:string
     isRequired: boolean;
 }
