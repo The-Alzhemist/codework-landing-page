@@ -14,7 +14,7 @@ const FormDateInput = ({
         {labelName} {isRequired && <span className="text-red-500">*</span>}
       </label>
       <input
-        className={`appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 h-[38px] leading-tight focus:outline-none focus:shadow-outline`}
+        className={`appearance-none border rounded w-full py-2 px-3 text-gray-700 h-[38px] leading-tight focus:outline-none focus:shadow-outline  ${errors ? 'border-red-500 mb-1' : 'mb-3'}`}
         type="date"
         id={inputName}
         {...register(inputName, {
@@ -24,7 +24,7 @@ const FormDateInput = ({
           },
         })}
       />
-      {isRequired && <p className="text-red-500 mb-5">{errors}</p>}
+      {errors && <p className="text-red-500 mb-3 text-xs">{errors}</p>}
     </>
   );
 };

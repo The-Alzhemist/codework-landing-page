@@ -10,7 +10,7 @@ import FormEmailInput from "./component/formEmailInput/FormEmailInput";
 import withFormSpreeForm from "./withFormSpree-form";
 import StatusMessage from "./component/statusMessage/StatusMessage";
 import FormCheckboxInput from "./component/formCheckboxInput/FormCheckboxInput";
-import { FORMSPREE_SLACK_TEST } from "@/config/environment";
+import { FORMSPREE_LANDING_TEST_KEY } from "@/config/environment";
 import { checkboxList } from "./component/formCheckboxInput/constants";
 import { WithFormSpreeFormProps } from "./interface";
 const ContactForm = ({  isShowOtherChannel,
@@ -19,7 +19,7 @@ const ContactForm = ({  isShowOtherChannel,
   handleSubmit,
   errors,
   isValid}:WithFormSpreeFormProps) => {
-  const [state, sendDataToFromSpree] = useFormSpree(FORMSPREE_SLACK_TEST);
+  const [state, sendDataToFromSpree] = useFormSpree(FORMSPREE_LANDING_TEST_KEY);
 
   return (
     <>
@@ -124,7 +124,7 @@ const ContactForm = ({  isShowOtherChannel,
             4997.
           </div>
 
-          {errors && (
+          {/* {errors && (
             <div className="mb-5">
               {errors.idea && (
                 <p className="text-red-500">** {errors.idea?.message}</p>
@@ -139,7 +139,7 @@ const ContactForm = ({  isShowOtherChannel,
                 <p className="text-red-500">** {errors.phoneNumber?.message}</p>
               )}
             </div>
-          )}
+          )} */}
 
           <ExternalPrimaryButton pathName="#" disabled={!isValid}>
             SEND MESSAGE

@@ -1,3 +1,3 @@
 // FormSpree Key
-export const FORMSPREE_SLACK_TEST = "xwkdoowe"
-export const FORMSPREE_SLACK_LANDING_GROUP = "xknlrznz"
+export const FORMSPREE_LANDING_TEST_KEY = "xwkdoowe"
+export const FORMSPREE_LANDING_KEY = "xknlrznz"
