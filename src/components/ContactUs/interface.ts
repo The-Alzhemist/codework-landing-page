@@ -1,4 +1,5 @@
-import { FieldErrors, UseFormHandleSubmit } from "react-hook-form";
+import { FieldErrors, FieldValues, SubmitHandler, UseFormHandleSubmit } from "react-hook-form";
+import { SubmissionSuccess, SubmissionError } from '@formspree/core';
 
 export type ContactFormTypes = {
     idea: string;
@@ -19,6 +20,11 @@ export type ContactFormTypes = {
     handleSubmit: UseFormHandleSubmit<ContactFormTypes, undefined>;
     errors: FieldErrors<ContactFormTypes>; 
     isValid: boolean; 
-    state:any
-    sendDataToFromSpree:any
+    state:{
+      errors: SubmissionError<FieldValues> | null;
+      result: SubmissionSuccess | null;
+      submitting: boolean;
+      succeeded: boolean;
+  }
+    sendDataToFromSpree:SubmitHandler<FieldValues>
   }
