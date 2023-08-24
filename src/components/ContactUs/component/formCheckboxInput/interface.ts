@@ -4,7 +4,7 @@ import { ContactFormTypes } from "../../interface";
 export interface FormCheckboxInterface {
     labelName: string;
     inputName: string;
-    register:any
+    register:any;
     errors?:string; 
     isRequired: boolean;
     checkboxList:{
