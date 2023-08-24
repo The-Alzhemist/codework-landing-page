@@ -1,4 +1,4 @@
-import { FieldErrors, FieldValues, RegisterOptions, SubmitHandler, UseFormHandleSubmit, UseFormRegisterReturn } from "react-hook-form";
+import { FieldErrors, FieldValues, RegisterOptions, SubmitHandler, UseFormHandleSubmit, UseFormRegister, UseFormRegisterReturn } from "react-hook-form";
 import { SubmissionSuccess, SubmissionError } from '@formspree/core';
 
 export interface ContactFormTypes {
@@ -17,9 +17,9 @@ export interface ContactFormTypes {
   export interface WithFormSpreeFormProps {
     isShowOtherChannel: boolean;
     setIsShowOtherChannel: React.Dispatch<React.SetStateAction<boolean>>;
-    register:any
-    handleSubmit: UseFormHandleSubmit<ContactFormTypes, undefined>;
-    errors: FieldErrors<ContactFormTypes>; 
+    register:UseFormRegister<FieldValues>
+    handleSubmit: UseFormHandleSubmit<FieldValues, undefined>;
+    errors: FieldErrors<FieldValues>; 
     isValid: boolean; 
     state:{
       errors: SubmissionError<FieldValues> | null;

@@ -90,6 +90,7 @@ const ContactForm = ({
                     optionList={SELECTED_OPTION_LIST}
                     register={register}
                     isRequired={false}
+
                   />
                 </div>
               </div>
