@@ -13,12 +13,17 @@ import FormCheckboxInput from "./component/formCheckboxInput/FormCheckboxInput";
 import { FORMSPREE_LANDING_TEST_KEY } from "@/config/environment";
 import { checkboxList } from "./component/formCheckboxInput/constants";
 import { WithFormSpreeFormProps } from "./interface";
-const ContactForm = ({  isShowOtherChannel,
+
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+const ContactForm = ({
+  isShowOtherChannel,
   setIsShowOtherChannel,
   register,
   handleSubmit,
   errors,
-  isValid}:WithFormSpreeFormProps) => {
+  isValid,
+}: WithFormSpreeFormProps) => {
   const [state, sendDataToFromSpree] = useFormSpree(FORMSPREE_LANDING_TEST_KEY);
 
   return (
@@ -150,6 +155,42 @@ const ContactForm = ({  isShowOtherChannel,
           succeeded={state.succeeded}
           errors={state.errors}
         />
+
+      
+
+        <button className="border mx-2"
+          onClick={() =>
+            toast.info("Sending your message, please wait...", {
+              position: "top-center",
+              autoClose: 2000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+              theme: "light",
+            })
+          }
+        >
+          Toast sending...
+        </button>
+
+        <button className="border mx-2"
+          onClick={() =>
+            toast.success("Your message has been sent successfully. Thank you for reaching out to us!", {
+              position: "top-center",
+              autoClose: 5000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+              theme: "light",
+            })
+          }
+        >
+          Toast successfully
+        </button>
       </div>
     </>
   );
