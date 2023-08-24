@@ -19,7 +19,7 @@ const FormStringInput = ({ labelName, inputName, register, errors, isRequired }:
           },
         })}
       />
-      {isRequired && <p className="text-red-500 mb-3 text-xs">{errors}</p>}
+      {errors && <p className="text-red-500 mb-3 text-xs">{errors}</p>}
     </>
   );
 };
