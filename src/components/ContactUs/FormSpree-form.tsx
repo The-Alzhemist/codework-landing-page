@@ -1,5 +1,4 @@
 import React from "react";
-import { useForm as useFormSpree } from "@formspree/react";
 import FormTextareaInput from "./component/formStringInput/FormTextareaInput";
 import FormStringInput from "./component/formStringInput/FormStringInput";
 import FormDateInput from "./component/formDateInput/FormDateInput";
@@ -10,12 +9,8 @@ import FormEmailInput from "./component/formEmailInput/FormEmailInput";
 import withFormSpreeForm from "./withFormSpree-form";
 import StatusMessage from "./component/statusMessage/StatusMessage";
 import FormCheckboxInput from "./component/formCheckboxInput/FormCheckboxInput";
-import { FORMSPREE_LANDING_TEST_KEY } from "@/config/environment";
-import { checkboxList } from "./component/formCheckboxInput/constants";
 import { WithFormSpreeFormProps } from "./interface";
-
-import { toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import { CHECKBOX_LIST, SELECTED_OPTION_LIST } from "@/constants/ContactUs/constant";
 const ContactForm = ({
   isShowOtherChannel,
   setIsShowOtherChannel,
@@ -23,9 +18,9 @@ const ContactForm = ({
   handleSubmit,
   errors,
   isValid,
+  state,
+  sendDataToFromSpree
 }: WithFormSpreeFormProps) => {
-  const [state, sendDataToFromSpree] = useFormSpree(FORMSPREE_LANDING_TEST_KEY);
-
   return (
     <>
       <div className="bg-white rounded-xl relative max-w-[1440px] mx-auto py-[30px] md:py-[50px] lg:px-[50px] my-5 sm:my-0">
@@ -92,8 +87,10 @@ const ContactForm = ({
                   <FormSelectedInput
                     labelName="timePeriod"
                     inputName="timePeriod"
+                    optionList={SELECTED_OPTION_LIST}
                     register={register}
-                    isRequired={false}
+                    isRequired={true}
+                    errors={errors?.timePeriod?.message}
                   />
                 </div>
               </div>
@@ -117,21 +114,24 @@ const ContactForm = ({
             <FormCheckboxInput
               labelName="How did you hear about us?"
               inputName="channel"
-              checkboxList={checkboxList}
+              checkboxList={CHECKBOX_LIST}
               register={register}
               isShowOtherChannel={isShowOtherChannel}
               setIsShowOtherChannel={setIsShowOtherChannel}
             />
           </div>
 
-          <div className="mb-5  text-sm">
+          <p className="mb-5  text-sm">
             *We will be in touch with you shortly through the number +66 83 987
             4997.
-          </div>
+          </p>
 
-          <ExternalPrimaryButton pathName="#" disabled={!isValid}>
+          <div className=" flex justify-end">
+          <ExternalPrimaryButton pathName="#" disabled={!isValid} >
             SEND MESSAGE
           </ExternalPrimaryButton>
+          </div>
+          
         </form>
 
         <StatusMessage
@@ -139,7 +139,6 @@ const ContactForm = ({
             succeeded={state.succeeded}
             errors={state.errors}
           />
-
       </div>
     </>
   );

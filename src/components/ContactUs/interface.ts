@@ -19,4 +19,6 @@ export type FormValues = {
     handleSubmit: UseFormHandleSubmit<FormValues, undefined>;
     errors: any; 
     isValid: boolean; 
+    state:any
+    sendDataToFromSpree:any
   }

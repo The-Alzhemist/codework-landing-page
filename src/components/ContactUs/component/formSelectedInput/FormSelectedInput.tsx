@@ -1,9 +1,11 @@
 import React from "react";
 import { FormSelectedInterface } from "./interface";
+import { SELECTED_OPTION_LIST } from "@/constants/ContactUs/constant";
 
 const FormSelectedInput = ({
   labelName,
   inputName,
+  optionList,
   register,
   errors,
   isRequired,
@@ -13,9 +15,8 @@ const FormSelectedInput = ({
       <label className="flex" htmlFor={inputName}>
         <span className="text-white">{labelName}</span>
       </label>
-
       <select
-        className="border border-gray-300 text-gray-900 text-sm rounded block w-full px-2 h-[38px]"
+        className={`border border-gray-300 text-gray-900 text-sm rounded block w-full px-2 h-[38px] ${errors ? 'border-red-500 mb-1' : 'mb-3'}`}
         id={inputName}
         {...register(inputName, {
           required: {
@@ -24,12 +25,13 @@ const FormSelectedInput = ({
           },
         })}
       >
-        <option value="">Select time period</option>
-        <option value="13.00-14.00">13.00-14.00</option>
-        <option value="14.00-16.00">14.00-16.00</option>
-        <option value="17.00-18.00">17.00-18.00</option>
+        {optionList.map((item: any, index: number) =>(
+          <React.Fragment key={`option-${inputName}-${index}`}>
+             <option value={item.value}>{item.text}</option> 
+          </React.Fragment>
+        ))}
       </select>
-      {errors && <p className="text-red-500 mb-5">{errors}</p>}
+      {errors && <p className="text-red-500 mb-3 text-xs">{errors}</p>}
     </>
   );
 };
