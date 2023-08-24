@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
-import { FormSpreeStatus } from './interface';
+import { FormSpreeStatusInterface } from './interface';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-const StatusMessage = ({ succeeded, submitting, errors }: FormSpreeStatus) => {
+const StatusMessage = ({ succeeded, submitting, errors }: FormSpreeStatusInterface) => {
   useEffect(() => {
     if (submitting && !succeeded) {
       toast.info("We're processing your message...", {
