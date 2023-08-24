@@ -1,10 +1,10 @@
-import { FieldErrors } from "react-hook-form";
+import { FieldErrors, RegisterOptions, UseFormRegisterReturn } from "react-hook-form";
 import { ContactFormTypes } from "../../interface";
 
 export interface FormCheckboxInterface {
     labelName: string;
     inputName: string;
-    register:any;
+    register:(name: string, options?: RegisterOptions) => UseFormRegisterReturn;
     errors?:string; 
     isRequired: boolean;
     checkboxList:{
