@@ -42,6 +42,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 - react-toast status handler = done
 - selectedForm reusable with other option = done
 - hoc structure = done
+- tailwindMerge 
 - type full
  
 
