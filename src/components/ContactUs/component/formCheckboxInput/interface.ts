@@ -8,6 +8,6 @@ export interface FormCheckboxInterface {
         value: string;
         label: string;
     }[],
-    isShowOtherChannel:any,
-    setIsShowOtherChannel:any,
+    isShowOtherChannel:boolean,
+    setIsShowOtherChannel: React.Dispatch<React.SetStateAction<boolean>>
 }
