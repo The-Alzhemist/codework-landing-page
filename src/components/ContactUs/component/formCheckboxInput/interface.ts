@@ -4,7 +4,10 @@ export interface FormCheckboxInterface {
     register:any
     errors?:any
     isRequired: boolean;
-    checkboxList:any,
+    checkboxList:{
+        value: string;
+        label: string;
+    }[],
     isShowOtherChannel:any,
     setIsShowOtherChannel:any,
 }
