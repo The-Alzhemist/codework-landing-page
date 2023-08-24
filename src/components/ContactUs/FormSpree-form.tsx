@@ -89,8 +89,7 @@ const ContactForm = ({
                     inputName="timePeriod"
                     optionList={SELECTED_OPTION_LIST}
                     register={register}
-                    isRequired={true}
-                    errors={errors?.timePeriod?.message}
+                    isRequired={false}
                   />
                 </div>
               </div>
@@ -118,6 +117,7 @@ const ContactForm = ({
               register={register}
               isShowOtherChannel={isShowOtherChannel}
               setIsShowOtherChannel={setIsShowOtherChannel}
+              isRequired={false}
             />
           </div>
 
