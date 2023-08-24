@@ -1,5 +1,6 @@
 import React from "react";
 import FormStringInput from "../formStringInput/FormStringInput";
+import { FormCheckboxInterface } from "./interface";
 
 const FormCheckboxInput = ({
   inputName,
@@ -8,7 +9,9 @@ const FormCheckboxInput = ({
   register,
   isShowOtherChannel,
   setIsShowOtherChannel,
-}: any) => {
+  errors,
+  isRequired
+}: FormCheckboxInterface) => {
   return (
     <>
       <label htmlFor={labelName}>{labelName}</label>
@@ -19,8 +22,14 @@ const FormCheckboxInput = ({
               <input
                 type="checkbox"
                 value={item.value}
-                {...register(inputName)}
                 className="mr-2"
+                {...register(inputName, {
+                  required: {
+                    value: isRequired,
+                    message: `${labelName} is required`,
+                  },
+                })}
+                
               />
               <label htmlFor={inputName}>{item.label}</label>
             </div>
@@ -55,7 +64,10 @@ const FormCheckboxInput = ({
             </div>
           )}
         </div>
+
+        
       </div>
+      {errors && <p className="text-red-500 mb-3 text-xs">{errors}</p>}
     </>
   );
 };
