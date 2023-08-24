@@ -39,9 +39,10 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 
 <!-- clear -->
+- react-toast status handler = done
+- selectedForm reusable with other option = done
+- hoc structure = done
 - type full
-- react-toast status handler
-- hoc structure
-- selectedForm reusable with other option
+ 
 
 
