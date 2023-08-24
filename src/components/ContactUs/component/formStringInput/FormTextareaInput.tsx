@@ -19,7 +19,7 @@ const FormTextareaInput = ({ labelName, inputName, register, errors, isRequired 
             })}
             placeholder="Write something ..."
           />
-           {errors && <p className="text-red-500 mb-3 text-xs">{errors}</p>}
+           {errors && typeof errors === "string" ?   <p className="text-red-500 mb-3 text-xs">{errors}</p> : ''}
           
     </>
   );

@@ -1,9 +1,9 @@
-import { RegisterOptions, UseFormRegisterReturn } from "react-hook-form";
+import { FieldError, FieldErrorsImpl, FieldValues, Merge, RegisterOptions, UseFormRegister, UseFormRegisterReturn } from "react-hook-form";
 
 export interface FormDateInterface {
     labelName: string;
     inputName: string;
-    register:(name: string, options?: RegisterOptions) => UseFormRegisterReturn;
-    errors?:string
+    register:UseFormRegister<FieldValues>
+    errors?:string |FieldError | Merge<FieldError, FieldErrorsImpl<any>> | undefined
     isRequired: boolean;
 }
