@@ -14,9 +14,7 @@ const FormEmailInput = ({
         {labelName} {isRequired && <span className="text-red-500">*</span>}
       </label>
       <input
-        className={`appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline ${
-          errors && "border-red-500"
-        }`}
+        className={`appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${errors ? 'border-red-500 mb-1' : 'mb-3'}`}
         type="text"
         id={inputName}
         placeholder="Write something ..."
@@ -31,6 +29,7 @@ const FormEmailInput = ({
           },
         })}
       />
+      {errors && <p className="text-red-500 mb-3 text-xs">{errors}</p>}
     </>
   );
 };
