@@ -129,68 +129,17 @@ const ContactForm = ({
             4997.
           </div>
 
-          {/* {errors && (
-            <div className="mb-5">
-              {errors.idea && (
-                <p className="text-red-500">** {errors.idea?.message}</p>
-              )}
-              {errors.name && (
-                <p className="text-red-500">** {errors.name?.message}</p>
-              )}
-              {errors.email && (
-                <p className="text-red-500">** {errors.email?.message}</p>
-              )}
-              {errors.phoneNumber && (
-                <p className="text-red-500">** {errors.phoneNumber?.message}</p>
-              )}
-            </div>
-          )} */}
-
           <ExternalPrimaryButton pathName="#" disabled={!isValid}>
             SEND MESSAGE
           </ExternalPrimaryButton>
         </form>
+
         <StatusMessage
-          submitting={state.submitting}
-          succeeded={state.succeeded}
-          errors={state.errors}
-        />
+            submitting={state.submitting}
+            succeeded={state.succeeded}
+            errors={state.errors}
+          />
 
-      
-
-        <button className="border mx-2"
-          onClick={() =>
-            toast.info("Sending your message, please wait...", {
-              position: "top-center",
-              autoClose: 2000,
-              hideProgressBar: false,
-              closeOnClick: true,
-              pauseOnHover: true,
-              draggable: true,
-              progress: undefined,
-              theme: "light",
-            })
-          }
-        >
-          Toast sending...
-        </button>
-
-        <button className="border mx-2"
-          onClick={() =>
-            toast.success("Your message has been sent successfully. Thank you for reaching out to us!", {
-              position: "top-center",
-              autoClose: 5000,
-              hideProgressBar: false,
-              closeOnClick: true,
-              pauseOnHover: true,
-              draggable: true,
-              progress: undefined,
-              theme: "light",
-            })
-          }
-        >
-          Toast successfully
-        </button>
       </div>
     </>
   );
