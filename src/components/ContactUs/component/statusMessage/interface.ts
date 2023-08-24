@@ -1,6 +1,7 @@
 import { SubmissionError} from '@formspree/core';
-export interface FormSpreeStatus {
+import { FieldValues } from 'react-hook-form';
+export interface FormSpreeStatusInterface {
     submitting: boolean;
     succeeded: boolean;
-    errors: SubmissionError<any> | null;
+    errors: SubmissionError<FieldValues> | null;
 }
