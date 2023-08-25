@@ -142,7 +142,6 @@ const ContactForm = ({
             succeeded={state.succeeded}
             errors={state.errors}
           />
-
           <SocialsSection/>
       </div>
     </>
