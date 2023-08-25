@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
-import { FormSpreeStatusInterface } from './interface';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { FormSpreeStatusInterface } from './interface';
 
 const StatusMessage = ({ succeeded, submitting, errors }: FormSpreeStatusInterface) => {
   useEffect(() => {
