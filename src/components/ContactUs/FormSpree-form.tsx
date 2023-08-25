@@ -12,7 +12,7 @@ import FormCheckboxInput from "./component/form/formCheckboxInput/FormCheckboxIn
 import { WithFormSpreeFormProps } from "./interface";
 import { CHECKBOX_LIST, SELECTED_OPTION_LIST } from "@/constants/ContactUs/constant";
 import SocialsSection from "./component/SocialsSection/SocialsSection";
-import StatusMessage from "./component/StatusMessage/StatusMessage";
+import StatusMessage from "./StatusMessage/StatusMessage";
 const ContactForm = ({
   isShowOtherChannel,
   setIsShowOtherChannel,
