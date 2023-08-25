@@ -1,16 +1,17 @@
 import React from "react";
-import FormTextareaInput from "./component/formStringInput/FormTextareaInput";
-import FormStringInput from "./component/formStringInput/FormStringInput";
-import FormDateInput from "./component/formDateInput/FormDateInput";
+import FormTextareaInput from "./component/form/formStringInput/FormTextareaInput";
+import FormStringInput from "./component/form/formStringInput/FormStringInput";
+import FormDateInput from "./component/form/formDateInput/FormDateInput";
 import { ExternalPrimaryButton } from "../AppLayout/components/button/ExternalPrimaryButton";
 import BackgroundGradientBlur from "../backgroundGradientBlur/BackgroundGradientBlur";
-import FormSelectedInput from "./component/formSelectedInput/FormSelectedInput";
-import FormEmailInput from "./component/formEmailInput/FormEmailInput";
+import FormSelectedInput from "./component/form/formSelectedInput/FormSelectedInput";
+import FormEmailInput from "./component/form/formEmailInput/FormEmailInput";
 import withFormSpreeForm from "./withFormSpree-form";
-import StatusMessage from "./component/statusMessage/StatusMessage";
-import FormCheckboxInput from "./component/formCheckboxInput/FormCheckboxInput";
+import StatusMessage from "./component/StatusMessage/StatusMessage";
+import FormCheckboxInput from "./component/form/formCheckboxInput/FormCheckboxInput";
 import { WithFormSpreeFormProps } from "./interface";
 import { CHECKBOX_LIST, SELECTED_OPTION_LIST } from "@/constants/ContactUs/constant";
+import SocialsSection from "./component/SocialsSection/SocialsSection";
 const ContactForm = ({
   isShowOtherChannel,
   setIsShowOtherChannel,
@@ -140,6 +141,8 @@ const ContactForm = ({
             succeeded={state.succeeded}
             errors={state.errors}
           />
+
+          <SocialsSection/>
       </div>
     </>
   );

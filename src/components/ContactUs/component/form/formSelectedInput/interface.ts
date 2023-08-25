@@ -1,5 +1,5 @@
 import { FieldError, FieldErrorsImpl, FieldValues, Merge, RegisterOptions, UseFormRegister, UseFormRegisterReturn } from "react-hook-form";
-import { ContactFormTypes } from "../../interface";
+import { ContactFormTypes } from "../../../interface";
 
 export interface FormSelectedInterface {
     labelName: string;
