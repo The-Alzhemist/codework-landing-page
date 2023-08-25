@@ -7,11 +7,12 @@ import BackgroundGradientBlur from "../backgroundGradientBlur/BackgroundGradient
 import FormSelectedInput from "./component/form/formSelectedInput/FormSelectedInput";
 import FormEmailInput from "./component/form/formEmailInput/FormEmailInput";
 import withFormSpreeForm from "./withFormSpree-form";
-import StatusMessage from "./component/StatusMessage/StatusMessage";
+
 import FormCheckboxInput from "./component/form/formCheckboxInput/FormCheckboxInput";
 import { WithFormSpreeFormProps } from "./interface";
 import { CHECKBOX_LIST, SELECTED_OPTION_LIST } from "@/constants/ContactUs/constant";
 import SocialsSection from "./component/SocialsSection/SocialsSection";
+import StatusMessage from "./component/StatusMessage/StatusMessage";
 const ContactForm = ({
   isShowOtherChannel,
   setIsShowOtherChannel,
