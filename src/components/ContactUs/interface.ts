@@ -1,5 +1,13 @@
-import { FieldErrors, FieldValues, RegisterOptions, SubmitHandler, UseFormHandleSubmit, UseFormRegister, UseFormRegisterReturn } from "react-hook-form";
-import { SubmissionSuccess, SubmissionError } from '@formspree/core';
+import {
+  FieldErrors,
+  FieldValues,
+  RegisterOptions,
+  SubmitHandler,
+  UseFormHandleSubmit,
+  UseFormRegister,
+  UseFormRegisterReturn,
+} from "react-hook-form";
+import { SubmissionSuccess, SubmissionError } from "@formspree/core";
 
 export interface ContactFormTypes {
   email: string;
@@ -14,18 +22,19 @@ export interface ContactFormTypes {
   otherChannel: string;
 }
 
-  export interface WithFormSpreeFormProps {
-    isShowOtherChannel: boolean;
-    setIsShowOtherChannel: React.Dispatch<React.SetStateAction<boolean>>;
-    register:UseFormRegister<FieldValues>
-    handleSubmit: UseFormHandleSubmit<FieldValues, undefined>;
-    errors: FieldErrors<FieldValues>; 
-    isValid: boolean; 
-    state:{
-      errors: SubmissionError<FieldValues> | null;
-      result: SubmissionSuccess | null;
-      submitting: boolean;
-      succeeded: boolean;
-  }
-    sendDataToFromSpree:SubmitHandler<FieldValues>
-  }
+export interface WithFormSpreeFormProps {
+  isShowOtherChannel: boolean;
+  setIsShowOtherChannel: React.Dispatch<React.SetStateAction<boolean>>;
+  register: UseFormRegister<FieldValues>;
+  handleSubmit: UseFormHandleSubmit<FieldValues, undefined>;
+  errors: FieldErrors<FieldValues>;
+  isValid: boolean;
+  control: any;
+  state: {
+    errors: SubmissionError<FieldValues> | null;
+    result: SubmissionSuccess | null;
+    submitting: boolean;
+    succeeded: boolean;
+  };
+  sendDataToFromSpree: SubmitHandler<FieldValues>;
+}
