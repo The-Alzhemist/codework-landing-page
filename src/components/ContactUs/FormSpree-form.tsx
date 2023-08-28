@@ -18,6 +18,7 @@ import SocialsSection from "./component/SocialsSection/SocialsSection";
 import StatusMessage from "./StatusMessage/StatusMessage";
 import InputField from "../form/InputField/InputField";
 import TextAreaField from "../form/TextAreaField/TextAreaField";
+import SelectedField from "../form/SelectedField/SelectedField";
 const ContactForm = ({
   isShowOtherChannel,
   setIsShowOtherChannel,
@@ -29,6 +30,9 @@ const ContactForm = ({
   control,
   sendDataToFromSpree,
 }: WithFormSpreeFormProps) => {
+  const testfunc = (e:any) => {
+    console.log(" >>", e)
+  }
   return (
     <>
       <div className="bg-white rounded-xl relative max-w-[1440px] mx-auto py-[30px] md:py-[50px] lg:px-[50px] my-5 sm:my-0">
@@ -42,7 +46,7 @@ const ContactForm = ({
         </h1>
         <form
           className="w-full max-w-[1440px] px-2 md:px-5"
-          onSubmit={handleSubmit(sendDataToFromSpree)}
+          onSubmit={handleSubmit(testfunc)}
           noValidate
         >
           {/* row 1 */}
@@ -55,16 +59,19 @@ const ContactForm = ({
               errors={errors?.idea?.message}
             /> */}
             <TextAreaField
-            name="idea"
-            control={control}
-            rules={{
-              required: { value: true, message: "Tell us your idea us required." },
-            }}
-            placeholder="Write something..."
-            type="text"
-            label="Tell us your idea"
-            className="mb-[12px]"
-            rows={5}
+              name="idea"
+              control={control}
+              rules={{
+                required: {
+                  value: true,
+                  message: "Tell us your idea us required.",
+                },
+              }}
+              placeholder="Write something..."
+              type="text"
+              label="Tell us your idea"
+              className="mb-[12px]"
+              rows={5}
             />
           </div>
           {/* row 2 */}
@@ -138,20 +145,47 @@ const ContactForm = ({
             <div className="w-full">
               <div className="flex gap-x-3 sm:gap-x-6">
                 <div className="w-full">
-                  <FormDateInput
+                  {/* <FormDateInput
                     labelName=" Preferred time slots"
                     inputName="timeSlot"
                     register={register}
                     isRequired={false}
+                  /> */}
+                  <InputField
+                    name="timeSlot"
+                    control={control}
+                    rules={{
+                      required: {
+                        value: false,
+                        message: "",
+                      },
+                    }}
+                    type="date"
+                    label="Preferred time slots"
+                    className="mb-[12px]"
                   />
                 </div>
                 <div className="w-full">
-                  <FormSelectedInput
+                  {/* <FormSelectedInput
                     labelName="timePeriod"
                     inputName="timePeriod"
                     optionList={SELECTED_OPTION_LIST}
                     register={register}
                     isRequired={false}
+                  /> */}
+                  <SelectedField 
+                   name="timePeriod"
+                   control={control}
+                   rules={{
+                     required: {
+                       value: false,
+                       message: "",
+                     },
+                   }}
+                   type="date"
+                   label="Time Period"
+                   className="mb-[12px]"
+                   optionList={SELECTED_OPTION_LIST}
                   />
                 </div>
               </div>
@@ -162,11 +196,14 @@ const ContactForm = ({
                 isRequired={true}
                 errors={errors?.phoneNumber?.message}
               ></FormStringInput> */}
-                <InputField
+              <InputField
                 name="phoneNumber"
                 control={control}
                 rules={{
-                  required: { value: true, message: "Phone number is Required." },
+                  required: {
+                    value: true,
+                    message: "Phone number is Required.",
+                  },
                 }}
                 placeholder="Write something ..."
                 type="number"
@@ -179,7 +216,7 @@ const ContactForm = ({
                 register={register}
                 isRequired={false}
               ></FormStringInput> */}
-                   <InputField
+              <InputField
                 name="companyName"
                 control={control}
                 rules={{
