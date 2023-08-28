@@ -19,6 +19,7 @@ import StatusMessage from "./StatusMessage/StatusMessage";
 import InputField from "../form/InputField/InputField";
 import TextAreaField from "../form/TextAreaField/TextAreaField";
 import SelectedField from "../form/SelectedField/SelectedField";
+import CheckBoxField from "../form/CheckBoxField/CheckBoxField";
 const ContactForm = ({
   isShowOtherChannel,
   setIsShowOtherChannel,
@@ -33,6 +34,8 @@ const ContactForm = ({
   const testfunc = (e:any) => {
     console.log(" >>", e)
   }
+  const options = ['January', 'February', 'March', 'April', 'May', 'June'];
+
   return (
     <>
       <div className="bg-white rounded-xl relative max-w-[1440px] mx-auto py-[30px] md:py-[50px] lg:px-[50px] my-5 sm:my-0">
@@ -46,7 +49,7 @@ const ContactForm = ({
         </h1>
         <form
           className="w-full max-w-[1440px] px-2 md:px-5"
-          onSubmit={handleSubmit(testfunc)}
+          onSubmit={handleSubmit(sendDataToFromSpree)}
           noValidate
         >
           {/* row 1 */}
@@ -231,7 +234,7 @@ const ContactForm = ({
           </div>
 
           <div className="mb-5">
-            <FormCheckboxInput
+            {/* <FormCheckboxInput
               labelName="How did you hear about us?"
               inputName="channel"
               checkboxList={CHECKBOX_LIST}
@@ -239,6 +242,18 @@ const ContactForm = ({
               isShowOtherChannel={isShowOtherChannel}
               setIsShowOtherChannel={setIsShowOtherChannel}
               isRequired={false}
+            /> */}
+            <CheckBoxField 
+             name="channel"
+             control={control}
+             rules={{
+               required: { value: false, message: "" },
+             }}
+             placeholder="Write something ..."
+             type="text"
+             label="Company name"
+             className="mb-[12px]"
+             checkboxList={options}
             />
           </div>
 

@@ -12,7 +12,7 @@ const withFormSpreeForm = (Component: React.FC<WithFormSpreeFormProps>) => {
     const hookForm = useForm<FieldValues>();
     const { register, handleSubmit, formState, reset, control } = hookForm;
     const { errors, isValid } = formState;
-    const [state, sendDataToFromSpree] = useFormSpree(FORMSPREE_LANDING_KEY);
+    const [state, sendDataToFromSpree] = useFormSpree(PRIVATE_MAIL_TEST);
     
 
 
