@@ -13,7 +13,6 @@ const InputField = ({
   label,
   className,
   inputClassName,
-  suffixIcon,
   placeholder,
   required = false,
   maxLength,
@@ -40,7 +39,7 @@ const InputField = ({
               disabled:bg-gray-300 disabled:text-gray-500 disabled:cursor-not-allowed 
               placeholder-gray-400  placeholder:text-md
                 ${error && 'border-red-500 border'}
-                ${suffixIcon && 'pr-[36px]'}
+               
                 ${inputClassName}
               `}
               disabled={disabled}
@@ -55,13 +54,7 @@ const InputField = ({
                 field.onChange(event.target.value)
               }}
             />
-            {suffixIcon && (
-              <div className={`absolute right-3 ${disabled && 'opacity-30'}`}>
-                {suffixIcon}
-              </div>
-            )}
           </div>
-
           {error && (
             <div className='mt-[8px] text-xs text-red-500 top-full'>
               {error.message}

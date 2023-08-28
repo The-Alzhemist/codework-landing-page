@@ -1,12 +1,11 @@
 import React from 'react'
-import { CheckboxFieldProps } from './interface'
+import { CheckBoxFieldProps } from './interface'
 
 
-
-const withCheckBoxField = (Component: React.FC<CheckboxFieldProps>) => {
+const withCheckBoxField = (Component: React.FC<CheckBoxFieldProps>) => {
   const Hoc = ({
     ...props
-  }: CheckboxFieldProps) => {
+  }: CheckBoxFieldProps) => {
 
     const newProps = {
       ...props,
