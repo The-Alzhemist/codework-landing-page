@@ -36,14 +36,14 @@ export const SELECTED_OPTION_LIST = [
   export const CHECKBOX_LIST = [
     {
       value: "Search engine (Google, Yahoo, etc.)",
-      label: "Search engine (Google, Yahoo, etc.)",
+      text: "Search engine (Google, Yahoo, etc.)",
     },
     {
       value: "Social media",
-      label: "Social media",
+      text: "Social media",
     },
     {
       value: "Friend/Colleague",
-      label: "Friend/Colleague",
+      text: "Friend/Colleague",
     },
   ];
