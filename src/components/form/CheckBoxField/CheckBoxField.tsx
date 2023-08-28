@@ -1,27 +1,24 @@
 import { Controller } from "react-hook-form";
 import { twMerge } from "tailwind-merge";
-// import { withInputField } from './withInputField'
-
 import React from "react";
-import { InputFieldProps } from "./interface";
 import { withCheckBoxField } from "./withCheckBoxField";
+import InputField from "../InputField/InputField";
+import { CheckboxFieldProps } from "./interface";
 
 const CheckBoxField = ({
   name,
   control,
   rules,
   disabled,
-  type,
   label,
   className,
   inputClassName,
-  suffixIcon,
-  placeholder,
   required = false,
-  maxLength,
   checkboxList,
   checked,
-}: InputFieldProps) => (
+  isShowOtherOption = false,
+  otherOptionName = "OtherOption",
+}: CheckboxFieldProps) => (
   <Controller
     name={name}
     control={control}
@@ -43,31 +40,68 @@ const CheckBoxField = ({
         <div className="relative">
           <div className="flex flex-col sm:flex-row flex-wrap gap-x-5">
             {checkboxList.map((option: any) => (
-              <label key={option}>
-                <Controller
-                  name="months"
-                  control={control}
-                  render={({ field }) => (
-                    <input
-                      type="checkbox"
-                      value={option}
-                      checked={field.value && field.value.includes(option)}
-                      onChange={(e) => {
-                        const selectedOptions = field.value || [];
-                        const updatedOptions = selectedOptions.includes(option)
-                          ? selectedOptions.filter(
-                              (selected: any) => selected !== option
-                            )
-                          : [...selectedOptions, option];
-                        field.onChange(updatedOptions);
-                      }}
-                      className="mx-3"
-                    />
-                  )}
-                />
-                {option}
-              </label>
+              <>
+                <div key={option}>
+                  <input
+                    type="checkbox"
+                    value={option}
+                    checked={field.value && field.value.includes(option)}
+                    onChange={() => {
+                      const selectedOptions = field.value || [];
+                      const updatedOptions = selectedOptions.includes(option)
+                        ? selectedOptions.filter(
+                            (selected: any) => selected !== option
+                          )
+                        : [...selectedOptions, option];
+                      field.onChange(updatedOptions);
+                    }}
+                    className={twMerge(`mx-2 ${error && 'border-red-500 border'}`, inputClassName)}
+                  />
+                  {option}
+                </div>
+              </>
             ))}
+
+            {isShowOtherOption && (
+              <section>
+                <div>
+                  <input
+                    type="checkbox"
+                    name={name}
+                    value="Other option"
+                    checked={
+                      field.value && field.value.includes("Other option")
+                    }
+                    className={twMerge(`mx-2 ${error && 'border-red-500 border'}`, inputClassName)}
+                    onChange={() => {
+                      const updatedOptions = field.value.includes(
+                        "Other option"
+                      )
+                        ? field.value.filter(
+                            (selected: any) => selected !== "Other option"
+                          )
+                        : [...field.value, "Other option"];
+                      field.onChange(updatedOptions);
+                    }}
+                    
+                  />
+                  <label>{otherOptionName}</label>
+                </div>
+                {field.value?.includes("Other option") && (
+                  <InputField
+                    name="Others"
+                    control={control}
+                    rules={{
+                      required: { value: false, message: "" },
+                    }}
+                    placeholder="Write something ..."
+                    type="text"
+                    label=""
+                    className="mb-[12px] ml-2"
+                  />
+                )}
+              </section>
+            )}
           </div>
         </div>
 

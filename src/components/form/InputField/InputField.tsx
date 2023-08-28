@@ -31,7 +31,6 @@ const InputField = ({
             {label} {required && <span className="text-red-500">*</span>}
           </label>
           )} 
-          
           <div className='relative'>
             <input
               {...field}
