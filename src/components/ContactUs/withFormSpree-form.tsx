@@ -13,16 +13,11 @@ const withFormSpreeForm = (Component: React.FC<WithFormSpreeFormProps>) => {
     const { register, handleSubmit, formState, reset, control } = hookForm;
     const { errors, isValid } = formState;
     const [state, sendDataToFromSpree] = useFormSpree(FORMSPREE_LANDING_KEY);
+    
 
-    // const {
-    //   control,
-    //   handleSubmit,
-    //   formState: { errors },
-    // } = useForm<CredentialType>()
 
     useEffect(() => {
       if (!state.submitting && !state.errors && state.succeeded) {
-        console.log('state >>>>', state)
         reset(); 
       }
     }, [state.submitting, state.errors, state.succeeded]);

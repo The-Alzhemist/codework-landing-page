@@ -17,6 +17,7 @@ import {
 import SocialsSection from "./component/SocialsSection/SocialsSection";
 import StatusMessage from "./StatusMessage/StatusMessage";
 import InputField from "../form/InputField/InputField";
+import TextAreaField from "../form/TextAreaField/TextAreaField";
 const ContactForm = ({
   isShowOtherChannel,
   setIsShowOtherChannel,
@@ -46,12 +47,24 @@ const ContactForm = ({
         >
           {/* row 1 */}
           <div>
-            <FormTextareaInput
+            {/* <FormTextareaInput
               labelName="Tell us your idea"
               inputName="idea"
               register={register}
               isRequired={true}
               errors={errors?.idea?.message}
+            /> */}
+            <TextAreaField
+            name="idea"
+            control={control}
+            rules={{
+              required: { value: true, message: "Tell us your idea us required." },
+            }}
+            placeholder="Write something..."
+            type="text"
+            label="Tell us your idea"
+            className="mb-[12px]"
+            rows={5}
             />
           </div>
           {/* row 2 */}
