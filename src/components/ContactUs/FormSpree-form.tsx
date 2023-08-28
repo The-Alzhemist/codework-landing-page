@@ -11,7 +11,7 @@ import withFormSpreeForm from "./withFormSpree-form";
 import FormCheckboxInput from "./component/form/formCheckboxInput/FormCheckboxInput";
 import { WithFormSpreeFormProps } from "./interface";
 import {
-  CHECKBOX_LIST,
+  CONTACT_OPTIONS,
   SELECTED_OPTION_LIST,
 } from "@/constants/ContactUs/constant";
 import SocialsSection from "./component/SocialsSection/SocialsSection";
@@ -31,9 +31,7 @@ const ContactForm = ({
   const testfunc = (e:any) => {
     console.log(" >>", e)
   }
-  const options = ['Search engine (Google, Yahoo, etc.)', 'Social media', 'Friend/Colleague'];
 
- 
   return (
     <>
       <div className="bg-white rounded-xl relative max-w-[1440px] mx-auto py-[30px] md:py-[50px] lg:px-[50px] my-5 sm:my-0">
@@ -183,7 +181,6 @@ const ContactForm = ({
                        message: "",
                      },
                    }}
-                   type="date"
                    label="Time Period"
                    className="mb-[12px]"
                    optionList={SELECTED_OPTION_LIST}
@@ -249,7 +246,7 @@ const ContactForm = ({
              }}
              label="How did you hear about us?"
              className="mb-[12px]"
-             checkboxList={options}
+             checkboxList={CONTACT_OPTIONS}
              isShowOtherOption={true}
              otherOptionName="Other (please specify)"
             />

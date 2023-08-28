@@ -3,7 +3,7 @@ import { twMerge } from "tailwind-merge";
 import React from "react";
 import { withCheckBoxField } from "./withCheckBoxField";
 import InputField from "../InputField/InputField";
-import { CheckboxFieldProps } from "./interface";
+import { CheckBoxFieldProps } from "./interface";
 
 const CheckBoxField = ({
   name,
@@ -18,7 +18,7 @@ const CheckBoxField = ({
   checked,
   isShowOtherOption = false,
   otherOptionName = "OtherOption",
-}: CheckboxFieldProps) => (
+}: CheckBoxFieldProps) => (
   <Controller
     name={name}
     control={control}

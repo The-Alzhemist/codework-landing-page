@@ -1,13 +1,11 @@
 import React from 'react'
-import { InputFieldAcceptProps, InputFieldProps } from './interface'
+import { SelectedFieldProps } from './interface'
 
-const withSelectedField = (Component: React.FC<InputFieldProps>) => {
+
+const withSelectedField = (Component: React.FC<SelectedFieldProps>) => {
   const Hoc = ({
-    type,
-    isShowPassword,
-
     ...props
-  }: InputFieldAcceptProps) => {
+  }: SelectedFieldProps) => {
     const newProps = {
       ...props,
     }

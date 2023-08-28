@@ -1,16 +1,11 @@
 import React from 'react'
-import { TextAreaFieldAcceptProps } from './interface'
+import { TextAreaFieldProps } from './interface'
 
-
-const withTextAreaField = (Component: React.FC<TextAreaFieldAcceptProps>) => {
+const withTextAreaField = (Component: React.FC<TextAreaFieldProps>) => {
   const Hoc = ({
-    type,
-
     ...props
-  }: TextAreaFieldAcceptProps) => {
-   
+  }: TextAreaFieldProps) => {
     const newProps = {
-     
       ...props,
     }
 
