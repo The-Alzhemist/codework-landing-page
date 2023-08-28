@@ -1,16 +1,13 @@
 import React from 'react'
-import { InputFieldAcceptProps, InputFieldProps } from './interface'
+import { CheckboxFieldProps } from './interface'
 
 
-const withCheckBoxField = (Component: React.FC<InputFieldProps>) => {
+
+const withCheckBoxField = (Component: React.FC<CheckboxFieldProps>) => {
   const Hoc = ({
-    type,
-    isShowPassword,
-
     ...props
-  }: InputFieldAcceptProps) => {
+  }: CheckboxFieldProps) => {
 
-    
     const newProps = {
       ...props,
     }

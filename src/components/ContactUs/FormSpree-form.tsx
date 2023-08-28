@@ -21,9 +21,6 @@ import TextAreaField from "../form/TextAreaField/TextAreaField";
 import SelectedField from "../form/SelectedField/SelectedField";
 import CheckBoxField from "../form/CheckBoxField/CheckBoxField";
 const ContactForm = ({
-  isShowOtherChannel,
-  setIsShowOtherChannel,
-  register,
   handleSubmit,
   errors,
   isValid,
@@ -34,8 +31,9 @@ const ContactForm = ({
   const testfunc = (e:any) => {
     console.log(" >>", e)
   }
-  const options = ['January', 'February', 'March', 'April', 'May', 'June'];
+  const options = ['Search engine (Google, Yahoo, etc.)', 'Social media', 'Friend/Colleague'];
 
+ 
   return (
     <>
       <div className="bg-white rounded-xl relative max-w-[1440px] mx-auto py-[30px] md:py-[50px] lg:px-[50px] my-5 sm:my-0">
@@ -49,7 +47,7 @@ const ContactForm = ({
         </h1>
         <form
           className="w-full max-w-[1440px] px-2 md:px-5"
-          onSubmit={handleSubmit(sendDataToFromSpree)}
+          onSubmit={handleSubmit(testfunc)}
           noValidate
         >
           {/* row 1 */}
@@ -249,12 +247,14 @@ const ContactForm = ({
              rules={{
                required: { value: false, message: "" },
              }}
-             placeholder="Write something ..."
-             type="text"
-             label="Company name"
+             label="How did you hear about us?"
              className="mb-[12px]"
              checkboxList={options}
+             isShowOtherOption={true}
+             otherOptionName="Other (please specify)"
             />
+
+
           </div>
 
           <p className="mb-5  text-sm">
