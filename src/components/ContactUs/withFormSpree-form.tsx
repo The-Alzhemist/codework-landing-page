@@ -14,13 +14,11 @@ const withFormSpreeForm = (Component: React.FC<WithFormSpreeFormProps>) => {
     const { errors, isValid } = formState;
     const [state, sendDataToFromSpree] = useFormSpree(PRIVATE_MAIL_TEST);
     
-
-
     useEffect(() => {
       if (!state.submitting && !state.errors && state.succeeded) {
         reset(); 
       }
-    }, [state.submitting, state.errors, state.succeeded]);
+    }, [reset, state.submitting, state.errors, state.succeeded]);
     
     const newProps: WithFormSpreeFormProps = {
       isShowOtherChannel,
