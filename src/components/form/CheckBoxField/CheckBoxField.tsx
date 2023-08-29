@@ -48,16 +48,12 @@ const CheckBoxField = ({
                     checked={field.value && field.value.includes(option)}
                     onChange={() => {
                       const selectedOptions = field.value || [];
-                      console.log('selectedOptions >>>', selectedOptions)
-                      console.log('selectedOptions.includes(option) >>', selectedOptions.includes(option))
                       const updatedOptions = selectedOptions.includes(option)
                         ? selectedOptions.filter(
                             (selected: string) => selected !== option
                           )
                         : [...selectedOptions, option];
-                           console.log('updatedOptions >>>', updatedOptions)
                       field.onChange(updatedOptions);
-                      console.log('field.onChange(updatedOptions); >>>', field.onChange(updatedOptions))
                     }}
                     disabled={disabled}
                     className={twMerge(`mx-2 disabled:bg-gray-300 disabled:text-gray-500 disabled:cursor-not-allowed  ${error && 'border-red-500 border'}`, inputClassName)}
