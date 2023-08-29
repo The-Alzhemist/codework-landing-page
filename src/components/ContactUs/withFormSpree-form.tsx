@@ -7,8 +7,7 @@ import { PRIVATE_MAIL_TEST, FORMSPREE_LANDING_TEST_KEY, FORMSPREE_LANDING_KEY } 
 const withFormSpreeForm = (Component: React.FC<WithFormSpreeFormProps>) => {
   
   const Hoc = () => {
-    const [isShowOtherChannel, setIsShowOtherChannel] =
-      useState<boolean>(false);
+
     const hookForm = useForm<FieldValues>();
     const { register, handleSubmit, formState, reset, control } = hookForm;
     const { errors, isValid } = formState;
@@ -21,8 +20,6 @@ const withFormSpreeForm = (Component: React.FC<WithFormSpreeFormProps>) => {
     }, [reset, state.submitting, state.errors, state.succeeded]);
     
     const newProps: WithFormSpreeFormProps = {
-      isShowOtherChannel,
-      setIsShowOtherChannel,
       register,
       handleSubmit,
       errors,

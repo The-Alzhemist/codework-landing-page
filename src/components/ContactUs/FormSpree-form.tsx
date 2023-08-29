@@ -27,7 +27,7 @@ const ContactForm = ({
 
   return (
     <>
-      <div className="bg-white rounded-xl relative max-w-[1440px] mx-auto py-[30px] md:py-[50px] lg:px-[50px] my-5 sm:my-0">
+      <div className="bg-white rounded-xl relative w-full max-w-[1140px] mx-auto py-[30px] md:py-[50px] lg:px-[50px] my-5 sm:my-0">
         <BackgroundGradientBlur className="top-0 left-0" />
         <BackgroundGradientBlur className="top-0 right-0" />
         <h1 className="text-center mb-20">
@@ -118,7 +118,8 @@ const ContactForm = ({
                     }}
                     type="date"
                     label="Preferred time slots"
-                    className="mb-[12px] h-[38px]"
+                    className="mb-[12px]"
+                    inputClassName="h-[38px]"
                     
                   />
                 </div>

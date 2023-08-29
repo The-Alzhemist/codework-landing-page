@@ -22,8 +22,6 @@ export interface ContactFormTypes {
 }
 
 export interface WithFormSpreeFormProps {
-  isShowOtherChannel: boolean;
-  setIsShowOtherChannel: React.Dispatch<React.SetStateAction<boolean>>;
   register: UseFormRegister<FieldValues>;
   handleSubmit: UseFormHandleSubmit<FieldValues, undefined>;
   errors: FieldErrors<FieldValues>;
