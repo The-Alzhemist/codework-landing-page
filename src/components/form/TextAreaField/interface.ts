@@ -1,9 +1,9 @@
-import { Control, RegisterOptions } from 'react-hook-form'
+import { Control, FieldValues, RegisterOptions } from 'react-hook-form'
 import { ReactElement } from 'react'
 
 export type TextAreaFieldProps = {
   name: string
-  control: Control<any, any>
+  control: Control<FieldValues>
   rules?: Omit<
     RegisterOptions,
     'valueAsNumber' | 'valueAsDate' | 'setValueAs' | 'disabled'
