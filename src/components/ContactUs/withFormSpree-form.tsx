@@ -8,10 +8,22 @@ const withFormSpreeForm = (Component: React.FC<WithFormSpreeFormProps>) => {
   
   const Hoc = () => {
 
-    const hookForm = useForm<FieldValues>();
-    const { register, handleSubmit, formState, reset, control } = hookForm;
+    const hookForm = useForm<FieldValues>({
+      defaultValues: {
+        channels: {
+          searchEngine: false,
+          social: false,
+          friend: false,
+          other: false
+        }
+      }
+    });
+    const { register, handleSubmit, formState, reset, control, watch } = hookForm;
     const { errors, isValid } = formState;
     const [state, sendDataToFromSpree] = useFormSpree(PRIVATE_MAIL_TEST);
+
+    const isShowOtherChannel = watch('channels.other')
+    console.log('xxx')
     
     useEffect(() => {
       if (!state.submitting && !state.errors && state.succeeded) {
@@ -26,7 +38,8 @@ const withFormSpreeForm = (Component: React.FC<WithFormSpreeFormProps>) => {
       isValid,
       state,
       control,
-      sendDataToFromSpree
+      sendDataToFromSpree,
+      isShowOtherChannel
     };
 
     

@@ -19,6 +19,7 @@ export interface ContactFormTypes {
   idea: string;
   channels: string;
   otherChannel: string;
+  isShowOtherChannel: boolean;
 }
 
 export interface WithFormSpreeFormProps {
@@ -34,4 +35,5 @@ export interface WithFormSpreeFormProps {
     succeeded: boolean;
   };
   sendDataToFromSpree: SubmitHandler<FieldValues>;
+  isShowOtherChannel: boolean;
 }

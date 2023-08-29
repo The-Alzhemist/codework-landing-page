@@ -13,6 +13,8 @@ import InputField from "../form/InputField/InputField";
 import TextAreaField from "../form/TextAreaField/TextAreaField";
 import SelectedField from "../form/SelectedField/SelectedField";
 import CheckBoxField from "../form/CheckBoxField/CheckBoxField";
+import CheckboxField from "../form/CheckboxFields/CheckbboxFields";
+import CheckboxFieldx from "../form/CheckboxFields/CheckbboxFields";
 const ContactForm = ({
   handleSubmit,
   errors,
@@ -20,10 +22,12 @@ const ContactForm = ({
   state,
   control,
   sendDataToFromSpree,
+  isShowOtherChannel,
 }: WithFormSpreeFormProps) => {
-  const testfunc = (e:any) => {
-    console.log(" >>", e)
-  }
+
+  const testfunc = (e: any) => {
+    alert('xxx')
+  };
 
   return (
     <>
@@ -38,7 +42,7 @@ const ContactForm = ({
         </h1>
         <form
           className="w-full max-w-[1440px] px-2 md:px-5"
-          onSubmit={handleSubmit(testfunc)}
+          onSubmit={handleSubmit(sendDataToFromSpree)}
           noValidate
         >
           {/* row 1 */}
@@ -100,13 +104,11 @@ const ContactForm = ({
                 label="Email"
                 className="mb-[12px]"
               />
-
             </div>
             {/* right */}
             <div className="w-full">
               <div className="flex gap-x-3 sm:gap-x-6">
                 <div className="w-full">
-
                   <InputField
                     name="timeSlot"
                     control={control}
@@ -118,25 +120,23 @@ const ContactForm = ({
                     }}
                     type="date"
                     label="Preferred time slots"
-                    className="mb-[12px]"
+                    className="mb-[12px] "
                     inputClassName="h-[38px]"
-                    
                   />
                 </div>
                 <div className="w-full">
-
-                  <SelectedField 
-                   name="timePeriod"
-                   control={control}
-                   rules={{
-                     required: {
-                       value: false,
-                       message: "",
-                     },
-                   }}
-                   label="Time Period"
-                   className="mb-[12px]"
-                   optionList={SELECTED_OPTION_LIST}
+                  <SelectedField
+                    name="timePeriod"
+                    control={control}
+                    rules={{
+                      required: {
+                        value: false,
+                        message: "",
+                      },
+                    }}
+                    label="Time Period"
+                    className="mb-[12px]"
+                    optionList={SELECTED_OPTION_LIST}
                   />
                 </div>
               </div>
@@ -170,20 +170,54 @@ const ContactForm = ({
             </div>
           </div>
 
-          <div className="mb-5">
+          <div className="mb-5 ">
+            <label className="flex">How did you hear about us?</label>
+            <div className="flex gap-x-3 items-start">
+              <CheckboxFieldx
+                control={control}
+                name="channels.searchEngine"
+                label="Search engine (Google, Yahoo, etc.)"
+                labelClassName=""
+                inputClassName="ml-0"
+              />
+              <CheckboxFieldx
+                control={control}
+                name="channels.social"
+                label="Social media"
+                rules={{
+                  required: { value: true, message: "xxx" },
+                }}
+                labelClassName=""
+              />
+              <CheckboxFieldx
+                control={control}
+                name="channels.friend"
+                label="Friend/Colleague"
+                labelClassName=""
+              />
+              <div className="flex flex-col">
+                <CheckboxFieldx
+                  control={control}
+                  name="channels.other"
+                  label="Other (please specify)"
+                  labelClassName=""
+                />
 
-            <CheckBoxField 
-             name="channel"
-             control={control}
-             rules={{
-               required: { value: false, message: "" },
-             }}
-             label="How did you hear about us?"
-             className="mb-[12px]"
-             checkboxList={CONTACT_OPTIONS}
-             isShowOtherOption={true}
-             otherOptionName="Other (please specify)"
-            />
+                {isShowOtherChannel && (
+                  <InputField
+                    name="Others"
+                    control={control}
+                    rules={{
+                      required: { value: false, message: "" },
+                    }}
+                    placeholder="Write something..."
+                    type="text"
+                    label=""
+                    className="mb-[12px] ml-2"
+                  />
+                )}
+              </div>
+            </div>
           </div>
 
           <p className="mb-5  text-sm">
@@ -204,8 +238,6 @@ const ContactForm = ({
           errors={state.errors}
         />
         <SocialsSection />
-
- 
       </div>
     </>
   );
