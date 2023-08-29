@@ -18,7 +18,10 @@ export interface SelectedFieldProps  {
   type?: string
   required?: boolean
   maxLength?: number,
-  optionList: any
+  optionList: {
+    value: string;
+    text: string;
+  }[];
 }
 
 

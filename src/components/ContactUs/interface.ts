@@ -1,4 +1,5 @@
 import {
+  Control,
   FieldErrors,
   FieldValues,
   SubmitHandler,
@@ -27,7 +28,7 @@ export interface WithFormSpreeFormProps {
   handleSubmit: UseFormHandleSubmit<FieldValues, undefined>;
   errors: FieldErrors<FieldValues>;
   isValid: boolean;
-  control: any;
+  control:  Control<FieldValues, any>;
   state: {
     errors: SubmissionError<FieldValues> | null;
     result: SubmissionSuccess | null;
