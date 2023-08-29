@@ -39,7 +39,7 @@ const CheckBoxField = ({
 
         <div className="relative">
           <div className="flex flex-col sm:flex-row flex-wrap gap-x-5">
-            {checkboxList.map((option: Array<string>, index: number) => (
+            {checkboxList.map((option: string, index: number) => (
               <>
                 <div key={`${option[index]}`}>
                   <input
@@ -52,7 +52,7 @@ const CheckBoxField = ({
                       console.log('selectedOptions.includes(option) >>', selectedOptions.includes(option))
                       const updatedOptions = selectedOptions.includes(option)
                         ? selectedOptions.filter(
-                            (selected: string[]) => selected !== option
+                            (selected: string) => selected !== option
                           )
                         : [...selectedOptions, option];
                            console.log('updatedOptions >>>', updatedOptions)

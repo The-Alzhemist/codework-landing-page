@@ -13,7 +13,7 @@ export interface CheckBoxFieldProps  {
   disabled?: boolean
   className?: string
   required?: boolean
-  checkboxList: any,
+  checkboxList: Array<string>,
   checked?: boolean | undefined,
 
   isShowOtherOption: boolean
