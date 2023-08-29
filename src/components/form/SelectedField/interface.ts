@@ -1,8 +1,6 @@
 import { Control, RegisterOptions } from 'react-hook-form'
 import { ReactElement } from 'react'
 
-
-
 export interface SelectedFieldProps  {
   name: string
   control: Control
@@ -12,7 +10,6 @@ export interface SelectedFieldProps  {
   >
 
   label?: string | JSX.Element
-  suffixIcon?: React.ReactNode
   inputClassName?: string
   disabled?: boolean
   placeholder?: string
@@ -23,3 +20,5 @@ export interface SelectedFieldProps  {
   maxLength?: number,
   optionList: any
 }
+
+

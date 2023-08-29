@@ -42,7 +42,10 @@ const SelectedField = ({
               onChange={(e) => field.onChange(e.target.value)}
               disabled={disabled}
             >
-              {optionList.map((item: any, index: number) => (
+              {optionList.map((item: {
+                text: string,
+                value: string
+              }, index: number) => (
                 <React.Fragment key={`option-${item.text}-${index}`}>
                   <option value={item.value} >{item.text}</option>
                 </React.Fragment>

@@ -17,7 +17,7 @@ const CheckBoxField = ({
   checkboxList,
   checked,
   isShowOtherOption = false,
-  otherOptionName = "OtherOption",
+  otherOptionName
 }: CheckBoxFieldProps) => (
   <Controller
     name={name}
@@ -39,21 +39,25 @@ const CheckBoxField = ({
 
         <div className="relative">
           <div className="flex flex-col sm:flex-row flex-wrap gap-x-5">
-            {checkboxList.map((option: any) => (
+            {checkboxList.map((option: Array<string>, index: number) => (
               <>
-                <div key={option}>
+                <div key={`${option[index]}`}>
                   <input
                     type="checkbox"
                     value={option}
                     checked={field.value && field.value.includes(option)}
                     onChange={() => {
                       const selectedOptions = field.value || [];
+                      console.log('selectedOptions >>>', selectedOptions)
+                      console.log('selectedOptions.includes(option) >>', selectedOptions.includes(option))
                       const updatedOptions = selectedOptions.includes(option)
                         ? selectedOptions.filter(
-                            (selected: any) => selected !== option
+                            (selected: string[]) => selected !== option
                           )
                         : [...selectedOptions, option];
+                           console.log('updatedOptions >>>', updatedOptions)
                       field.onChange(updatedOptions);
+                      console.log('field.onChange(updatedOptions); >>>', field.onChange(updatedOptions))
                     }}
                     disabled={disabled}
                     className={twMerge(`mx-2 disabled:bg-gray-300 disabled:text-gray-500 disabled:cursor-not-allowed  ${error && 'border-red-500 border'}`, inputClassName)}
@@ -79,7 +83,7 @@ const CheckBoxField = ({
                         "Other option"
                       )
                         ? field.value.filter(
-                            (selected: any) => selected !== "Other option"
+                            (selected: string) => selected !== "Other option"
                           )
                         : [...field.value, "Other option"];
                       field.onChange(updatedOptions);
@@ -87,7 +91,7 @@ const CheckBoxField = ({
                     disabled={disabled}
                     
                   />
-                  <label>{otherOptionName}</label>
+                 {otherOptionName && <label>{otherOptionName}</label>} 
                 </div>
                 {field.value?.includes("Other option") && (
                   <InputField

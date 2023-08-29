@@ -1,14 +1,7 @@
 import React from "react";
-import FormTextareaInput from "./component/form/formStringInput/FormTextareaInput";
-import FormStringInput from "./component/form/formStringInput/FormStringInput";
-import FormDateInput from "./component/form/formDateInput/FormDateInput";
 import { ExternalPrimaryButton } from "../AppLayout/components/button/ExternalPrimaryButton";
 import BackgroundGradientBlur from "../backgroundGradientBlur/BackgroundGradientBlur";
-import FormSelectedInput from "./component/form/formSelectedInput/FormSelectedInput";
-import FormEmailInput from "./component/form/formEmailInput/FormEmailInput";
 import withFormSpreeForm from "./withFormSpree-form";
-
-import FormCheckboxInput from "./component/form/formCheckboxInput/FormCheckboxInput";
 import { WithFormSpreeFormProps } from "./interface";
 import {
   CONTACT_OPTIONS,
@@ -50,13 +43,6 @@ const ContactForm = ({
         >
           {/* row 1 */}
           <div>
-            {/* <FormTextareaInput
-              labelName="Tell us your idea"
-              inputName="idea"
-              register={register}
-              isRequired={true}
-              errors={errors?.idea?.message}
-            /> */}
             <TextAreaField
               name="idea"
               control={control}
@@ -76,20 +62,13 @@ const ContactForm = ({
           <div className="flex flex-col sm:flex-row gap-x-6">
             {/* left */}
             <div className="w-full">
-              {/* <FormStringInput
-                labelName="Your budget? (optional)"
-                inputName="budget"
-                register={register}
-                isRequired={false}
-              ></FormStringInput> */}
-
               <InputField
                 name="budget"
                 control={control}
                 rules={{
                   required: { value: false, message: "" },
                 }}
-                placeholder="Write something"
+                placeholder="Write something..."
                 type="text"
                 label="Your budget? (optional)"
                 className="mb-[12px]"
@@ -101,20 +80,11 @@ const ContactForm = ({
                 rules={{
                   required: { value: true, message: "Name is Required." },
                 }}
-                placeholder="Write something ..."
+                placeholder="Write something..."
                 type="text"
                 label="Name"
                 className="mb-[12px]"
               />
-
-              {/* <FormStringInput
-                labelName="Name"
-                inputName="name"
-                register={register}
-                isRequired={true}
-                errors={errors?.name?.message}
-              ></FormStringInput> */}
-
               <InputField
                 name="email"
                 control={control}
@@ -125,30 +95,18 @@ const ContactForm = ({
                     message: "Invalid pattern email address",
                   },
                 }}
-                placeholder="Write something ..."
+                placeholder="Write something..."
                 type="text"
                 label="Email"
                 className="mb-[12px]"
               />
 
-              {/* <FormEmailInput
-                labelName="Email"
-                inputName="email"
-                register={register}
-                isRequired={true}
-                errors={errors?.email?.message}
-              /> */}
             </div>
             {/* right */}
             <div className="w-full">
               <div className="flex gap-x-3 sm:gap-x-6">
                 <div className="w-full">
-                  {/* <FormDateInput
-                    labelName=" Preferred time slots"
-                    inputName="timeSlot"
-                    register={register}
-                    isRequired={false}
-                  /> */}
+
                   <InputField
                     name="timeSlot"
                     control={control}
@@ -165,13 +123,7 @@ const ContactForm = ({
                   />
                 </div>
                 <div className="w-full">
-                  {/* <FormSelectedInput
-                    labelName="timePeriod"
-                    inputName="timePeriod"
-                    optionList={SELECTED_OPTION_LIST}
-                    register={register}
-                    isRequired={false}
-                  /> */}
+
                   <SelectedField 
                    name="timePeriod"
                    control={control}
@@ -187,13 +139,7 @@ const ContactForm = ({
                   />
                 </div>
               </div>
-              {/* <FormStringInput
-                labelName=" Phone number"
-                inputName="phoneNumber"
-                register={register}
-                isRequired={true}
-                errors={errors?.phoneNumber?.message}
-              ></FormStringInput> */}
+
               <InputField
                 name="phoneNumber"
                 control={control}
@@ -203,24 +149,19 @@ const ContactForm = ({
                     message: "Phone number is Required.",
                   },
                 }}
-                placeholder="Write something ..."
+                placeholder="Write something..."
                 type="number"
                 label="Phone number"
                 className="mb-[12px]"
               />
-              {/* <FormStringInput
-                labelName="Company Name"
-                inputName="companyName"
-                register={register}
-                isRequired={false}
-              ></FormStringInput> */}
+
               <InputField
                 name="companyName"
                 control={control}
                 rules={{
                   required: { value: false, message: "" },
                 }}
-                placeholder="Write something ..."
+                placeholder="Write something..."
                 type="text"
                 label="Company name"
                 className="mb-[12px]"
@@ -229,15 +170,7 @@ const ContactForm = ({
           </div>
 
           <div className="mb-5">
-            {/* <FormCheckboxInput
-              labelName="How did you hear about us?"
-              inputName="channel"
-              checkboxList={CHECKBOX_LIST}
-              register={register}
-              isShowOtherChannel={isShowOtherChannel}
-              setIsShowOtherChannel={setIsShowOtherChannel}
-              isRequired={false}
-            /> */}
+
             <CheckBoxField 
              name="channel"
              control={control}
@@ -250,8 +183,6 @@ const ContactForm = ({
              isShowOtherOption={true}
              otherOptionName="Other (please specify)"
             />
-
-
           </div>
 
           <p className="mb-5  text-sm">
@@ -273,17 +204,7 @@ const ContactForm = ({
         />
         <SocialsSection />
 
-        {/* <InputField
-            name='idea'
-            control={control}
-            rules={{
-              required: { value: true, message: 'xxxx'},
-            }}
-            placeholder='Write something'
-            type='text'
-            label='Tell us your idea"'
-            className='mb-[12px]'
-          /> */}
+ 
       </div>
     </>
   );

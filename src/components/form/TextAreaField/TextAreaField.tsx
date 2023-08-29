@@ -2,6 +2,7 @@
 import { Controller } from 'react-hook-form'
 import { twMerge } from 'tailwind-merge'
 import { withTextAreaField } from './withTextAreaField'
+import { TextAreaFieldProps } from './interface'
 
 
 const TextAreaField = ({
@@ -16,7 +17,7 @@ const TextAreaField = ({
   required = false,
   maxLength,
   rows
-}: any) => (
+}: TextAreaFieldProps) => (
   <Controller
     name={name}
     control={control}
