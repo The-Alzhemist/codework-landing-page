@@ -9,13 +9,10 @@ export type TextAreaFieldProps = {
     'valueAsNumber' | 'valueAsDate' | 'setValueAs' | 'disabled'
   >
   label?: string | ReactElement
-  isShowPassword?: boolean
-  suffixIcon?: React.ReactNode
   inputClassName?: string
   disabled?: boolean
   placeholder?: string
   className?: string
-  type?: string
   required?: boolean
   maxLength?: number
   rows?: number

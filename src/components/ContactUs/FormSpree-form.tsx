@@ -67,7 +67,6 @@ const ContactForm = ({
                 },
               }}
               placeholder="Write something..."
-              type="text"
               label="Tell us your idea"
               className="mb-[12px]"
               rows={5}
@@ -161,7 +160,8 @@ const ContactForm = ({
                     }}
                     type="date"
                     label="Preferred time slots"
-                    className="mb-[12px]"
+                    className="mb-[12px] h-[38px]"
+                    
                   />
                 </div>
                 <div className="w-full">

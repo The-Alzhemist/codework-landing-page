@@ -1,11 +1,9 @@
 import {
   FieldErrors,
   FieldValues,
-  RegisterOptions,
   SubmitHandler,
   UseFormHandleSubmit,
   UseFormRegister,
-  UseFormRegisterReturn,
 } from "react-hook-form";
 import { SubmissionSuccess, SubmissionError } from "@formspree/core";
 
