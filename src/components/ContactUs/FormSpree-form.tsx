@@ -8,7 +8,7 @@ import {
   SELECTED_OPTION_LIST,
 } from "@/constants/ContactUs/constant";
 import SocialsSection from "./component/SocialsSection/SocialsSection";
-import StatusMessage from "./StatusMessage/StatusMessage";
+import StatusMessage from "./component/StatusMessage/StatusMessage";
 import InputField from "../form/InputField/InputField";
 import TextAreaField from "../form/TextAreaField/TextAreaField";
 import SelectedField from "../form/SelectedField/SelectedField";
