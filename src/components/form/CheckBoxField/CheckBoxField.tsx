@@ -55,7 +55,8 @@ const CheckBoxField = ({
                         : [...selectedOptions, option];
                       field.onChange(updatedOptions);
                     }}
-                    className={twMerge(`mx-2 ${error && 'border-red-500 border'}`, inputClassName)}
+                    disabled={disabled}
+                    className={twMerge(`mx-2 disabled:bg-gray-300 disabled:text-gray-500 disabled:cursor-not-allowed  ${error && 'border-red-500 border'}`, inputClassName)}
                   />
                   {option}
                 </div>
@@ -83,6 +84,7 @@ const CheckBoxField = ({
                         : [...field.value, "Other option"];
                       field.onChange(updatedOptions);
                     }}
+                    disabled={disabled}
                     
                   />
                   <label>{otherOptionName}</label>
@@ -94,7 +96,7 @@ const CheckBoxField = ({
                     rules={{
                       required: { value: false, message: "" },
                     }}
-                    placeholder="Write something ..."
+                    placeholder="Write something..."
                     type="text"
                     label=""
                     className="mb-[12px] ml-2"

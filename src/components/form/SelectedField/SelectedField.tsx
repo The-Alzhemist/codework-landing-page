@@ -34,7 +34,7 @@ const SelectedField = ({
                className={`
                border rounded w-full py-1 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline
                disabled:bg-gray-300 disabled:text-gray-500 disabled:cursor-not-allowed 
-               placeholder-gray-400  placeholder:text-md h-[40px]
+               placeholder-gray-400 h-[38px]
                  ${error && 'border-red-500 border'}
                  ${inputClassName}
                `}
