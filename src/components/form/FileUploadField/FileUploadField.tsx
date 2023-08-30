@@ -2,7 +2,6 @@ import { Controller } from "react-hook-form";
 import { twMerge } from "tailwind-merge";
 import { FileUploadFieldProps } from "./interface";
 
-
 const FileUploadField = ({
   name,
   control,
@@ -29,25 +28,12 @@ const FileUploadField = ({
           <input
             type="file"
             name={field.name}
-            className={`file:mr-4 file:py-2 file:px-4 border-dashed border-2 p-2 rounded-md file:rounded-md file:border-0 file:text-sm file:font-semibold  ${disabled ? 'file:bg-secondary-500' : 'file:bg-secondary-900'} file:text-white hover:cursor-pointer  disabled:text-gray-500 disabled:cursor-not-allowed $ ${
+            className={twMerge(`file:mr-4 file:py-2 file:px-4 border-dashed border-2 p-2 rounded-md file:rounded-md file:border-0 file:text-sm file:font-semibold  ${disabled ? 'file:bg-secondary-500' : 'file:bg-secondary-900'} file:text-white hover:cursor-pointer  disabled:text-gray-500 disabled:cursor-not-allowed $ ${
               error && "border-red-500 border"
-            } ${inputClassName}`}
+            }`, inputClassName)}
             disabled={disabled}
             onChange={(e) => field.onChange(e.target.files?.[0])}
           />
-          {/* {field.value && (
-            <button
-              type="button"
-              className="text-right mt-2 text-xs text-red-500 hover:underline"
-              onClick={() => {
-                field.onChange(null); // Reset the file input
-              }}
-            >
-              Clear
-            </button>
-          )} */}
-
-
           {error && (
             <div className="mt-[8px] text-xs text-red-500 top-full">
               {error.message}

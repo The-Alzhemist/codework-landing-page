@@ -20,7 +20,7 @@ export interface ContactFormTypes {
   channels: string;
   otherChannel: string;
   isShowOtherChannel: boolean;
-  onSubmit:any
+  onSubmit: SubmitHandler<FieldValues>
 }
 
 export interface WithFormSpreeFormProps {
@@ -28,7 +28,7 @@ export interface WithFormSpreeFormProps {
   handleSubmit: UseFormHandleSubmit<FieldValues, undefined>;
   errors: FieldErrors<FieldValues>;
   isValid: boolean;
-  control:  Control<FieldValues, any>;
+  control:  Control<FieldValues>;
   state: {
     errors: SubmissionError<FieldValues> | null;
     result: SubmissionSuccess | null;
@@ -37,7 +37,7 @@ export interface WithFormSpreeFormProps {
   };
   sendDataToFromSpree: SubmitHandler<FieldValues>;
   isShowOtherChannel: boolean;
-  onSubmit:(data: any) => Promise<void>
+  onSubmit: SubmitHandler<FieldValues>
 }
 
 export interface FormDataFields {
@@ -55,5 +55,5 @@ export interface FormDataFields {
     friend?: string;
     other?: string;
   };
-  attachment?: any;
+  attachment?: File;
 }

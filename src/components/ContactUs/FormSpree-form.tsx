@@ -11,7 +11,7 @@ import StatusMessage from "./component/StatusMessage/StatusMessage";
 import InputField from "../form/InputField/InputField";
 import TextAreaField from "../form/TextAreaField/TextAreaField";
 import SelectedField from "../form/SelectedField/SelectedField";
-import CheckboxFieldx from "../form/CheckboxFields/CheckbboxFields";
+import CheckboxField from "../form/CheckboxField/CheckboxField";
 import FileUploadField from "../form/FileUploadField/FileUploadField";
 const ContactForm = ({
   handleSubmit,
@@ -181,41 +181,41 @@ const ContactForm = ({
 
           <div className="mb-5 ">
             <label className="flex">How did you hear about us?</label>
-            <div className="flex gap-x-3 items-start">
-              <CheckboxFieldx
+            <div className="flex gap-x-4 items-start flex-wrap">
+              <CheckboxField
                 control={control}
                 name="channels.searchEngine"
                 label="Search engine (Google, Yahoo, etc.)"
                 labelClassName=""
                 rules={{
-                  required: { value: true, message: "xxx" },
+                  required: { value: false, message: "" },
                 }}
                 inputClassName="ml-0"
               />
-              <CheckboxFieldx
+              <CheckboxField
                 control={control}
                 name="channels.social"
                 label="Social media"
                 rules={{
                   required: { value: false, message: "" },
                 }}
-                labelClassName=""
+                inputClassName="ml-0"
               />
-              <CheckboxFieldx
+              <CheckboxField
                 control={control}
                 name="channels.friend"
                 label="Friend/Colleague"
-                labelClassName=""
+                inputClassName="ml-0"
               />
               <div className="flex flex-col">
-                <CheckboxFieldx
+                <CheckboxField
                   control={control}
                   name="channels.other"
                   rules={{
                     required: { value: false, message: "" },
                   }}
                   label="Other (please specify)"
-                  labelClassName=""
+                  inputClassName="ml-0"
                 />
 
                 {isShowOtherChannel && (
@@ -239,9 +239,6 @@ const ContactForm = ({
             *We will be in touch with you shortly through the number +66 83 987
             4997.
           </p>
-
-          {/* x: <input type="file" {...register('file')} /> */}
-          {/* <input type="file" name="attachment" accept="image/png, image/jpeg"/> */}
 
           <div className=" flex justify-end">
             <ExternalPrimaryButton pathName="#" disabled={!isValid}>

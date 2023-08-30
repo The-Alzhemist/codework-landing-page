@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { FormDataFields, WithFormSpreeFormProps } from "./interface";
-import { FieldValues, useForm } from "react-hook-form";
+import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import { useForm as useFormSpree } from "@formspree/react";
 import {
   PRIVATE_MAIL_TEST,
@@ -24,7 +24,7 @@ const withFormSpreeForm = (Component: React.FC<WithFormSpreeFormProps>) => {
     const { register, handleSubmit, formState, reset, control, watch } =
       hookForm;
     const { errors, isValid } = formState;
-    const [state, sendDataToFromSpree] = useFormSpree(PRIVATE_MAIL_TEST);
+    const [state, sendDataToFromSpree] = useFormSpree(FORMSPREE_PRODUCTION_LANDING_KEY);
     const isShowOtherChannel = watch("channels.other");
 
     useEffect(() => {
@@ -32,33 +32,34 @@ const withFormSpreeForm = (Component: React.FC<WithFormSpreeFormProps>) => {
         reset();
       }
     }, [reset, state.submitting, state.errors, state.succeeded]);
-
-    const onSubmit = async (data: FormDataFields) => {
-      console.log('data > ',data)
+    const onSubmit: SubmitHandler<FieldValues> = async (data) => {
       try {
         const formData = new FormData();
         formData.append("Name ", data.name);
-        formData.append("Company name ", data.companyName || '-');
+        formData.append("Company name ", data.companyName || "-");
         formData.append("Email ", data.email);
         formData.append("Phone number ", `(+66)${data.phoneNumber}`);
-        formData.append("Preferred time slots ", data.timeSlot || '-');
-        formData.append("Time Period ", data.timePeriod || '-');
+        formData.append("Preferred time slots ", data.timeSlot || "-");
+        formData.append("Time Period ", data.timePeriod || "-");
         formData.append("Tell us your idea ", data.idea);
-        formData.append("Budget ", data.budget || '-');
+        formData.append("Budget ", data.budget || "-");
         formData.append(
           "How did you hear about us ",
-          `Search Engine: ${data.channels.searchEngine || '-'} 
-           Social Media: ${data.channels.social || '-'} 
-           Friend: ${data.channels.friend || '-'} 
-           Other channel: ${data.channels.other || '-'}`
+          `Search Engine: ${data.channels.searchEngine || "-"} 
+           Social Media: ${data.channels.social || "-"} 
+           Friend: ${data.channels.friend || "-"} 
+           Other channel: ${data.channels.other || "-"}`
         );
 
-        if (data?.attachment) {
-          console.log(data?.attachment);
-          formData.append("Attachment ", data?.attachment || '-');
+        if(data.channels.other) {
+          formData.append("Other Channel ", data?.Others || "-");
         }
 
-        //  const response = await sendDataToFromSpree(formData);
+        if (data?.attachment) {
+          formData.append("Attachment ", data?.attachment || "-");
+        }
+
+        await sendDataToFromSpree(formData);
       } catch (error) {
         console.error(error);
       }
