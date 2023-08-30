@@ -11,7 +11,7 @@ export interface CheckboxFieldProps {
   className?: string
   label: string
   labelClassName?: string
-  checked?: any
-  disabled?:any,
-  inputClassName?:any,
+  checked?: boolean
+  disabled?:boolean,
+  inputClassName?:string,
 }

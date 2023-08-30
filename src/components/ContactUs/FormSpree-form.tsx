@@ -26,7 +26,7 @@ const ContactForm = ({
 }: WithFormSpreeFormProps) => {
 
   const testfunc = (e: any) => {
-    alert('xxx')
+    console.log(e)
   };
 
   return (
@@ -42,7 +42,7 @@ const ContactForm = ({
         </h1>
         <form
           className="w-full max-w-[1440px] px-2 md:px-5"
-          onSubmit={handleSubmit(sendDataToFromSpree)}
+          onSubmit={handleSubmit(testfunc)}
           noValidate
         >
           {/* row 1 */}
@@ -178,6 +178,9 @@ const ContactForm = ({
                 name="channels.searchEngine"
                 label="Search engine (Google, Yahoo, etc.)"
                 labelClassName=""
+                rules={{
+                  required: { value: true, message: "xxx" },
+                }}
                 inputClassName="ml-0"
               />
               <CheckboxFieldx
@@ -185,7 +188,7 @@ const ContactForm = ({
                 name="channels.social"
                 label="Social media"
                 rules={{
-                  required: { value: true, message: "xxx" },
+                  required: { value: false, message: "" },
                 }}
                 labelClassName=""
               />
@@ -199,6 +202,9 @@ const ContactForm = ({
                 <CheckboxFieldx
                   control={control}
                   name="channels.other"
+                  rules={{
+                    required: { value: false, message: "" },
+                  }}
                   label="Other (please specify)"
                   labelClassName=""
                 />
