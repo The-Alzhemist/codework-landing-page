@@ -20,6 +20,7 @@ export interface ContactFormTypes {
   channels: string;
   otherChannel: string;
   isShowOtherChannel: boolean;
+  onSubmit:any
 }
 
 export interface WithFormSpreeFormProps {
@@ -36,4 +37,5 @@ export interface WithFormSpreeFormProps {
   };
   sendDataToFromSpree: SubmitHandler<FieldValues>;
   isShowOtherChannel: boolean;
+  onSubmit:any
 }

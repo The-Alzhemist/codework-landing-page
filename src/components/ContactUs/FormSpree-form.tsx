@@ -15,6 +15,7 @@ import SelectedField from "../form/SelectedField/SelectedField";
 import CheckBoxField from "../form/CheckBoxField/CheckBoxField";
 import CheckboxField from "../form/CheckboxFields/CheckbboxFields";
 import CheckboxFieldx from "../form/CheckboxFields/CheckbboxFields";
+import FileUploadField from "../form/FileUploadField/FileUploadField";
 const ContactForm = ({
   handleSubmit,
   errors,
@@ -23,6 +24,8 @@ const ContactForm = ({
   control,
   sendDataToFromSpree,
   isShowOtherChannel,
+  register,
+  onSubmit
 }: WithFormSpreeFormProps) => {
 
   const testfunc = (e: any) => {
@@ -42,8 +45,8 @@ const ContactForm = ({
         </h1>
         <form
           className="w-full max-w-[1440px] px-2 md:px-5"
-          onSubmit={handleSubmit(testfunc)}
-          noValidate
+          encType="multipart/form-data"
+          onSubmit={handleSubmit(onSubmit)}
         >
           {/* row 1 */}
           <div>
@@ -230,6 +233,11 @@ const ContactForm = ({
             *We will be in touch with you shortly through the number +66 83 987
             4997.
           </p>
+
+          <FileUploadField control={control} name="attachment" />
+         {/* x: <input type="file" {...register('file')} /> */}
+          {/* <input type="file" name="attachment" accept="image/png, image/jpeg"/> */}
+          
 
           <div className=" flex justify-end">
             <ExternalPrimaryButton pathName="#" disabled={!isValid}>
