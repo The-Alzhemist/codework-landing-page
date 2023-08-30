@@ -47,7 +47,7 @@ const withFormSpreeForm = (Component: React.FC<WithFormSpreeFormProps>) => {
   
   
         const response = await sendDataToFromSpree(formData);
-        console.log(response);
+        console.log("res: ",response);
       } catch (error) {
         console.error(error);
       }

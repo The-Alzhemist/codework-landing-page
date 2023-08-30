@@ -23,19 +23,12 @@ const FileUploadField = ({
         control={control}
         defaultValue={null}
         render={({ field }) => (
-            // <input
-            //   type="file"
-            //   onChange={(e) => field.onChange(e.target.files?.[0])}
-            // />
-            // <input
-            // id="dropzone-file"
-            // name={name}
-            //   type="file"
-            //   onChange={(e) => field.onChange(e.target.files)}
-             
-            // />
-            // data?.attachment
-            <input type="file" name={field.name}   />
+          <input
+          type="file"
+          name={field.name}
+          className={inputClassName}
+          onChange={(e) => field.onChange(e.target.files?.[0])}
+        />
     
         )}
       />
