@@ -4,7 +4,6 @@ import BackgroundGradientBlur from "../backgroundGradientBlur/BackgroundGradient
 import withFormSpreeForm from "./withFormSpree-form";
 import { WithFormSpreeFormProps } from "./interface";
 import {
-  CONTACT_OPTIONS,
   SELECTED_OPTION_LIST,
 } from "@/constants/ContactUs/constant";
 import SocialsSection from "./component/SocialsSection/SocialsSection";
@@ -12,8 +11,6 @@ import StatusMessage from "./component/StatusMessage/StatusMessage";
 import InputField from "../form/InputField/InputField";
 import TextAreaField from "../form/TextAreaField/TextAreaField";
 import SelectedField from "../form/SelectedField/SelectedField";
-import CheckBoxField from "../form/CheckBoxField/CheckBoxField";
-import CheckboxField from "../form/CheckboxFields/CheckbboxFields";
 import CheckboxFieldx from "../form/CheckboxFields/CheckbboxFields";
 import FileUploadField from "../form/FileUploadField/FileUploadField";
 const ContactForm = ({
@@ -25,13 +22,8 @@ const ContactForm = ({
   sendDataToFromSpree,
   isShowOtherChannel,
   register,
-  onSubmit
+  onSubmit,
 }: WithFormSpreeFormProps) => {
-
-  const testfunc = (e: any) => {
-    console.log(e)
-  };
-
   return (
     <>
       <div className="bg-white rounded-xl relative w-full max-w-[1140px] mx-auto py-[30px] md:py-[50px] lg:px-[50px] my-5 sm:my-0">
@@ -106,6 +98,20 @@ const ContactForm = ({
                 type="text"
                 label="Email"
                 className="mb-[12px]"
+              />
+
+              <FileUploadField
+                control={control}
+                disabled={false}
+                rules={{
+                  required: {
+                    value: false,
+                    message: "",
+                  },
+                }}
+                name="attachment"
+                label="File Attachment"
+                className="w-full  mb-5"
               />
             </div>
             {/* right */}
@@ -234,10 +240,8 @@ const ContactForm = ({
             4997.
           </p>
 
-          <FileUploadField control={control} name="attachment" />
-         {/* x: <input type="file" {...register('file')} /> */}
+          {/* x: <input type="file" {...register('file')} /> */}
           {/* <input type="file" name="attachment" accept="image/png, image/jpeg"/> */}
-          
 
           <div className=" flex justify-end">
             <ExternalPrimaryButton pathName="#" disabled={!isValid}>

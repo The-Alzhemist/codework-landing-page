@@ -1,11 +1,8 @@
 import { Control, RegisterOptions } from 'react-hook-form'
 import { ReactElement } from 'react'
 
-export interface InputFieldAcceptProps extends InputFieldProps {
-  isShowPassword?: boolean
-}
 
-export interface InputFieldProps  {
+export interface FileUploadFieldProps  {
   name: string
   control: Control
   rules?: Omit<
@@ -18,7 +15,6 @@ export interface InputFieldProps  {
   disabled?: boolean
   placeholder?: string
   className?: string
-
   type?: string
   required?: boolean
   maxLength?: number

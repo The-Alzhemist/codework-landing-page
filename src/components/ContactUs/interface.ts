@@ -37,5 +37,23 @@ export interface WithFormSpreeFormProps {
   };
   sendDataToFromSpree: SubmitHandler<FieldValues>;
   isShowOtherChannel: boolean;
-  onSubmit:any
+  onSubmit:(data: any) => Promise<void>
+}
+
+export interface FormDataFields {
+  name: string;
+  companyName?: string;
+  email: string;
+  phoneNumber: string;
+  timeSlot?: string;
+  timePeriod?: string;
+  idea: string;
+  budget?: string;
+  channels: {
+    searchEngine?: string;
+    social?: string;
+    friend?: string;
+    other?: string;
+  };
+  attachment?: any;
 }
