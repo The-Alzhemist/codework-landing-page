@@ -1,9 +1,9 @@
 import React from "react";
 import { Controller } from "react-hook-form";
-import { CheckboxFieldProps } from "./interface";
 import { twMerge } from "tailwind-merge";
+import { CheckBoxFieldProps } from "./interface";
 
-const CheckboxField = ({
+const CheckBoxField = ({
   control,
   name,
   rules,
@@ -13,7 +13,7 @@ const CheckboxField = ({
   checked,
   disabled,
   inputClassName,
-}: CheckboxFieldProps) => (
+}: CheckBoxFieldProps) => (
   <Controller
     control={control}
     rules={rules}
@@ -48,4 +48,4 @@ const CheckboxField = ({
   />
 );
 
-export default CheckboxField;
+export default CheckBoxField;

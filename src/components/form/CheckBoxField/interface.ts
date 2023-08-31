@@ -1,6 +1,6 @@
 import { Control, RegisterOptions } from 'react-hook-form'
 
-export interface CheckboxFieldProps {
+export interface CheckBoxFieldProps {
   control: Control
   name: string
   rules?: Omit<

@@ -11,9 +11,12 @@ import StatusMessage from "./component/StatusMessage/StatusMessage";
 import InputField from "../form/InputField/InputField";
 import TextAreaField from "../form/TextAreaField/TextAreaField";
 import SelectedField from "../form/SelectedField/SelectedField";
-
 import FileUploadField from "../form/FileUploadField/FileUploadField";
-import CheckboxField from "../form/CheckboxField/CheckboxField";
+import CheckBoxField from "../form/CheckBoxField/CheckBoxField";
+
+
+
+
 const ContactForm = ({
   handleSubmit,
   errors,
@@ -183,7 +186,7 @@ const ContactForm = ({
           <div className="mb-5 ">
             <label className="flex">How did you hear about us?</label>
             <div className="flex gap-x-4 items-start flex-wrap">
-              <CheckboxField
+              <CheckBoxField
                 control={control}
                 name="channels.searchEngine"
                 label="Search engine (Google, Yahoo, etc.)"
@@ -193,7 +196,7 @@ const ContactForm = ({
                 }}
                 inputClassName="ml-0"
               />
-              <CheckboxField
+              <CheckBoxField
                 control={control}
                 name="channels.social"
                 label="Social media"
@@ -202,14 +205,14 @@ const ContactForm = ({
                 }}
                 inputClassName="ml-0"
               />
-              <CheckboxField
+              <CheckBoxField
                 control={control}
                 name="channels.friend"
                 label="Friend/Colleague"
                 inputClassName="ml-0"
               />
               <div className="flex flex-col">
-                <CheckboxField
+                <CheckBoxField
                   control={control}
                   name="channels.other"
                   rules={{

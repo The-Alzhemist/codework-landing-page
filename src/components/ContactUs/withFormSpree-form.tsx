@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { FormDataFields, WithFormSpreeFormProps } from "./interface";
+import { WithFormSpreeFormProps } from "./interface";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import { useForm as useFormSpree } from "@formspree/react";
 import {
