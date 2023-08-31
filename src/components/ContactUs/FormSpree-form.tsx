@@ -11,8 +11,9 @@ import StatusMessage from "./component/StatusMessage/StatusMessage";
 import InputField from "../form/InputField/InputField";
 import TextAreaField from "../form/TextAreaField/TextAreaField";
 import SelectedField from "../form/SelectedField/SelectedField";
-import CheckboxField from "../form/CheckboxField/CheckboxField";
+
 import FileUploadField from "../form/FileUploadField/FileUploadField";
+import CheckboxField from "../form/CheckboxField/CheckboxField";
 const ContactForm = ({
   handleSubmit,
   errors,
