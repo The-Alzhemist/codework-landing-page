@@ -5,7 +5,7 @@ import  TagManager  from 'react-gtm-module';
 
 export default function App({ Component, pageProps }: AppProps) {
   useEffect(() => {
-    TagManager.initialize({ gtmId: 'GTM-5BSHT4MJ' });
+    TagManager.initialize({ gtmId: 'GTM-P3SQWN78' });
   }, []);
   
   return <Component {...pageProps} />
