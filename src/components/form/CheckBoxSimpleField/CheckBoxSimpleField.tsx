@@ -3,7 +3,7 @@ import { Controller } from "react-hook-form";
 import { twMerge } from "tailwind-merge";
 import { CheckBoxFieldProps } from "./interface";
 
-const CheckBoxField = ({
+const CheckBoxSimpleField = ({
   control,
   name,
   rules,
@@ -48,4 +48,4 @@ const CheckBoxField = ({
   />
 );
 
-export default CheckBoxField;
+export default CheckBoxSimpleField;

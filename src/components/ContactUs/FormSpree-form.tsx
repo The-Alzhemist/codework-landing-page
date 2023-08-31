@@ -12,9 +12,7 @@ import InputField from "../form/InputField/InputField";
 import TextAreaField from "../form/TextAreaField/TextAreaField";
 import SelectedField from "../form/SelectedField/SelectedField";
 import FileUploadField from "../form/FileUploadField/FileUploadField";
-import CheckBoxField from "../form/CheckBoxField/CheckBoxField";
-
-
+import CheckBoxField from "../form/CheckBoxSimpleField/CheckBoxSimpleField";
 
 
 const ContactForm = ({
@@ -92,7 +90,7 @@ const ContactForm = ({
                 name="email"
                 control={control}
                 rules={{
-                  required: { value: true, message: "Name is Required." },
+                  required: { value: true, message: "Email is Required." },
                   pattern: {
                     value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
                     message: "Invalid pattern email address",
