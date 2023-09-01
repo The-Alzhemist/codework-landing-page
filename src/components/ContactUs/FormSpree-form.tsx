@@ -50,7 +50,7 @@ const ContactForm = ({
               rules={{
                 required: {
                   value: true,
-                  message: "Tell us your idea us required.",
+                  message: "Tell us your idea required.",
                 },
               }}
               placeholder="Write something..."
@@ -244,7 +244,7 @@ const ContactForm = ({
 
           <div className=" flex justify-end">
             <ExternalPrimaryButton pathName="#" disabled={!isValid}>
-              SEND MESSAGE
+            Submit my idea
             </ExternalPrimaryButton>
           </div>
         </form>
