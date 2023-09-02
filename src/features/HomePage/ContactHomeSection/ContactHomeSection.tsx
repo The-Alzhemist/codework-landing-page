@@ -2,12 +2,12 @@ import React from "react";
 import Image from "next/image";
 
 import withContactUs from "./withContactUs";
-import { contactUsProp } from "./interface";
+import { ContactHomeSectionProp } from "./interface";
 import BackgroundGradientBlur from "@/components/BackgroundGradientBlur/BackgroundGradientBlur";
 import Paragraph from "@/components/typography/paragraph/Paragraph";
 
 
-const ContactUs = (props: contactUsProp) => {
+const ContactHomeSection = (props: ContactHomeSectionProp) => {
   const { contactUsSectionText } = props
   return (
     <section
@@ -89,5 +89,5 @@ const ContactUs = (props: contactUsProp) => {
   );
 };
 
-const WrappedComponent = withContactUs(ContactUs);
+const WrappedComponent = withContactUs(ContactHomeSection);
 export default WrappedComponent;

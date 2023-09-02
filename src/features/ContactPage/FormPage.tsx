@@ -1,5 +1,5 @@
 import React from "react";
-import { SELECTED_OPTION_LIST } from "@/constants/contactUs/constants";
+import { SELECTED_OPTION_LIST } from "@/constants/contactPage/constants";
 import withFormPage from "./withFormPage";
 
 import TextAreaField from "@/components/form/TextAreaField/TextAreaField";

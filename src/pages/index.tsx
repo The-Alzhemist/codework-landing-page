@@ -13,8 +13,8 @@ import MetaTag from "@/components/Seo/MetaTag";
 import AboutUs from "@/features/HomePage/AboutUs/AboutUs";
 import OurService from "@/features/HomePage/OurService/OurService";
 import OurProduct from "@/features/HomePage/OurProduct/OurProduct";
-import ContactUs from "@/features/HomePage/ContactUs/ContactUs";
 import OurPartner from "@/features/HomePage/OurPartner/OurPartner";
+import ContactHomeSection from "@/features/HomePage/ContactHomeSection/ContactHomeSection";
 
 
 export default function Home() {
@@ -28,7 +28,7 @@ export default function Home() {
         <OurService />
         <OurProduct />
         <OurPartner />
-        <ContactUs />
+        <ContactHomeSection />
       </AppLayout>
     </>
   );
