@@ -1,6 +1,6 @@
 import React from "react";
 import { OurProductProps, OurProductTextInterface } from "./interface";
-import { ourProductSectionText } from "@/constants/home/our-product-text";
+import { ourProductSectionText } from "@/constants/Home/our-product-text";
 
 const withOurProduct = (Component: React.FC<OurProductProps>) => {
   const Hoc = () => {

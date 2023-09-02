@@ -1,8 +1,7 @@
 import { Prompt } from '@next/font/google';
 import React from 'react'
-
-import { twMerge } from 'tailwind-merge';
 import { ParagraphInterfaceProps } from './interface';
+import { twMerge } from 'tailwind-merge';
 const fontPrompt = Prompt({
     weight: ["100", "200", "300", "400", "500", "600", "700"],
     subsets: ["latin"],

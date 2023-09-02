@@ -1,11 +1,11 @@
 import React from "react";
 import { Gloria_Hallelujah } from "@next/font/google";
 import withHeroSection from "./withHeroSection";
-import BackgroundGradientBlur from "../../../components/BackgroundGradientBlur/BackgroundGradientBlur";
-import Paragraph from "../../../components/typography/Paragraph/Paragraph";
-
+import BackgroundGradientBlur from "../../backgroundGradientBlur/BackgroundGradientBlur";
+import Paragraph from "../../AppLayout/components/typography/paragraph/Paragraph";
+import Hyperlinks from "../../AppLayout/components/link/Hyperlinks";
 import Image from "next/image";
-import { PrimaryButton } from "../../../components/buttons/PrimaryButton";
+import { PrimaryButton } from "../../AppLayout/components/button/PrimaryButton";
 import { HeroSectionProps } from "./interface";
 
 const fontGloriaHallelujah = Gloria_Hallelujah({

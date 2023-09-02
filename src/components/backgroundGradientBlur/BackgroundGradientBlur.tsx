@@ -1,6 +1,7 @@
 import React from "react";
 import { BgGradientBlueInterface } from "./interface";
 
+
 const BackgroundGradientBlur = ({ className }: BgGradientBlueInterface) => {
   return (
     <>

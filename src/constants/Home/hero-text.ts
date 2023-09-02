@@ -1,4 +1,4 @@
-import { HeroTextInterface } from "@/features/Home/HeroSection/interface";
+import { HeroTextInterface } from "@/components/Home/HeroSection/interface";
 
 export const heroSectionText: HeroTextInterface = {
     heading1: "WE CAN MAKE YOUR",

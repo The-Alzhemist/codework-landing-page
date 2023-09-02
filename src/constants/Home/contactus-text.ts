@@ -1,4 +1,4 @@
-import { ContactUsTextInterface } from "@/features/Home/ContactUs/interface";
+import { ContactUsTextInterface } from "@/components/Home/ContactUs/interface";
 
 export const contactUsSectionText: ContactUsTextInterface = {
     heading1: "Let’s make your idea come true!",

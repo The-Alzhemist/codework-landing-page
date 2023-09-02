@@ -3,7 +3,7 @@ import withNavigation from "./withNavigation";
 import Link from "next/link";
 import { animated } from "@react-spring/web";
 
-import { OutlinedButton } from "../../../buttons/OutlinedButton";
+import { OutlinedButton } from "../button/OutlinedButton";
 import { MenuItem, NavigationProps } from "./interface";
 
 

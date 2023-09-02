@@ -1,4 +1,4 @@
-import { ourPartnerTextInterface } from "@/features/Home/OurPartner/interface";
+import { ourPartnerTextInterface } from "@/components/Home/OurPartner/interface";
 
 export const ourPartnerSectionText: ourPartnerTextInterface = {
     heading1: "OUR ",
