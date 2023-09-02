@@ -37,7 +37,7 @@ const FormPage = ({
           </div>
         </h1>
         <form
-          className="w-full max-w-[1440px] px-2 md:px-5"
+          className=" max-w-[1440px] px-2 md:px-5"
           encType="multipart/form-data"
           onSubmit={handleSubmit(onSubmit)}
         >

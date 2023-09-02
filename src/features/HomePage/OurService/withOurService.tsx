@@ -1,6 +1,6 @@
 import React from "react";
 import { OurServiceProps } from "./interface";
-import { ourServiceSectionText } from "@/constants/home/ourServiceText";
+import { ourServiceSectionText } from "@/constants/homePage/ourServiceText";
 // import { ourServiceSectionText } from "@/constants/Home/our-service-text";
 
 const withOurService = (Component: React.FC<OurServiceProps>) => {

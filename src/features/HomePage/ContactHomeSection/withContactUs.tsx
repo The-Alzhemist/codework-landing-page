@@ -1,6 +1,6 @@
 import React from "react";
 import { ContactHomeSectionProp } from "./interface";
-import { contactUsSectionText } from "@/constants/home/contactusText";
+import { contactUsSectionText } from "@/constants/homePage/contactusText";
 
 
 const withContactHomeSection = (Component: React.FC<ContactHomeSectionProp>) => {

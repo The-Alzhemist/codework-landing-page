@@ -1,4 +1,5 @@
-import { aboutUsTextInterface } from "@/components/Home/AboutUs/interface";
+import { aboutUsTextInterface } from "@/features/HomePage/AboutUs/interface";
+
 
 export const aboutUsSectionText: aboutUsTextInterface = {
     heading1: "EIEI",

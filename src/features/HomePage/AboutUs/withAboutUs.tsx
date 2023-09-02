@@ -1,6 +1,6 @@
 import React from "react";
 import { aboutUsProps, aboutUsTextInterface } from "./interface";
-import { aboutUsSectionText } from "@/constants/home/aboutusText";
+import { aboutUsSectionText } from "@/constants/homePage/aboutusText";
 
 
 const withAboutUs = (Component: React.FC<aboutUsProps>) => {
