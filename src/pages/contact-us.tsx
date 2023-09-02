@@ -1,7 +1,7 @@
 import React from "react";
 import AppLayout from "../components/AppLayout/AppLayout";
 import MetaTag from "@/components/Seo/MetaTag";
-import ContactForm from "@/components/ContactUs/FormSpreeForm";
+import FormPage from "@/features/ContactUs/FormPage";
 
 const ContactUsPage = () => {
   return (
@@ -10,7 +10,8 @@ const ContactUsPage = () => {
 
       <AppLayout>
         <div className="flex flex-col items-center z-20 min-h-[500px] justify-center ">
-        <ContactForm />
+        {/* <ContactForm /> */}
+        <FormPage/>
         </div>
       </AppLayout>
     </>
