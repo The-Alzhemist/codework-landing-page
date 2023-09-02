@@ -1,5 +1,5 @@
 import React from "react";
-import BackgroundGradientBlur from "../../backgroundGradientBlur/BackgroundGradientBlur";
+import BackgroundGradientBlur from "../../../components/BackgroundGradientBlur/BackgroundGradientBlur";
 import Image from "next/image";
 import withOurPartner from "./withOurPartner";
 import { ourPartnerProps, ImageInfo } from "./interface";

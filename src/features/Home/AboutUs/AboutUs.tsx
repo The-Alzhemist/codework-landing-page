@@ -1,8 +1,8 @@
 import React from "react";
-import BackgroundGradientBlur from "../../backgroundGradientBlur/BackgroundGradientBlur";
-import Paragraph from "../../AppLayout/components/typography/paragraph/Paragraph";
+import BackgroundGradientBlur from "../../../components/BackgroundGradientBlur/BackgroundGradientBlur";
+import Paragraph from "../../../components/typography/Paragraph/Paragraph";
 import Image from "next/image";
-import { PrimaryButton } from "../../AppLayout/components/button/PrimaryButton";
+import { PrimaryButton } from "../../../components/buttons/PrimaryButton";
 import withAboutUs from "./withAboutUs";
 import { aboutUsProps } from "./interface";
 
