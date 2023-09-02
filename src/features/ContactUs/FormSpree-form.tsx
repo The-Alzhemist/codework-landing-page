@@ -1,18 +1,18 @@
 import React from "react";
-import { ExternalPrimaryButton } from "../AppLayout/components/button/ExternalPrimaryButton";
-import BackgroundGradientBlur from "../backgroundGradientBlur/BackgroundGradientBlur";
+import { ExternalPrimaryButton } from "../../components/buttons/ExternalPrimaryButton";
+import BackgroundGradientBlur from "../../components/BackgroundGradientBlur/BackgroundGradientBlur";
 import withFormSpreeForm from "./withFormSpree-form";
 import { WithFormSpreeFormProps } from "./interface";
 import {
   SELECTED_OPTION_LIST,
-} from "@/constants/ContactUs/constant";
+} from "@/constants/contactUs/constant";
 import SocialsSection from "./component/SocialsSection/SocialsSection";
 import StatusMessage from "./component/StatusMessage/StatusMessage";
-import InputField from "../form/InputField/InputField";
-import TextAreaField from "../form/TextAreaField/TextAreaField";
-import SelectedField from "../form/SelectedField/SelectedField";
-import FileUploadField from "../form/FileUploadField/FileUploadField";
-import CheckBoxField from "../form/CheckBoxSimpleField/CheckBoxSimpleField";
+import InputField from "../../components/form/InputField/InputField";
+import TextAreaField from "../../components/form/TextAreaField/TextAreaField";
+import SelectedField from "../../components/form/SelectedField/SelectedField";
+import FileUploadField from "../../components/form/FileUploadField/FileUploadField";
+import CheckBoxField from "../../components/form/CheckBoxSimpleField/CheckBoxSimpleField";
 
 
 const ContactForm = ({

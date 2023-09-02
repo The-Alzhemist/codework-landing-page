@@ -1,4 +1,4 @@
-import { OurProductTextInterface } from "@/components/Home/OurProduct/interface";
+import { OurProductTextInterface } from "@/features/Home/OurProduct/interface";
 
 export const ourProductSectionText: OurProductTextInterface = {
     heading1: "OUR",
