@@ -10,7 +10,6 @@ const ContactUsPage = () => {
 
       <AppLayout>
         <div className="flex flex-col items-center z-20 min-h-[500px] justify-center ">
-        {/* <ContactForm /> */}
         <FormPage/>
         </div>
       </AppLayout>
