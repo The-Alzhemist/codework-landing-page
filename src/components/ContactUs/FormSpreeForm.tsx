@@ -3,9 +3,9 @@ import { ExternalPrimaryButton } from "../buttons/ExternalPrimaryButton";
 
 import withFormSpreeForm from "./withFormSpreeForm";
 import { WithFormSpreeFormProps } from "./interface";
-import {
-  SELECTED_OPTION_LIST,
-} from "@/constants/contactUs/constant";
+// import {
+//   SELECTED_OPTION_LIST,
+// } from "@/constants/contactUs/constant";
 import SocialsSection from "./component/SocialsSection/SocialsSection";
 import StatusMessage from "./component/StatusMessage/StatusMessage";
 import InputField from "../form/InputField/InputField";
@@ -13,7 +13,8 @@ import TextAreaField from "../form/TextAreaField/TextAreaField";
 import SelectedField from "../form/SelectedField/SelectedField";
 import FileUploadField from "../form/FileUploadField/FileUploadField";
 import CheckBoxField from "../form/CheckBoxSimpleField/CheckBoxSimpleField";
-import BackgroundGradientBlur from "../BackgroundGradientBlur/BackgroundGradientBlur";
+import { SELECTED_OPTION_LIST } from "@/constants/contactUs/constants";
+// import BackgroundGradientBlur from "../BackgroundGradientBlur/BackgroundGradientBlur";
 
 
 const ContactForm = ({
@@ -30,8 +31,8 @@ const ContactForm = ({
   return (
     <>
       <div className="bg-white rounded-xl relative w-full max-w-[1140px] mx-auto py-[30px] md:py-[50px] lg:px-[50px] my-5 sm:my-0">
-        <BackgroundGradientBlur className="top-0 left-0" />
-        <BackgroundGradientBlur className="top-0 right-0" />
+        {/* <BackgroundGradientBlur className="top-0 left-0" />
+        <BackgroundGradientBlur className="top-0 right-0" /> */}
         <h1 className="text-center mb-20">
           <div className="text-2xl font-light mr-20">Wanna talk with us?</div>
           <div className="font-normal inline bg-line text-3xl md:text-5xl ml-20">
