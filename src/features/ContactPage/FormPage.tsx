@@ -7,8 +7,7 @@ import InputField from "@/components/form/InputField/InputField";
 import FileUploadField from "@/components/form/FileUploadField/FileUploadField";
 import SelectedField from "@/components/form/SelectedField/SelectedField";
 import { ExternalPrimaryButton } from "@/components/buttons/ExternalPrimaryButton";
-// import StatusMessage from "@/components/ContactUs/component/StatusMessage/StatusMessage";
-// import SocialsSection from "@/components/ContactUs/component/SocialsSection/SocialsSection";
+
 import CheckBoxSimpleField from "@/components/form/CheckBoxSimpleField/CheckBoxSimpleField";
 import BackgroundGradientBlur from "@/components/BackgroundGradientBlur/BackgroundGradientBlur";
 import { WithFormPageProps } from "./interface";

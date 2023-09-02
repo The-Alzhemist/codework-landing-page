@@ -1,7 +1,8 @@
 import React from "react";
 import AppLayout from "../components/AppLayout/AppLayout";
 import MetaTag from "@/components/Seo/MetaTag";
-import FormPage from "@/features/ContactUs/FormPage";
+import FormPage from "@/features/ContactPage/FormPage";
+
 
 const ContactUsPage = () => {
   return (
