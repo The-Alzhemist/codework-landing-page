@@ -1,7 +1,7 @@
 import React from "react";
-import { ExternalPrimaryButton } from "../AppLayout/components/button/ExternalPrimaryButton";
-import BackgroundGradientBlur from "../backgroundGradientBlur/BackgroundGradientBlur";
-import withFormSpreeForm from "./withFormSpree-form";
+import { ExternalPrimaryButton } from "../buttons/ExternalPrimaryButton";
+
+import withFormSpreeForm from "./withFormSpreeForm";
 import { WithFormSpreeFormProps } from "./interface";
 import {
   SELECTED_OPTION_LIST,
@@ -13,6 +13,7 @@ import TextAreaField from "../form/TextAreaField/TextAreaField";
 import SelectedField from "../form/SelectedField/SelectedField";
 import FileUploadField from "../form/FileUploadField/FileUploadField";
 import CheckBoxField from "../form/CheckBoxSimpleField/CheckBoxSimpleField";
+import BackgroundGradientBlur from "../BackgroundGradientBlur/BackgroundGradientBlur";
 
 
 const ContactForm = ({

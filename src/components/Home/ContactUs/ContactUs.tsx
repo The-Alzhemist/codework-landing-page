@@ -1,10 +1,10 @@
 import React from "react";
-import BackgroundGradientBlur from "../../backgroundGradientBlur/BackgroundGradientBlur";
 import Image from "next/image";
-import Paragraph from "../../AppLayout/components/typography/paragraph/Paragraph";
-import { PrimaryButton } from "../../AppLayout/components/button/PrimaryButton";
+import Paragraph from "../../typography/paragraph/Paragraph";
+import { PrimaryButton } from "../../buttons/PrimaryButton";
 import withContactUs from "./withContactUs";
 import { contactUsProp } from "./interface";
+import BackgroundGradientBlur from "@/components/BackgroundGradientBlur/BackgroundGradientBlur";
 
 
 const ContactUs = (props: contactUsProp) => {

@@ -1,7 +1,7 @@
 import React from "react";
 import AppLayout from "../components/AppLayout/AppLayout";
 import MetaTag from "@/components/seo/MetaTag";
-import ContactForm from "@/components/ContactUs/FormSpree-form";
+import ContactForm from "@/components/ContactUs/FormSpreeForm";
 
 const ContactUsPage = () => {
   return (

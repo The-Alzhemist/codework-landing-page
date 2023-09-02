@@ -1,10 +1,10 @@
 import React from "react";
 import Image from "next/image";
-import BackgroundGradientBlur from "../../backgroundGradientBlur/BackgroundGradientBlur";
-import Paragraph from "../../AppLayout/components/typography/paragraph/Paragraph";
-import Hyperlinks from "../../AppLayout/components/link/Hyperlinks";
+import Paragraph from "../../typography/paragraph/Paragraph";
+import Hyperlinks from "../../links/Hyperlinks/Hyperlinks";
 import withOurProduct from "./withOurProduct";
 import { OurProductProps } from "./interface";
+import BackgroundGradientBlur from "@/components/BackgroundGradientBlur/BackgroundGradientBlur";
 
 const OurProduct = (props: OurProductProps) => {
   const { ourProductSectionText } = props;
