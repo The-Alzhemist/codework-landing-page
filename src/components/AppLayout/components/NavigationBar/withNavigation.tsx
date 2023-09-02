@@ -1,7 +1,7 @@
 import { useSpring } from "@react-spring/web";
 import React, { useState } from "react";
 import { ExternalNavigationProps, NavigationProps } from "./interface";
-import { menu } from "@/constants/navigation-bar-text";
+import { menu } from "@/constants/navigationBarText";
 
 
 const withNavigation = (Component: React.FC<NavigationProps>) => {

@@ -5,7 +5,7 @@ import withFormSpreeForm from "./withFormSpreeForm";
 import { WithFormSpreeFormProps } from "./interface";
 import {
   SELECTED_OPTION_LIST,
-} from "@/constants/ContactUs/constant";
+} from "@/constants/contactUs/constant";
 import SocialsSection from "./component/SocialsSection/SocialsSection";
 import StatusMessage from "./component/StatusMessage/StatusMessage";
 import InputField from "../form/InputField/InputField";

@@ -1,6 +1,6 @@
 import React from "react";
 import { ourPartnerProps, ourPartnerTextInterface } from "./interface";
-import { ourPartnerSectionText } from "@/constants/home/our-partner-text";
+import { ourPartnerSectionText } from "@/constants/home/ourPartnerText";
 // import { ourPartnerSectionText } from "@/constants/Home/our-partner-text";
 
 const withOurPartner = (Component: React.FC<ourPartnerProps>) => {

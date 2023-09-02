@@ -2,6 +2,7 @@ import Head from "next/head";
 import React from "react";
 import { MetaTagInterface } from "./interface";
 
+
 const MetaTag = (props: MetaTagInterface) => {
   const { title, description, image } = props;
   let defaultMetaTitle = ""

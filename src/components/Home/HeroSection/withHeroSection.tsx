@@ -1,6 +1,6 @@
 import React from "react";
 import { HeroSectionProps, HeroTextInterface } from "./interface";
-import { heroSectionText } from "@/constants/home/hero-text";
+import { heroSectionText } from "@/constants/home/heroText";
 
 
 
