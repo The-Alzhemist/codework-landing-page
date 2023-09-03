@@ -68,6 +68,7 @@ const FormPage = ({
                 rules={{
                   required: { value: false, message: "" },
                 }}
+                suffixIcon="฿"
                 placeholder="Write something..."
                 type="text"
                 label="Your budget? (optional)"

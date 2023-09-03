@@ -22,4 +22,5 @@ export interface InputFieldProps  {
   type?: string
   required?: boolean
   maxLength?: number
+  suffixIcon?: React.ReactNode
 }
