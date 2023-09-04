@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import BackgroundGradientBlur from "@/components/BackgroundGradientBlur/BackgroundGradientBlur";
 import { SELECTED_OPTION_LIST } from "@/constants/contactPage/constants";
 import withFormPage from "./withFormPage";
 
@@ -9,7 +10,6 @@ import SelectedField from "@/components/form/SelectedField/SelectedField";
 import { ExternalPrimaryButton } from "@/components/buttons/ExternalPrimaryButton";
 
 import CheckBoxSimpleField from "@/components/form/CheckBoxSimpleField/CheckBoxSimpleField";
-import BackgroundGradientBlur from "@/components/BackgroundGradientBlur/BackgroundGradientBlur";
 import { WithFormPageProps } from "./interface";
 import StatusMessage from "./component/StatusMessage/StatusMessage";
 import SocialsSection from "./component/SocialsSection/SocialsSection";
