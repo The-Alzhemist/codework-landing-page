@@ -1,10 +1,11 @@
 import React from "react";
-import BackgroundGradientBlur from "../../backgroundGradientBlur/BackgroundGradientBlur";
+
 import Paragraph from "../../AppLayout/components/typography/paragraph/Paragraph";
 import Hyperlinks from "../../AppLayout/components/link/Hyperlinks";
 import Image from "next/image";
 import withOurService from "./withOurService";
 import { OurServiceProps, ProductSolution } from "./interface";
+import BackgroundGradientBlur from "@/components/BackgroundGradientBlur/BackgroundGradientBlur";
 
 const OurService = (props: OurServiceProps) => {
   const { ourServiceSectionText } = props;
