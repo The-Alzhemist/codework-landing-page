@@ -14,11 +14,9 @@ import { WithFormPageProps } from "./interface";
 import StatusMessage from "./component/StatusMessage/StatusMessage";
 import SocialsSection from "./component/SocialsSection/SocialsSection";
 import Modal from "@/components/Modal/Modal";
-import { PrimaryButton } from "@/components/buttons/PrimaryButton";
 
-import { BsFillCheckCircleFill } from "react-icons/bs";
-import { SimpleButton } from "@/components/buttons/SimpleButton";
 import { CgSpinner } from "react-icons/cg";
+import { BiCheckCircle } from "react-icons/bi";
 
 const FormPage = ({
   handleSubmit,
@@ -58,7 +56,7 @@ const FormPage = ({
               rules={{
                 required: {
                   value: true,
-                  message: "Tell us your idea required.",
+                  message: "Tell us your idea is required.",
                 },
               }}
               placeholder="Write something..."
@@ -258,7 +256,7 @@ const FormPage = ({
                   <span className=" animate-spin">
                     <CgSpinner />
                   </span>
-                )}{" "}
+                )}
                 Submit my idea
               </div>
             </ExternalPrimaryButton>
@@ -267,7 +265,6 @@ const FormPage = ({
 
         <StatusMessage errors={state.errors} />
         <SocialsSection />
-      
 
         <Modal
           isOpen={showModal}
@@ -276,21 +273,17 @@ const FormPage = ({
         >
           <div className="relative bg-white rounded-lg text-center">
             <div className="p-6">
-              <div className="flex justify-center text-5xl text-primary mb-1">
-                <BsFillCheckCircleFill />
+              <div className="flex justify-center text-7xl text-primary-700 mb-5">
+                <BiCheckCircle />
               </div>
-              <h3 className="text-xl sm:text-2xl font-medium text-primary mb-3">
-                Message sent successfully!
+              <h3 className="text-xl sm:text-xl font-medium text-slate-900 mb-5">
+              Thank you for sharing your idea with us!
               </h3>
-              <div className="text-sm font-light mt-0 pt-0 text-slate-500 mb-5">
-                Thank you for sharing your idea with us.
-                <br />
+              <div className="text-sm font-light mt-0 pt-0 text-slate-700 mb-5">
                 We will get back to you as soon as possible. Let the journey
                 with CodeWork
               </div>
-              <SimpleButton onClickHandler={() => setShowModal(false)}>
-                Continue
-              </SimpleButton>
+             
             </div>
           </div>
         </Modal>

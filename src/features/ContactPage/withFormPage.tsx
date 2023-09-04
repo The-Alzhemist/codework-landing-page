@@ -3,8 +3,6 @@ import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import { useForm as useFormSpree } from "@formspree/react";
 import {
   PRIVATE_MAIL_TEST,
-  FORMSPREE_LANDING_TEST_KEY,
-  FORMSPREE_LANDING_KEY,
   FORMSPREE_PRODUCTION_LANDING_KEY,
 } from "@/config/environment";
 import { WithFormPageProps } from "./interface";
@@ -25,7 +23,7 @@ const withFormPage = (Component: React.FC<WithFormPageProps>) => {
     const { register, handleSubmit, formState, reset, control, watch } =
       hookForm;
     const { errors, isValid } = formState;
-    const [state, sendDataToFromSpree] = useFormSpree(PRIVATE_MAIL_TEST);
+    const [state, sendDataToFromSpree] = useFormSpree(FORMSPREE_PRODUCTION_LANDING_KEY);
     const isShowOtherChannel = watch("channels.other");
     const [showModal, setShowModal] = useState(false);
 
