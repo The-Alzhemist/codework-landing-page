@@ -3,7 +3,7 @@ import Image from "next/image";
 
 import withContactUs from "./withContactUs";
 import { ContactHomeSectionProp } from "./interface";
-import BackgroundGradientBlur from "@/components/Ford/BackgroundGradientBlur";
+import BackgroundGradientBlur from "@/components/ford/BackgroundGradientBlur";
 import Paragraph from "@/components/typography/paragraph/Paragraph";
 
 
