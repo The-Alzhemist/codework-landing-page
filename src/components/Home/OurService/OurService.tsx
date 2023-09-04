@@ -1,5 +1,5 @@
 import React from "react";
-import BackgroundGradientBlur from "../../backgroundGradientBlur/BackgroundGradientBlur";
+import BackgroundGradientBlur from "@/components/BackgroundGradientBlur/BackgroundGradientBlur";
 import Paragraph from "../../AppLayout/components/typography/paragraph/Paragraph";
 import Hyperlinks from "../../AppLayout/components/link/Hyperlinks";
 import Image from "next/image";

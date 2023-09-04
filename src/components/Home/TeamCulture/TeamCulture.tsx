@@ -1,7 +1,7 @@
 //ย้ายไปหน้า aboutus หลังจาก deploy หน้า home กลับมาทำต่อ
 
 // import React from "react";
-// import BackgroundGradientBlur from "../../backgroundGradientBlur/BackgroundGradientBlur";
+// import BackgroundGradientBlur from "@/components/BackgroundGradientBlur/BackgroundGradientBlur";
 // import { Gloria_Hallelujah, Prompt } from "@next/font/google";
 // import Paragraph from "../../AppLayout/components/typography/paragraph/Paragraph";
 // import Image from "next/image";

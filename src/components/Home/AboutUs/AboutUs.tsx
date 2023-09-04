@@ -1,10 +1,11 @@
 import React from "react";
-import BackgroundGradientBlur from "../../backgroundGradientBlur/BackgroundGradientBlur";
+
 import Paragraph from "../../AppLayout/components/typography/paragraph/Paragraph";
 import Image from "next/image";
 import { PrimaryButton } from "../../AppLayout/components/button/PrimaryButton";
 import withAboutUs from "./withAboutUs";
 import { aboutUsProps } from "./interface";
+import BackgroundGradientBlur from "@/components/BackgroundGradientBlur/BackgroundGradientBlur";
 
 const AboutUs = (props: aboutUsProps) => {
   const { aboutUsSectionText } = props;

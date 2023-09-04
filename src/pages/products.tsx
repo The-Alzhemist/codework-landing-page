@@ -1,6 +1,7 @@
 import React from "react";
 import AppLayout from "../components/AppLayout/AppLayout";
-import MetaTag from "@/components/seo/MetaTag";
+import MetaTag from "@/components/Seo/MetaTag";
+
 
 const clients = () => {
   return (
