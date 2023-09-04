@@ -6,7 +6,7 @@ import withHeroSection from "./withHeroSection";
 import Image from "next/image";
 
 import { HeroSectionProps } from "./interface";
-import BackgroundGradientBlur from "@/components/BackgroundGradientBlur/BackgroundGradientBlur";
+import BackgroundGradientBlur from "@/components/Ford/BackgroundGradientBlur";
 import Paragraph from "@/components/typography/paragraph/Paragraph";
 
 const fontGloriaHallelujah = Gloria_Hallelujah({

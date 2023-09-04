@@ -4,7 +4,7 @@ import Image from "next/image";
 import withOurPartner from "./withOurPartner";
 import { ourPartnerProps, ImageInfo } from "./interface";
 import Link from "next/link";
-import BackgroundGradientBlur from "@/components/BackgroundGradientBlur/BackgroundGradientBlur";
+import BackgroundGradientBlur from "@/components/Ford/BackgroundGradientBlur";
 
 
 const OurPartner = (props: ourPartnerProps) => {
