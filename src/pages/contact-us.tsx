@@ -1,6 +1,6 @@
 import React from "react";
 import AppLayout from "../components/AppLayout/AppLayout";
-import MetaTag from "@/components/Seo/MetaTag";
+import MetaTag from "@/components/MetaTag/MetaTag";
 import FormPage from "@/features/ContactPage/FormPage";
 
 
