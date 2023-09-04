@@ -25,13 +25,16 @@ const withFormPage = (Component: React.FC<WithFormPageProps>) => {
     const { register, handleSubmit, formState, reset, control, watch } =
       hookForm;
     const { errors, isValid } = formState;
-    const [state, sendDataToFromSpree] = useFormSpree(FORMSPREE_PRODUCTION_LANDING_KEY);
+    const [state, sendDataToFromSpree] = useFormSpree(PRIVATE_MAIL_TEST);
     const isShowOtherChannel = watch("channels.other");
+    const [showModal, setShowModal] = useState(false);
 
     useEffect(() => {
       if (!state.submitting && !state.errors && state.succeeded) {
+        setShowModal(true)
         reset();
       }
+      
     }, [reset, state.submitting, state.errors, state.succeeded]);
     const onSubmit: SubmitHandler<FieldValues> = async (data) => {
       try {
@@ -66,6 +69,7 @@ const withFormPage = (Component: React.FC<WithFormPageProps>) => {
       }
     };
 
+
     const newProps: WithFormPageProps = {
       register,
       handleSubmit,
@@ -76,7 +80,10 @@ const withFormPage = (Component: React.FC<WithFormPageProps>) => {
       sendDataToFromSpree,
       isShowOtherChannel,
       onSubmit,
+      showModal,
+      setShowModal
     };
+
 
     return <Component {...newProps} />;
   };

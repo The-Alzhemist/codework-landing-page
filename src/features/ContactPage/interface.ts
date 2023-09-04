@@ -8,20 +8,20 @@ import {
 } from "react-hook-form";
 import { SubmissionSuccess, SubmissionError } from "@formspree/core";
 
-export interface ContactFormTypes {
-  email: string;
-  name: string;
-  CompanyName: string;
-  phoneNumber: number;
-  timeSlot: string;
-  timePeriod: string;
-  budget: string;
-  idea: string;
-  channels: string;
-  otherChannel: string;
-  isShowOtherChannel: boolean;
-  onSubmit: SubmitHandler<FieldValues>
-}
+// export interface ContactFormTypes {
+//   email: string;
+//   name: string;
+//   CompanyName: string;
+//   phoneNumber: number;
+//   timeSlot: string;
+//   timePeriod: string;
+//   budget: string;
+//   idea: string;
+//   channels: string;
+//   otherChannel: string;
+//   isShowOtherChannel: boolean;
+//   onSubmit: SubmitHandler<FieldValues>
+// }
 
 export interface WithFormPageProps {
   register: UseFormRegister<FieldValues>;
@@ -38,6 +38,8 @@ export interface WithFormPageProps {
   sendDataToFromSpree: SubmitHandler<FieldValues>;
   isShowOtherChannel: boolean;
   onSubmit: SubmitHandler<FieldValues>
+  showModal:boolean,
+  setShowModal: React.Dispatch<React.SetStateAction<boolean>>
 }
 
 export interface FormDataFields {

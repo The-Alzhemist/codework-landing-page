@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { SELECTED_OPTION_LIST } from "@/constants/contactPage/constants";
 import withFormPage from "./withFormPage";
 
@@ -13,6 +13,12 @@ import BackgroundGradientBlur from "@/components/BackgroundGradientBlur/Backgrou
 import { WithFormPageProps } from "./interface";
 import StatusMessage from "./component/StatusMessage/StatusMessage";
 import SocialsSection from "./component/SocialsSection/SocialsSection";
+import Modal from "@/components/Modal/Modal";
+import { PrimaryButton } from "@/components/buttons/PrimaryButton";
+
+import { BsFillCheckCircleFill } from "react-icons/bs";
+import { SimpleButton } from "@/components/buttons/SimpleButton";
+import { CgSpinner } from "react-icons/cg";
 
 const FormPage = ({
   handleSubmit,
@@ -22,9 +28,12 @@ const FormPage = ({
   control,
   sendDataToFromSpree,
   isShowOtherChannel,
-  register,
   onSubmit,
+  showModal,
+  setShowModal
 }: WithFormPageProps) => {
+ 
+
   return (
     <>
       <div className="bg-white rounded-xl relative w-full max-w-[1140px] mx-auto py-[30px] md:py-[50px] lg:px-[50px] my-5 sm:my-0">
@@ -244,17 +253,47 @@ const FormPage = ({
 
           <div className=" flex justify-end">
             <ExternalPrimaryButton pathName="#" disabled={!isValid}>
-            Submit my idea
+              <div className="flex justify-center items-center gap-x-1">
+                {state.submitting && (
+                  <span className=" animate-spin">
+                    <CgSpinner />
+                  </span>
+                )}{" "}
+                Submit my idea
+              </div>
             </ExternalPrimaryButton>
           </div>
         </form>
 
-        <StatusMessage
-          submitting={state.submitting}
-          succeeded={state.succeeded}
-          errors={state.errors}
-        />
+        <StatusMessage errors={state.errors} />
         <SocialsSection />
+      
+
+        <Modal
+          isOpen={showModal}
+          onCloseHandler={() => setShowModal(false)}
+          disabledClose={false}
+        >
+          <div className="relative bg-white rounded-lg text-center">
+            <div className="p-6">
+              <div className="flex justify-center text-5xl text-primary mb-1">
+                <BsFillCheckCircleFill />
+              </div>
+              <h3 className="text-xl sm:text-2xl font-medium text-primary mb-3">
+                Message sent successfully!
+              </h3>
+              <div className="text-sm font-light mt-0 pt-0 text-slate-500 mb-5">
+                Thank you for sharing your idea with us.
+                <br />
+                We will get back to you as soon as possible. Let the journey
+                with CodeWork
+              </div>
+              <SimpleButton onClickHandler={() => setShowModal(false)}>
+                Continue
+              </SimpleButton>
+            </div>
+          </div>
+        </Modal>
       </div>
     </>
   );
