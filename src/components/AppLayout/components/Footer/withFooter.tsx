@@ -1,6 +1,6 @@
 import React from "react";
 import { FooterMenu, FooterProps, footerExternalProps } from "./interface";
-import { footerMenu } from "@/constants/footer-text";
+import { footerMenu } from "@/constants/footerText";
 
 
 const withFooter = (Component: React.FC<FooterProps>) => {
