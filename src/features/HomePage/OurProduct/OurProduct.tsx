@@ -3,7 +3,7 @@ import Image from "next/image";
 
 import withOurProduct from "./withOurProduct";
 import { OurProductProps } from "./interface";
-import BackgroundGradientBlur from "@/components/ford/BackgroundGradientBlur";
+import BackgroundGradientBlur from "@/components/BackgroundGradientBlur/BackgroundGradientBlur";
 import Paragraph from "@/components/typography/paragraph/Paragraph";
 
 const OurProduct = (props: OurProductProps) => {

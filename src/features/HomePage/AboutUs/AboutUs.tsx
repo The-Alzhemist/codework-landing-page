@@ -4,7 +4,7 @@ import Image from "next/image";
 
 import withAboutUs from "./withAboutUs";
 import { aboutUsProps } from "./interface";
-import BackgroundGradientBlur from "@/components/ford/BackgroundGradientBlur";
+import BackgroundGradientBlur from "@/components/BackgroundGradientBlur/BackgroundGradientBlur";
 import Paragraph from "@/components/typography/paragraph/Paragraph";
 
 const AboutUs = (props: aboutUsProps) => {

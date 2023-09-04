@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import BackgroundGradientBlur from "@/components/ford/BackgroundGradientBlur";
+import BackgroundGradientBlur from "@/components/BackgroundGradientBlur/BackgroundGradientBlur";
 import { SELECTED_OPTION_LIST } from "@/constants/contactPage/constants";
 import withFormPage from "./withFormPage";
 
