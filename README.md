@@ -40,16 +40,11 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 
 <!-- clear -->
-- responsive hero section  = done
-- use tailwind color = done
-- font root import  = done
-- hoc pattern = done
-- json data each component = done
-- move components to src = done
-- externalLink component = done
-- use tailwind merge library = done
-- meta title, description for home page = done
+- react-toast status handler = done
+- selectedForm reusable with other option = done
+- hoc structure = done
+- tailwindMerge 
+- type full
+ 
 
-- change img to <source/>
-- fork to codework repo
 
