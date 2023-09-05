@@ -1,5 +1,6 @@
 import React from "react";
 import { ModalAcceptProps, ModalProps } from "./interface";
+import { MODAL_ID } from "@/interfaces/enum";
 
 const withModal = (Component: React.FC<ModalProps>) => {
   const Hoc = ({
@@ -11,8 +12,8 @@ const withModal = (Component: React.FC<ModalProps>) => {
     const onCloseModal = (event: React.MouseEvent<HTMLElement>) => {
       if (
         !disabledClose &&
-        ((event.target as HTMLElement).id === "modalBackdrop" ||
-          (event.target as HTMLElement).id === "hideModalBtn")
+        ((event.target as HTMLElement).id === MODAL_ID.MODAL_BACKDROP ||
+          (event.target as HTMLElement).id === MODAL_ID.MODAL_CANCEL_BTN)
       ) {
         onCloseHandler();
       }

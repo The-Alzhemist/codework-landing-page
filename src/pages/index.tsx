@@ -20,7 +20,7 @@ import ContactHomeSection from "@/features/HomePage/ContactHomeSection/ContactHo
 export default function Home() {
   return (
     <>
-     <MetaTag image="/seo/codework-meta-cover-v2.jpg" />
+     <MetaTag image="/seo/matatag-home.png" />
 
       <AppLayout>
         <HeroSection />
