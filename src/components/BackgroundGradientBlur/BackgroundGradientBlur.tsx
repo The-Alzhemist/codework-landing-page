@@ -1,12 +1,23 @@
 import React from "react";
 import { BgGradientBlueInterface } from "./interface";
+import { twMerge } from "tailwind-merge";
 
 const BackgroundGradientBlur = ({ className }: BgGradientBlueInterface) => {
+  const style = twMerge(`hidden lg:flex absolute -z-10 w-[700px] h-[700px]`, className)
   return (
     <>
-      {/* none bug */}
-      <div className={`hidden lg:flex rounded-full w-[150px] h-[150px] md:w-[500px] md:h-[500px]
-    sm:bg-primary-200 blur-[100px] sm:blur-[100px] -z-10 absolute ${className}`}></div>
+        <picture className={style}>
+              <source
+                srcSet="/global/bg-blur-200.png"
+                type="image/webp"
+              />
+              <img
+                src="/global/bg-blur-200.png"
+                alt="bg circle gradient"
+                title="bg circle gradient"
+                loading="lazy"
+              />
+            </picture>
     </>
   );
 };
