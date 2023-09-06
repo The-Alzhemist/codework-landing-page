@@ -21,10 +21,10 @@ const HeroSection = (props: HeroSectionProps) => {
     <section
       className={`relative md:py-[50px] max-w-[1440px] mx-auto lg:px-[50px] pt-5 sm:pt-0 mb-9`}
     >
-      <BackgroundGradientBlur className="top-0 left-0" />
-      <BackgroundGradientBlur className="top-0 right-0" />
-      <BackgroundGradientBlur className="bottom-0 left-0" />
-      <BackgroundGradientBlur className="bottom-0 right-0" />
+      <BackgroundGradientBlur className="top-[-200px] left-[-200px] " />
+      <BackgroundGradientBlur className="top-[-200px] right-0" />
+      <BackgroundGradientBlur className="bottom-[-200px] left-[-200px] " />
+      <BackgroundGradientBlur className="bottom-[-200px] right-0 " />
 
       <div className="flex w-full">
         <div className="z-10 w-[100%] lg:w-[80%]  min-h-[600px]  relative bg-white border-[3px] border-black rounded-[50px] py-6 md:p-10 flex flex-col justify-center drop-shadow-md p-5 sm:p-0">
