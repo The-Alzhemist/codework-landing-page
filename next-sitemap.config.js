@@ -1,5 +1,5 @@
 module.exports = {
-    siteUrl: 'www.codework-tech.com',
+    siteUrl: 'https://codework-tech.com',
     generateRobotsTxt: true,
     sitemapSize: 7000,
   }
