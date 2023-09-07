@@ -38,12 +38,11 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
 
-<!-- clear -->
-- react-toast status handler = done
-- selectedForm reusable with other option = done
-- hoc structure = done
-- tailwindMerge 
-- type full
+<!-- SEO -->
+- sitemap.xml
+- robot.txt
+
+
  
 
 
