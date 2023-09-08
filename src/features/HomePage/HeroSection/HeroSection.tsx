@@ -74,7 +74,6 @@ const HeroSection = (props: HeroSectionProps) => {
               {heroSectionText.buttonName}
             </PrimaryButton> */}
             {/* <Hyperlinks link="/aboutus">{heroSectionText.linkName}</Hyperlinks> */}
-            <button id="hero-section-btn">GTM Click</button>
           </div>
         </div>
 
