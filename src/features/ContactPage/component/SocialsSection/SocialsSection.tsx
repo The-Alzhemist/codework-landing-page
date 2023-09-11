@@ -6,7 +6,7 @@ import IconSocialLink from "../IconSocialLink/IconSocialLink";
 const SocialsSection = () => {
   return (
     <section className="px-2 md:px-5 mt-8 sm:mt-0">
-      <div className="mb-5">Other contact channel</div>
+      <div className="mb-5">Other contact channels</div>
       <div className="flex justify-left items-center gap-x-2 mb-2">
         <IconSocialLink linkName="#" iconName={<PiFacebookLogoBold />} />
         <IconSocialLink linkName="#" iconName={<FaInstagram />} />
