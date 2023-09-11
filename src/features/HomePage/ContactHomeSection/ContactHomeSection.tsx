@@ -5,6 +5,7 @@ import withContactUs from "./withContactUs";
 import { ContactHomeSectionProp } from "./interface";
 import BackgroundGradientBlur from "@/components/BackgroundGradientBlur/BackgroundGradientBlur";
 import Paragraph from "@/components/typography/paragraph/Paragraph";
+import { PrimaryButton } from "@/components/buttons/PrimaryButton";
 
 
 const ContactHomeSection = (props: ContactHomeSectionProp) => {
@@ -36,14 +37,14 @@ const ContactHomeSection = (props: ContactHomeSectionProp) => {
           </div>
 
           <div className="flex justify-end relative">
-          {/* <Image
+          <Image
               src="/home/contact-us/contact-us-sticker-3.png"
               width={0}
               height={0}
               layout="responsive"
               className="z-0 max-w-[80px] h-auto absolute right-60 bottom-5"
               alt="simple but ambitious section cover"
-            /> */}
+            />
              <Image
               src="/home/contact-us/contact-us-sticker-2.png"
               width={0}
@@ -52,19 +53,12 @@ const ContactHomeSection = (props: ContactHomeSectionProp) => {
               className="z-0 max-w-[30px] h-auto absolute right-[-10px] bottom-12"
               alt="simple but ambitious section cover"
             />
-            {/* <PrimaryButton pathName="/aboutus">{contactUsSectionText.buttonName}</PrimaryButton> */}
+            <PrimaryButton className="min-w-[200px] py-3" pathName="/contact-us">{contactUsSectionText.buttonName}</PrimaryButton>
           </div>
         </h2>
 
         <div className="lg:w-2/4">
-          {/* <ImageP
-            src="/home/contact-us/contact-us-section-cover.png"
-            width={0}
-            height={0}
-            layout="responsive" 
-            className="z-0 max-w-[490px] h-auto"
-            alt="simple but ambitious section cover"
-          /> */}
+       
              <picture className="z-0 max-w-[490px] h-auto">
             <source
               srcSet="/home/contact-us/contact-us-section-cover-1x.webp"

@@ -4,5 +4,5 @@ import { ContactHomeSectionTextInterface } from "@/features/HomePage/ContactHome
 export const contactUsSectionText: ContactHomeSectionTextInterface = {
     heading1: "Let’s make your idea come true!",
     heading2: "CONTACT US",
-    buttonName: 'READ MORE ABOUT US'
+    buttonName: 'CONTACT US'
   }
