@@ -5,12 +5,13 @@ import type { AppProps } from 'next/app'
 import { useEffect, useState } from 'react';
 import TagManager from 'react-gtm-module'
 import Cookies from 'js-cookie';
-import { PopupPDPA } from '@/features/PAPAPopup/PDPAPopup';
+import PDPAPopup from '@/features/PAPAPopup/PDPAPopup';
+
 
 
 export default function App({ Component, pageProps }: AppProps) {
-
   const [hasConsent, setHasConsent] = useState(false);
+
   useEffect(() => {
     const userHasGivenConsent = Cookies.get('consent') === 'true';
     if (userHasGivenConsent) {
@@ -21,7 +22,7 @@ export default function App({ Component, pageProps }: AppProps) {
 
   return (
     <>
-    {!hasConsent && <PopupPDPA onAccept={() => setHasConsent(true)} />} 
+    {!hasConsent && <PDPAPopup onAccept={() => setHasConsent(true)} />} 
       <Component {...pageProps} />
     </>
   ) 
