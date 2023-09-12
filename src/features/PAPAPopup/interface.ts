@@ -4,6 +4,7 @@ export interface PDPAPopupAcceptProps {
 
 export interface PDPAPopupProps {
   isOpen: boolean;
-  handleClose: () => void;
-  shouldRender: boolean
+  handleClose: (value: boolean) => void;
+  shouldRender: boolean,
+  setIsOpen: (value: boolean) => void;
 }

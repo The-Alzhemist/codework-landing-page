@@ -7,9 +7,10 @@ const withPDPAPopup = (Component: React.FC<PDPAPopupProps>) => {
     const {onAccept}  = props
     const [isOpen, setIsOpen] = useState(true);
     const [shouldRender, setShouldRender] = useState(false);
-    const handleClose = () => {
+
+    const handleClose = (isAcceptBtn: boolean = true) => {
         setIsOpen(false);
-        if (onAccept) {
+        if (onAccept && isAcceptBtn) {
             Cookies.set('consent', 'true', { expires: 365 }); // Expires in 365 days
             onAccept();
         }
@@ -23,10 +24,11 @@ const withPDPAPopup = (Component: React.FC<PDPAPopupProps>) => {
       return () => clearTimeout(timer);
     }, []);
     
-    const newProps: any = {
+    const newProps: PDPAPopupProps = {
         handleClose,
         isOpen,
-        shouldRender
+        shouldRender,
+        setIsOpen
     };
 
     return <Component {...newProps} />;
