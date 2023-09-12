@@ -17,9 +17,7 @@ import OurPartner from "@/features/HomePage/OurPartner/OurPartner";
 import ContactHomeSection from "@/features/HomePage/ContactHomeSection/ContactHomeSection";
 
 
-
 export default function Home() {
-
   return (
     <>
      <MetaTag image="/seo/matatag-home.png" />
@@ -31,9 +29,7 @@ export default function Home() {
         <OurProduct />
         <OurPartner />
         <ContactHomeSection />
-      </AppLayout>
-
-     
+      </AppLayout>     
     </>
   );
 }
