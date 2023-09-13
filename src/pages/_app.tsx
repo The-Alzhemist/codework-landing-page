@@ -1,6 +1,30 @@
+import { GTM_PRODUCTION, LOCAL_STORAGE_PDPA_KEY } from '@/config/environment';
+
 import '@/styles/globals.css'
 import type { AppProps } from 'next/app'
+import { useEffect, useState } from 'react';
+import TagManager from 'react-gtm-module'
+import Cookies from 'js-cookie';
+import PDPAPopup from '@/features/PAPAPopup/PDPAPopup';
+
+
 
 export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+  const [hasConsent, setHasConsent] = useState(false);
+
+  useEffect(() => {
+    const userHasGivenConsent = typeof window !== 'undefined' && localStorage.getItem(LOCAL_STORAGE_PDPA_KEY);
+    if (userHasGivenConsent) {
+      setHasConsent(true);
+      TagManager.initialize({ gtmId: GTM_PRODUCTION });
+    }
+  }, [hasConsent]);
+
+  return (
+    <>
+    {!hasConsent && <PDPAPopup onAccept={() => setHasConsent(true)} />} 
+      <Component {...pageProps} />
+    </>
+  ) 
+
 }
