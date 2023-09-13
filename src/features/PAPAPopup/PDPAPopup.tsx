@@ -18,11 +18,11 @@ const PDPAPopup = ({ isOpen, handleClose, shouldRender, setIsOpen }: PDPAPopupPr
                 <div className='bg-white sm:w-[90%] border-t-2 sm:border-2 border-gray-900 fixed z-50 bottom-0 md:bottom-10 p-5 sm:rounded-lg  w-full max-w-[800px] flex justify-between gap-x-5 flex-col sm:flex-row'>
                     <div className="flex flex-col justify-center mb-5 sm:mb-0">
                         <div className="text-xl font-semibold mb-2">The website uses cookies</div>
-                        <div className="text-sm font-light">We use cookies to enhance performance and improve your experience while using the website.</div>
+                        <div className="text-sm font-light">We respect your privacy and use cookies to improve your browsing experience.</div>
                     </div>
 
                     <div className="flex flex-row-reverse gap-x-3  justify-start sm:justify-center  sm:flex-col">
-                        <SimpleButton className="mb-2 w-[150px] h-[40px] sm:h-[40px] flex justify-center items-center" onClickHandler={() => handleClose(true)}>Accept</SimpleButton>
+                        <SimpleButton className=" w-[150px] h-[40px] sm:h-[40px] flex justify-center items-center" onClickHandler={() => handleClose(true)}>Accept</SimpleButton>
                         <div
                             className="text-xs cursor-pointer absolute top-1 
                             right-2 text-gray-400 bg-transparent" onClick={() => handleClose(false)}>

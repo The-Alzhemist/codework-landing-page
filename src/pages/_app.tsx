@@ -1,4 +1,4 @@
-import { GTM_PRODUCTION } from '@/config/environment';
+import { GTM_PRODUCTION, LOCAL_STORAGE_PDPA_KEY } from '@/config/environment';
 
 import '@/styles/globals.css'
 import type { AppProps } from 'next/app'
@@ -13,7 +13,7 @@ export default function App({ Component, pageProps }: AppProps) {
   const [hasConsent, setHasConsent] = useState(false);
 
   useEffect(() => {
-    const userHasGivenConsent = Cookies.get('consent') === 'true';
+    const userHasGivenConsent = typeof window !== 'undefined' && localStorage.getItem(LOCAL_STORAGE_PDPA_KEY);
     if (userHasGivenConsent) {
       setHasConsent(true);
       TagManager.initialize({ gtmId: GTM_PRODUCTION });
