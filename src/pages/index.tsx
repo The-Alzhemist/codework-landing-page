@@ -24,10 +24,10 @@ export default function Home() {
 
       <AppLayout>
         <HeroSection />
+        <OurPartner />
         <AboutUs />
         <OurService />
         <OurProduct />
-        <OurPartner />
         <ContactHomeSection />
       </AppLayout>     
     </>
