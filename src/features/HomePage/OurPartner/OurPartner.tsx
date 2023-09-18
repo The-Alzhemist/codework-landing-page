@@ -42,17 +42,16 @@ const OurPartner = (props: ourPartnerProps) => {
         </div>
       </h2>
 
-      <div className="flex justify-center gap-10">
+      <div className="flex justify-center  flex-wrap gap-10">
         {ourPartnerSectionText.imagesList.map((item: ImageInfo, index: number) => (
           <React.Fragment key={`our-partner-${index}`}>
-            <a className="w-[150px] h-[150px] md:w-[200px] md:h-[200px] bg-white rounded-full border-2 border-primary-700 flex justify-center items-center transition-all ease-out duration-100 hover:shadow-lg" href={item.urlName} target="_blank" rel="noopener nofollow">
-              <Image
+            <a className="w-[150px] h-[150px] md:w-[200px] md:h-[200px] bg-white rounded-full border-2 border-primary-700 flex justify-center items-center transition-all ease-out duration-100 hover:shadow-lg " href={item.urlName} target="_blank" rel="noopener nofollow">
+              <img
                 src={item.pathName}
-                width={170}
-                height={59}
-                layout="responsive"
-                className="h-auto p-3"
-                alt="simple but ambitious section cover"
+                width={0}
+                height={0}
+                className="h-auto w-[90%] p-3"
+                alt={`${item.alt}`}
               />
             </a>
            
