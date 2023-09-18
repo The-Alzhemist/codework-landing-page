@@ -8,6 +8,7 @@ export interface ImageInfo {
     pathName: string;
     urlName: string;
     alt: string
+    className?: string
 }
   
 export interface ourPartnerProps {
