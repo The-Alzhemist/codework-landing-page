@@ -45,6 +45,7 @@ const MetaTag = (props: MetaTagInterface) => {
         content={description ? description : defaultMetaDescription}
       />
       <meta name="twitter:image" content={image ? image : defaultMetaImage} />
+      <meta name="theme-color" content="#C8D94C" />
     </Head>
   );
 };
