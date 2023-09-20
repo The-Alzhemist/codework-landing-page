@@ -17,8 +17,8 @@ export const ExternalPrimaryButton: React.FC<CustomButtonProps> = ({
   return (
 
     // need to use https:// prefix for external link
-    <a href={pathName} rel="nofollow" target="_blank">
-      <button id={id} className={style}>
+    <a href={pathName} rel="nofollow" target="_blank" id={id}>
+      <button className={style}>
         <span>{children}</span>
       </button>
     </a>
