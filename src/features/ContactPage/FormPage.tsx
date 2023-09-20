@@ -250,7 +250,7 @@ const FormPage = ({
           </p>
 
           <div className=" flex justify-end">
-            <ExternalPrimaryButton pathName="#" disabled={!isValid}>
+            <ExternalPrimaryButton id="form-submit-ContactForm" pathName="#" disabled={!isValid}>
               <div className="flex justify-center items-center gap-x-1">
                 {state.submitting && (
                   <span className=" animate-spin">
