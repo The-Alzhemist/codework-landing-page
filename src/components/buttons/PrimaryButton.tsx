@@ -13,7 +13,6 @@ export const PrimaryButton: React.FC<CustomButtonProps> = ({pathName, className,
   
   return (
     <Link href={pathName}>
-      // id สำหรับ tracking ต้องเป็น pattern [Category]-[Action]-[Label] 
       <button id={id} className={style}>
         <span>{children}</span>
       </button>

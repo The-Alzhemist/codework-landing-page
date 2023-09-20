@@ -18,7 +18,6 @@ export const ExternalPrimaryButton: React.FC<CustomButtonProps> = ({
 
     // need to use https:// prefix for external link
     <a href={pathName} rel="nofollow" target="_blank">
-      // id สำหรับ tracking ต้องเป็น pattern [Category]-[Action]-[Label] 
       <button id={id} className={style}>
         <span>{children}</span>
       </button>
