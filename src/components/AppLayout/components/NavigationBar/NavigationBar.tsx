@@ -1,11 +1,12 @@
-import React  from "react";
+import React, { useState } from "react";
 import withNavigation from "./withNavigation";
 import Link from "next/link";
 import { animated } from "@react-spring/web";
 
 import { OutlinedButton } from "../../../buttons/OutlinedButton";
 import { MenuItem, NavigationProps } from "./interface";
-
+import { FaArrowLeftLong } from "react-icons/fa6";
+import { motion, useAnimation, AnimatePresence } from "framer-motion";
 
 const NavigationBar = ({
   IsSideMenuOpen,
@@ -17,20 +18,34 @@ const NavigationBar = ({
   menu,
   fontPrompt,
 }: NavigationProps) => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleSidebar = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const controls = useAnimation();
+
+  const animateSidebar = async () => {
+    if (isOpen) {
+      await controls.start({ y: 0 }); // Move sidebar down (Y: 0%)
+    } else {
+      await controls.start({ y: '-100%' }); // Move sidebar up (Y: -100%)
+    }
+  };
+
+ 
   return (
     <>
       <header
         className={`${fontPrompt.variable} font-prompt text-md fixed z-50 flex h-16 w-full items-center overflow-hidden bg-primary-50/30 bg-white`}
       >
-        <div className=" w-full h-full mx-auto flex items-center justify-between px-6 py-3">
+        <div className="w-full h-full mx-auto flex items-center justify-between px-6 py-3">
           <div className="flex items-center  font-black text-primary-900">
             <div className="relative w-[170px] h-[15px]">
               <Link href="/">
                 <picture>
-                  <source
-                    srcSet="/codework-logo-1x.webp"
-                    type="image/webp"
-                  />
+                  <source srcSet="/codework-logo-1x.webp" type="image/webp" />
                   <img
                     src="/codework-logo-1x.png"
                     alt="codework logo"
@@ -42,73 +57,84 @@ const NavigationBar = ({
             </div>
           </div>
 
-          {/* Burger for Sidemenu, only for mobile */}
-           {/* หน้าไหนเสร็จแล้วค่อยๆมาเปิดทีละปุ่ม */}
-          <div className="z-20 flex items-end lg:hidden">
-            <button
-              className="ml-4 flex flex-col"
+          {/* Only for PC */}
+          {/* หน้าไหนเสร็จแล้วค่อยๆมาเปิดทีละปุ่ม */}
+          <div className="hidden lg:flex items-center gap-x-5">
+            <div
+              className="cursor-pointer p-3 bg-slate-300 rounded"
               onClick={() => {
-                setIsSideMenuOpen(!IsSideMenuOpen);
+                toggleSidebar();
+                animateSidebar();
               }}
             >
-              <animated.span
-                style={hamburgerStyle1}
-                className="mb-1 h-1 w-6 rounded-full bg-slate-900"
-              />
-              <animated.span
-                style={hamburgerStyle2}
-                className="mb-1 h-1 w-6 rounded-full bg-slate-900"
-              />
-              <animated.span
-                style={hamburgerStyle3}
-                className="mb-1 h-1 w-6 rounded-full bg-slate-900"
-              />
-            </button>
-          </div>
-
-          {/* Only for PC */}
-           {/* หน้าไหนเสร็จแล้วค่อยๆมาเปิดทีละปุ่ม */}
-          <div className="hidden lg:flex items-center gap-x-5">
-            {/* {menu?.map((menu: MenuItem, index: number) => (
-              <React.Fragment key={`menu-${index}`}>
-                <div
-                  className={`flex cursor-pointer hover:text-secondary hover:bg-custom-gradient font-medium`}
-                >
-                  <Link className="py-1 px-3" href={menu.url}>
-                    {menu.name}
-                  </Link>
-                </div>
-              </React.Fragment>
-            ))} */}
-
-            <OutlinedButton className="" pathName="/contact-us">Contact Us</OutlinedButton>
+              menu
+            </div>
+            <OutlinedButton className="" pathName="/contact-us">
+              Contact Us
+            </OutlinedButton>
           </div>
         </div>
       </header>
 
-      {/* Sidemenu for tablet mobile */}
-      {/* หน้าไหนเสร็จแล้วค่อยๆมาเปิดทีละปุ่ม */}
-      <animated.nav
-        style={navStyle}
-        className="fixed top-0 z-30 flex h-full flex-col bg-primary-50/30 p-6 text-primary-900 bg-white w-full"
-      >
-        <ul className="mt-16 flex flex-col">
-          {/* {menu?.map((menu: MenuItem, index: number) => (
-            <React.Fragment key={`mobile-menu-${index}`}>
-              <li className="border-b-[2px] border-dashed border-primary-700">
-                <p className="flex cursor-pointer text-secondary font-medium text-2xl">
-                  <Link className="py-3 w-full text-secondary" href={menu.url}>
-                    {menu.name}
-                  </Link>
-                </p>
-              </li>
-            </React.Fragment>
-          ))} */}
+      <AnimatePresence>
+          <motion.nav
+            animate={controls}
+            className={`top-0 h-full w-full z-50 $ fixed`}
+          >
+            <header className="bg-primary-500 h-auto p-10 grid grid-cols-2">
+              <div
+                className="flex justify-end font-semibold col-start-1 col-span-2"
+                onClick={() => {
+                  toggleSidebar();
+                  animateSidebar();
+                }}
+              >
+                <span className="bg-slate-50 p-3 rounded-full cursor-pointer">
+                  X
+                </span>
+              </div>
+              <div className="flex flex-col gap-y-3">
+                <div className=" cursor-pointer text-7xl font-bold flex gap-x-2 hover:text-secondary group">
+                  Home
+                  <span className="hidden group-hover:block">
+                    <FaArrowLeftLong />
+                  </span>
+                </div>
+                <div className="cursor-pointer text-7xl font-bold flex gap-x-2 hover:text-secondary group">
+                  About Us
+                  <span className="hidden group-hover:block">
+                    <FaArrowLeftLong />
+                  </span>
+                </div>
+                <div className="cursor-pointer text-7xl font-bold flex gap-x-2 hover:text-secondary group">
+                  Our Product
+                  <span className="hidden group-hover:block">
+                    <FaArrowLeftLong />
+                  </span>
+                </div>
+                <div className="cursor-pointer text-7xl font-bold flex gap-x-2 hover:text-secondary group">
+                  Contact Us
+                  <span className="hidden group-hover:block">
+                    <FaArrowLeftLong />
+                  </span>
+                </div>
+              </div>
+              <div className="flex flex-col items-end justify-end">
+                <div className="text-lg">Social</div>
+                <div className="text-2xl font-semibold">Facebook</div>
+                <div className="text-2xl font-semibold mb-5">Instragram</div>
 
-          <li><OutlinedButton className="mt-8 w-full max-w-md" pathName="/contact-us" >Contact Us</OutlinedButton></li>
-     
-        </ul>
-      </animated.nav>
+                <div className="text-lg">Phone</div>
+                <div className="text-2xl font-semibold mb-5">(+66) 83 987 4997</div>
+
+                <div className="text-lg">Email</div>
+                <div className="text-2xl font-semibold">hello@codework-tech.com</div>
+              </div>
+            </header>
+          </motion.nav>
+        
+        ◊
+      </AnimatePresence>
 
       {/* Margin */}
       <div className="relative h-16 sm:h-24 w-full" />

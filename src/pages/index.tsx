@@ -15,6 +15,7 @@ import OurService from "@/features/HomePage/OurService/OurService";
 import OurProduct from "@/features/HomePage/OurProduct/OurProduct";
 import OurPartner from "@/features/HomePage/OurPartner/OurPartner";
 import ContactHomeSection from "@/features/HomePage/ContactHomeSection/ContactHomeSection";
+import { Testfunction } from "@/components/testFunc/testAnimation";
 
 
 export default function Home() {
@@ -29,6 +30,7 @@ export default function Home() {
         <OurService />
         <OurProduct />
         <ContactHomeSection />
+      
       </AppLayout>     
     </>
   );
