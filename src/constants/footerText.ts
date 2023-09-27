@@ -6,7 +6,7 @@ export const footerMenu: FooterMenu = {
       companyAddress:
         "3774 Sukhumvit road, South Bang Na, Bang Na, Bangkok 10260",
       companyEmail: "hello@codework-tech.com",
-      companyTel: "(+66) 83 987 4997",
+      companyTel: "(+66) 63 849 4282",
       companyCopyright: "Ⓒ2023 CodeWork Tech Co.,Ltd. All rights reserved.",
     },
     footerRight: [
