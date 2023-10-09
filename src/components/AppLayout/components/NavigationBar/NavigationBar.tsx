@@ -81,7 +81,7 @@ const NavigationBar = ({
               </React.Fragment>
             ))} */}
 
-            <OutlinedButton className="" pathName="/contact-us">Contact Us</OutlinedButton>
+            <OutlinedButton id="desktop-navbar-btn-contact-page" className="" pathName="/contact-us">Contact Us</OutlinedButton>
           </div>
         </div>
       </header>
@@ -105,7 +105,7 @@ const NavigationBar = ({
             </React.Fragment>
           ))} */}
 
-          <li><OutlinedButton className="mt-8 w-full max-w-md" pathName="/contact-us" >Contact Us</OutlinedButton></li>
+          <li><OutlinedButton id="mobile-navbar-btn-contact-page" className="mt-8 w-full max-w-md" pathName="/contact-us" >Contact Us</OutlinedButton></li>
      
         </ul>
       </animated.nav>
