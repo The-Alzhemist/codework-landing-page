@@ -53,7 +53,7 @@ const ContactHomeSection = (props: ContactHomeSectionProp) => {
               className="z-0 max-w-[30px] h-auto absolute right-[-10px] bottom-12"
               alt="simple but ambitious section cover"
             />
-            <PrimaryButton className="min-w-[200px] py-3" pathName="/contact-us">{contactUsSectionText.buttonName}</PrimaryButton>
+            <PrimaryButton id="footer-btn-contact-page" className="min-w-[200px] py-3" pathName="/contact-us">{contactUsSectionText.buttonName}</PrimaryButton>
           </div>
         </h2>
 
